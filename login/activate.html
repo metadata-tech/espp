@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../img/jatanegara.png" type="image/x-icon">
+  <title>eSPP</title>
+  <link rel="stylesheet" href="../assets/fontawesome-pro-6.5.1-web/css/all.css">
+  <link rel="stylesheet" href="../assets/bootstrap-5.3.2-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/login.css">
+  <link rel="shortcut icon" href="#">
+</head>
+<body>
+  <div class="bg-pattern d-flex align-items-center justify-content-center min-vh-100">
+    <div class="card border-0 m-3 mt-5 rounded-0 shadow bg-white bg-opacity-75" style="width: 38em;">
+      <div class="card-icon-top-custom bg-custom border border-4 border-light border-opacity-20 rounded-circle text-center">
+        <i class="fa fa-key fa-top-img position-absolute top-50 start-50 translate-middle text-white"></i>
+      </div>
+      <div class="card-body px-md-5 px-4 pt-5 pb-4">
+        <div class="px-0">
+          <div class="d-flex align-items-start">
+            <div class="p-0 flex-fill">
+              <span class="logo-sm"><span class="logo-e me-1">e</span>SPP</span>
+            </div>
+          </div>
+          <hr class="hr-custom mt-2" />
+        </div>
+        <form id="activateForm" novalidate>
+          <h5 class="mb-2 fw-medium ps-1">Pengaktifan Akaun</h5>
+          <input type="hidden" name="activationKey" id="activationKey" class="form-control btn-text border rounded-0 bg-white" required>
+          <div class="form-group mb-2">
+            <label class="col-form-label fw-medium ps-1">No. Kad Pengenalan <span class="text-danger">*</span></label>
+            <div class="input-group has-validation">
+              <input type="text" name="userEmail" id="userEmail" class="form-control btn-text border rounded-0 bg-white" placeholder="No. Kad Pengenalan" autocomplete="new-kp" required>
+              <button class="btn btn-input border bg-white rounded-0" type="button" style="cursor: default;">
+                <i class="far fa-envelope"></i>
+              </button>
+              <div class="invalid-feedback mt-0" id="userEmailInputFeedback"></div>
+            </div>
+          </div>
+          <div class="form-group mb-2">
+            <label class="col-form-label fw-medium ps-1">Kata Laluan <span class="text-danger">*</span></label>
+            <div class="input-group has-validation">
+              <input type="password" name="userPassword" id="userPassword" class="form-control btn-text border rounded-0 bg-white" placeholder="Kata Laluan" autocomplete="new-password" required>
+              <button class="btn btn-input border bg-white rounded-0" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-custom-class="custom-tooltip-2" data-bs-placement="bottom" data-bs-title="Show/Hide Password" type="button" onclick="showPassword()">
+                <i id="showPassword" class="far fa-eye-slash"></i>
+              </button>
+              <div class="invalid-feedback mt-0" id="userPasswordFeedback"></div>
+            </div>
+          </div>
+          <div class="form-group mb-2">
+            <label class="col-form-label fw-medium ps-1">Ulang Kata Laluan <span class="text-danger">*</span></label>
+            <div class="input-group has-validation">
+              <input type="password" name="userConfirmPassword" id="userConfirmPassword" class="form-control btn-text border rounded-0 bg-white" placeholder="Ulang Kata Laluan" required>
+              <button class="btn btn-input border bg-white rounded-0" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-custom-class="custom-tooltip-2" data-bs-placement="bottom" data-bs-title="Show/Hide Password" type="button" onclick="showConfirmPassword()">
+                <i id="showConfirmPassword" class="far fa-eye-slash"></i>
+              </button>
+              <div class="invalid-feedback mt-0" id="confirmPasswordFeedback"></div>
+            </div>
+          </div>
+          <div class="mt-3 d-grid gap-2">
+            <button type="submit" class="btn btn-custom rounded-0 shadow-bottom p-2">
+              Hantar
+            </button>
+            <button type="button" class="btn btn-outline-custom rounded-0 p-2" onclick="resetForm()">Set Semula</button>
+            <a href="../../login" class="btn btn-custom-text p-1 fw-medium border-0">Log Masuk</a>
+          </div>
+        </form>
+        <span id="err" class="mt-2" style="font-size: 0.875rem; display: none;"></span>
+      </div>
+      <div class="card-footer bg-custom text-white text-center px-3 py-3 rounded-bottom-0 border-0 shadow-top">
+        <small>
+          Hakcipta Terpelihara 2025 ©
+          <div class="fw-light">
+            Suruhanjaya Perkhidmatan Pendidikan Malaysia
+          </div>
+        </small>
+      </div>
+    </div>
+    <div class="position-absolute bottom-0 end-0 m-4 text-white d-none d-xxl-block opacity-50">
+      <small>
+        <a class="text-white text-decoration-none" target="_blank" href="https://www.freepik.com/free-photo/aerial-drone-view-thermal-station-s-tube-visible-clouds-with-smoke-coming-out-blue-clear-sky_12875360.htm">Image by frimufilms</a> on Freepik
+      </small>
+    </div>
+  </div>
+  <script src="../assets/bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/jquery-3.7.1.min.js"></script>
+  <script src="../js/custom.js"></script>
+  <script type="text/javascript" src="../../admin/js/mdb.js"></script>
+  <script type="text/javascript" src="../../admin/js/addons/crypto.js"></script>
+  <script type="text/javascript">
+    document.write('<scr' + 'ipt src="../../admin/js/common.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
+
+    $(document).ready(function() {
+      var pathArray = window.location.pathname.split('/');
+      var activationKey = pathArray[pathArray.length - 1];
+      $("#activationKey").val(activationKey);
+      
+      /* $("#userPassword").keyup(function () {
+        document.getElementById("userPassword").setCustomValidity("");
+        document.getElementById("userConfirmPassword").setCustomValidity("");
+      }); */
+    });
+
+    $('form').submit(function(e) {
+      var form = document.getElementById("activateForm");
+
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+
+      /*let userEmail = document.getElementById("userEmail");
+      let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+      if (!emailRegex.test(userEmail.value)) {
+        userEmail.setCustomValidity("Sila masukkan emel yang sah.");
+      } else {
+        userEmail.setCustomValidity("");
+      }*/
+
+      let userEmailInput = document.getElementById("userEmail");
+      let passwordInput = document.getElementById("userPassword");
+      let confirmPasswordInput = document.getElementById("userConfirmPassword");
+
+      if (userEmailInput.value.length == 0) {
+        userEmailInput.setCustomValidity("Sila masukkan No. Kad Pengenalan");
+        $("#userEmailInputFeedback").html("Sila masukkan No. Kad Pengenalan");
+      } else {
+        if (userEmailInput.value.length != 12) {
+          if (!mzValidDigit(userEmailInput.value)) {
+            userEmailInput.setCustomValidity("Panjang mesti bersamaan 12 digit<br>No. Kad Pengenalan mesti dalam format nombor");
+            $("#userEmailInputFeedback").html("Panjang mesti bersamaan 12 digit<br>No. Kad Pengenalan mesti dalam format nombor");
+          } else {
+            userEmailInput.setCustomValidity("Panjang mesti bersamaan 12 digit");
+            $("#userEmailInputFeedback").html("Panjang mesti bersamaan 12 digit");
+          }
+        } else if (!mzValidDigit(userEmailInput.value)) {
+            userEmailInput.setCustomValidity("No. Kad Pengenalan mesti dalam format nombor");
+            $("#userEmailInputFeedback").html("No. Kad Pengenalan mesti dalam format nombor");
+        } else {
+          userEmailInput.setCustomValidity("");
+        }
+      }
+
+      if (passwordInput.value.length == 0) {
+        passwordInput.setCustomValidity("Sila masukkan Kata Laluan");
+        $("#userPasswordFeedback").html("Sila masukkan Kata Laluan");
+      } else {
+        if (passwordInput.value.length <= 8) {
+          if (!mzValidPassword(passwordInput.value)) {
+            passwordInput.setCustomValidity("Panjang minimum mesti 8 huruf<br>Kata Laluan mesti dimulakan dengan huruf besar dan mengandungi 1 huruf kecil, 1 huruf besar, 1 special character dan 1 nombor");
+            $("#userPasswordFeedback").html("Panjang minimum mesti 8 huruf<br>Kata Laluan mesti dimulakan dengan huruf besar dan mengandungi 1 huruf kecil, 1 huruf besar, 1 special character dan 1 nombor");
+          } else {
+            passwordInput.setCustomValidity("Panjang minimum mesti 8 huruf");
+            $("#userPasswordFeedback").html("Panjang minimum mesti 8 huruf");
+          }
+        } else if (!mzValidPassword(passwordInput.value)) {
+          passwordInput.setCustomValidity("Kata Laluan mesti dimulakan dengan huruf besar dan mengandungi 1 huruf kecil, 1 huruf besar, 1 special character dan 1 nombor");
+          $("#userPasswordFeedback").html("Kata Laluan mesti dimulakan dengan huruf besar dan mengandungi 1 huruf kecil, 1 huruf besar, 1 special character dan 1 nombor");
+        } else {
+          passwordInput.setCustomValidity("");
+        }
+      }
+
+      if (confirmPasswordInput.value.length == 0) {
+        confirmPasswordInput.setCustomValidity("Sila masukkan Kata Laluan");
+        $("#confirmPasswordFeedback").html("Sila masukkan Kata Laluan");
+      } else {
+        if (passwordInput.value && confirmPasswordInput.value !== passwordInput.value) {
+          confirmPasswordInput.setCustomValidity("Kata laluan tidak sama");
+          $("#confirmPasswordFeedback").html("Kata laluan tidak sama");
+        } else {
+          confirmPasswordInput.setCustomValidity("");
+        }
+      }
+
+      form.classList.add("was-validated");
+
+      if (form.checkValidity()) {
+        $(form).removeClass('was-validated');
+        event.preventDefault();
+
+        try {
+          const data = {
+            userName: $('#userEmail').val(),
+            userPassword: $('#userPassword').val(),
+            activationKey: $('#activationKey').val(),
+          };
+          mzFetch('../../admin/main/activation', 'POST', data).then((res) => {
+            form.reset();
+            $("#err").css("display", "block").addClass("text-success").html('Kata Laluan anda berjaya disimpan. Sila log masuk ke Sistem eSPP.').delay(15000).fadeOut();
+          }).catch((e)=>{ $("#err").css("display", "block").addClass("text-danger").html(e.message).delay(15000).fadeOut(); });
+        } catch (e) {
+          $("#err").css("display", "block").addClass("text-danger").html(e.message).delay(15000).fadeOut();
+        }
+      }
+    });
+
+    function showPassword() {
+      var x = document.getElementById("userPassword");
+      var y = document.getElementById("showPassword");
+      if (x.type === "password") {
+        x.type = "text";
+        y.classList.remove("fa-eye-slash");
+        y.classList.add("fa-eye");
+      } else {
+        x.type = "password";
+        y.classList.remove("fa-eye");
+        y.classList.add("fa-eye-slash");
+      }
+    }
+
+    function showConfirmPassword() {
+      var x = document.getElementById("userConfirmPassword");
+      var y = document.getElementById("showConfirmPassword");
+      if (x.type === "password") {
+        x.type = "text";
+        y.classList.remove("fa-eye-slash");
+        y.classList.add("fa-eye");
+      } else {
+        x.type = "password";
+        y.classList.remove("fa-eye");
+        y.classList.add("fa-eye-slash");
+      }
+    }
+
+    function resetForm() {
+      $("#err").css("display", "none").html('');
+      var form = $('#activateForm')[0];
+      $(form).removeClass('was-validated');
+      form.reset();
+    }
+  </script>
+</body>
+</html>

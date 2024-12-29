@@ -1,0 +1,47 @@
+[
+  {
+    "userId": 1,
+    "userRoleId": 12,
+    "userName": "MUHAMMAD ZAID BIN SHAHARIL"
+  },
+  {
+    "userId": 2,
+    "userRoleId": 12,
+    "userName": "MUHAMMAD SAIFUL BIN ABDUL JALIL"
+  },
+  {
+    "userId": 3,
+    "userRoleId": 12,
+    "userName": "KHAIRUL ANUAR BIN ABDULLAH"
+  },
+  {
+    "userId": 4,
+    "userRoleId": 12,
+    "userName": "NURUL HUDA BIN MOHD FAHIM"
+  },
+  {
+    "userId": 5,
+    "userRoleId": 11,
+    "userName": "KHAIRULNIZAM BIN ABD GHANI"
+  },
+  {
+    "userId": 6,
+    "userRoleId": 11,
+    "userName": "MARDIANA BINTI MAT HASSAN"
+  },
+  {
+    "userId": 7,
+    "userRoleId": 11,
+    "userName": "MUHAMMAD ZAID BIN SHAHARIL"
+  },
+  {
+    "userId": 8,
+    "userRoleId": 22,
+    "userName": "MUHAMMAD ZAID BIN SHAHARIL"
+  },
+  {
+    "userId": 9,
+    "userRoleId": 22,
+    "userName": "NOR ALIYA NABILA BINTI FARIZAL"
+  }
+]

@@ -1,0 +1,131 @@
+<div class="modal" id="modalPpj" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-notify modal-xl modal-dialog-scrollable" role="document">
+    <div class="modal-content rounded-0">
+      <div class="modal-header unique-color rounded-0">
+        <h5 class="modal-title w-100 white-text" id="h5MppjTitle"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="btnMppjClose">
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body pt-4 pb-1">
+        <form id="formMppj" autocomplete="off" spellcheck="false">
+          <div class="row mb-2">
+            <div class="col-lg-6 mb-2">
+              <p class="label-text">Jenis Skim</p>
+              <div class="select-outline my-1" id="optMppjJenisSkim_">
+                <select class="mdb-select md-form md-outline md-outline-light colorful-select white my-0 font-weight-500 z-depth-0" searchable="Carian" data-stop-refresh="true" id="optMppjJenisSkim">
+                  <option value="">Sila Pilih</option>
+                  <option value="Pegawai Pendidikan Pengajian Tinggi Gred DH41">Pegawai Pendidikan Pengajian Tinggi Gred DH41</option>
+                  <option value="Pegawai Pendidikan Pengajian Tinggi Gred DH29">Pegawai Pendidikan Pengajian Tinggi Gred DH29</option>
+                  <option value="Pembantu Tadbir (Perkeranian/Operasi) Gred N19">Pembantu Tadbir (Perkeranian/Operasi) Gred N19</option>
+                </select>
+                <p class="font-small font-weight-400 text-danger my-0" id="optMppjJenisSkimErr"></p>
+              </div>
+            </div>
+            <div class="col-lg-6 mb-2">
+              <p class="label-text">Kekosongan</p>
+              <div class="md-form md-outline md-outline-light my-1">
+                <input type="text" class="form-control numeric" id="txtMppjKekosongan">
+                <p class="font-small font-weight-400 text-danger my-0" id="txtMppjKekosonganErr"></p>
+              </div>
+            </div>
+            <div class="col-lg-12 mb-3">
+              <p class="label-text">Jenis Sekolah</p>
+              <div class="md-form md-outline md-outline-light mt-0 mb-1">
+                <div class="form-check form-check-inline mb-1 pl-0">
+                  <input type="radio" class="form-check-input" name="radMppjJenisSekolah[]" id="radMppjJenisSekolah1" value="Rendah">
+                  <label for="radMppjJenisSekolah1" class="form-check-label text-black font-weight-normal">Rendah</label>
+                </div>
+                <div class="form-check form-check-inline mb-1 pl-0">
+                  <input type="radio" class="form-check-input" name="radMppjJenisSekolah[]" id="radMppjJenisSekolah2" value="Menengah">
+                  <label for="radMppjJenisSekolah2" class="form-check-label text-black font-weight-normal">Menengah</label>
+                </div>
+                <div class="form-check form-check-inline mb-1 pl-0">
+                  <input type="radio" class="form-check-input" name="radMppjJenisSekolah[]" id="radMppjJenisSekolah3" value="Kebangsaan">
+                  <label for="radMppjJenisSekolah3" class="form-check-label text-black font-weight-normal">Kebangsaan</label>
+                </div>
+                <div class="form-check form-check-inline mb-1 pl-0">
+                  <input type="radio" class="form-check-input" name="radMppjJenisSekolah[]" id="radMppjJenisSekolah4" value="Jenis Cina">
+                  <label for="radMppjJenisSekolah4" class="form-check-label text-black font-weight-normal">Jenis Cina</label>
+                </div>
+                <div class="form-check form-check-inline mb-1 pl-0">
+                  <input type="radio" class="form-check-input" name="radMppjJenisSekolah[]" id="radMppjJenisSekolah5" value="Jenis Tamil">
+                  <label for="radMppjJenisSekolah5" class="form-check-label text-black font-weight-normal">Jenis Tamil</label>
+                </div>
+                <div class="form-check form-check-inline mb-1 pl-0">
+                  <input type="radio" class="form-check-input" name="radMppjJenisSekolah[]" id="radMppjJenisSekolah6" value="Lain-lain">
+                  <label for="radMppjJenisSekolah6" class="form-check-label text-black font-weight-normal">Lain-lain</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 mb-3">
+              <p class="label-text">Mata Pelajaran</p>
+              <div class="md-form md-outline md-outline-light mt-0 mb-1">
+                <div class="form-check form-check-inline mb-1 pl-0">
+                  <input type="checkbox" class="form-check-input" name="chkMppjMataPelajaran[]" id="chkMppjMataPelajaran1" value="Bahasa Melayu">
+                  <label for="chkMppjMataPelajaran1" class="form-check-label text-black font-weight-normal">Bahasa Melayu</label>
+                </div>
+                <div class="form-check form-check-inline mb-1 pl-0">
+                  <input type="checkbox" class="form-check-input" name="chkMppjMataPelajaran[]" id="chkMppjMataPelajaran2" value="Bahasa Inggeris">
+                  <label for="chkMppjMataPelajaran2" class="form-check-label text-black font-weight-normal">Bahasa Inggeris</label>
+                </div>
+                <div class="form-check form-check-inline mb-1 pl-0">
+                  <input type="checkbox" class="form-check-input" name="chkMppjMataPelajaran[]" id="chkMppjMataPelajaran3" value="Matematik">
+                  <label for="chkMppjMataPelajaran3" class="form-check-label text-black font-weight-normal">Matematik</label>
+                </div>
+                <div class="form-check form-check-inline mb-1 pl-0">
+                  <input type="checkbox" class="form-check-input" name="chkMppjMataPelajaran[]" id="chkMppjMataPelajaran4" value="Sejarah">
+                  <label for="chkMppjMataPelajaran4" class="form-check-label text-black font-weight-normal">Sejarah</label>
+                </div>
+                <div class="form-check form-check-inline mb-1 pl-0">
+                  <input type="checkbox" class="form-check-input" name="chkMppjMataPelajaran[]" id="chkMppjMataPelajaran5" value="Sains">
+                  <label for="chkMppjMataPelajaran5" class="form-check-label text-black font-weight-normal">Sains</label>
+                </div>
+                <div class="form-check form-check-inline mb-1 pl-0">
+                  <input type="checkbox" class="form-check-input" name="chkMppjMataPelajaran[]" id="chkMppjMataPelajaran6" value="Pendidikan Islam/Pendidikan Moral">
+                  <label for="chkMppjMataPelajaran6" class="form-check-label text-black font-weight-normal">Pendidikan Islam/Pendidikan Moral</label>
+                </div>
+                <div class="form-check form-check-inline mb-1 pl-0">
+                  <input type="checkbox" class="form-check-input" name="chkMppjMataPelajaran[]" id="chkMppjMataPelajaran7" value="Pendidikan Jasmani dan Kesihatan">
+                  <label for="chkMppjMataPelajaran7" class="form-check-label text-black font-weight-normal">Pendidikan Jasmani dan Kesihatan</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-12 mb-2">
+              <p class="label-text">Kementerian/Jabatan</p>
+              <div class="md-form md-outline md-outline-light my-1">
+                <input type="text" class="form-control uc-text" id="txtMppjJabatan">
+                <p class="font-small font-weight-400 text-danger my-0" id="txtMppjJabatanErr"></p>
+              </div>
+            </div>
+            <div class="col-lg-6 mb-2">
+              <p class="label-text">Nama Pegawai</p>
+              <div class="md-form md-outline md-outline-light my-1">
+                <input type="text" class="form-control uc-text" id="txtMppjPegawai">
+                <p class="font-small font-weight-400 text-danger my-0" id="txtMppjPegawaiErr"></p>
+              </div>
+            </div>
+            <div class="col-lg-6 mb-2">
+              <p class="label-text">Tarikh Permohonan</p>
+              <div class="md-form md-outline md-outline-light my-1">
+                <input type="text" class="form-control datepicker2" id="txtMppjTarikhPermohonan" placeholder="DD/MM/YYYY">
+                <p class="font-small font-weight-400 text-danger my-0" id="txtMppjTarikhPermohonanErr"></p>
+              </div>
+            </div>
+            <div class="col-lg-12 mb-2">
+              <p class="label-text">Catatan</p>
+              <div class="md-form md-outline md-outline-light my-1">
+                <textarea class="md-textarea form-control" rows="5" id="txtMppjCatatan"></textarea>
+                <p class="font-small font-weight-400 text-danger my-0" id="txtMppjCatatanErr"></p>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer p-0">
+        <button type="button" class="btn btn-md btn-outline-default waves-effect z-depth-0" data-dismiss="modal"><i class="fa-solid fa-ban mr-2"></i>Batal</button>
+        <button type="button" class="btn btn-md btn-default waves-effect z-depth-0" id="btnMppjSave"><i class="fa-regular fa-floppy-disk mr-2"></i>Simpan</button>
+      </div>
+    </div>
+  </div>
+</div>

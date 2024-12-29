@@ -1,0 +1,51 @@
+<div class="modal animated bounceInDown" id="ModalChangeProfile" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-notify" role="document">
+    <div class="modal-content">
+      <div class="modal-header unique-color rounded-0">
+        <h4 class="modal-title w-100 white-text"><i class="fa-solid fa-user-edit text-white mr-2"></i> Kemaskini Profil</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="btnMpfClose">
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body pt-4_5 pb-1">
+        <form id="formMpf" autocomplete="off" spellcheck="false">
+          <div class="row">
+            <div class="col-12">
+              <div class="md-form md-outline md-outline-light my-a">
+                <input type="text" id="txtMpfName" class="form-control uc-text">
+                <label class="text-dark" for="txtMpfName" id="lblMpfName">Nama *</label>
+                <p class="font-small font-weight-400 text-danger" id="txtMpfNameErr"></p>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="md-form md-outline md-outline-light my-a">
+                <input type="text" id="txtMpfEmail" class="form-control">
+                <label class="text-dark" for="txtMpfEmail" id="lblMpfEmail">Alamat Emel *</label>
+                <p class="font-small font-weight-400 text-danger" id="txtMpfEmailErr"></p>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="md-form md-outline md-outline-light my-a">
+                <input type="text" id="txtMpfContactNo" class="form-control">
+                <label class="text-dark" for="txtMpfContactNo" id="lblMpfContactNo">No. Telefon *</label>
+                <p class="font-small font-weight-400 text-danger" id="txtMpfContactNoErr"></p>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="md-form md-outline md-outline-light my-a">
+                <input type="text" id="txtMpfDesignation" class="form-control uc-text">
+                <label class="text-dark" for="txtMpfDesignation" id="lblMpfDesignation">Jawatan</label>
+                <p class="font-small font-weight-400 text-danger" id="txtMpfDesignationErr"></p>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer p-0">
+        <button type="button" class="btn btn-md btn-outline-default waves-effect z-depth-0" data-dismiss="modal"><i class="fa-solid fa-ban mr-2"></i>Batal</button>
+        <button type="button" class="btn btn-md btn-default waves-effect z-depth-0" id="btnMpfSave"><i class="fa-regular fa-floppy-disk mr-2"></i>Simpan</button>
+      </div>
+    </div>
+  </div>
+</div>

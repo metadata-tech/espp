@@ -1,0 +1,241 @@
+<section class="sectionMaklumat" style="display: none;">
+  <div class="row mb-2">
+    <div class="col-12 p-1">
+      <nav class="navbar z-depth-1">
+        <h4 class="navbar-text white-text font-weight-500 ml-2 pb-0" id="h4SmTitle">
+          <div class="d-flex">
+            <div class="p-0 pr-2 align-self-center"><i class="fa-duotone fa-xl fa-user-tie mr-2"></i></div>
+            <div class="p-0">Maklumat Anggota</div>
+          </div>
+        </h4>
+        <button class="btn-clear text-white float-right mr-2 btnSmBack" title="Kembali">
+          <i class="fa-solid fa-xl fa-chevron-left"></i>
+        </button>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <!-- Menu -->
+    <div class="col p-1 side-section order-1">
+      <div class="card rounded-0" style="position: sticky; top: 62px;">
+        <!-- NGDPDBBPTKIR -->
+        <div class="card-body py-2 d-none d-xxl-block">
+          <div class="row">
+            <div class="col-md-12 text-center">
+              <img src="img/profile.jpg" class="mx-auto z-depth-0 rounded-0 border border-1" width="100%">
+              <button type="button" class="btn btn-sm btn-default btn-block waves-effect z-depth-0 mt-2" id="btnKemaskiniGambar">
+                <i class="fa-solid fa-image-user mr-2"></i>Kemaskini Gambar
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Menu -->
+        <div class="card-body white border-top-unique p-2">
+          <ul class="nav nav-pills-custom flex-xxl-column" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active" id="secA-tab" data-toggle="pill" href="#secA" role="tab">
+                <div class="d-flex flex-row align-items-center">
+                  <div class="div-menu-icon"><i class="fa-solid fa-a" style="margin-left: 0.125rem !important;"></i></div>
+                  <div class="p-0 ml-2 d-none d-xxl-block">
+                    <p class="menu-title">Maklumat Pegawai</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="secB-tab" data-toggle="pill" href="#secB" role="tab">
+                <div class="d-flex flex-row align-items-center">
+                  <div class="div-menu-icon"><i class="fa-solid fa-b" style="margin-left: 0.125rem !important;"></i></div>
+                  <div class="p-0 ml-2 d-none d-xxl-block">
+                    <p class="menu-title">Maklumat Perkhidmatan</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="secC-tab" data-toggle="pill" href="#secC" role="tab">
+                <div class="d-flex flex-row align-items-center">
+                  <div class="div-menu-icon"><i class="fa-solid fa-c" style="margin-left: 0.125rem !important;"></i></div>
+                  <div class="p-0 ml-2 d-none d-xxl-block">
+                    <p class="menu-title">Maklumat Emolumen</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="secD-tab" data-toggle="pill" href="#secD" role="tab">
+                <div class="d-flex flex-row align-items-center">
+                  <div class="div-menu-icon"><i class="fa-solid fa-d" style="margin-left: 0.125rem !important;"></i></div>
+                  <div class="p-0 ml-2 d-none d-xxl-block">
+                    <p class="menu-title">Maklumat Pinjaman</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="secE-tab" data-toggle="pill" href="#secE" role="tab">
+                <div class="d-flex flex-row align-items-center">
+                  <div class="div-menu-icon"><i class="fa-solid fa-e" style="margin-left: 0.125rem !important;"></i></div>
+                  <div class="p-0 ml-2 d-none d-xxl-block">
+                    <p class="menu-title">Perakuan</p>
+                  </div>
+                </div>
+              </a>
+            </li>
+            <li class="nav-item d-xxl-none" role="presentation">
+              <a class="nav-link mt-2 btnAc1Back">
+                <div class="d-flex flex-row align-items-center">
+                  <div class="div-menu-icon"><i class="fa-regular fa-chevron-circle-left"></i></div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Content -->
+    <div class="col p-1 pl-xl-3 order-2">
+      <!-- Content -->
+      <div class="card rounded-0 mb-4">
+        <div class="card-body p-0 rounded-0">
+          <div class="tab-content p-0">
+            <div class="tab-pane fade accordion show active" id="secA" role="tabpanel">
+              <div class="card shadow-none">
+                <div class="card-header unique-color darken-3 rounded-0 p-1">
+                  <div class="d-flex flex-row">
+                    <div class="p-0 flex-fill">
+                      <h5 class="navbar-text white-text font-weight-500 ml-3 mb-0">
+                        <i class="fa-solid fa-a mr-2"></i> Maklumat Pegawai
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <p class="label-text">Nama Penuh</p>
+                      <div class="md-form md-outline md-outline-light my-1">
+                        <input type="text" class="form-control uc-text" id="txtSmNamaPenuh">
+                        <p class="font-small text-danger" id="txtSmNamaPenuhErr"></p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <p class="label-text">No. Kad Pengenalan</p>
+                      <div class="md-form md-outline md-outline-light my-1">
+                        <input type="text" class="form-control uc-text" id="txtSmNoKp">
+                        <p class="font-small text-danger" id="txtSmNoKpErr"></p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <p class="label-text">Tarikh Lahir</p>
+                      <div class="md-form md-outline md-outline-light my-1">
+                        <input type="text" class="form-control datepicker2" placeholder="DD/MM/YYYY" id="txtSmTarikhLahir">
+                        <p class="font-small text-danger" id="txtSmTarikhLahirErr"></p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <p class="label-text">Tempat Lahir</p>
+                      <div class="md-form md-outline md-outline-light my-1">
+                        <input type="text" class="form-control uc-text" id="txtSmTempatLahir">
+                        <p class="font-small text-danger" id="txtSmTempatLahirErr"></p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <p class="label-text">Jantina</p>
+                      <div class="md-form md-outline my-1">
+                        <div class="form-check form-check-inline mb-2">
+                          <input type="radio" class="form-check-input" name="radSmJantina" id="radSmJantina1" value="1">
+                          <label class="form-check-label text-black font-weight-500" for="radSmJantina1">Lelaki</label>
+                        </div>
+                        <div class="form-check form-check-inline mb-2">
+                          <input type="radio" class="form-check-input" name="radSmJantina" id="radSmJantina2" value="2">
+                          <label class="form-check-label text-black font-weight-500" for="radSmJantina2">Perempuan</label>
+                        </div>
+                        <p class="font-small text-danger font-weight-400" id="radSmJantinaErr"></p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <p class="label-text">Gelaran Kehormat</p>
+                      <div class="select-outline my-1" id="optSmGelaran_">
+                        <select class="mdb-select md-form md-outline md-outline-light colorful-select my-0 font-weight-500 z-depth-0" searchable="Carian" data-stop-refresh="true" id="optSmGelaran">
+                          <option value="">Sila Pilih</option>
+                          <option value="Encik">Encik</option>
+                          <option value="Puan">Puan</option>
+                          <option value="Tuan">Tuan</option>
+                          <option value="Cik">Cik</option>
+                        </select>
+                        <p class="font-small text-danger font-weight-400" id="optSmGelaranErr"></p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <p class="label-text">Bangsa</p>
+                      <div class="select-outline my-1" id="optSmBangsa_">
+                        <select class="mdb-select md-form md-outline md-outline-light colorful-select my-0 font-weight-500 z-depth-0" searchable="Carian" data-stop-refresh="true" id="optSmBangsa">
+                          <option value="">Sila Pilih</option>
+                          <option value="Melayu">Melayu</option>
+                        </select>
+                        <p class="font-small text-danger font-weight-400" id="optSmBangsaErr"></p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <p class="label-text">Agama</p>
+                      <div class="select-outline my-1" id="optSmAgama_">
+                        <select class="mdb-select md-form md-outline md-outline-light colorful-select my-0 font-weight-500 z-depth-0" searchable="Carian" data-stop-refresh="true" id="optSmAgama">
+                          <option value="">Sila Pilih</option>
+                          <option value="Islam">Islam</option>
+                        </select>
+                        <p class="font-small text-danger font-weight-400" id="optSmAgamaErr"></p>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <p class="label-text">Alamat Penuh</p>
+                      <div class="md-form md-outline md-outline-light my-1">
+                        <textarea class="md-textarea form-control uc-text" rows="4" id="txtSmAlamatPenuh"></textarea>
+                        <p class="font-small text-danger font-weight-400" id="txtSmAlamatPenuhErr"></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 p-0">
+                      <div class="table-responsive">
+                        <table id="dtSmAk" class="table table-custom display responsive mt-1">
+                          <thead>
+                            <tr>
+                              <th colspan="6" class="text-left">
+                                Senarai Nama Ahli Keluarga
+                              </th>
+                            </tr>
+                            <tr>
+                              <th class="all" style="width: 50px; min-width: 50px;">#</th>
+                              <th class="all">Nama Penuh</th>
+                              <th class="all">Tarikh Lahir</th>
+                              <th class="all">Hubungan</th>
+                              <th class="all">Pekerjaan</th>
+                              <th class="all" style="width: 62px; min-width: 62px;">
+                                <span class="btn-clear divSmSave btnSmTambahAhli" data-toggle="tooltip" data-placement="left" title="Tambah Ahli Keluarga">
+                                  <i class="fa-regular mx-0 fa-circle-plus fa-lg"></i>
+                                </span>
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody></tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer grey lighten-6 p-1 divSmSave">
+                  <div class="d-flex">
+                    <div class="p-0 pr-2 ml-auto">
+                      <button type="button" class="btn btn-sm btn-outline-default z-depth-0 m-0" id="btnSmSecAReset"><i class="fa-solid fa-rotate mr-2"></i>Set Semula</button>
+                      <button type="button" class="btn btn-sm btn-default z-depth-1" id="btnSmSecASave"><i class="fa-solid fa-floppy-disk mr-2"></i>Simpan</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>

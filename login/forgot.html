@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="img/jatanegara.png" type="image/x-icon" />
+  <title>eSPP</title>
+  <link rel="stylesheet" href="assets/fontawesome-pro-6.5.1-web/css/all.css" />
+  <link rel="stylesheet" href="assets/bootstrap-5.3.2-dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/login.css" />
+  <link rel="shortcut icon" href="#" />
+</head>
+
+<body>
+  <div class="bg-pattern d-flex align-items-center justify-content-center min-vh-100">
+    <div class="card border-0 m-3 mt-5 rounded-0 shadow bg-white bg-opacity-75" style="width: 38em">
+      <div
+        class="card-icon-top-custom bg-custom border border-4 border-light border-opacity-20 rounded-circle text-center">
+        <i class="fa fa-question fa-top-img position-absolute top-50 start-50 translate-middle text-white"></i>
+      </div>
+      <div class="card-body px-md-5 px-4 pt-5 pb-4">
+        <div class="px-0">
+          <div class="d-flex align-items-start">
+            <div class="p-0 flex-fill">
+              <span class="logo-sm"><span class="logo-e me-1">e</span>SPP</span>
+            </div>
+          </div>
+          <hr class="hr-custom mt-2" />
+        </div>
+        <form id="forgotForm" method="POST" novalidate>
+          <h5 class="mb-2 fw-medium ps-1">Terlupa Kata Laluan</h5>
+          <div class="form-group mb-2">
+            <label for="userName" class="col-form-label fw-medium ps-1">ID Pengguna <span class="text-danger">*</span></label>
+            <div class="input-group has-validation">
+              <input type="text" name="userName" id="userName" class="form-control btn-text border rounded-0 bg-white" placeholder="ID Pengguna" required />
+              <button class="btn btn-input border bg-white rounded-0" type="button" style="cursor: default">
+                <i class="far fa-user"></i>
+              </button>
+              <div class="invalid-feedback mt-0">Sila masukkan ID Pengguna</div>
+            </div>
+          </div>
+          <div class="form-group mb-2">
+            <label for="userEmail" class="col-form-label fw-medium ps-1">Emel Pengguna <span class="text-danger">*</span></label>
+            <div class="input-group has-validation">
+              <input type="text" name="userEmail" id="userEmail" class="form-control btn-text border rounded-0 bg-white" placeholder="Emel Pengguna" required />
+              <button class="btn btn-input border bg-white rounded-0" type="button" style="cursor: default">
+                <i class="far fa-envelope"></i>
+              </button>
+              <div class="invalid-feedback mt-0">Sila masukkan emel pengguna yang sah</div>
+            </div>
+          </div>
+          <div class="mt-3 d-grid gap-2">
+            <button type="button" class="btn btn-custom rounded-0 shadow-bottom p-2 btn-confirm">
+              Reset Kata Laluan
+            </button>
+            <a href="/login" class="btn btn-custom-text p-1 fw-medium border-0">Log Masuk</a>
+          </div>
+        </form>
+        <span id="err" class="mt-2" style="font-size: 0.875rem; display: none"></span>
+      </div>
+      <div class="card-footer bg-custom text-white text-center px-3 py-3 rounded-bottom-0 border-0 shadow-top">
+        <small>
+          Hakcipta Terpelihara 2025 ©
+          <div class="fw-light">
+            Suruhanjaya Perkhidmatan Pendidikan Malaysia
+          </div>
+        </small>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="modalConfirmForgot" tabindex="-1" aria-labelledby="modalConfirmForgotLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalConfirmForgotLabel">
+            Terlupa Kata Laluan
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>
+            Sila sahkan e-mel anda <b><span style="color: #0b5ed7" id="forgotPasswordEmail"></span></b> untuk menetapkan semula kata laluan anda.
+            Arahan untuk menetapkan semula kata laluan akan dihantar ke e-mel
+            anda.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-custom-4 shadow-bottom" data-bs-dismiss="modal">
+            Batal
+          </button>
+          <button type="button" class="btn btn-danger btn-submit shadow-bottom" data-bs-dismiss="modal">
+            Hantar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <script src="js/sanitize.js"></script>
+
+  <script src="js/custom.js"></script>
+  <script type="text/javascript" src="../admin/js/mdb.js"></script>
+  <script type="text/javascript" src="../admin/js/addons/crypto.js"></script>
+  <script type="text/javascript">
+    document.write("<scr" + 'ipt src="../admin/js/common.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + "ipt>");
+
+    $(document).ready(function () {});
+
+    $(".btn-confirm").on("click", function () {
+      var form = document.getElementById("forgotForm");
+
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+
+      let emel = document.getElementById("userEmail");
+      let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+      if (!emailRegex.test(emel.value)) {
+        emel.setCustomValidity("Sila masukkan emel yang sah.");
+      } else {
+        emel.setCustomValidity("");
+      }
+
+      form.classList.add("was-validated");
+
+      if (form.checkValidity()) {
+        $("#modalConfirmForgot").modal("show");
+      }
+    });
+
+    $(".btn-submit").on("click", function () {
+      var form = document.getElementById("forgotForm");
+      event.preventDefault();
+
+      if (form.checkValidity()) {
+        $(form).removeClass("was-validated");
+        event.preventDefault();
+
+        try {
+          const data = {
+            userEmail: $("#userEmail").val(),
+            userName: $("#userName").val(),
+          };
+        } catch (e) {
+          $("#err").css("display", "block").addClass("text-danger").html(e.message).delay(15000).fadeOut();
+        }
+      }
+    });
+
+    function confirmForgot() {
+      $("#modalConfirmForgot").show();
+    }
+  </script>
+</body>
+
+</html>

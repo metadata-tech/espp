@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel = "icon" href="img/jatanegara.png" type = "image/x-icon">
+  <title>eSPP</title>
+  <link rel="stylesheet" href="css/fontawesome-pro-6.5.1-web/css/all.min.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/mdb.css">
+  <link rel="stylesheet" href="css/responsive.dataTables.min.css">
+  <link rel="stylesheet" href="css/button.dataTables.min.css"/>
+  <link rel="stylesheet" href="css/style.css?5">
+</head>
+<body class="fixed-sn light-blue-skin">
+  <header>
+    <div class="includeHtml" id="h-b-nav_left"></div>
+    <div class="includeHtml" id="h-b-nav_top"></div>
+  </header>
+  <main>
+    <div class="container-fluid" id="divPageWidth">
+      <section class="sectionMain mb-3">
+        <div class="row mb-2">
+          <div class="col-12 p-1">
+            <nav class="navbar z-depth-1">
+              <h4 class="navbar-text white-text font-weight-500 ml-2 pb-0">
+                <div class="d-flex">
+                  <div class="p-0 pr-2 align-self-center"><i class="fa-duotone fa-lg fa-grid-2 mr-2"></i></div>
+                  <div class="p-0">Dashboard</div>
+                </div>
+              </h4>
+            </nav>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 p-1">
+            <div class="card-deck">
+              <div class="card mb-2 rounded-0 d-none d-xl-block">
+                <div class="card-body p-3 mb-0 border-left-unique">
+                  <div class="d-flex align-items-center mb-0">
+                    <div class="p-0 flex-fill">
+                      <p class="my-0 font-small font-weight-500">Semua Permohonan</p>
+                      <p class="h4 my-0 text-uppercase text-unique" id="totalPermohonanSemua">56</p>
+                    </div>
+                    <div class="p-0 flex-shrink-1">
+                      <i class="fa-light fa-2xl fa-folder-open text-unique"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-2 rounded-0 d-none d-xl-block">
+                <div class="card-body p-3 mb-0 border-left-unique">
+                  <div class="d-flex align-items-center mb-0">
+                    <div class="p-0 flex-fill">
+                      <p class="my-0 font-small font-weight-500">Permohonan Baharu</p>
+                      <p class="h4 my-0 text-uppercase text-unique" id="totalPermohonanBaharu">20</p>
+                    </div>
+                    <div class="p-0 flex-shrink-1">
+                      <i class="fa-light fa-2xl fa-file-circle-plus text-unique"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-2 rounded-0 d-none d-xl-block">
+                <div class="card-body p-3 mb-0 border-left-unique">
+                  <div class="d-flex align-items-center mb-0">
+                    <div class="p-0 flex-fill">
+                      <p class="my-0 font-small font-weight-500">Dalam Proses</p>
+                      <p class="h4 my-0 text-uppercase text-unique" id="totalPermohonanProses">30</p>
+                    </div>
+                    <div class="p-0 flex-shrink-1">
+                      <i class="fa-light fa-2xl fa-file-pen text-unique"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb-2 rounded-0 d-none d-xl-block">
+                <div class="card-body p-3 mb-0 border-left-unique">
+                  <div class="d-flex align-items-center mb-0">
+                    <div class="p-0 flex-fill">
+                      <p class="my-0 font-small font-weight-500">Permohonan Selesai</p>
+                      <p class="h4 my-0 text-uppercase text-unique" id="totalPermohonanSelesai">6</p>
+                    </div>
+                    <div class="p-0 flex-shrink-1">
+                      <i class="fa-light fa-2xl fa-file-circle-check text-unique"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 p-1">
+            <div class="card mb-2 rounded-0">
+              <div class="card-header white h6 rounded-0 p-0" style="cursor: pointer;" data-toggle="collapse" data-target="#accStatStatusBorangHh">
+                <div class="d-flex">
+                  <div class="p-2-3 flex-shrink-1 unique-color"><i class="fa-duotone fa-chart-bar text-white"></i></div>
+                  <div class="p-2-3 flex-fill">Status Kes Berdasarkan Peranan Pegawai</div>
+                </div>
+              </div>
+              <div id="accStatStatusBorangHh" class="collapse show">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div id="chrtStatusKes"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 p-1 pr-xl-2">
+            <div class="card mb-2 rounded-0">
+              <div class="card-header white h6 rounded-0 p-0" style="cursor: pointer;" data-toggle="collapse" data-target="#accStatStatusBorangHh">
+                <div class="d-flex">
+                  <div class="p-2-3 flex-shrink-1 unique-color"><i class="fa-duotone fa-pie-chart text-white"></i></div>
+                  <div class="p-2-3 flex-fill">Status Kes Bersara 2024</div>
+                </div>
+              </div>
+              <div class="collapse show">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div id="chrtStatusKesBersara2024"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 p-1 pl-xl-2">
+            <div class="card mb-2 rounded-0">
+              <div class="card-header white h6 rounded-0 p-0" style="cursor: pointer;" data-toggle="collapse" data-target="#accStatStatusBorangHh">
+                <div class="d-flex">
+                  <div class="p-2-3 flex-shrink-1 unique-color"><i class="fa-duotone fa-pie-chart text-white"></i></div>
+                  <div class="p-2-3 flex-fill">Status Kes Bersara 2025</div>
+                </div>
+              </div>
+              <div class="collapse show">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div id="chrtStatusKesBersara2025"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- <div class="includeHtml" id="h-s-section_airp_isi_rumah"></div> -->
+    </div>
+    <div class="includeHtml" id="h-m-modal_change_password"></div>
+    <div class="includeHtml" id="h-m-modal_change_profile"></div>
+    <div class="includeHtml" id="h-m-modal_notification"></div>
+    <div class="includeHtml" id="h-m-modal_confirm_delete"></div>
+    <div class="includeHtml" id="h-m-modal_confirm_action"></div>
+    <div class="includeHtml" id="h-m-modal_permohonan_pengisian"></div>
+  </main>
+
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/include.js"></script>
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="js/mdb.js"></script>
+  <script type="text/javascript" src="js/addons/crypto.js"></script>
+  <script type="text/javascript" src="js/addons/moment.min.js"></script>
+  <script type="text/javascript" src="js/vendor/datatables/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="js/vendor/datatables/js/dataTables.bootstrap4.min.js"></script>
+  <script type="text/javascript" src="js/vendor/datatables/js/dataTables.buttons.min.js"></script>
+  <script type="text/javascript" src="js/vendor/datatables/js/buttons.html5.min.js"></script>
+  <script type="text/javascript" src="js/vendor/datatables/js/buttons.print.min.js"></script>
+  <script type="text/javascript" src="js/vendor/datatables/js/buttons.colvis.min.js"></script>
+  <script type="text/javascript" src="js/vendor/datatables/js/jszip.min.js"></script>
+  <script type="text/javascript" src="js/vendor/datatables/js/pdfmake.min.js"></script>
+  <script type="text/javascript" src="js/vendor/datatables/js/vfs_fonts.js"></script>
+  <script type="text/javascript" src="js/vendor/highcharts-11.3.0/highcharts.js"></script>
+  <script type="text/javascript" src="js/vendor/highcharts-11.3.0/modules/exporting.js"></script>
+  <script type="text/javascript" src="js/vendor/highcharts-11.3.0/modules/export-data.js"></script>
+  <script type="text/javascript" src="js/vendor/highcharts-11.3.0/modules/accessibility.js"></script>
+  <script type="text/javascript" src="js/addons/xlsx.min.js"></script>
+  <!-- <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script> -->
+
+  <script type="text/javascript">
+    document.write('<scr' + 'ipt src="js/common.js?5' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
+    document.write('<scr' + 'ipt src="js/global/LocalDb.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
+
+    let dtDisplay;
+    let modalConfirmAction;
+    let modalConfirmDelete;
+    let mainClass;
+
+    document.addEventListener('DOMContentLoaded', function () {
+      dtDisplay = new DtDisplay();
+      mainClass = new Home();
+      modalConfirmDelete = new ModalConfirmDelete();
+      modalConfirmAction = new ModalConfirmAction();
+
+      ShowLoader(); setTimeout(function () {
+        try {
+          mzCheckInternal (false);
+
+          /* const localDbMain = new LocalDb('main');
+          localDbMain.indexedConnect().then(() => {
+            localDbMain.indexedGetAllSort('menu', 'navTurn', 'next').then((res) => {
+              mzSetupMenu(res);
+            });
+          }).catch(()=>{ toastr['error'](_ALERT_MSG_ERROR_DEFAULT, _ALERT_TITLE_ERROR); }); */
+
+          // mainClass.genTabAirp();
+
+          mainClass.setModalConfirmDelete(modalConfirmDelete);
+          modalConfirmDelete.init();
+
+          mainClass.setModalConfirmAction(modalConfirmAction);
+          modalConfirmAction.init();
+
+          mainClass.setDtDisplay(dtDisplay);
+          mainClass.init();
+
+          HideLoader();
+        } catch (e) { toastr['error'](_ALERT_MSG_ERROR_DEFAULT, _ALERT_TITLE_ERROR); }
+      }, 400);
+    });
+
+    document.write('<scr' + 'ipt src="js/pages/modal/ModalChangePassword.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
+    document.write('<scr' + 'ipt src="js/pages/modal/ModalChangeProfile.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
+    document.write('<scr' + 'ipt src="js/pages/modal/ModalNotification.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
+    document.write('<scr' + 'ipt src="js/pages/modal/ModalConfirmAction.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
+    document.write('<scr' + 'ipt src="js/pages/modal/ModalConfirmDelete.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
+    document.write('<scr' + 'ipt src="js/global/DtDisplay.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
+    document.write('<scr' + 'ipt src="js/pages/Home.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
+
+  </script>
+</body>
+</html>

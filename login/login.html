@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="img/jatanegara.png" type="image/x-icon" />
+  <title>eSPP</title>
+  <link rel="stylesheet" href="assets/fontawesome-pro-6.5.1-web/css/all.css" />
+  <link rel="stylesheet" href="assets/bootstrap-5.3.2-dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/login.css?123" />
+  <link rel="shortcut icon" href="#" />
+</head>
+
+<body>
+  <div class="bg-pattern d-flex align-items-center justify-content-center min-vh-100">
+    <div class="card border-0 m-2 rounded-0 shadow bg-white bg-opacity-75" style="width: 38em">
+      <div class="card-body px-md-5 px-4 pt-5 pb-4">
+        <div class="position-absolute top-0 end-0 mt-5 me-5">
+          <a href="#" data-bs-toggle="modal" data-bs-target="#modalAnnouncement" class="text-dark">
+            <i class="fa fa-regular fa-bullhorn fa-lg"><span class="badge rounded-pill badge-notification mt-2">2</span></i>
+          </a>
+        </div>
+        <div class="d-flex p-0 mb-0">
+          <div class="p-0 pe-3">
+            <img src="img/jatanegara.png" alt="" style="height: 110px" />
+          </div>
+          <div class="p-0 flex-fill">
+            <span class="logo"><span class="logo-e me-1">e</span>SPP</span>
+            <p class="logo-sub-sm mt-1 ps-1">Sistem Pengambilan dan Perkhidmatan</p>
+          </div>
+        </div>
+        <form id="loginForm" class="needs-validation" method="POST" novalidate>
+          <div class="form-group mb-3 mt-3">
+            <div class="input-group has-validation">
+              <input type="text" name="userId" id="userId" class="form-control btn-text border rounded-0 bg-white" placeholder="ID Pengguna" required />
+              <button class="btn btn-input border bg-white rounded-0" type="button" style="cursor: default">
+                <i class="far fa-user"></i>
+              </button>
+              <div class="invalid-feedback mt-0">Sila masukkan ID pengguna</div>
+            </div>
+          </div>
+          <div class="form-group mb-3">
+            <div class="input-group has-validation">
+              <input type="password" name="userPassword" id="userPassword" class="form-control btn-text border rounded-0 bg-white" placeholder="Kata Laluan" required />
+              <button type="button" class="btn btn-input border bg-white rounded-0" id="btn-password" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-custom-class="custom-tooltip-2" data-bs-placement="bottom" data-bs-title="Papar Kata Laluan" onclick="showPassword()">
+                <i id="showpass" class="fa-regular fa-eye-slash"></i>
+              </button>
+              <div class="invalid-feedback mt-0">Sila masukkan kata laluan pengguna</div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-12 d-grid gap-2">
+              <button type="submit" class="btn btn-custom rounded-0 p-2 shadow-bottom">
+                Log Masuk
+              </button>
+              <a href="forgot" class="btn btn-custom-text p-1 fw-medium border-0">Terlupa Kata Laluan?</a>
+              <span class="custom-text fw-medium text-center mt-2">Daftar Akaun? <span><a href="#" class="custom-link" data-bs-toggle="modal" data-bs-target="#modalRegisterForm">Muat Turun Borang Pendaftaran ID Pengguna</a></span></span>
+            </div>
+          </div>
+        </form>
+        <span id="err" class="mt-2" style="font-size: 0.875rem; display: none"></span>
+      </div>
+      <div class="card-footer bg-white border-bottom border-top-0 shadow-top">
+        <div class="justify-content-around d-flex flex-wrap m-1">
+          <a href="#" data-bs-toggle="modal" data-bs-target="#modalSemakan" class="btn btn-custom-text p-1 fw-medium border-0">SEMAKAN ATAS TALIAN</a>
+          <a href="contact" class="btn btn-custom-text p-1 fw-medium border-0">BANTUAN DALAM TALIAN</a>
+        </div>
+      </div>
+      <div class="card-footer bg-custom text-white text-center px-3 py-3 rounded-bottom-0 border-0 shadow-top">
+        <small>
+          Hakcipta Terpelihara 2026 © eSPP
+          <div class="fw-light">
+            Suruhanjaya Perkhidmatan Pendidikan
+          </div>
+        </small>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="modalAnnouncement" tabindex="-1" aria-labelledby="modalAnnouncementLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content rounded-0 border border-3">
+        <div class="modal-body p-0">
+          <div id="announcentControl" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="img/announcement/announcement.jpg"  class="d-block w-100" />
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#announcentControl" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#announcentControl" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <div class="modal-footer m-0 p-1">
+          <button type="button" style="font-size: 0.875em" class="btn btn-sm" data-bs-dismiss="modal" aria-label="Close">
+            Klik di mana-mana sahaja untuk menutup
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="modalRegisterForm" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content rounded-0 border border-3 border-light">
+        <div class="modal-body p-0" style="height: 90vh">
+          <embed src="document/blank.pdf?22" frameborder="0" width="100%" height="98%" />
+        </div>
+        <div class="modal-footer m-0 p-1">
+          <button type="button" style="font-size: 0.875em" class="btn btn-sm" data-bs-dismiss="modal" aria-label="Close">
+            Klik di mana-mana sahaja untuk menutup
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="modalUserManual" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+      <div class="modal-content rounded-0 border border-3 border-light">
+        <div class="modal-body p-0" style="height: 90vh">
+          <embed src="document/blank.pdf?22" frameborder="0" width="100%" height="98%" />
+        </div>
+        <div class="modal-footer m-0 p-1">
+          <button type="button" style="font-size: 0.875em" class="btn btn-sm" data-bs-dismiss="modal" aria-label="Close">
+            Klik di mana-mana sahaja untuk menutup
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="modalSemakan" tabindex="-1" aria-labelledby="modalSemakanLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+      <div class="modal-content border-0 rounded-0">
+        <div class="modal-header justify-content-center">
+          <h5 class="modal-title">Semakan Atas Talian</h5>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-lg-6 col-xl-3 mb-xl-0 mb-3 d-flex align-items-stretch">
+              <div class="card rounded-0">
+                <img src="img/semakan/interview.jpg" class="card-img-top rounded-0" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Semakan Panggilan Temu Duga</h5>
+                  <p class="font-small mb-0">Pautan ke Laman Semakan Panggilan Temu Duga Jawatan SPP</p>
+                </div>
+                <div class="card-footer bg-white">
+                  <div class="d-grid gap-2">
+                    <button type="button" class="btn btn-custom rounded-0 p-2 shadow-bottom">
+                      Semak
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-xl-3 mb-xl-0 mb-3 d-flex align-items-stretch">
+              <div class="card rounded-0">
+                <img src="img/semakan/handshake.jpg" class="card-img-top rounded-0" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Semakan Keputusan Temu Duga</h5>
+                  <p class="font-small mb-0">Pautan ke Laman Semakan Keputusan Temu Duga Jawatan SPP</p>
+                </div>
+                <div class="card-footer bg-white">
+                  <div class="d-grid gap-2">
+                    <button type="button" class="btn btn-custom rounded-0 p-2 shadow-bottom">
+                      Semak
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-xl-3 mb-xl-0 mb-3 d-flex align-items-stretch">
+              <div class="card rounded-0">
+                <img src="img/semakan/interview.jpg" class="card-img-top rounded-0" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Semakan Permohonan</h5>
+                  <p class="font-small mb-0">Pautan ke Laman Semakan Permohonan Jawatan SPP</p>
+                </div>
+                <div class="card-footer bg-white">
+                  <div class="d-grid gap-2">
+                    <button type="button" class="btn btn-custom rounded-0 p-2 shadow-bottom">
+                      Semak
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-xl-3 mb-xl-0 mb-3 d-flex align-items-stretch">
+              <div class="card rounded-0">
+                <img src="img/semakan/handshake.jpg" class="card-img-top rounded-0" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Semakan Perkhidmatan</h5>
+                  <p class="font-small mb-0">Pautan ke Laman Semakan Perkhidmatan Jawatan SPP</p>
+                </div>
+                <div class="card-footer bg-white">
+                  <div class="d-grid gap-2">
+                    <button type="button" class="btn btn-custom rounded-0 p-2 shadow-bottom">
+                      Semak
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light rounded-0" data-bs-dismiss="modal" aria-label="Close">Tutup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="assets/bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <script src="js/sanitize.js"></script>
+  <script src="js/custom.js"></script>
+  <script type="text/javascript" src="../admin/js/mdb.js"></script>
+  <script type="text/javascript" src="../admin/js/addons/crypto.js"></script>
+  <script type="text/javascript">
+    document.write("<scr" + 'ipt src="../admin/js/global/LocalDb.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + "ipt>");
+    document.write("<scr" + 'ipt src="../admin/js/common.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + "ipt>");
+
+    $("form").submit(function (e) {
+      var form = document.getElementById("loginForm");
+
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+
+      form.classList.add("was-validated");
+
+      if (form.checkValidity()) {
+        $(form).removeClass("was-validated");
+        e.preventDefault();
+
+        try {
+          const data = {
+            username: $("#userId").val(),
+            password: $("#userPassword").val(),
+          };
+
+          ShowLoader();
+          window.location.href = '../admin/home'
+        } catch (e) {
+          HideLoader();
+          $("#err").css("display", "block").addClass("text-danger").html(e.message).delay(8000).fadeOut();
+        }
+      }
+    });
+
+    const tooltipElements = document.querySelectorAll(
+      '[data-bs-toggle="tooltip"]'
+    );
+    const tooltips = [...tooltipElements].map(
+      (el) => new bootstrap.Tooltip(el)
+    );
+
+    function showPassword() {
+      let tooltip = bootstrap.Tooltip.getInstance("#btn-password");
+      var x = document.getElementById("userPassword");
+      var y = document.getElementById("showpass");
+      if (x.type === "password") {
+        x.type = "text";
+        y.classList.remove("fa-eye-slash");
+        y.classList.add("fa-eye");
+        tooltip._config.title = "Sembunyi Kata Laluan";
+        tooltip.update();
+      } else {
+        x.type = "password";
+        y.classList.remove("fa-eye");
+        y.classList.add("fa-eye-slash");
+        tooltip._config.title = "Papar Kata Laluan";
+        tooltip.update();
+      }
+    }
+  </script>
+</body>
+
+</html>
