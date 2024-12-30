@@ -230,7 +230,7 @@ th:first-child {
   background-repeat: repeat;
 }
 .bg-image {
-  background-image: url('../img/bg-banci-pertanian-2024-white.jpg');
+  background-image: url('../img/bg-spp.jpg');
   background-size: cover;
   background-position: bottom;
 }
@@ -287,14 +287,14 @@ th:first-child {
   --bs-btn-color: #315481;
   --bs-btn-border-color: #315481;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #315481;
+  --bs-btn-hover-bg: #3f5c80;
   --bs-btn-hover-border-color: #315481;
   --bs-btn-focus-shadow-rgb: 25, 135, 84;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #315481;
+  --bs-btn-active-bg: #3f5c80;
   --bs-btn-active-border-color: #315481;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #315481;
+  --bs-btn-disabled-color: #3f5c80;
   --bs-btn-disabled-bg: transparent;
   --bs-btn-disabled-border-color: #315481;
   --bs-gradient: none;

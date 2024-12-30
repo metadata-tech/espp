@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="../img/jatanegara.png" type="image/x-icon" />
+  <title>eSPP</title>
+  <link rel="stylesheet" href="../assets/fontawesome-pro-6.5.1-web/css/all.css" />
+  <link rel="stylesheet" href="../assets/bootstrap-5.3.2-dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../css/login.css" />
+  <link rel="shortcut icon" href="#" />
+</head>
+
+<body>
+  <div class="bg-pattern d-flex align-items-center justify-content-center min-vh-100">
+    <div class="card border-0 m-3 mt-5 rounded-0 shadow bg-white bg-opacity-75" style="width: 38em">
+      <div
+        class="card-icon-top-custom bg-custom border border-4 border-light border-opacity-20 rounded-circle text-center">
+        <i class="fa fa-magnifying-glass fa-top-img position-absolute top-50 start-50 translate-middle text-white"></i>
+      </div>
+      <div class="card-body px-md-5 px-4 pt-5 pb-4">
+        <div class="px-0">
+          <div class="d-flex align-items-start">
+            <div class="p-0 pe-3">
+              <img src="../img/jatanegara.png" alt="" style="height: 75px" />
+            </div>
+            <div class="p-0 flex-fill">
+              <span class="logo-sm"><span class="logo-e me-1">e</span>SPP</span>
+              <p class="logo-sub-sm mt-1 ps-1">Sistem Pengambilan dan Perkhidmatan</p>
+            </div>
+          </div>
+          <hr class="hr-custom mt-2" />
+        </div>
+        <form id="semakanForm" method="POST" novalidate>
+          <h5 class="mb-2 fw-medium ps-1">Semakan <span id="titleSemakan"></span></h5>
+          <div class="form-group mb-2">
+            <label for="noKp" class="col-form-label fw-medium ps-1 font-small">Sila masukkan No. MyKad 12 Digit tanpa (-)</label>
+            <div class="input-group has-validation">
+              <input type="text" name="noKp" id="noKp" class="form-control btn-text border rounded-0 bg-white numeric" maxlength="12" placeholder="No. MyKad" required />
+              <button class="btn btn-input border bg-white rounded-0" type="button" style="cursor: default">
+                <i class="fa-regular fa-address-card"></i>
+              </button>
+              <div class="invalid-feedback mt-0" id="noKpInputFeedback">Sila masukkan No. MyKad 12 Digit tanpa (-)</div>
+            </div>
+          </div>
+          <div class="mt-3 mb-3 d-grid gap-2">
+            <div class="row">
+              <div class="col-6 d-grid">
+                <button type="button" class="btn btn-custom btn-block rounded-0 shadow-bottom p-2 btn-submit">Semak</button>
+              </div>
+              <div class="col-6 d-grid">
+                <button type="button" class="btn btn-outline-custom rounded-0 p-2" onclick="window.location.reload()">Set Semula</button>
+              </div>
+            </div>
+          </div>
+          <div class="alert alert-danger rounded-0 p-2" id="alertErrP" style="display: none;">
+            <h3 class="text-center"><i class="fa fa-exclamation-triangle"></i></h3>
+            <h6 class="alert-heading text-center">Maaf! Maklumat Anda Tiada Dalam Urusan Ini.</h6>
+            <hr>
+            <p class="mb-2 text-center font-small">Kemungkinan :-</p>
+            <ul class="font-small">
+              <li>No. Kad Pengenalan tiada dalam sistem kami; atau</li>
+              <li>Permohonan anda tidak layak untuk dipanggil temu duga.</li>
+            </ul>
+          </div>
+          <div class="alert alert-danger rounded-0 p-2" id="alertErrK" style="display: none;">
+            <h3 class="text-center"><i class="fa fa-exclamation-triangle"></i></h3>
+            <h6 class="alert-heading text-center">Maaf! Anda tidak tersenarai untuk temu duga ini.</h6>
+          </div>
+          <div class="alert alert-danger rounded-0 p-2" id="alertErr" style="display: none;">
+            <h3 class="text-center"><i class="fa fa-exclamation-triangle"></i></h3>
+            <h6 class="alert-heading text-center">Maaf! Maklumat Anda Tiada Dalam Urusan Ini.</h6>
+            <hr>
+            <p class="font-small text-center">No. Kad Pengenalan tiada dalam sistem kami.</p>
+          </div>
+          <div class="mt-2 mb-0 d-grid gap-2">
+            <a href="../../login" class="btn btn-custom-text p-1 fw-medium border-0">Kembali</a>
+          </div>
+        </form>
+        <span id="err" class="mt-2" style="font-size: 0.875rem; display: none"></span>
+      </div>
+      <div class="card-footer bg-custom text-white text-center px-3 py-3 rounded-bottom-0 border-0 shadow-top">
+        <small>
+          Hakcipta Terpelihara 2026 ©
+          <div class="fw-light">
+            Suruhanjaya Perkhidmatan Pendidikan
+          </div>
+        </small>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/bootstrap-5.3.2-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/jquery-3.7.1.min.js"></script>
+  <script src="../js/sanitize.js"></script>
+
+  <script src="../js/custom.js"></script>
+  <script type="text/javascript" src="../../admin/js/mdb.js"></script>
+  <script type="text/javascript" src="../../admin/js/addons/crypto.js"></script>
+  <script type="text/javascript">
+    document.write("<scr" + 'ipt src="../../admin/js/common.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + "ipt>");
+
+    $(document).ready(function() {
+      var pathArray = window.location.pathname.split('/');
+      let semakan = pathArray[pathArray.length - 1];
+
+      if (semakan == 'p') {
+        $('#titleSemakan').html('Panggilan Temu Duga');
+      } else if (semakan == 'k') {
+        $('#titleSemakan').html('Keputusan Temu Duga');
+      } else if (semakan == 'm') {
+        $('#titleSemakan').html('Permohonan');
+      } else if (semakan == 's') {
+        $('#titleSemakan').html('Status Perkhidmatan');
+      }
+
+      $(".btn-submit").on("click", function () {
+        var form = document.getElementById("semakanForm");
+
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+
+        let noKpInput = document.getElementById("noKp");
+
+        if (noKpInput.value.length == 0) {
+          noKpInput.setCustomValidity("Sila masukkan No. MyKad");
+          $("#noKpInputFeedback").html("Sila masukkan No. MyKad");
+        } else {
+          if (noKpInput.value.length != 12) {
+            if (!mzValidDigit(noKpInput.value)) {
+              noKpInput.setCustomValidity("Panjang No. MyKad mesti bersamaan 12 digit<br>No. MyKad mesti dalam format nombor");
+              $("#noKpInputFeedback").html("Panjang No. MyKad mesti bersamaan 12 digit<br>No. MyKad mesti dalam format nombor");
+            } else {
+              noKpInput.setCustomValidity("Panjang No. MyKad mesti bersamaan 12 digit");
+              $("#noKpInputFeedback").html("Panjang No. MyKad mesti bersamaan 12 digit");
+            }
+          } else if (!mzValidDigit(noKpInput.value)) {
+              noKpInput.setCustomValidity("No. MyKad mesti dalam format nombor");
+              $("#noKpInputFeedback").html("No. MyKad mesti dalam format nombor");
+          } else {
+            noKpInput.setCustomValidity("");
+          }
+        }
+
+        form.classList.add("was-validated");
+
+        if (form.checkValidity()) {
+          $(form).removeClass("was-validated");
+          event.preventDefault();
+
+          try {
+            const data = {
+              noKp: $("#noKp").val(),
+            };
+            let success = false;
+
+            if ($("#noKp").val() == '999999999999') {
+              success = true;
+            } else {
+              success = false;
+            }
+
+            if (semakan == 'p') {
+              if (!success) {
+                $('#alertErrP').show();
+                $('#alertSuccessP').hide();
+              } else {
+                $('#alertErrP').hide();
+                $('#alertSuccessP').show();
+              }
+            } else if (semakan == 'k') {
+              if (!success) {
+                $('#alertErrK').show();
+                $('#alertSuccessK').hide();
+              } else {
+                $('#alertErrK').hide();
+                $('#alertSuccessK').show();
+              }
+            } else if (semakan == 'm') {
+              if (!success) {
+                $('#alertErr').show();
+                $('#alertSuccessM').hide();
+              } else {
+                $('#alertErr').hide();
+                $('#alertSuccessM').show();
+              }
+            } else if (semakan == 's') {
+              if (!success) {
+                $('#alertErr').show();
+                $('#alertSuccessS').hide();
+              } else {
+                $('#alertErr').hide();
+                $('#alertSuccessS').show();
+              }
+            }
+          } catch (e) {
+            $("#err").css("display", "block").addClass("text-danger").html(e.message).delay(15000).fadeOut();
+          }
+        }
+      });
+    });
+
+    $(document).ready(function () {});
+
+  </script>
+</body>
+
+</html>
