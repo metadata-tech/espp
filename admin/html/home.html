@@ -35,55 +35,48 @@
         </div>
         <div class="row">
           <div class="col-12 p-1">
-            <div class="card-deck">
-              <div class="card mb-2 rounded-0 d-none d-xl-block">
-                <div class="card-body p-3 mb-0 border-left-unique">
-                  <div class="d-flex align-items-center mb-0">
-                    <div class="p-0 flex-fill">
-                      <p class="my-0 font-small font-weight-500">Semua Permohonan</p>
-                      <p class="h4 my-0 text-uppercase text-unique" id="totalPermohonanSemua">56</p>
-                    </div>
-                    <div class="p-0 flex-shrink-1">
-                      <i class="fa-light fa-2xl fa-folder-open text-unique"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card mb-2 rounded-0 d-none d-xl-block">
-                <div class="card-body p-3 mb-0 border-left-unique">
-                  <div class="d-flex align-items-center mb-0">
-                    <div class="p-0 flex-fill">
-                      <p class="my-0 font-small font-weight-500">Permohonan Baharu</p>
-                      <p class="h4 my-0 text-uppercase text-unique" id="totalPermohonanBaharu">20</p>
-                    </div>
-                    <div class="p-0 flex-shrink-1">
-                      <i class="fa-light fa-2xl fa-file-circle-plus text-unique"></i>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card mb-3 rounded-0 d-none d-xl-block">
+                  <div class="card-body p-3 mb-0 border-left-unique">
+                    <div class="d-flex align-items-center mb-0">
+                      <div class="p-0 flex-fill">
+                        <p class="my-0 font-small font-weight-500">Jumlah Tapisan (<span class="tahunSemasa">2025</span>)</p>
+                        <p class="h4 my-0 text-uppercase text-unique" id="totalTapisanTahunSemasa">56</p>
+                      </div>
+                      <div class="p-0 flex-shrink-1">
+                        <i class="fa-light fa-2xl fa-folder-closed text-unique"></i>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="card mb-2 rounded-0 d-none d-xl-block">
-                <div class="card-body p-3 mb-0 border-left-unique">
-                  <div class="d-flex align-items-center mb-0">
-                    <div class="p-0 flex-fill">
-                      <p class="my-0 font-small font-weight-500">Dalam Proses</p>
-                      <p class="h4 my-0 text-uppercase text-unique" id="totalPermohonanProses">30</p>
-                    </div>
-                    <div class="p-0 flex-shrink-1">
-                      <i class="fa-light fa-2xl fa-file-pen text-unique"></i>
+              <div class="col-md-4">
+                <div class="card mb-3 rounded-0 d-none d-xl-block">
+                  <div class="card-body p-3 mb-0 border-left-unique">
+                    <div class="d-flex align-items-center mb-0">
+                      <div class="p-0 flex-fill">
+                        <p class="my-0 font-small font-weight-500">Bil. Tapisan Dalam Proses</p>
+                        <p class="h4 my-0 text-uppercase text-unique" id="totalTapisanDalamProses">20</p>
+                      </div>
+                      <div class="p-0 flex-shrink-1">
+                        <i class="fa-light fa-2xl fa-folder-open text-unique"></i>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="card mb-2 rounded-0 d-none d-xl-block">
-                <div class="card-body p-3 mb-0 border-left-unique">
-                  <div class="d-flex align-items-center mb-0">
-                    <div class="p-0 flex-fill">
-                      <p class="my-0 font-small font-weight-500">Permohonan Selesai</p>
-                      <p class="h4 my-0 text-uppercase text-unique" id="totalPermohonanSelesai">6</p>
-                    </div>
-                    <div class="p-0 flex-shrink-1">
-                      <i class="fa-light fa-2xl fa-file-circle-check text-unique"></i>
+              <div class="col-md-4">
+                <div class="card mb-3 rounded-0 d-none d-xl-block">
+                  <div class="card-body p-3 mb-0 border-left-unique">
+                    <div class="d-flex align-items-center mb-0">
+                      <div class="p-0 flex-fill">
+                        <p class="my-0 font-small font-weight-500">Bil. Tapisan Selesai (<span class="tahunSemasa">2025</span>)</p>
+                        <p class="h4 my-0 text-uppercase text-unique" id="totalTapisanSelesai">30</p>
+                      </div>
+                      <div class="p-0 flex-shrink-1">
+                        <i class="fa-light fa-2xl fa-folder-check text-unique"></i>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -93,56 +86,81 @@
         </div>
         <div class="row">
           <div class="col-12 p-1">
-            <div class="card mb-2 rounded-0">
-              <div class="card-header white h6 rounded-0 p-0" style="cursor: pointer;" data-toggle="collapse" data-target="#accStatStatusBorangHh">
-                <div class="d-flex">
-                  <div class="p-2-3 flex-shrink-1 unique-color"><i class="fa-duotone fa-chart-bar text-white"></i></div>
-                  <div class="p-2-3 flex-fill">Status Kes Berdasarkan Peranan Pegawai</div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card mb-3 rounded-0">
+                  <div class="card-header white h6 rounded-0 p-0" style="cursor: pointer;" data-toggle="collapse" data-target="#accStatusPemerolehan2024">
+                    <div class="d-flex">
+                      <div class="p-2-3 flex-shrink-1 unique-color"><i class="fa-duotone fa-pie-chart text-white"></i></div>
+                      <div class="p-2-3 flex-fill">Status Pemerolehan 2024</div>
+                    </div>
+                  </div>
+                  <div id="accStatusPemerolehan2024" class="collapse show">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div id="chrtStatusPemerolehan2024"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div id="accStatStatusBorangHh" class="collapse show">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <div id="chrtStatusKes"></div>
+              <div class="col-md-8">
+                <div class="card mb-3 rounded-0">
+                  <div class="card-header white h6 rounded-0 p-0" style="cursor: pointer;" data-toggle="collapse" data-target="#accBilPermohonanCalon">
+                    <div class="d-flex">
+                      <div class="p-2-3 flex-shrink-1 unique-color"><i class="fa-duotone fa-chart-bar text-white"></i></div>
+                      <div class="p-2-3 flex-fill">Bilangan Permohonan Calon Menerima Tawaran Mengikut Skim</div>
+                    </div>
+                  </div>
+                  <div id="accBilPermohonanCalon" class="collapse show">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div id="chrtBilPermohonanCalon"></div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-6 p-1 pr-xl-2">
-            <div class="card mb-2 rounded-0">
-              <div class="card-header white h6 rounded-0 p-0" style="cursor: pointer;" data-toggle="collapse" data-target="#accStatStatusBorangHh">
-                <div class="d-flex">
-                  <div class="p-2-3 flex-shrink-1 unique-color"><i class="fa-duotone fa-pie-chart text-white"></i></div>
-                  <div class="p-2-3 flex-fill">Status Kes Bersara 2024</div>
-                </div>
-              </div>
-              <div class="collapse show">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <div id="chrtStatusKesBersara2024"></div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card mb-3 rounded-0">
+                  <div class="card-header white h6 rounded-0 p-0" style="cursor: pointer;" data-toggle="collapse" data-target="#accBilTemudugaMengikutNegeri">
+                    <div class="d-flex">
+                      <div class="p-2-3 flex-shrink-1 unique-color"><i class="fa-duotone fa-chart-column text-white"></i></div>
+                      <div class="p-2-3 flex-fill">Bilangan Temuduga Mengikut Negeri</div>
+                    </div>
+                  </div>
+                  <div id="accBilTemudugaMengikutNegeri" class="collapse show">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div id="chrtBilTemudugaMengikutNegeri"></div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="col-md-6 p-1 pl-xl-2">
-            <div class="card mb-2 rounded-0">
-              <div class="card-header white h6 rounded-0 p-0" style="cursor: pointer;" data-toggle="collapse" data-target="#accStatStatusBorangHh">
-                <div class="d-flex">
-                  <div class="p-2-3 flex-shrink-1 unique-color"><i class="fa-duotone fa-pie-chart text-white"></i></div>
-                  <div class="p-2-3 flex-fill">Status Kes Bersara 2025</div>
-                </div>
-              </div>
-              <div class="collapse show">
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <div id="chrtStatusKesBersara2025"></div>
+              <div class="col-md-12">
+                <div class="card mb-3 rounded-0">
+                  <div class="card-header white h6 rounded-0 p-0" style="cursor: pointer;" data-toggle="collapse" data-target="#accBilCalonMengikutNegeri">
+                    <div class="d-flex">
+                      <div class="p-2-3 flex-shrink-1 unique-color"><i class="fa-duotone fa-chart-column text-white"></i></div>
+                      <div class="p-2-3 flex-fill">Bilangan Permohonan Calon Temuduga Mengikut Negeri</div>
+                    </div>
+                  </div>
+                  <div id="accBilCalonMengikutNegeri" class="collapse show">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div id="chrtBilCalonMengikutNegeri"></div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -12,9 +12,9 @@ function DtDisplay () {
             return '';
         }
         if (typeof isBadge !== 'undefined' && isBadge === true) {
-            return '<span style="font-size: 11px;" class="badge '+statusColor+' z-depth-0 w-100"><i class="fa-regular fa-folder mr-1"></i>'+statusName+'</span>';
+            return '<span class="badge '+statusColor+' z-depth-0 w-100"><i class="fa-regular fa-folder mr-1"></i>'+statusName+'</span>';
         }
-        return '<span style="font-size: 11px;" class="badge badge-pill '+statusColor+' z-depth-0 w-100">'+statusName+'</span>';
+        return '<span class="badge badge-pill '+statusColor+' z-depth-0 w-100 text-uppercase">'+statusName+'</span>';
         // return '<div class="chip chip-tag '+statusColor+' white-text z-depth-0 w-100 text-center">'+statusName+'</div>';
     }
 

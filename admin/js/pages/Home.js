@@ -16,43 +16,16 @@ function Home () {
           .get()
       );
 
-      Highcharts.chart("chrtStatusKesBersara2024", {
+      Highcharts.chart("chrtStatusPemerolehan2024", {
         chart: {
           type: "pie",
         },
         title: {
-          text: "Status Kes Bersara 2024",
+          text: "Status Pemerolehan 2024",
         },
         tooltip: {
           valueSuffix: "%",
         },
-        /* plotOptions: {
-          series: {
-            allowPointSelect: true,
-            cursor: "pointer",
-            dataLabels: [
-              {
-                enabled: true,
-                distance: 20,
-              },
-              {
-                enabled: true,
-                distance: -40,
-                format: "{point.percentage:.1f}%",
-                style: {
-                  fontSize: "1.2em",
-                  textOutline: "none",
-                  opacity: 0.7,
-                },
-                filter: {
-                  operator: ">",
-                  property: "percentage",
-                  value: 10,
-                },
-              },
-            ],
-          },
-        }, */
         plotOptions: {
           pie: {
             allowPointSelect: true,
@@ -72,111 +45,35 @@ function Home () {
             colorByPoint: true,
             data: [
               {
-                name: "Baharu",
+                name: "Tamat",
                 sliced: true,
                 selected: true,
-                y: 26.71,
+                y: 75,
               },
               {
-                name: "Penyediaan Kertas",
-                y: 55.02,
-              },
-              {
-                name: "Penentuan Prima Facie",
-                y: 1.09,
-              },
-              {
-                name: "Surat Pertuduhan",
-                y: 15.5,
-              },
-              {
-                name: "Semakan Kertas",
-                y: 1.68,
-              },
+                name: "Dalam Proses",
+                y: 25,
+              }
             ],
             showInLegend: true
           },
         ],
       });
 
-      Highcharts.chart("chrtStatusKesBersara2025", {
-        chart: {
-          plotBackgroundColor: null,
-          plotBorderWidth: null,
-          plotShadow: false,
-          type: "pie",
-        },
-        title: {
-          text: "Status Kes Bersara 2025",
-        },
-        tooltip: {
-          pointFormat: "{series.name}: <b>{point.percentage:.1f}%</b>",
-        },
-        accessibility: {
-          point: {
-            valueSuffix: "%",
-          },
-        },
-        plotOptions: {
-          pie: {
-            allowPointSelect: true,
-            cursor: "pointer",
-            // colors,
-            borderRadius: 5,
-            dataLabels: {
-              enabled: true,
-              format: "<b>{point.name}</b><br>{point.percentage:.1f} %",
-              distance: -50,
-            },
-          },
-        },
-        series: [
-          {
-            name: "Status",
-            colorByPoint: true,
-            data: [
-              {
-                name: "Baharu",
-                y: 5,
-              },
-              {
-                name: "Penyediaan Kertas",
-                y: 10,
-              },
-              {
-                name: "Penentuan Prima Facie",
-                y: 10,
-              },
-              {
-                name: "Surat Pertuduhan",
-                y: 5,
-              },
-              {
-                name: "Semakan Kertas",
-                sliced: true,
-                selected: true,
-                y: 70,
-              },
-            ],
-            showInLegend: true
-          },
-        ],
-      });
-
-      Highcharts.chart("chrtStatusKes", {
+      Highcharts.chart("chrtBilPermohonanCalon", {
         chart: {
           type: "bar",
         },
         title: {
-          text: "Status Kes Berdasarkan Peranan Pegawai",
+          text: "Bilangan Permohonan Calon Menerima Tawaran Mengikut Skim",
         },
         xAxis: {
           categories: [
-            "02) KPP OA1 - YUS YULANDY (OA)",
-            "03) KPP OA2 - SHAHRIMAN (OA)",
-            "04) KPP OA3 - FAEZAH (OA)",
-            "06) KPP OA5 - EZLY (OA)",
-            "09) PP OA3 - ELINI (OA)",
+            "1042",
+            "1048",
+            "1180",
+            "1184",
+            "1188",
           ],
           title: {
             text: null,
@@ -187,7 +84,7 @@ function Home () {
         yAxis: {
           min: 0,
           title: {
-            text: "Status Kes",
+            text: "Bil. Permohonan",
             align: "high",
           },
           labels: {
@@ -225,23 +122,110 @@ function Home () {
         },
         series: [
           {
-            name: "B01) Penyediaan (PP)",
-            data: [632, 727, 3202, 721],
+            name: "2025",
+            data: [632, 727, 3202, 250],
           },
           {
-            name: "C) Surat Pertuduhan (SP)",
-            data: [814, 841, 2453, 726],
+            name: "2024",
+            data: [814, 841, 2453, 490],
           },
           {
-            name: "E02) Semakan (PH)",
-            data: [1393, 1031, 2689, 745],
-          },
-          {
-            name: "H) RAYUAN (Selesai)",
-            data: [1393, 1031, 2689, 745],
+            name: "2023",
+            data: [1393, 1031, 2689, 980],
           },
         ],
       });
+
+      Highcharts.chart('chrtBilTemudugaMengikutNegeri', {
+        chart: {
+          type: 'column'
+        },
+        title: {
+          text: 'Bilangan Temuduga Mengikut Negeri'
+        },
+        xAxis: {
+          categories: ['Johor', 'Kedah', 'Kelantan', 'Melaka', 'Negeri Sembilan', 'Pahang', 'Pulau Pinang', 'Perak', 'Perlis', 'Selangor', 'Terengganu', 'Sabah', 'Sarawak', 'WP Kuala Lumpur'],
+          crosshair: true,
+          accessibility: {
+            description: 'Negeri'
+          }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Bilangan Temuduga'
+            }
+        },
+        tooltip: {
+            valueSuffix: ' temuduga'
+        },
+        plotOptions: {
+          column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+          }
+        },
+        series: [
+          {
+            name: 'Selesai',
+            data: [546, 224, 654, 213, 123, 678, 546, 224, 654, 213, 123, 678, 789, 567]
+          },
+          {
+            name: 'Akan Datang',
+            data: [234, 213, 456, 232, 245, 267, 245, 232, 234, 289, 213, 234, 245, 213]
+          },
+          {
+            name: 'Sedang Berjalan',
+            data: [123, 145, 165, 128, 123, 156, 178, 189, 195, 153, 124, 143, 134, 142]
+          },
+        ]
+      });
+
+      Highcharts.chart('chrtBilCalonMengikutNegeri', {
+        chart: {
+          type: 'column'
+        },
+        title: {
+          text: 'Bilangan Permohonan Calon Temuduga Mengikut Negeri'
+        },
+        xAxis: {
+          categories: ['Johor', 'Kedah', 'Kelantan', 'Melaka', 'Negeri Sembilan', 'Pahang', 'Pulau Pinang', 'Perak', 'Perlis', 'Selangor', 'Terengganu', 'Sabah', 'Sarawak', 'WP Kuala Lumpur'],
+          crosshair: true,
+          accessibility: {
+            description: 'Negeri'
+          }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Bilangan Permohonan Calon Temudug'
+            }
+        },
+        tooltip: {
+            valueSuffix: ' permohonan'
+        },
+        plotOptions: {
+          column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+          }
+        },
+        series: [
+          {
+            name: '2025',
+            data: [546, 224, 654, 213, 123, 678, 546, 224, 654, 213, 123, 678, 789, 567]
+          },
+          {
+            name: '2024',
+            data: [234, 213, 456, 232, 245, 267, 245, 232, 234, 289, 213, 234, 245, 213]
+          },
+          {
+            name: '2023',
+            data: [123, 145, 165, 128, 123, 156, 178, 189, 195, 153, 124, 143, 134, 142]
+          },
+        ]
+      });
+    
     } catch (e) { throw new Error(); }
   }
 

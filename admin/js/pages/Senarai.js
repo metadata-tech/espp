@@ -69,7 +69,8 @@ function Senarai () {
       formValidate.registerFields(vData);
       
       $('.btnAddPpj').on('click', function () {
-        modalPermohonanPengisian.add();
+        sectionMaklumat.add();
+        // modalPermohonanPengisian.add();
       });
       
       $('#btnCtcrFilter').on('click', function () {
@@ -86,9 +87,9 @@ function Senarai () {
           if ($('#optCtcrJawatan').val().length > 0) {
             dtPpj.columns(4).search($('#optCtcrJawatan').val() ? $('#optCtcrJawatan').val() : '', true, false);
           }
-          if ($('#txtCtcrTarikhPermohonan').val().length > 0) {
+          /* if ($('#txtCtcrTarikhPermohonan').val().length > 0) {
             dtPpj.columns(5).search($('#txtCtcrTarikhPermohonan').val() ? '^'+$('#txtCtcrTarikhPermohonan').val()+'$' : '', true, false);
-          }
+          } */
           const status = $("input[name='chkCtcrStatus[]']:checked").map(function(){
             return '^'+this.value+'$'; 
           }).get().join('|');
@@ -103,6 +104,15 @@ function Senarai () {
         $('#lblCtcrTarikhHingga').addClass('active');
         dtPpj.search('').columns().search('').draw();
       });
+
+      /* $('#dtPpj tfoot th').each(function (i) {
+        var title = $('#example thead th')
+          .eq($(this).index())
+          .text();
+        $(this).html(
+          '<input type="text" placeholder="' + title + '" data-index="' + i + '" />'
+        );
+      }); */
     
       dtPpj = $('#dtPpj').DataTable({
         bLengthChange: false,

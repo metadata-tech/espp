@@ -25,35 +25,27 @@
           <div class="col-12 p-1">
             <nav class="navbar z-depth-1">
               <h4 class="navbar-text white-text font-weight-500 ml-2 pb-0">
-                <div class="d-flex">
-                  <div class="p-0 pr-2 align-self-center"><i class="fa-duotone fa-lg fa-briefcase mr-2"></i></div>
-                  <div class="p-0">Permohonan PGSPP</div>
-                </div>
+                <i class="fa-duotone fa-lg fa-briefcase mr-3"></i>Permohonan PGSPP
               </h4>
             </nav>
           </div>
         </div>
         <div class="row">
-          <div class="col-xl-3 p-1">
+          <div class="col-lg-12 p-1">
             <div class="card mb-3 rounded-0">
               <div class="accordion">
                 <div class="card-header white h6 rounded-0 p-0" style="cursor: pointer;" data-toggle="collapse" data-target="#accCtcr">
                   <div class="d-flex">
                     <div class="p-2-3 flex-shrink-1 unique-color"><i class="fa-duotone fa-filters text-white"></i></div>
                     <div class="p-2-3 flex-fill">Tapis Carian</div>
+                    <div class="p-2-3"><i class="fa fa-chevron-down accordion-chevron text-light"></i></div>
                   </div>
                 </div>
-                <div id="accCtcr" class="collapse d-xl-block">
+                <div id="accCtcr" class="collapse">
                   <form id="formCtcr" autocomplete="off" spellcheck="false">
                     <div class="card-body">
                       <div class="row">
-                        <div class="col-md-6 col-xl-12 mb-2">
-                          <p class="label-text">Tahun</p>
-                          <div class="md-form md-outline md-outline-light md-custom my-1">
-                            <input type="text" class="form-control numeric" maxlength="4" id="txtCtcrTahun" placeholder="YYYY">
-                          </div>
-                        </div>
-                        <div class="col-md-6 col-xl-12 mb-2">
+                        <div class="col-md-6 mb-2">
                           <p class="label-text">Kod Kementerian</p>
                           <div class="select-outline" id="optCtcrKementerian_">
                             <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optCtcrKementerian">
@@ -64,51 +56,58 @@
                             <!-- <label class="text-dark font-weight-500" for="optCtcrKementerian" id="lblCtcrKementerian">Kod Kementerian</label> -->
                           </div>
                         </div>
-                        <div class="col-md-6 col-xl-12 mb-2">
+                        <div class="col-md-6 mb-2">
                           <p class="label-text">Skim Perkhidmatan</p>
                           <div class="select-outline" id="optCtcrJawatan_">
                             <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optCtcrJawatan">
                               <option value="" selected>Sila Pilih</option>
                               <option value="1184 - PEGAWAI PERKHIDMATAN PENDIDIKAN GRED DG41">1184 - PEGAWAI PERKHIDMATAN PENDIDIKAN GRED DG41</option>
+                              <option value="1188 - PEGAWAI PERKHIDMATAN PENDIDIKAN SISWAZAH GRED DG41">1188 - PEGAWAI PERKHIDMATAN PENDIDIKAN SISWAZAH GRED DG41</option>
                             </select>
                             <!-- <label class="text-dark font-weight-500" for="optCtcrJawatan" id="lblCtcrJawatan">Kod Jawatan</label> -->
+                          </div>
+                        </div>
+                        <div class="col-md-6 mb-2">
+                          <p class="label-text">Tahun</p>
+                          <div class="md-form md-outline md-outline-light md-custom my-1">
+                            <input type="text" class="form-control numeric" maxlength="4" id="txtCtcrTahun" placeholder="YYYY">
                           </div>
                         </div>
                         <!-- <div class="col-md-12 mb-4">
                           <p class="label-text">Jenis Sekolah</p>
                           <div class="md-form md-outline my-0">
                             <div class="row">
-                              <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-12 col-xxl-6">
+                              <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-6">
                                 <div class="form-check mb-1 pl-0">
                                   <input type="radio" class="form-check-input" name="radCtcrJenisSekolah" id="radCtcrJenisSekolah1" value="Rendah">
                                   <label for="radCtcrJenisSekolah1" class="form-check-label text-black font-weight-normal">Rendah</label>
                                 </div>
                               </div>
-                              <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-12 col-xxl-6">
+                              <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-6">
                                 <div class="form-check mb-1 pl-0">
                                   <input type="radio" class="form-check-input" name="radCtcrJenisSekolah" id="radCtcrJenisSekolah2" value="Menengah">
                                   <label for="radCtcrJenisSekolah2" class="form-check-label text-black font-weight-normal">Menengah</label>
                                 </div>
                               </div>
-                              <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-12 col-xxl-6">
+                              <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-6">
                                 <div class="form-check mb-1 pl-0">
                                   <input type="radio" class="form-check-input" name="radCtcrJenisSekolah" id="radCtcrJenisSekolah3" value="Kebangsaan">
                                   <label for="radCtcrJenisSekolah3" class="form-check-label text-black font-weight-normal">Kebangsaan</label>
                                 </div>
                               </div>
-                              <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-12 col-xxl-6">
+                              <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-6">
                                 <div class="form-check mb-1 pl-0">
                                   <input type="radio" class="form-check-input" name="radCtcrJenisSekolah" id="radCtcrJenisSekolah4" value="Jenis Cina">
                                   <label for="radCtcrJenisSekolah4" class="form-check-label text-black font-weight-normal">Jenis Cina</label>
                                 </div>
                               </div>
-                              <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-12 col-xxl-6">
+                              <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-6">
                                 <div class="form-check mb-1 pl-0">
                                   <input type="radio" class="form-check-input" name="radCtcrJenisSekolah" id="radCtcrJenisSekolah5" value="Jenis Tamil">
                                   <label for="radCtcrJenisSekolah5" class="form-check-label text-black font-weight-normal">Jenis Tamil</label>
                                 </div>
                               </div>
-                              <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-12 col-xxl-6">
+                              <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xxl-6">
                                 <div class="form-check mb-1 pl-0">
                                   <input type="radio" class="form-check-input" name="radCtcrJenisSekolah" id="radCtcrJenisSekolah6" value="Lain-lain">
                                   <label for="radCtcrJenisSekolah6" class="form-check-label text-black font-weight-normal">Lain-lain</label>
@@ -117,7 +116,7 @@
                             </div>
                           </div>
                         </div> -->
-                        <div class="col-md-6 col-xl-12 mb-4">
+                        <div class="col-md-6 mb-4">
                           <p class="label-text">Status</p>
                           <div class="md-form md-outline my-0">
                             <div class="form-check form-check-inline mb-1 pl-0">
@@ -138,12 +137,12 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-md-6 col-xl-12 mb-2">
+                        <!-- <div class="col-md-6 mb-2">
                           <p class="label-text">Tarikh Permohonan</p>
                           <div class="md-form md-outline md-outline-light md-custom my-1">
                             <input type="text" class="form-control datepicker2" id="txtCtcrTarikhPermohonan" placeholder="DD/MM/YYYY">
                           </div>
-                        </div>
+                        </div> -->
                         <!-- <div class="col-lg-12 col-xxl-6 pr-xxl-1 mb-lg-4 mb-xxl-0">
                           <div class="md-form md-outline md-outline-light md-custom my-0">
                             <input type="text" class="form-control datepicker2" id="txtCtcrTarikhDari" placeholder="DD/MM/YYYY">
@@ -158,16 +157,20 @@
                         </div> -->
                       </div>
                     </div>
-                    <div class="card-footer white px-2">
-                      <button type="button" class="btn btn-sm btn-default btn-block mb-2 waves-effect z-depth-0" id="btnCtcrFilter"><i class="fa-solid fa-filters mr-2"></i>Tapis</button>
-                      <button type="button" class="btn btn-sm btn-outline-default btn-block waves-effect z-depth-0" id="btnCtcrClearFilter"><i class="fa-solid fa-filter-circle-xmark mr-2"></i>Kosongkan</button>
+                    <div class="card-footer white p-1">
+                      <div class="d-flex">
+                        <div class="mr-auto px-2">
+                          <button type="button" class="btn btn-sm btn-default waves-effect z-depth-0" id="btnCtcrFilter"><i class="fa-solid fa-filters mr-2"></i>Tapis</button>
+                          <button type="button" class="btn btn-sm btn-outline-default waves-effect z-depth-0" id="btnCtcrClearFilter"><i class="fa-solid fa-filter-circle-xmark mr-2"></i>Kosongkan</button>
+                        </div>
+                      </div>
                     </div>
                   </form>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-xl-9 p-1 pl-xl-2">
+          <div class="col-lg-12 p-1">
             <div class="card mb-3 rounded-0">
               <div class="card-header unique-color rounded-0 p-1">
                 <div class="d-flex flex-row">
@@ -187,8 +190,8 @@
                         <th class="align-bottom" style="width: 40px; min-width: 40px;">#</th>
                         <th class="all align-bottom">Tahun</th>
                         <th class="all align-bottom">No. Pemerolehan</th>
-                        <th class="all align-bottom">Kementerian/ Jabatan</th>
-                        <th class="all align-bottom">Skim Perkhidmatan</th>
+                        <th class="all align-bottom" style="width: 20%;">Kementerian/ Jabatan</th>
+                        <th class="all align-bottom" style="width: 20%;">Skim Perkhidmatan</th>
                         <th class="all align-bottom">Tarikh Permohonan</th>
                         <th class="all align-bottom">Bil. Kekosongan</th>
                         <th class="all align-bottom">Status</th>
@@ -196,6 +199,19 @@
                       </tr>
                     </thead>
                     <tbody></tbody>
+                    <!-- <tfoot>
+                      <tr>
+                        <th>#</th>
+                        <th>Tahun</th>
+                        <th>No. Pemerolehan</th>
+                        <th>Kementerian/ Jabatan</th>
+                        <th>Skim Perkhidmatan</th>
+                        <th>Tarikh Permohonan</th>
+                        <th>Bil. Kekosongan</th>
+                        <th>Status</th>
+                        <th></th>
+                      </tr>
+                    </tfoot> -->
                   </table>
                 </div>
               </div>

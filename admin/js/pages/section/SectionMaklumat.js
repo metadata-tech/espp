@@ -8,6 +8,25 @@ function SectionMaklumat () {
   let dtDisplay;
   let dtSmAk;
 
+  this.add = function () {
+    try {
+      submitType = 'add';
+      console.log(submitType);
+
+      ShowLoader();
+      setTimeout(function () {
+        self.genTableAk();
+
+        $('#h4SmTitle').html('<i class="fa-duotone fa-lg fa-file-circle-plus mr-3"></i>Daftar Maklumat PGSPP');
+        $('.sectionMain').hide();
+        $('.sectionMaklumat').show();
+        maScrollTop();
+        
+        HideLoader();
+      }, 200);
+    } catch (e) { toastr['error'](e.message !== '' ? e.message : _ALERT_MSG_ERROR_DEFAULT, _ALERT_TITLE_ERROR); }
+  };
+
   this.edit = function (_anggotaId) {
     try {
       mzEmptyParams([_anggotaId]);
@@ -19,6 +38,7 @@ function SectionMaklumat () {
       setTimeout(function () {
         self.genTableAk();
 
+        $('#h4SmTitle').html('<i class="fa-duotone fa-lg fa-file-pen mr-3"></i>Kemaskini Maklumat PGSPP');
         $('.sectionMain').hide();
         $('.sectionMaklumat').show();
         maScrollTop();
