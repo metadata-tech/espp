@@ -136,15 +136,6 @@ function ModalPermohonanPengisian() {
       toastr["error"](_ALERT_MSG_ERROR_DEFAULT, _ALERT_TITLE_ERROR);
     }
   };
-
-  function assignMppj() {
-    mzFetch('prosesan/airp_tnm_pnj_kekal/' + tanamanId).then((res) => {
-      mzSetValue('txtMppjJenisTanaman', res['airpTnmPnjKekalJenisTanaman'], 'text');
-      mzSetValue('optMppjLokasi', res['airpLokasiId'], 'select');
-      mzSetValue('txtMppjTahunDitanam', res['airpTnmPnjKekalTahun'], 'text');
-      mzSetValue('txtMppjBertanamKeluasan', maGetCurrency(res['airpTnmPnjKekalLuas']), 'text');
-    }).catch(() => { toastr['error'](_ALERT_MSG_ERROR_DEFAULT, _ALERT_TITLE_ERROR); });
-  }
   
   this.getClassName = function () {
     return className;

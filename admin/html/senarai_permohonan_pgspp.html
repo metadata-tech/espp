@@ -53,7 +53,6 @@
                               <option value="1215 - KEMENTERIAN PENGAJIAN TINGGI">1215 - KEMENTERIAN PENGAJIAN TINGGI</option>
                               <option value="1216 - KEMENTERIAN PENDIDIKAN MALAYSIA">1216 - KEMENTERIAN PENDIDIKAN MALAYSIA</option>
                             </select>
-                            <!-- <label class="text-dark font-weight-500" for="optCtcrKementerian" id="lblCtcrKementerian">Kod Kementerian</label> -->
                           </div>
                         </div>
                         <div class="col-md-6 mb-2">
@@ -64,7 +63,6 @@
                               <option value="1184 - PEGAWAI PERKHIDMATAN PENDIDIKAN GRED DG41">1184 - PEGAWAI PERKHIDMATAN PENDIDIKAN GRED DG41</option>
                               <option value="1188 - PEGAWAI PERKHIDMATAN PENDIDIKAN SISWAZAH GRED DG41">1188 - PEGAWAI PERKHIDMATAN PENDIDIKAN SISWAZAH GRED DG41</option>
                             </select>
-                            <!-- <label class="text-dark font-weight-500" for="optCtcrJawatan" id="lblCtcrJawatan">Kod Jawatan</label> -->
                           </div>
                         </div>
                         <div class="col-md-6 mb-2">
@@ -137,24 +135,6 @@
                             </div>
                           </div>
                         </div>
-                        <!-- <div class="col-md-6 mb-2">
-                          <p class="label-text">Tarikh Permohonan</p>
-                          <div class="md-form md-outline md-outline-light md-custom my-1">
-                            <input type="text" class="form-control datepicker2" id="txtCtcrTarikhPermohonan" placeholder="DD/MM/YYYY">
-                          </div>
-                        </div> -->
-                        <!-- <div class="col-lg-12 col-xxl-6 pr-xxl-1 mb-lg-4 mb-xxl-0">
-                          <div class="md-form md-outline md-outline-light md-custom my-0">
-                            <input type="text" class="form-control datepicker2" id="txtCtcrTarikhDari" placeholder="DD/MM/YYYY">
-                            <label class="text-dark font-weight-400 active" for="txtCtcrTarikhDari" id="lblCtcrTarikhDari">Tarikh (Dari)</label>
-                          </div>
-                        </div>
-                        <div class="col-lg-12 col-xxl-6 pl-xxl-1">
-                          <div class="md-form md-outline md-outline-light md-custom my-0">
-                            <input type="text" class="form-control datepicker2" id="txtCtcrTarikhHingga" placeholder="DD/MM/YYYY">
-                            <label class="text-dark font-weight-400 active" for="txtCtcrTarikhHingga" id="lblCtcrTarikhHingga">Tarikh (Hingga)</label>
-                          </div>
-                        </div> -->
                       </div>
                     </div>
                     <div class="card-footer white p-1">
@@ -199,19 +179,6 @@
                       </tr>
                     </thead>
                     <tbody></tbody>
-                    <!-- <tfoot>
-                      <tr>
-                        <th>#</th>
-                        <th>Tahun</th>
-                        <th>No. Pemerolehan</th>
-                        <th>Kementerian/ Jabatan</th>
-                        <th>Skim Perkhidmatan</th>
-                        <th>Tarikh Permohonan</th>
-                        <th>Bil. Kekosongan</th>
-                        <th>Status</th>
-                        <th></th>
-                      </tr>
-                    </tfoot> -->
                   </table>
                 </div>
               </div>
@@ -219,7 +186,7 @@
           </div>
         </div>
       </section>
-      <div class="includeHtml" id="h-s-section_maklumat"></div>
+      <div class="includeHtml" id="h-s-section_maklumat_pgspp"></div>
     </div>
     <div class="includeHtml" id="h-m-modal_change_password"></div>
     <div class="includeHtml" id="h-m-modal_change_profile"></div>
@@ -227,6 +194,12 @@
     <div class="includeHtml" id="h-m-modal_confirm_delete"></div>
     <div class="includeHtml" id="h-m-modal_confirm_action"></div>
     <div class="includeHtml" id="h-m-modal_permohonan_pengisian"></div>
+    <div class="includeHtml" id="h-m-modal_kelonggaran_syarat_lantikan"></div>
+    <div class="includeHtml" id="h-m-modal_kelayakan_peringkat_ijazah"></div>
+    <div class="includeHtml" id="h-m-modal_kelayakan_peringkat_stpm"></div>
+    <div class="includeHtml" id="h-m-modal_pegawai_sementara_kontrak"></div>
+    <div class="includeHtml" id="h-m-modal_pegawai_kpsl"></div>
+    <div class="includeHtml" id="h-m-modal_pegawai_kader"></div>
   </main>
 
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
@@ -259,16 +232,29 @@
     let modalConfirmAction;
     let modalConfirmDelete;
     let modalPermohonanPengisian;
+    let modalKelonggaranSyaratLantikan;
+    let modalKelayakanPeringkatIjazah;
+    let modalKelayakanPeringkatStpm;
+    let modalPegawaiSementaraKontrak;
+    let modalPegawaiKpsl;
+    let modalPegawaiKader;
     let mainClass;
-    let sectionMaklumat;
+    let sectionMaklumatPgspp;
 
     document.addEventListener('DOMContentLoaded', function () {
       dtDisplay = new DtDisplay();
-      mainClass = new Senarai();
+      mainClass = new SenaraiPermohonanPgspp();
       modalConfirmDelete = new ModalConfirmDelete();
       modalConfirmAction = new ModalConfirmAction();
       modalPermohonanPengisian = new ModalPermohonanPengisian();
-      sectionMaklumat = new SectionMaklumat();
+
+      sectionMaklumatPgspp = new SectionMaklumatPgspp();
+      modalKelonggaranSyaratLantikan = new ModalKelonggaranSyaratLantikan();
+      modalKelayakanPeringkatIjazah = new ModalKelayakanPeringkatIjazah();
+      modalKelayakanPeringkatStpm = new ModalKelayakanPeringkatStpm();
+      modalPegawaiSementaraKontrak = new ModalPegawaiSementaraKontrak();
+      modalPegawaiKpsl = new ModalPegawaiKpsl();
+      modalPegawaiKader = new ModalPegawaiKader();
 
       ShowLoader(); setTimeout(function () {
         try {
@@ -281,8 +267,6 @@
             });
           }).catch(()=>{ toastr['error'](_ALERT_MSG_ERROR_DEFAULT, _ALERT_TITLE_ERROR); }); */
 
-          // mainClass.genTabAirp();
-
           mainClass.setModalConfirmDelete(modalConfirmDelete);
           modalConfirmDelete.init();
 
@@ -292,10 +276,35 @@
           mainClass.setModalPermohonanPengisian(modalPermohonanPengisian);
           modalPermohonanPengisian.init();
 
-          mainClass.setSectionMaklumat(sectionMaklumat);
-          sectionMaklumat.setDtDisplay(dtDisplay);
-          sectionMaklumat.setClassFrom(mainClass);
-          sectionMaklumat.init();
+          mainClass.setSectionMaklumatPgspp(sectionMaklumatPgspp);
+          sectionMaklumatPgspp.setDtDisplay(dtDisplay);
+          sectionMaklumatPgspp.setClassFrom(mainClass);
+          sectionMaklumatPgspp.init();
+          
+          sectionMaklumatPgspp.setModalKelonggaranSyaratLantikan(modalKelonggaranSyaratLantikan);
+          sectionMaklumatPgspp.setModalKelayakanPeringkatIjazah(modalKelayakanPeringkatIjazah);
+          sectionMaklumatPgspp.setModalKelayakanPeringkatStpm(modalKelayakanPeringkatStpm);
+          sectionMaklumatPgspp.setModalPegawaiSementaraKontrak(modalPegawaiSementaraKontrak);
+          sectionMaklumatPgspp.setModalPegawaiKpsl(modalPegawaiKpsl);
+          sectionMaklumatPgspp.setModalPegawaiKader(modalPegawaiKader);
+
+          modalKelonggaranSyaratLantikan.setClassFrom(sectionMaklumatPgspp);
+          modalKelonggaranSyaratLantikan.init();
+
+          modalKelayakanPeringkatIjazah.setClassFrom(sectionMaklumatPgspp);
+          modalKelayakanPeringkatIjazah.init();
+
+          modalKelayakanPeringkatStpm.setClassFrom(sectionMaklumatPgspp);
+          modalKelayakanPeringkatStpm.init();
+
+          modalPegawaiSementaraKontrak.setClassFrom(sectionMaklumatPgspp);
+          modalPegawaiSementaraKontrak.init();
+
+          modalPegawaiKpsl.setClassFrom(sectionMaklumatPgspp);
+          modalPegawaiKpsl.init();
+
+          modalPegawaiKader.setClassFrom(sectionMaklumatPgspp);
+          modalPegawaiKader.init();
 
           mainClass.setDtDisplay(dtDisplay);
           mainClass.init();
@@ -305,7 +314,13 @@
       }, 400);
     });
 
-    document.write('<scr' + 'ipt src="js/pages/section/SectionMaklumat.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
+    document.write('<scr' + 'ipt src="js/pages/modal/ModalPegawaiKader.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
+    document.write('<scr' + 'ipt src="js/pages/modal/ModalPegawaiKpsl.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
+    document.write('<scr' + 'ipt src="js/pages/modal/ModalPegawaiSementaraKontrak.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
+    document.write('<scr' + 'ipt src="js/pages/modal/ModalKelayakanPeringkatStpm.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
+    document.write('<scr' + 'ipt src="js/pages/modal/ModalKelayakanPeringkatIjazah.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
+    document.write('<scr' + 'ipt src="js/pages/modal/ModalKelonggaranSyaratLantikan.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
+    document.write('<scr' + 'ipt src="js/pages/section/SectionMaklumatPgspp.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
     document.write('<scr' + 'ipt src="js/pages/modal/ModalPermohonanPengisian.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
     document.write('<scr' + 'ipt src="js/pages/modal/ModalChangePassword.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
     document.write('<scr' + 'ipt src="js/pages/modal/ModalChangeProfile.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
@@ -313,7 +328,7 @@
     document.write('<scr' + 'ipt src="js/pages/modal/ModalConfirmAction.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
     document.write('<scr' + 'ipt src="js/pages/modal/ModalConfirmDelete.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
     document.write('<scr' + 'ipt src="js/global/DtDisplay.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
-    document.write('<scr' + 'ipt src="js/pages/Senarai.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
+    document.write('<scr' + 'ipt src="js/pages/SenaraiPermohonanPgspp.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
 
   </script>
 </body>

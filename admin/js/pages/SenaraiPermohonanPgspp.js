@@ -1,12 +1,12 @@
-function Senarai () {
+function SenaraiPermohonanPgspp () {
   
-  const className = 'Senarai';
+  const className = 'SenaraiPermohonanPgspp';
   let self = this;
   let dtDisplay;
   let modalConfirmDelete;
   let modalConfirmAction;
   let modalPermohonanPengisian;
-  let sectionMaklumat;
+  let sectionMaklumatPgspp;
   let userId;
   let dtPpj;
   let formValidate;
@@ -69,7 +69,7 @@ function Senarai () {
       formValidate.registerFields(vData);
       
       $('.btnAddPpj').on('click', function () {
-        sectionMaklumat.add();
+        sectionMaklumatPgspp.add();
         // modalPermohonanPengisian.add();
       });
       
@@ -104,15 +104,6 @@ function Senarai () {
         $('#lblCtcrTarikhHingga').addClass('active');
         dtPpj.search('').columns().search('').draw();
       });
-
-      /* $('#dtPpj tfoot th').each(function (i) {
-        var title = $('#example thead th')
-          .eq($(this).index())
-          .text();
-        $(this).html(
-          '<input type="text" placeholder="' + title + '" data-index="' + i + '" />'
-        );
-      }); */
     
       dtPpj = $('#dtPpj').DataTable({
         bLengthChange: false,
@@ -127,7 +118,6 @@ function Senarai () {
         "<'d-flex mt-2'<'p-0 flex-fill'tr>>" +
         "<'d-flex align-items-center'<'p-0 flex-fill d-none d-sm-block'i><'p-0 mt-3 mr-auto flex-fill'p>>",
         columnDefs: [
-          // { className: 'align-top', targets: [3,4] },
           { className: 'text-center align-top', targets: [0,1,2,3,4,5,6,7,8] },
           { bSortable: false, targets: [0, 8] },
           // { visible: false, targets: [3] },
@@ -150,10 +140,11 @@ function Senarai () {
             } catch (e) { toastr['error'](e.message, _ALERT_TITLE_ERROR); } HideLoader(); }, 100);
           });
           $('.lnkPpjView').off('click').on('click', function () {
-            modalConfirmAction.action(123, self);
+            // modalConfirmAction.action(123, self);
+            sectionMaklumatPgspp.view(123);
           });
           $('.lnkPpjEdit').off('click').on('click', function () {
-            sectionMaklumat.edit(123);
+            sectionMaklumatPgspp.edit(123);
           });
           $('.lnkPpjRemove').off('click').on('click', function () {
             modalConfirmDelete.delete(123, self);
@@ -277,6 +268,16 @@ function Senarai () {
       dtPpj.clear().rows.add(dataDb).draw();
     } catch (e) { toastr['error'](_ALERT_MSG_ERROR_DEFAULT, _ALERT_TITLE_ERROR); }
   };
+  
+  this.delete = function (_id) {
+    try {
+      mzEmptyParams([_id]);
+
+      toastr['success']('Maklumat PGSPP berjaya dihapus!');
+    } catch (e) {
+      toastr["error"](_ALERT_MSG_ERROR_DEFAULT, _ALERT_TITLE_ERROR);
+    }
+  };
 
   this.setDtDisplay = function (_dtDisplay) {
     dtDisplay = _dtDisplay;
@@ -294,8 +295,8 @@ function Senarai () {
     modalPermohonanPengisian = _modalPermohonanPengisian;
   };
   
-  this.setSectionMaklumat = function (_sectionMaklumat) {
-    sectionMaklumat = _sectionMaklumat;
+  this.setSectionMaklumatPgspp = function (_sectionMaklumatPgspp) {
+    sectionMaklumatPgspp = _sectionMaklumatPgspp;
   };
 
 }

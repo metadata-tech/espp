@@ -642,7 +642,7 @@ function MzValidate(isEnglish) {
                             msg += isEnglish ? '<br>Please choose ' + name : '<br>Sila pilih ' + name;
                             return false;
                         case 'notEmptyFile':
-                            msg += isEnglish ? '<br>Please upload ' + name : '<br>Sila muatnaik file ' + name;
+                            msg += isEnglish ? '<br>Please upload ' + name : '<br>Sila muatnaik fail ' + name;
                             return false;
                         case 'eitherOneCheck':
                             msg += isEnglish ? '<br>Please choose either one ' + name : '<br>Sila pilih salah satu ' + name;

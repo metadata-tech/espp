@@ -15,4 +15,4 @@ RewriteRule ^login/activate/(.+)/?$ login/activate.html
 RewriteRule ^login/semakan/(.+)/?$ login/semakan.html
 
 RewriteRule ^admin/home?$ admin/html/home.html
-RewriteRule ^admin/senarai?$ admin/html/senarai.html
+RewriteRule ^admin/senarai_permohonan_pgspp?$ admin/html/senarai_permohonan_pgspp.html

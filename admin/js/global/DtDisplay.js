@@ -14,7 +14,7 @@ function DtDisplay () {
         if (typeof isBadge !== 'undefined' && isBadge === true) {
             return '<span class="badge '+statusColor+' z-depth-0 w-100"><i class="fa-regular fa-folder mr-1"></i>'+statusName+'</span>';
         }
-        return '<span class="badge badge-pill '+statusColor+' z-depth-0 w-100 text-uppercase">'+statusName+'</span>';
+        return '<span class="badge badge-pill '+statusColor+' z-depth-0 w-100">'+statusName+'</span>';
         // return '<div class="chip chip-tag '+statusColor+' white-text z-depth-0 w-100 text-center">'+statusName+'</div>';
     }
 
@@ -190,14 +190,14 @@ function DtDisplay () {
         // const htmlView = '<button class="btn-clear" data-toggle="tooltip" data-placement="top" title="Papar"><i class="fa-regular mx-0 fa-eye fa-lg '+id+'View" id="'+id+'View_'+row+'"></i></button>';
         // const htmlRemove = '<button class="btn-clear" data-toggle="tooltip" data-placement="top" title="Hapus"><i class="fa-regular mx-0 fa-trash-can fa-lg '+id+'Remove" id="'+id+'Remove_'+row+'"></i></button>';
       
-        const htmlEdit = '<a data-toggle="tooltip" data-placement="top" title="Kemaskini"><i class="fa-regular fa-pen-to-square fa-lg '+id+'Edit" id="'+id+'Edit_'+row+'"></i></a>';
-        const htmlRemove = '<a data-toggle="tooltip" data-placement="top" title="Hapus"><i class="fa-regular fa-trash-can fa-lg ml-1 '+id+'Remove" id="'+id+'Remove_'+row+'"></i></a>';
-        const htmlView = '<a data-toggle="tooltip" data-placement="top" title="Papar"><i class="fa-regular fa-eye fa-lg ml-1 '+id+'View" id="'+id+'View_'+row+'"></i></a>';
+        const htmlEdit = '<a data-toggle="tooltip" data-placement="left" title="Kemaskini"><i class="fa-regular fa-pen-to-square fa-lg '+id+'Edit" id="'+id+'Edit_'+row+'"></i></a>';
+        const htmlRemove = '<a data-toggle="tooltip" data-placement="left" title="Hapus"><i class="fa-regular fa-trash-can fa-lg ml-1 '+id+'Remove" id="'+id+'Remove_'+row+'"></i></a>';
+        const htmlView = '<a data-toggle="tooltip" data-placement="left" title="Papar"><i class="fa-regular fa-eye fa-lg ml-1 '+id+'View" id="'+id+'View_'+row+'"></i></a>';
 
         // const htmlEdit = '<span class="btn-clear '+id+'Edit" data-toggle="tooltip" data-placement="top" title="Kemaskini" id="'+id+'Edit_'+row+'"><i class="fa-regular fa-pen-to-square fa-lg"></i></span>';
         // const htmlView = '<span class="btn-clear '+id+'View" data-toggle="tooltip" data-placement="top" title="Papar" id="'+id+'View_'+row+'"><i class="fa-regular fa-eye fa-lg"></i></span>';
         // const htmlRemove = '<span class="btn-clear '+id+'Remove" data-toggle="tooltip" data-placement="top" title="Hapus" id="'+id+'Remove_'+row+'"><i class="fa-regular fa-trash-can fa-lg"></i></span>';
-        if (type === 'edit') {
+        if (type === 'edit' || type === 'add') {
           if (flag == 1) {
             return '<div class="btn-group px-1">' + htmlEdit + htmlRemove + '</div>';
           } else if (flag == 2) {
