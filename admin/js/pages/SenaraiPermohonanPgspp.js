@@ -183,6 +183,7 @@ function SenaraiPermohonanPgspp () {
   }
   
   this.genTable = function () {
+    console.log('gen table');
     try {
       const dataDb = [{
         tahun: '2020', 

@@ -344,6 +344,9 @@ function SectionMaklumatPgspp () {
       } else {
         ShowLoader(); setTimeout(function () {
           toastr['success']('Maklumat PGSPP berjaya disimpan!');
+          classFrom.genTable();
+          // $('.sectionMaklumatPgspp').hide();
+          // $('.sectionMain').show();
           HideLoader();
         }, 200);
       }
@@ -626,6 +629,11 @@ function SectionMaklumatPgspp () {
     mzSetValue('txtSmTetap', '10', 'text');
     mzSetValue('txtSmSementara', '0', 'text');
     mzSetValue('txtSmKontrak', '30', 'text');
+    mzSetValue('txtSmPegawaiNama', 'SITI AISYAH BINTI ABDUL MALIK', 'text');
+    mzSetValue('txtSmPegawaiJawatan', 'PEGAWAI PSU - PENGAMBILAN', 'text');
+    mzSetValue('optSmPegawaiKementerian', '1215', 'text');
+    mzSetValue('txtSmTarikhPohon', '20/05/2024', 'text');
+    mzSetValue('txtSmTarikhTerima', '20/05/2024', 'text');
   };
   
   this.genTableKsl = function () {
