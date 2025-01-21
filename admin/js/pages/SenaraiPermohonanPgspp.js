@@ -113,6 +113,7 @@ function SenaraiPermohonanPgspp () {
         bInfo: true,
         autoWidth: false,
         aaSorting: [[1, 'asc'],[2, 'asc']],
+        aaSorting: [[1, 'asc'],[2, 'asc']],
         language: _DATATABLE_LANGUAGE,
         dom: "<'row'<'col-12 col-sm-6'B><'col-sm-6 d-none d-sm-block'f>>" +
         "<'d-flex mt-2'<'p-0 flex-fill'tr>>" +
@@ -227,7 +228,7 @@ function SenaraiPermohonanPgspp () {
         statusColor: "rgba-teal-strong", 
       },{
         tahun: '2022', 
-        noPemerolehan: "", 
+        noPemerolehan: "",  
         kementerian: "1215 - KEMENTERIAN PENGAJIAN TINGGI", 
         skimPerkhidmatan: '1184 - PEGAWAI PERKHIDMATAN PENDIDIKAN GRED DG41', 
         tarikhPermohonan: "20/12/2022", 
