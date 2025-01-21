@@ -239,6 +239,10 @@ function SectionMaklumatPgspp () {
 
       ShowLoader();
       setTimeout(function () {
+        mzSetValue('txtSmPegawaiNama', 'SITI AISYAH BINTI ABDUL MALIK', 'text');
+        mzSetValue('txtSmPegawaiJawatan', 'PEGAWAI PSU - PENGAMBILAN', 'text');
+        mzSetValue('optSmPegawaiKementerian', '1215', 'text');
+
         self.genTableKsl();
         self.genTableKpi();
         self.genTableKps();
@@ -354,6 +358,13 @@ function SectionMaklumatPgspp () {
 
     $('#btnSmReset').on('click', function () {
       formValidate.clearValidation();
+      if (submitType == 'edit' || submitType == 'view') {
+        self.assignValue();
+      } else {
+        mzSetValue('txtSmPegawaiNama', 'SITI AISYAH BINTI ABDUL MALIK', 'text');
+        mzSetValue('txtSmPegawaiJawatan', 'PEGAWAI PSU - PENGAMBILAN', 'text');
+        mzSetValue('optSmPegawaiKementerian', '1215', 'text');
+      }
     });
 
     $('.btnKslTambah').click(function(e) {
@@ -462,6 +473,7 @@ function SectionMaklumatPgspp () {
       bPaginate: false,
       bInfo: true,
       autoWidth: false,
+      ordering: false,
       aaSorting: [[2, 'asc']],
       language: _DATATABLE_LANGUAGE,
       dom: "<'d-flex'<'p-0 flex-fill'tr>>",
@@ -631,7 +643,7 @@ function SectionMaklumatPgspp () {
     mzSetValue('txtSmKontrak', '30', 'text');
     mzSetValue('txtSmPegawaiNama', 'SITI AISYAH BINTI ABDUL MALIK', 'text');
     mzSetValue('txtSmPegawaiJawatan', 'PEGAWAI PSU - PENGAMBILAN', 'text');
-    mzSetValue('optSmPegawaiKementerian', '1215', 'text');
+    mzSetValue('optSmPegawaiKementerian', '1215', 'select');
     mzSetValue('txtSmTarikhPohon', '20/05/2024', 'text');
     mzSetValue('txtSmTarikhTerima', '20/05/2024', 'text');
   };
