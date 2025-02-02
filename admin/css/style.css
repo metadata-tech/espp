@@ -792,7 +792,7 @@ label.btn input[type="radio"].with-gap:checked + label:after {
 label.btn input[type="radio"]:not(:checked) + label:before, 
 label.btn input[type="radio"]:not(:checked) + label:after {
   /* border: 2px solid #8a8a8a; */
-  border: 1px solid #a0a0a0;
+  border: 1px solid #8a8a8a;
 }
 .form-check-input[type="radio"]:disabled:not(:checked) + label:before {
   background-color: #e0e0e0;
@@ -2414,20 +2414,21 @@ table.ngdbbptk.dataTable tr.dtrg-group th {
   margin: 0 !important;  
 }
 .table-custom > thead > tr > th {  
-	text-align: left;
+	text-align: center !important;
 	padding: 8px 6px 8px 6px !important;
   font-weight: 500;
   font-size: 14.4px !important;
   border-bottom: 0 !important;
+  /* color: #3f5c80; */
 }
 .table-custom > tbody > tr > td {
 	font-size: 14px;
 	padding: 6px 5px 6px 5px !important;
   font-weight: 400;
 }
-.table-custom > tbody > tr:last-child { 
+/* .table-custom > tbody > tr:last-child { 
   border-bottom: 1px solid #dee2e6 !important;
-}
+} */
 .table-notification {
 	border-collapse: collapse;
 	border-spacing: 3px;
@@ -2989,4 +2990,7 @@ table.dataTable.table-condensed .sorting_desc:after {
 }
 .btn-file {
   height: 36 !important;
+}
+.unique-text {
+  color: #3f5c80;
 }

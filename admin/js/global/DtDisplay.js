@@ -194,9 +194,6 @@ function DtDisplay () {
         const htmlRemove = '<a data-toggle="tooltip" data-placement="left" title="Hapus"><i class="fa-regular fa-trash-can fa-lg ml-1 '+id+'Remove" id="'+id+'Remove_'+row+'"></i></a>';
         const htmlView = '<a data-toggle="tooltip" data-placement="left" title="Papar"><i class="fa-regular fa-eye fa-lg ml-1 '+id+'View" id="'+id+'View_'+row+'"></i></a>';
 
-        // const htmlEdit = '<span class="btn-clear '+id+'Edit" data-toggle="tooltip" data-placement="top" title="Kemaskini" id="'+id+'Edit_'+row+'"><i class="fa-regular fa-pen-to-square fa-lg"></i></span>';
-        // const htmlView = '<span class="btn-clear '+id+'View" data-toggle="tooltip" data-placement="top" title="Papar" id="'+id+'View_'+row+'"><i class="fa-regular fa-eye fa-lg"></i></span>';
-        // const htmlRemove = '<span class="btn-clear '+id+'Remove" data-toggle="tooltip" data-placement="top" title="Hapus" id="'+id+'Remove_'+row+'"><i class="fa-regular fa-trash-can fa-lg"></i></span>';
         if (type === 'edit' || type === 'add') {
           if (flag == 1) {
             return '<div class="btn-group px-1">' + htmlEdit + htmlRemove + '</div>';
@@ -204,6 +201,47 @@ function DtDisplay () {
             return '<div class="btn-group px-1">' + htmlEdit + '</div>';
           } else {
             return '<div class="btn-group px-1">' + htmlView + '</div>';
+          }
+        }
+        else {
+          return '<div class="btn-group px-1">' + htmlView + '</div>';
+        }
+    }
+
+
+    this.getActionEkeps = function (type, id, row, flag, flag2) {
+        const htmlEdit = '<button class="btn-clear" data-toggle="tooltip" data-placement="top" title="Kemaskini"><i class="fa-regular mx-0 fa-pen-to-square fa-lg '+id+'Edit" id="'+id+'Edit_'+row+'"></i></button>';
+        const htmlView = '<button class="btn-clear" data-toggle="tooltip" data-placement="top" title="Papar"><i class="fa-regular mx-0 fa-eye fa-lg '+id+'View" id="'+id+'View_'+row+'"></i></button>';
+        const htmlRemove = '<button class="btn-clear" data-toggle="tooltip" data-placement="top" title="Hapus"><i class="fa-regular mx-0 fa-trash-can fa-lg '+id+'Remove" id="'+id+'Remove_'+row+'"></i></button>';
+        const htmlActive = '<button class="btn-clear" data-toggle="tooltip" data-placement="top" title="Aktif"><i class="fa-regular mx-0 fa-circle fa-lg '+id+'Active" id="'+id+'Active_'+row+'"></i></button>';
+        const htmlDeactive = '<button class="btn-clear" data-toggle="tooltip" data-placement="top" title="Nyahaktif"><i class="fa-regular mx-0 fa-circle-check fa-lg '+id+'Deactive" id="'+id+'Deactive_'+row+'"></i></button>';
+
+        if (type === 'edit' || type === 'add') {
+          if (flag == 1) {
+            return '<div class="btn-group px-1">' + htmlEdit + htmlRemove + '</div>';
+          } else if (flag == 2) {
+            return '<div class="btn-group px-1">' + htmlEdit + htmlRemove + '</div>';
+          } else {
+            return '<div class="btn-group px-1">' + htmlView + '</div>';
+          }
+        }
+        else {
+          return '<div class="btn-group px-1">' + htmlView + '</div>';
+        }
+    }
+
+
+    this.getActionDokumenEkeps = function (type, id, row, flag, flag2) {
+        const htmlEdit = '<button class="btn-clear" data-toggle="tooltip" data-placement="top" title="Kemaskini"><i class="fa-regular mx-0 fa-pen-to-square fa-lg '+id+'Edit" id="'+id+'Edit_'+row+'"></i></button>';
+        const htmlView = '<button class="btn-clear" data-toggle="tooltip" data-placement="top" title="Papar"><i class="fa-regular mx-0 fa-eye fa-lg '+id+'View" id="'+id+'View_'+row+'"></i></button>';
+        const htmlRemove = '<button class="btn-clear" data-toggle="tooltip" data-placement="top" title="Hapus"><i class="fa-regular mx-0 fa-trash-can fa-lg '+id+'Remove" id="'+id+'Remove_'+row+'"></i></button>';
+        const htmlPdf = '<button class="btn-clear" data-toggle="tooltip" data-placement="top" title="Papar Dokumen"><i class="fa-regular mx-0 fa-file-pdf fa-lg '+id+'Pdf" id="'+id+'Pdf_'+row+'"></i></button>';
+
+        if (type === 'edit' || type === 'add') {
+          if (flag == 1) {
+            return '<div class="btn-group px-1">' + htmlEdit + htmlRemove + htmlPdf + '</div>';
+          } else {
+            return '<div class="btn-group px-1">' + htmlView + htmlPdf + '</div>';
           }
         }
         else {

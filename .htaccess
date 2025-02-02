@@ -14,5 +14,9 @@ RewriteRule ^login/register/?$ login/register.html
 RewriteRule ^login/activate/(.+)/?$ login/activate.html
 RewriteRule ^login/semakan/(.+)/?$ login/semakan.html
 
+# Modul Pengambilan
 RewriteRule ^admin/home?$ admin/html/home.html
 RewriteRule ^admin/senarai_permohonan_pgspp?$ admin/html/senarai_permohonan_pgspp.html
+
+# Modul Kertas
+RewriteRule ^admin/senarai_ekeps?$ admin/html/senarai_ekeps.html

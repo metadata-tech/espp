@@ -2,10 +2,10 @@
   <div class="row mb-2">
     <div class="col-12 p-1">
       <nav class="navbar z-depth-1">
-        <h4 class="navbar-text white-text font-weight-500 ml-2 pb-0" id="h4SmTitle">
+        <h4 class="navbar-text white-text font-weight-500 ml-2 pb-0" id="h4SmpTitle">
           <i class="fa-duotone fa-lg fa-file-pen mr-2"></i>Maklumat PGSPP
         </h4>
-        <button class="btn-clear text-white float-right mr-2 btnSmBack" title="Kembali">
+        <button class="btn-clear text-white float-right mr-2 btnSmpBack" title="Kembali">
           <i class="fa-solid fa-xl fa-chevron-left"></i>
         </button>
       </nav>
@@ -14,584 +14,564 @@
   <div class="row">
     <div class="col p-1">
       <div class="card rounded-0 mb-4">
-        <div class="card-body p-0 rounded-0">
-          <div class="tab-content p-0">
-            <div class="tab-pane fade accordion show active" id="secA" role="tabpanel">
-              <div class="card shadow-none">
-                <div class="card-header unique-color darken-3 rounded-0">
-                  <div class="row">
-                    <div class="col">
-                      <div class="d-flex">
-                        <div class="p-0 w-100">
-                          <p class="section-title">Borang Permohonan Pengisian Jawatan Di Bawah Bidangkuasa Suruhanjaya Perkhidmatan Pendidikan (SPP)</p>
-                          <p class="section-subtitle">(Status borang hendaklah diisi untuk satu Skim Perkhidmatan)</p>
-                        </div>
+        <div class="card-header unique-color darken-3 rounded-0">
+          <div class="row">
+            <div class="col">
+              <div class="d-flex">
+                <div class="p-0 w-100">
+                  <p class="section-title">Borang Permohonan Pengisian Jawatan Di Bawah Bidangkuasa Suruhanjaya Perkhidmatan Pendidikan (SPP)</p>
+                  <p class="section-subtitle">(Status borang hendaklah diisi untuk satu Skim Perkhidmatan)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-4">
+              <p class="label-text">Tahun<span class="ml-1 text-danger">*</span></p>
+              <div class="md-form md-outline md-outline-light my-1">
+                <input type="text" class="form-control numeric" maxlength="4" id="txtSmpTahun">
+                <p class="font-small text-danger" id="txtSmpTahunErr"></p>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <p class="label-text">Kementerian/ Jabatan<span class="ml-1 text-danger">*</span></p>
+              <div class="select-outline my-1" id="optSmpKementerian_">
+                <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optSmpKementerian">
+                  <option value="" selected>Sila Pilih</option>
+                  <option value="1215">1215 - KEMENTERIAN PENGAJIAN TINGGI</option>
+                  <option value="1216">1216 - KEMENTERIAN PENDIDIKAN MALAYSIA</option>
+                </select>
+                <p class="font-small text-danger" id="optSmpKementerianErr"></p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <p class="label-text font-weight-500 unique-text">Jawatan</p>
+              <hr class="mt-2">
+            </div>
+            <div class="col-md-6">
+              <p class="label-text">Skim Perkhidmatan<span class="ml-1 text-danger">*</span></p>
+              <div class="select-outline my-1" id="optSmpSkimPerkhidmatan_">
+                <select class="mdb-select md-form md-outline md-outline-light colorful-select my-0 font-weight-500 z-depth-0" searchable="Carian" data-stop-refresh="true" id="optSmpSkimPerkhidmatan">
+                  <option value="">Sila Pilih</option>
+                  <option value="1042">1042 - PEGAWAI PENDIDIKAN PENGAJIAN TINGGI GRED DH41</option>
+                </select>
+                <p class="font-small text-danger" id="optSmpSkimPerkhidmatanErr"></p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <p class="label-text">Klasifikasi Perkhidmatan</p>
+              <div class="select-outline my-1" id="optSmpKlasifikasiPerkhidmatan_">
+                <select class="mdb-select md-form md-outline md-outline-light colorful-select my-0 font-weight-500 z-depth-0" searchable="Carian" data-stop-refresh="true" id="optSmpKlasifikasiPerkhidmatan">
+                  <option value="">Sila Pilih</option>
+                </select>
+                <p class="font-small text-danger" id="optSmpKlasifikasiPerkhidmatanErr"></p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <p class="label-text">Kumpulan Perkhidmatan</p>
+              <div class="select-outline my-1" id="optSmpKumpulanPerkhidmatan_">
+                <select class="mdb-select md-form md-outline md-outline-light colorful-select my-0 font-weight-500 z-depth-0" searchable="Carian" data-stop-refresh="true" id="optSmpKumpulanPerkhidmatan">
+                  <option value="">Sila Pilih</option>
+                  <option value="A">A</option>
+                </select>
+                <p class="font-small text-danger" id="optSmpKumpulanPerkhidmatanErr"></p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <p class="label-text">Gred Gaji</p>
+              <div class="select-outline my-1" id="optSmpGredGaji_">
+                <select class="mdb-select md-form md-outline md-outline-light colorful-select my-0 font-weight-500 z-depth-0" searchable="Carian" data-stop-refresh="true" id="optSmpGredGaji">
+                  <option value="">Sila Pilih</option>
+                  <option value="DG44">DG44</option>
+                  <option value="DG48">DG48</option>
+                </select>
+                <p class="font-small text-danger" id="optSmpGredGajiErr"></p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <p class="label-text">Jadual Gaji</p>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="md-form md-outline md-outline-light my-1">
+                    <div class="input-group">
+                      <div class="input-group-append align-items-center">
+                        <span class="rounded-0 font-weight-400 px-3">P</span>
                       </div>
+                      <input type="text" class="form-control numeric" id="txtSmpJadualGajiP">
                     </div>
+                    <p class="font-small text-danger" id="txtSmpJadualGajiPErr"></p>
                   </div>
                 </div>
-                <div class="card-body">
-                  <div class="row">
-                    <div class="col-md-4">
-                      <p class="label-text">Tahun<span class="ml-1 text-danger">*</span></p>
-                      <div class="md-form md-outline md-outline-light my-1">
-                        <input type="text" class="form-control numeric" maxlength="4" id="txtSmTahun">
-                        <p class="font-small text-danger" id="txtSmTahunErr"></p>
+                <div class="col-md-6">
+                  <div class="md-form md-outline md-outline-light my-1">
+                    <div class="input-group">
+                      <div class="input-group-append align-items-center">
+                        <span class="rounded-0 font-weight-400 px-3">T</span>
                       </div>
-                      <!-- <div class="select-outline my-1" id="optSmTahun_">
-                        <select class="mdb-select md-form md-outline md-outline-light colorful-select my-0 font-weight-500 z-depth-0" searchable="Carian" data-stop-refresh="true" id="optSmTahun">
-                          <option value="">Sila Pilih</option>
-                          <option value="2025">2025</option>
-                          <option value="2024">2024</option>
-                          <option value="2023">2023</option>
-                          <option value="2022">2022</option>
-                          <option value="2021">2021</option>
-                          <option value="2022">2022</option>
-                        </select>
-                        <p class="font-small text-danger" id="optSmTahunErr"></p>
-                      </div> -->
+                      <input type="text" class="form-control numeric" id="txtSmpJadualGajiT">
                     </div>
-                    <div class="col-md-8">
-                      <p class="label-text">Kementerian/ Jabatan<span class="ml-1 text-danger">*</span></p>
-                      <div class="select-outline my-1" id="optSmKementerian_">
-                        <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optSmKementerian">
-                          <option value="" selected>Sila Pilih</option>
-                          <option value="1215">1215 - KEMENTERIAN PENGAJIAN TINGGI</option>
-                          <option value="1216">1216 - KEMENTERIAN PENDIDIKAN MALAYSIA</option>
-                        </select>
-                        <p class="font-small text-danger" id="optSmKementerianErr"></p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <p class="label-text font-weight-500">Jawatan</p>
-                      <hr class="mt-2">
-                    </div>
-                    <div class="col-md-6">
-                      <p class="label-text">Skim Perkhidmatan<span class="ml-1 text-danger">*</span></p>
-                      <div class="select-outline my-1" id="optSmSkimPerkhidmatan_">
-                        <select class="mdb-select md-form md-outline md-outline-light colorful-select my-0 font-weight-500 z-depth-0" searchable="Carian" data-stop-refresh="true" id="optSmSkimPerkhidmatan">
-                          <option value="">Sila Pilih</option>
-                          <option value="1042">1042 - PEGAWAI PENDIDIKAN PENGAJIAN TINGGI GRED DH41</option>
-                        </select>
-                        <p class="font-small text-danger" id="optSmSkimPerkhidmatanErr"></p>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <p class="label-text">Klasifikasi Perkhidmatan</p>
-                      <div class="select-outline my-1" id="optSmKlasifikasiPerkhidmatan_">
-                        <select class="mdb-select md-form md-outline md-outline-light colorful-select my-0 font-weight-500 z-depth-0" searchable="Carian" data-stop-refresh="true" id="optSmKlasifikasiPerkhidmatan">
-                          <option value="">Sila Pilih</option>
-                        </select>
-                        <p class="font-small text-danger" id="optSmKlasifikasiPerkhidmatanErr"></p>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <p class="label-text">Kumpulan Perkhidmatan</p>
-                      <div class="select-outline my-1" id="optSmKumpulanPerkhidmatan_">
-                        <select class="mdb-select md-form md-outline md-outline-light colorful-select my-0 font-weight-500 z-depth-0" searchable="Carian" data-stop-refresh="true" id="optSmKumpulanPerkhidmatan">
-                          <option value="">Sila Pilih</option>
-                          <option value="A">A</option>
-                        </select>
-                        <p class="font-small text-danger" id="optSmKumpulanPerkhidmatanErr"></p>
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <p class="label-text">Gred Gaji</p>
-                      <div class="select-outline my-1" id="optSmGredGaji_">
-                        <select class="mdb-select md-form md-outline md-outline-light colorful-select my-0 font-weight-500 z-depth-0" searchable="Carian" data-stop-refresh="true" id="optSmGredGaji">
-                          <option value="">Sila Pilih</option>
-                          <option value="DG44">DG44</option>
-                          <option value="DG48">DG48</option>
-                        </select>
-                        <p class="font-small text-danger" id="optSmGredGajiErr"></p>
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <p class="label-text">Jadual Gaji</p>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="md-form md-outline md-outline-light my-1">
-                            <div class="input-group">
-                              <div class="input-group-append align-items-center">
-                                <span class="rounded-0 font-weight-400 px-3">P</span>
-                              </div>
-                              <input type="text" class="form-control numeric" id="txtSmJadualGajiP">
-                            </div>
-                            <p class="font-small text-danger" id="txtSmJadualGajiPErr"></p>
-                          </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="md-form md-outline md-outline-light my-1">
-                            <div class="input-group">
-                              <div class="input-group-append align-items-center">
-                                <span class="rounded-0 font-weight-400 px-3">T</span>
-                              </div>
-                              <input type="text" class="form-control numeric" id="txtSmJadualGajiT">
-                            </div>
-                            <p class="font-small text-danger" id="txtSmJadualGajiTErr"></p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <p class="label-text font-weight-500">Bilangan jawatan yang diluluskan mengikut Buku Anggaran Belanja Mengurus</p>
-                      <hr class="mt-2">
-                    </div>
-                    <div class="col-md-3">
-                      <p class="label-text">Tahun</p>
-                      <div class="md-form md-outline md-outline-light my-1">
-                        <input type="text" class="form-control numeric" maxlength="4" id="txtSmJawatanTahun">
-                        <p class="font-small text-danger" id="txtSmJawatanTahunErr"></p>
-                      </div>
-                      <!-- <div class="select-outline my-1" id="optSmJawatanTahun_">
-                        <select class="mdb-select md-form md-outline md-outline-light colorful-select my-0 font-weight-500 z-depth-0" searchable="Carian" data-stop-refresh="true" id="optSmJawatanTahun">
-                          <option value="">Sila Pilih</option>
-                          <option value="2025">2025</option>
-                          <option value="2024">2024</option>
-                          <option value="2023">2023</option>
-                          <option value="2022">2022</option>
-                        </select>
-                        <p class="font-small text-danger" id="optSmJawatanTahunErr"></p>
-                      </div> -->
-                    </div>
-                    <div class="col-md-3">
-                      <p class="label-text">Tetap</p>
-                      <div class="md-form md-outline md-outline-light my-1">
-                        <input type="text" class="form-control numeric" maxlength="4" id="txtSmTetap">
-                        <p class="font-small text-danger" id="txtSmTetapErr"></p>
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <p class="label-text">Sementara</p>
-                      <div class="md-form md-outline md-outline-light my-1">
-                        <input type="text" class="form-control numeric" maxlength="4" id="txtSmSementara">
-                        <p class="font-small text-danger" id="txtSmSementaraErr"></p>
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <p class="label-text">Kontrak</p>
-                      <div class="md-form md-outline md-outline-light my-1">
-                        <input type="text" class="form-control numeric" maxlength="4" id="txtSmKontrak">
-                        <p class="font-small text-danger" id="txtSmKontrakErr"></p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <p class="label-text font-weight-500">Kekosongan</p>
-                      <hr class="mt-2">
-                    </div>
-                  </div>
-                  <div class="d-flex">
-                    <div class="p-0 mw-40">
-                      <p class="label-text mt-1">(a)</p>
-                    </div>
-                    <div class="p-0 flex-fill">
-                      <div class="row">
-                        <div class="col-md-10">
-                          <p class="label-text mt-1">Bilangan kekosongan yang dipohon untuk pengisian</p>
-                        </div>
-                        <div class="col-md-2">
-                          <div class="md-form md-outline md-outline-light my-1">
-                            <input type="text" class="form-control numeric" maxlength="4" id="txtSmKosongDipohon">
-                            <p class="font-small text-danger" id="txtSmKosongDipohonErr"></p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-10">
-                          <p class="label-text mt-1">Bilangan kekosongan yang masih ada (untuk tempoh 6 bulan)</p>
-                        </div>
-                        <div class="col-md-2">
-                          <div class="md-form md-outline md-outline-light my-1">
-                            <input type="text" class="form-control numeric" maxlength="4" id="txtSmKosongMasihAda">
-                            <p class="font-small text-danger" id="txtSmKosongMasihAdaErr"></p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-10">
-                          <p class="label-text mt-1">Bilangan kekosongan yang dijangka akibat persaraan atau kenaikan pangkat </p>
-                        </div>
-                        <div class="col-md-2">
-                          <div class="md-form md-outline md-outline-light my-1">
-                            <input type="text" class="form-control numeric" maxlength="4" id="txtSmKosongDijangka">
-                            <p class="font-small text-danger" id="txtSmKosongDijangkaErr"></p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-10">
-                          <p class="label-text mt-1">Bilangan kekosongan dari kemungkinan lain </p>
-                        </div>
-                        <div class="col-md-2">
-                          <div class="md-form md-outline md-outline-light my-1">
-                            <input type="text" class="form-control numeric" maxlength="4" id="txtSmKosongLain">
-                            <p class="font-small text-danger" id="txtSmKosongLainErr"></p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="d-flex">
-                    <div class="p-0 mw-40">
-                      <p class="label-text mt-1">(b)</p>
-                    </div>
-                    <div class="p-0 flex-fill">
-                      <div class="row">
-                        <div class="col-md-12">
-                          <p class="label-text mt-1 mb-4">Pecahan Kekosongan</p>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-10">
-                          <p class="label-text mt-1">Semenanjung</p>
-                        </div>
-                        <div class="col-md-2">
-                          <div class="md-form md-outline md-outline-light my-1">
-                            <input type="text" class="form-control numeric" maxlength="4" id="txtSmPecahanSemenanjung">
-                            <p class="font-small text-danger" id="txtSmPecahanSemenanjungErr"></p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-10">
-                          <p class="label-text mt-1">Sabah</p>
-                        </div>
-                        <div class="col-md-2">
-                          <div class="md-form md-outline md-outline-light my-1">
-                            <input type="text" class="form-control numeric" maxlength="4" id="txtSmPecahanSabah">
-                            <p class="font-small text-danger" id="txtSmPecahanSabahErr"></p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-10">
-                          <p class="label-text mt-1">Sarawak</p>
-                        </div>
-                        <div class="col-md-2">
-                          <div class="md-form md-outline md-outline-light my-1">
-                            <input type="text" class="form-control numeric" maxlength="4" id="txtSmPecahanSarawak">
-                            <p class="font-small text-danger" id="txtSmPecahanSarawakErr"></p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="d-flex">
-                    <div class="p-0 mw-40">
-                      <p class="label-text mt-1">(c)</p>
-                    </div>
-                    <div class="p-0 flex-fill">
-                      <p class="label-text mt-1">Butiran kekosongan mengikut Buku Anggaran Belanja Mengurus Tahun Semasa (Sertakan salinan Warta-warta Perjawatan)</p>
-                    </div>
-                  </div>
-                  <div class="row mt-4">
-                    <div class="col-md-12">
-                      <p class="label-text font-weight-500">Kelonggaran Syarat Lantikan<i class="fa fa-regular fa-circle-info ml-3" data-toggle="tooltip" data-placement="right" title="Sekiranya terdapat kelonggaran syarat lantikan, sila kemukakan surat kelulusan JPA"></i></p>
-                      <hr class="mt-2">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12 p-0">
-                      <div class="table-responsive">
-                        <table id="dtKsl" class="table table-custom display responsive mt-1">
-                          <thead>
-                            <tr>
-                              <th class="all" style="width: 50px; min-width: 50px;">#</th>
-                              <th class="all">Tajuk Lampiran</th>
-                              <th class="all">Jenis Lampiran</th>
-                              <th class="all" style="width: 62px; min-width: 62px;">
-                                <span class="btn-clear divSmSave btnKslTambah" data-toggle="tooltip" data-placement="left" title="Tambah">
-                                  <i class="fa-regular mx-0 fa-circle-plus fa-lg"></i>
-                                </span>
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody></tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row mt-4">
-                    <div class="col-md-12">
-                      <p class="label-text font-weight-500">Keperluan Pengisian Bidang Pengkhususan<i class="fa fa-regular fa-circle-info ml-3" data-toggle="tooltip" data-placement="right" title="Ketua Jabatan hendaklah mencadangkan kelayakan-kelayakan masuk mengikut bidang pengkhususan pengajian dan bilangan calon yang diperlukan selaras dengan keperluan Kementerian/Jabatan/Negeri masing-masing."></i></p>
-                      <hr class="mt-2">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12 p-0">
-                      <div class="table-responsive">
-                        <table id="dtKpi" class="table table-custom display responsive mt-1">
-                          <thead>
-                            <tr>
-                              <th class="all" style="width: 50px; min-width: 50px;">#</th>
-                              <th class="all">Kelayakan di Peringkat Ijazah/Diploma (Bidang Pengkhususan/Opsyen)</th>
-                              <th class="all">Bil. Calon</th>
-                              <th class="all" style="width: 62px; min-width: 62px;">
-                                <span class="btn-clear divSmSave btnKpiTambah" data-toggle="tooltip" data-placement="left" title="Tambah">
-                                  <i class="fa-regular mx-0 fa-circle-plus fa-lg"></i>
-                                </span>
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody></tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row mt-4">
-                    <div class="col-md-12 p-0">
-                      <div class="table-responsive">
-                        <table id="dtKps" class="table table-custom display responsive mt-1">
-                          <thead>
-                            <tr>
-                              <th class="all" style="width: 50px; min-width: 50px;">#</th>
-                              <th class="all">Kelayakan di Peringkat STPM/SPM/PMR mengikut keutamaan mata pelajaran</th>
-                              <th class="all">Keutamaan</th>
-                              <th class="all" style="width: 62px; min-width: 62px;">
-                                <span class="btn-clear divSmSave btnKpsTambah" data-toggle="tooltip" data-placement="left" title="Tambah">
-                                  <i class="fa-regular mx-0 fa-circle-plus fa-lg"></i>
-                                </span>
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody></tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row mt-4">
-                    <div class="col-md-12">
-                      <p class="label-text font-weight-500">Keperluan Pengisian Mengikut Jantina</p>
-                      <hr class="mt-2">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-7"></div>
-                    <div class="col-2">
-                      <p class="label-text text-center">Bilangan Calon</p>
-                    </div>
-                    <div class="col">
-                      <p class="label-text text-center">atau</p>
-                    </div>
-                    <div class="col-2">
-                      <p class="label-text text-center">Peratus (%)</p>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-7">
-                      <p class="label-text mt-1">Bilangan calon lelaki</p>
-                    </div>
-                    <div class="col-2">
-                      <div class="md-form md-outline md-outline-light my-1">
-                        <input type="text" class="form-control numeric" maxlength="4" id="txtSmBilCalonLelaki">
-                        <p class="font-small text-danger" id="txtSmBilCalonLelakiErr"></p>
-                      </div>
-                    </div>
-                    <div class="col"></div>
-                    <div class="col-2">
-                      <div class="md-form md-outline md-outline-light my-1">
-                        <input type="text" class="form-control numeric" maxlength="3" id="txtSmPeratusCalonLelaki">
-                        <p class="font-small text-danger" id="txtSmPeratusCalonLelakiErr"></p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-7">
-                      <p class="label-text mt-1">Bilangan calon perempuan</p>
-                    </div>
-                    <div class="col-2">
-                      <div class="md-form md-outline md-outline-light my-1">
-                        <input type="text" class="form-control numeric" maxlength="4" id="txtSmBilCalonPerempuan">
-                        <p class="font-small text-danger" id="txtSmBilCalonPerempuanErr"></p>
-                      </div>
-                    </div>
-                    <div class="col"></div>
-                    <div class="col-2">
-                      <div class="md-form md-outline md-outline-light my-1">
-                        <input type="text" class="form-control numeric" maxlength="3" id="txtSmPeratusCalonPerempuan">
-                        <p class="font-small text-danger" id="txtSmPeratusCalonPerempuanErr"></p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-12">
-                      <p class="label-text">Justifikasi mengenai keperluan pengisian jawatan mengikut jantina</p>
-                      <div class="md-form md-outline md-outline-light my-1">
-                        <textarea class="md-textarea form-control uc-text" rows="4" id="txtSmJustifikasiJantina"></textarea>
-                        <p class="font-small text-danger" id="txtSmJustifikasiJantinaErr"></p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <p class="label-text font-weight-500">Senarai Tugas dan Diskripsi Tugas Jawatan</p>
-                      <hr class="mt-2">
-                    </div>
-                    <div class="col-12">
-                      <p class="label-text">Sila sertakan senarai tugas jawatan</p>
-                      <div class="md-form md-outline md-outline-light my-1">
-                        <textarea class="md-textarea form-control uc-text" rows="4" id="txtSmSenaraiTugasJawatan"></textarea>
-                        <p class="font-small text-danger" id="txtSmSenaraiTugasJawatanErr"></p>
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <p class="label-text">Sila sertakan diskripsi tugas jawatan (ringkasan tugas)</p>
-                      <div class="md-form md-outline md-outline-light my-1">
-                        <textarea class="md-textarea form-control uc-text" rows="4" id="txtSmDiskripsiTugasJawatan"></textarea>
-                        <p class="font-small text-danger" id="txtSmDiskripsiTugasJawatanErr"></p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <p class="label-text font-weight-500">Senarai Nama Pegawai Yang Telah Dilantik Secara Sementara Dan Kontrak Dalam Jawatan Perkhidmatan Yang Sama<i class="fa fa-regular fa-circle-info ml-3" data-toggle="tooltip" data-placement="right" title="Calon yang telah didaftar di dalam Bank Data Berkomputer, Suruhanjaya. Perkhidmatan Pelajaran sahaja akan dipertimbangkan untuk ditemuduga."></i></p>
-                      <hr class="mt-2">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12 p-0">
-                      <div class="table-responsive">
-                        <table id="dtPsk" class="table table-custom display responsive mt-1">
-                          <thead>
-                            <tr>
-                              <th class="all" style="width: 50px; min-width: 50px;">#</th>
-                              <th class="all">Nama</th>
-                              <th class="all">No. KP</th>
-                              <th class="all">Bidang Pengkhususan</th>
-                              <th class="all">Tarikh Lantikan</th>
-                              <th class="all" style="width: 62px; min-width: 62px;">
-                                <span class="btn-clear divSmSave btnPskTambah" data-toggle="tooltip" data-placement="left" title="Tambah">
-                                  <i class="fa-regular mx-0 fa-circle-plus fa-lg"></i>
-                                </span>
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody></tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row mt-4">
-                    <div class="col-md-12">
-                      <p class="label-text font-weight-500">Senarai Nama Pegawai Yang Layak Di Bawah Perbekalan Kenaikan Pangkat Secara Lantikan (KPSL)<i class="fa fa-regular fa-circle-info ml-3" data-toggle="tooltip" data-placement="right" title="Calon yang telah didaftar di dalam Bank Data Berkomputer, Suruhanjaya. Perkhidmatan Pelajaran sahaja akan dipertimbangkan untuk ditemuduga."></i></p>
-                      <hr class="mt-2">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12 p-0">
-                      <div class="table-responsive">
-                        <table id="dtPsl" class="table table-custom display responsive mt-1">
-                          <thead>
-                            <tr>
-                              <th class="all" style="width: 50px; min-width: 50px;">#</th>
-                              <th class="all">Nama</th>
-                              <th class="all">No. KP</th>
-                              <th class="all">Bidang Pengkhususan</th>
-                              <th class="all">Tarikh Lantikan</th>
-                              <th class="all" style="width: 62px; min-width: 62px;">
-                                <span class="btn-clear divSmSave btnPslTambah" data-toggle="tooltip" data-placement="left" title="Tambah">
-                                  <i class="fa-regular mx-0 fa-circle-plus fa-lg"></i>
-                                </span>
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody></tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row mt-4">
-                    <div class="col-md-12">
-                      <p class="label-text font-weight-500">Senarai Nama Pegawai Kader Yang Ditempatkan Di Kementerian/Jabatan<i class="fa fa-regular fa-circle-info ml-3" data-toggle="tooltip" data-placement="right" title="Ketua Jabatan memastikan calon telah mengemukakan permohonan. Sila senaraikan Nama, No. Kad Pengenalan dan nama Kementerian/Jabatan di mana mereka di tempatkan."></i></p>
-                      <hr class="mt-2">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12 p-0">
-                      <div class="table-responsive">
-                        <table id="dtPkk" class="table table-custom display responsive mt-1">
-                          <thead>
-                            <tr>
-                              <th class="all" style="width: 50px; min-width: 50px;">#</th>
-                              <th class="all">Nama</th>
-                              <th class="all">No. KP</th>
-                              <th class="all">Kementerian/ Jabatan</th>
-                              <th class="all" style="width: 62px; min-width: 62px;">
-                                <span class="btn-clear divSmSave btnPkkTambah" data-toggle="tooltip" data-placement="left" title="Tambah">
-                                  <i class="fa-regular mx-0 fa-circle-plus fa-lg"></i>
-                                </span>
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody></tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row mt-4">
-                    <div class="col-md-12">
-                      <p class="label-text font-weight-500">Pengesahan</p>
-                      <hr class="mt-2">
-                    </div>
-                    <div class="col-md-6">
-                      <p class="label-text">Nama Pegawai<span class="ml-1 text-danger">*</span></p>
-                      <div class="md-form md-outline md-outline-light my-1">
-                        <input type="text" class="form-control" id="txtSmPegawaiNama">
-                        <p class="font-small text-danger" id="txtSmPegawaiNamaErr"></p>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <p class="label-text">Gelaran Jawatan<span class="ml-1 text-danger">*</span></p>
-                      <div class="md-form md-outline md-outline-light my-1">
-                        <input type="text" class="form-control" id="txtSmPegawaiJawatan">
-                        <p class="font-small text-danger" id="txtSmPegawaiJawatanErr"></p>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <p class="label-text">Kementerian/ Jabatan<span class="ml-1 text-danger">*</span></p>
-                      <div class="select-outline my-1" id="optSmPegawaiKementerian_">
-                        <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optSmPegawaiKementerian">
-                          <option value="" selected>Sila Pilih</option>
-                          <option value="1215">1215 - KEMENTERIAN PENGAJIAN TINGGI</option>
-                          <option value="1216">1216 - KEMENTERIAN PENDIDIKAN MALAYSIA</option>
-                        </select>
-                        <p class="font-small text-danger" id="optSmPegawaiKementerianErr"></p>
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <p class="label-text">Tarikh Pohon<span class="ml-1 text-danger">*</span></p>
-                      <div class="md-form md-outline md-outline-light md-custom my-1">
-                        <input type="text" class="form-control datepicker2" id="txtSmTarikhPohon" placeholder="DD/MM/YYYY">
-                        <p class="font-small text-danger" id="txtSmTarikhPohonErr"></p>
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <p class="label-text">Tarikh Terima<span class="ml-1 text-danger">*</span></p>
-                      <div class="md-form md-outline md-outline-light md-custom my-1">
-                        <input type="text" class="form-control datepicker2" id="txtSmTarikhTerima" placeholder="DD/MM/YYYY">
-                        <p class="font-small text-danger" id="txtSmTarikhTerimaErr"></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="card-footer grey lighten-6 p-1">
-                  <div class="d-flex align-items-center">
-                    <div class="p-0 pl-2 mr-auto">
-                      <button type="button" class="btn btn-sm btn-outline-default z-depth-0 btnSmBack"><i class="fa-solid fa-chevron-left mr-2"></i>Kembali</button>
-                    </div>
-                    <div class="p-0 pr-2 ml-auto divSmSave">
-                      <button type="button" class="btn btn-sm btn-outline-default z-depth-0" id="btnSmReset"><i class="fa-solid fa-rotate mr-2"></i>Set Semula</button>
-                      <button type="button" class="btn btn-sm btn-default z-depth-1" id="btnSmSave"><i class="fa-solid fa-floppy-disk mr-2"></i>Simpan</button>
-                    </div>
+                    <p class="font-small text-danger" id="txtSmpJadualGajiTErr"></p>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <p class="label-text font-weight-500 unique-text">Bilangan jawatan yang diluluskan mengikut Buku Anggaran Belanja Mengurus</p>
+              <hr class="mt-2">
+            </div>
+            <div class="col-md-3">
+              <p class="label-text">Tahun</p>
+              <div class="md-form md-outline md-outline-light my-1">
+                <input type="text" class="form-control numeric" maxlength="4" id="txtSmpJawatanTahun">
+                <p class="font-small text-danger" id="txtSmpJawatanTahunErr"></p>
+              </div>
+              <!-- <div class="select-outline my-1" id="optSmpJawatanTahun_">
+                <select class="mdb-select md-form md-outline md-outline-light colorful-select my-0 font-weight-500 z-depth-0" searchable="Carian" data-stop-refresh="true" id="optSmpJawatanTahun">
+                  <option value="">Sila Pilih</option>
+                  <option value="2025">2025</option>
+                  <option value="2024">2024</option>
+                  <option value="2023">2023</option>
+                  <option value="2022">2022</option>
+                </select>
+                <p class="font-small text-danger" id="optSmpJawatanTahunErr"></p>
+              </div> -->
+            </div>
+            <div class="col-md-3">
+              <p class="label-text">Tetap</p>
+              <div class="md-form md-outline md-outline-light my-1">
+                <input type="text" class="form-control numeric" maxlength="4" id="txtSmpTetap">
+                <p class="font-small text-danger" id="txtSmpTetapErr"></p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <p class="label-text">Sementara</p>
+              <div class="md-form md-outline md-outline-light my-1">
+                <input type="text" class="form-control numeric" maxlength="4" id="txtSmpSementara">
+                <p class="font-small text-danger" id="txtSmpSementaraErr"></p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <p class="label-text">Kontrak</p>
+              <div class="md-form md-outline md-outline-light my-1">
+                <input type="text" class="form-control numeric" maxlength="4" id="txtSmpKontrak">
+                <p class="font-small text-danger" id="txtSmpKontrakErr"></p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <p class="label-text font-weight-500 unique-text">Kekosongan</p>
+              <hr class="mt-2">
+            </div>
+          </div>
+          <div class="d-flex">
+            <div class="p-0 mw-40">
+              <p class="label-text mt-1">(a)</p>
+            </div>
+            <div class="p-0 flex-fill">
+              <div class="row">
+                <div class="col-md-10">
+                  <p class="label-text mt-1">Bilangan kekosongan yang dipohon untuk pengisian</p>
+                </div>
+                <div class="col-md-2">
+                  <div class="md-form md-outline md-outline-light my-1">
+                    <input type="text" class="form-control numeric" maxlength="4" id="txtSmpKosongDipohon">
+                    <p class="font-small text-danger" id="txtSmpKosongDipohonErr"></p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-10">
+                  <p class="label-text mt-1">Bilangan kekosongan yang masih ada (untuk tempoh 6 bulan)</p>
+                </div>
+                <div class="col-md-2">
+                  <div class="md-form md-outline md-outline-light my-1">
+                    <input type="text" class="form-control numeric" maxlength="4" id="txtSmpKosongMasihAda">
+                    <p class="font-small text-danger" id="txtSmpKosongMasihAdaErr"></p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-10">
+                  <p class="label-text mt-1">Bilangan kekosongan yang dijangka akibat persaraan atau kenaikan pangkat </p>
+                </div>
+                <div class="col-md-2">
+                  <div class="md-form md-outline md-outline-light my-1">
+                    <input type="text" class="form-control numeric" maxlength="4" id="txtSmpKosongDijangka">
+                    <p class="font-small text-danger" id="txtSmpKosongDijangkaErr"></p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-10">
+                  <p class="label-text mt-1">Bilangan kekosongan dari kemungkinan lain </p>
+                </div>
+                <div class="col-md-2">
+                  <div class="md-form md-outline md-outline-light my-1">
+                    <input type="text" class="form-control numeric" maxlength="4" id="txtSmpKosongLain">
+                    <p class="font-small text-danger" id="txtSmpKosongLainErr"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex">
+            <div class="p-0 mw-40">
+              <p class="label-text mt-1">(b)</p>
+            </div>
+            <div class="p-0 flex-fill">
+              <div class="row">
+                <div class="col-md-12">
+                  <p class="label-text mt-1 mb-4">Pecahan Kekosongan</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-10">
+                  <p class="label-text mt-1">Semenanjung</p>
+                </div>
+                <div class="col-md-2">
+                  <div class="md-form md-outline md-outline-light my-1">
+                    <input type="text" class="form-control numeric" maxlength="4" id="txtSmpPecahanSemenanjung">
+                    <p class="font-small text-danger" id="txtSmpPecahanSemenanjungErr"></p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-10">
+                  <p class="label-text mt-1">Sabah</p>
+                </div>
+                <div class="col-md-2">
+                  <div class="md-form md-outline md-outline-light my-1">
+                    <input type="text" class="form-control numeric" maxlength="4" id="txtSmpPecahanSabah">
+                    <p class="font-small text-danger" id="txtSmpPecahanSabahErr"></p>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-10">
+                  <p class="label-text mt-1">Sarawak</p>
+                </div>
+                <div class="col-md-2">
+                  <div class="md-form md-outline md-outline-light my-1">
+                    <input type="text" class="form-control numeric" maxlength="4" id="txtSmpPecahanSarawak">
+                    <p class="font-small text-danger" id="txtSmpPecahanSarawakErr"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex">
+            <div class="p-0 mw-40">
+              <p class="label-text mt-1">(c)</p>
+            </div>
+            <div class="p-0 flex-fill">
+              <p class="label-text mt-1">Butiran kekosongan mengikut Buku Anggaran Belanja Mengurus Tahun Semasa (Sertakan salinan Warta-warta Perjawatan)</p>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-md-12">
+              <p class="label-text font-weight-500 unique-text">Kelonggaran Syarat Lantikan<i class="fa fa-regular fa-circle-info ml-3" data-toggle="tooltip" data-placement="right" title="Sekiranya terdapat kelonggaran syarat lantikan, sila kemukakan surat kelulusan JPA"></i></p>
+              <hr class="mt-2">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 p-0">
+              <div class="table-responsive">
+                <table id="dtKsl" class="table table-custom display responsive mt-1">
+                  <thead>
+                    <tr>
+                      <th class="all" style="width: 50px; min-width: 50px;">#</th>
+                      <th class="all">Tajuk Lampiran</th>
+                      <th class="all">Jenis Lampiran</th>
+                      <th class="all" style="width: 62px; min-width: 62px;">
+                        <span class="btn-clear divSmpSave btnKslTambah" data-toggle="tooltip" data-placement="left" title="Tambah">
+                          <i class="fa-regular mx-0 fa-circle-plus fa-lg"></i>
+                        </span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-md-12">
+              <p class="label-text font-weight-500 unique-text">Keperluan Pengisian Bidang Pengkhususan<i class="fa fa-regular fa-circle-info ml-3" data-toggle="tooltip" data-placement="right" title="Ketua Jabatan hendaklah mencadangkan kelayakan-kelayakan masuk mengikut bidang pengkhususan pengajian dan bilangan calon yang diperlukan selaras dengan keperluan Kementerian/Jabatan/Negeri masing-masing."></i></p>
+              <hr class="mt-2">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 p-0">
+              <div class="table-responsive">
+                <table id="dtKpi" class="table table-custom display responsive mt-1">
+                  <thead>
+                    <tr>
+                      <th class="all" style="width: 50px; min-width: 50px;">#</th>
+                      <th class="all">Kelayakan di Peringkat Ijazah/Diploma (Bidang Pengkhususan/Opsyen)</th>
+                      <th class="all">Bil. Calon</th>
+                      <th class="all" style="width: 62px; min-width: 62px;">
+                        <span class="btn-clear divSmpSave btnKpiTambah" data-toggle="tooltip" data-placement="left" title="Tambah">
+                          <i class="fa-regular mx-0 fa-circle-plus fa-lg"></i>
+                        </span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-md-12 p-0">
+              <div class="table-responsive">
+                <table id="dtKps" class="table table-custom display responsive mt-1">
+                  <thead>
+                    <tr>
+                      <th class="all" style="width: 50px; min-width: 50px;">#</th>
+                      <th class="all">Kelayakan di Peringkat STPM/SPM/PMR mengikut keutamaan mata pelajaran</th>
+                      <th class="all">Keutamaan</th>
+                      <th class="all" style="width: 62px; min-width: 62px;">
+                        <span class="btn-clear divSmpSave btnKpsTambah" data-toggle="tooltip" data-placement="left" title="Tambah">
+                          <i class="fa-regular mx-0 fa-circle-plus fa-lg"></i>
+                        </span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-md-12">
+              <p class="label-text font-weight-500 unique-text">Keperluan Pengisian Mengikut Jantina</p>
+              <hr class="mt-2">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-7"></div>
+            <div class="col-2">
+              <p class="label-text text-center">Bilangan Calon</p>
+            </div>
+            <div class="col">
+              <p class="label-text text-center">atau</p>
+            </div>
+            <div class="col-2">
+              <p class="label-text text-center">Peratus (%)</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-7">
+              <p class="label-text mt-1">Bilangan calon lelaki</p>
+            </div>
+            <div class="col-2">
+              <div class="md-form md-outline md-outline-light my-1">
+                <input type="text" class="form-control numeric" maxlength="4" id="txtSmpBilCalonLelaki">
+                <p class="font-small text-danger" id="txtSmpBilCalonLelakiErr"></p>
+              </div>
+            </div>
+            <div class="col"></div>
+            <div class="col-2">
+              <div class="md-form md-outline md-outline-light my-1">
+                <input type="text" class="form-control numeric" maxlength="3" id="txtSmpPeratusCalonLelaki">
+                <p class="font-small text-danger" id="txtSmpPeratusCalonLelakiErr"></p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-7">
+              <p class="label-text mt-1">Bilangan calon perempuan</p>
+            </div>
+            <div class="col-2">
+              <div class="md-form md-outline md-outline-light my-1">
+                <input type="text" class="form-control numeric" maxlength="4" id="txtSmpBilCalonPerempuan">
+                <p class="font-small text-danger" id="txtSmpBilCalonPerempuanErr"></p>
+              </div>
+            </div>
+            <div class="col"></div>
+            <div class="col-2">
+              <div class="md-form md-outline md-outline-light my-1">
+                <input type="text" class="form-control numeric" maxlength="3" id="txtSmpPeratusCalonPerempuan">
+                <p class="font-small text-danger" id="txtSmpPeratusCalonPerempuanErr"></p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <p class="label-text">Justifikasi mengenai keperluan pengisian jawatan mengikut jantina</p>
+              <div class="md-form md-outline md-outline-light my-1">
+                <textarea class="md-textarea form-control uc-text" rows="4" id="txtSmpJustifikasiJantina"></textarea>
+                <p class="font-small text-danger" id="txtSmpJustifikasiJantinaErr"></p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <p class="label-text font-weight-500 unique-text">Senarai Tugas dan Diskripsi Tugas Jawatan</p>
+              <hr class="mt-2">
+            </div>
+            <div class="col-12">
+              <p class="label-text">Sila sertakan senarai tugas jawatan</p>
+              <div class="md-form md-outline md-outline-light my-1">
+                <textarea class="md-textarea form-control uc-text" rows="4" id="txtSmpSenaraiTugasJawatan"></textarea>
+                <p class="font-small text-danger" id="txtSmpSenaraiTugasJawatanErr"></p>
+              </div>
+            </div>
+            <div class="col-12">
+              <p class="label-text">Sila sertakan diskripsi tugas jawatan (ringkasan tugas)</p>
+              <div class="md-form md-outline md-outline-light my-1">
+                <textarea class="md-textarea form-control uc-text" rows="4" id="txtSmpDiskripsiTugasJawatan"></textarea>
+                <p class="font-small text-danger" id="txtSmpDiskripsiTugasJawatanErr"></p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <p class="label-text font-weight-500 unique-text">Senarai Nama Pegawai Yang Telah Dilantik Secara Sementara Dan Kontrak Dalam Jawatan Perkhidmatan Yang Sama<i class="fa fa-regular fa-circle-info ml-3" data-toggle="tooltip" data-placement="right" title="Calon yang telah didaftar di dalam Bank Data Berkomputer, Suruhanjaya. Perkhidmatan Pelajaran sahaja akan dipertimbangkan untuk ditemuduga."></i></p>
+              <hr class="mt-2">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 p-0">
+              <div class="table-responsive">
+                <table id="dtPsk" class="table table-custom display responsive mt-1">
+                  <thead>
+                    <tr>
+                      <th class="all" style="width: 50px; min-width: 50px;">#</th>
+                      <th class="all">Nama</th>
+                      <th class="all">No. KP</th>
+                      <th class="all">Bidang Pengkhususan</th>
+                      <th class="all">Tarikh Lantikan</th>
+                      <th class="all" style="width: 62px; min-width: 62px;">
+                        <span class="btn-clear divSmpSave btnPskTambah" data-toggle="tooltip" data-placement="left" title="Tambah">
+                          <i class="fa-regular mx-0 fa-circle-plus fa-lg"></i>
+                        </span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-md-12">
+              <p class="label-text font-weight-500 unique-text">Senarai Nama Pegawai Yang Layak Di Bawah Perbekalan Kenaikan Pangkat Secara Lantikan (KPSL)<i class="fa fa-regular fa-circle-info ml-3" data-toggle="tooltip" data-placement="right" title="Calon yang telah didaftar di dalam Bank Data Berkomputer, Suruhanjaya. Perkhidmatan Pelajaran sahaja akan dipertimbangkan untuk ditemuduga."></i></p>
+              <hr class="mt-2">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 p-0">
+              <div class="table-responsive">
+                <table id="dtPsl" class="table table-custom display responsive mt-1">
+                  <thead>
+                    <tr>
+                      <th class="all" style="width: 50px; min-width: 50px;">#</th>
+                      <th class="all">Nama</th>
+                      <th class="all">No. KP</th>
+                      <th class="all">Bidang Pengkhususan</th>
+                      <th class="all">Tarikh Lantikan</th>
+                      <th class="all" style="width: 62px; min-width: 62px;">
+                        <span class="btn-clear divSmpSave btnPslTambah" data-toggle="tooltip" data-placement="left" title="Tambah">
+                          <i class="fa-regular mx-0 fa-circle-plus fa-lg"></i>
+                        </span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-md-12">
+              <p class="label-text font-weight-500 unique-text">Senarai Nama Pegawai Kader Yang Ditempatkan Di Kementerian/Jabatan<i class="fa fa-regular fa-circle-info ml-3" data-toggle="tooltip" data-placement="right" title="Ketua Jabatan memastikan calon telah mengemukakan permohonan. Sila senaraikan Nama, No. Kad Pengenalan dan nama Kementerian/Jabatan di mana mereka di tempatkan."></i></p>
+              <hr class="mt-2">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 p-0">
+              <div class="table-responsive">
+                <table id="dtPkk" class="table table-custom display responsive mt-1">
+                  <thead>
+                    <tr>
+                      <th class="all" style="width: 50px; min-width: 50px;">#</th>
+                      <th class="all">Nama</th>
+                      <th class="all">No. KP</th>
+                      <th class="all">Kementerian/ Jabatan</th>
+                      <th class="all" style="width: 62px; min-width: 62px;">
+                        <span class="btn-clear divSmpSave btnPkkTambah" data-toggle="tooltip" data-placement="left" title="Tambah">
+                          <i class="fa-regular mx-0 fa-circle-plus fa-lg"></i>
+                        </span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col-md-12">
+              <p class="label-text font-weight-500 unique-text">Pengesahan</p>
+              <hr class="mt-2">
+            </div>
+            <div class="col-md-6">
+              <p class="label-text">Nama Pegawai<span class="ml-1 text-danger">*</span></p>
+              <div class="md-form md-outline md-outline-light my-1">
+                <input type="text" class="form-control" id="txtSmpPegawaiNama">
+                <p class="font-small text-danger" id="txtSmpPegawaiNamaErr"></p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <p class="label-text">Gelaran Jawatan<span class="ml-1 text-danger">*</span></p>
+              <div class="md-form md-outline md-outline-light my-1">
+                <input type="text" class="form-control" id="txtSmpPegawaiJawatan">
+                <p class="font-small text-danger" id="txtSmpPegawaiJawatanErr"></p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <p class="label-text">Kementerian/ Jabatan<span class="ml-1 text-danger">*</span></p>
+              <div class="select-outline my-1" id="optSmpPegawaiKementerian_">
+                <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optSmpPegawaiKementerian">
+                  <option value="" selected>Sila Pilih</option>
+                  <option value="1215">1215 - KEMENTERIAN PENGAJIAN TINGGI</option>
+                  <option value="1216">1216 - KEMENTERIAN PENDIDIKAN MALAYSIA</option>
+                </select>
+                <p class="font-small text-danger" id="optSmpPegawaiKementerianErr"></p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <p class="label-text">Tarikh Pohon<span class="ml-1 text-danger">*</span></p>
+              <div class="md-form md-outline md-outline-light md-custom my-1">
+                <input type="text" class="form-control datepicker2" id="txtSmpTarikhPohon" placeholder="DD/MM/YYYY">
+                <p class="font-small text-danger" id="txtSmpTarikhPohonErr"></p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <p class="label-text">Tarikh Terima<span class="ml-1 text-danger">*</span></p>
+              <div class="md-form md-outline md-outline-light md-custom my-1">
+                <input type="text" class="form-control datepicker2" id="txtSmpTarikhTerima" placeholder="DD/MM/YYYY">
+                <p class="font-small text-danger" id="txtSmpTarikhTerimaErr"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer grey lighten-6 p-1">
+          <div class="d-flex align-items-center">
+            <div class="p-0 pl-2 mr-auto">
+              <button type="button" class="btn btn-sm btn-outline-default z-depth-0 btnSmpBack"><i class="fa-solid fa-chevron-left mr-2"></i>Kembali</button>
+            </div>
+            <div class="p-0 pr-2 ml-auto divSmpSave">
+              <button type="button" class="btn btn-sm btn-outline-default z-depth-0" id="btnSmpReset"><i class="fa-solid fa-rotate mr-2"></i>Set Semula</button>
+              <button type="button" class="btn btn-sm btn-default z-depth-1" id="btnSmpSave"><i class="fa-solid fa-floppy-disk mr-2"></i>Simpan</button>
             </div>
           </div>
         </div>

@@ -23,7 +23,7 @@ function SectionMaklumatPgspp () {
   this.getValidationData = function () {
     return [
       {
-        field_id: "txtSmTahun",
+        field_id: "txtSmpTahun",
         type: "text",
         name: "Tahun",
         validator: {
@@ -34,7 +34,7 @@ function SectionMaklumatPgspp () {
         }
       },
       {
-        field_id: "optSmKementerian",
+        field_id: "optSmpKementerian",
         type: "select",
         name: "Kementerian/ Jabatan",
         validator: {
@@ -42,7 +42,7 @@ function SectionMaklumatPgspp () {
         }
       },
       {
-        field_id: "optSmSkimPerkhidmatan",
+        field_id: "optSmpSkimPerkhidmatan",
         type: "select",
         name: "Skim Perkhidmatan",
         validator: {
@@ -50,31 +50,31 @@ function SectionMaklumatPgspp () {
         }
       },
       {
-        field_id: "optSmKumpulanPerkhidmatan",
+        field_id: "optSmpKumpulanPerkhidmatan",
         type: "select",
         name: "Kumpulan Perkhidmatan",
         validator: {}
       },
       {
-        field_id: "optSmGredGaji",
+        field_id: "optSmpGredGaji",
         type: "select",
         name: "Gred Gaji",
         validator: {}
       },
       {
-        field_id: "txtSmJadualGajiP",
+        field_id: "txtSmpJadualGajiP",
         type: "text",
         name: "Jadual Gaji P",
         validator: {}
       },
       {
-        field_id: "txtSmJadualGajiT",
+        field_id: "txtSmpJadualGajiT",
         type: "text",
         name: "Jadual Gaji T",
         validator: {}
       },
       {
-        field_id: "txtSmJawatanTahun",
+        field_id: "txtSmpJawatanTahun",
         type: "text",
         name: "Tahun",
         validator: {
@@ -84,109 +84,109 @@ function SectionMaklumatPgspp () {
         }
       },
       {
-        field_id: "txtSmTetap",
+        field_id: "txtSmpTetap",
         type: "text",
         name: "Tetap",
         validator: {}
       },
       {
-        field_id: "txtSmSementara",
+        field_id: "txtSmpSementara",
         type: "text",
         name: "Sementara",
         validator: {}
       },
       {
-        field_id: "txtSmKontrak",
+        field_id: "txtSmpKontrak",
         type: "text",
         name: "Kontrak",
         validator: {}
       },
       {
-        field_id: "txtSmKosongDipohon",
+        field_id: "txtSmpKosongDipohon",
         type: "text",
         name: "Bilangan",
         validator: {}
       },
       {
-        field_id: "txtSmKosongMasihAda",
+        field_id: "txtSmpKosongMasihAda",
         type: "text",
         name: "Bilangan",
         validator: {}
       },
       {
-        field_id: "txtSmKosongDijangka",
+        field_id: "txtSmpKosongDijangka",
         type: "text",
         name: "Bilangan",
         validator: {}
       },
       {
-        field_id: "txtSmKosongLain",
+        field_id: "txtSmpKosongLain",
         type: "text",
         name: "Bilangan",
         validator: {}
       },
       {
-        field_id: "txtSmPecahanSemenanjung",
+        field_id: "txtSmpPecahanSemenanjung",
         type: "text",
         name: "Semenanjung",
         validator: {}
       },
       {
-        field_id: "txtSmPecahanSabah",
+        field_id: "txtSmpPecahanSabah",
         type: "text",
         name: "Sabah",
         validator: {}
       },
       {
-        field_id: "txtSmPecahanSarawak",
+        field_id: "txtSmpPecahanSarawak",
         type: "text",
         name: "Sarawak",
         validator: {}
       },
       {
-        field_id: "txtSmBilCalonLelaki",
+        field_id: "txtSmpBilCalonLelaki",
         type: "text",
         name: "Bilangan",
         validator: {}
       },
       {
-        field_id: "txtSmPeratusCalonLelaki",
+        field_id: "txtSmpPeratusCalonLelaki",
         type: "text",
         name: "Peratus",
         validator: {}
       },
       {
-        field_id: "txtSmBilCalonPerempuan",
+        field_id: "txtSmpBilCalonPerempuan",
         type: "text",
         name: "Bilangan",
         validator: {}
       },
       {
-        field_id: "txtSmPeratusCalonPerempuan",
+        field_id: "txtSmpPeratusCalonPerempuan",
         type: "text",
         name: "Peratus",
         validator: {}
       },
       {
-        field_id: "txtSmJustifikasiJantina",
+        field_id: "txtSmpJustifikasiJantina",
         type: "textarea",
         name: "Justifikasi",
         validator: {}
       },
       {
-        field_id: "txtSmSenaraiTugasJawatan",
+        field_id: "txtSmpSenaraiTugasJawatan",
         type: "textarea",
         name: "Senarai tugas jawatan",
         validator: {}
       },
       {
-        field_id: "txtSmDiskripsiTugasJawatan",
+        field_id: "txtSmpDiskripsiTugasJawatan",
         type: "textarea",
         name: "Diskripsi tugas jawatan",
         validator: {}
       },
       {
-        field_id: "txtSmPegawaiNama",
+        field_id: "txtSmpPegawaiNama",
         type: "text",
         name: "Nama Pegawai",
         validator: {
@@ -194,7 +194,7 @@ function SectionMaklumatPgspp () {
         }
       },
       {
-        field_id: "txtSmPegawaiJawatan",
+        field_id: "txtSmpPegawaiJawatan",
         type: "text",
         name: "Gelaran Jawatan",
         validator: {
@@ -202,7 +202,7 @@ function SectionMaklumatPgspp () {
         }
       },
       {
-        field_id: "optSmPegawaiKementerian",
+        field_id: "optSmpPegawaiKementerian",
         type: "select",
         name: "Kementerian/ Jabatan",
         validator: {
@@ -210,7 +210,7 @@ function SectionMaklumatPgspp () {
         }
       },
       {
-        field_id: "txtSmTarikhPohon",
+        field_id: "txtSmpTarikhPohon",
         type: "text",
         name: "Tarikh Pohon",
         validator: {
@@ -218,7 +218,7 @@ function SectionMaklumatPgspp () {
         }
       },
       {
-        field_id: "txtSmTarikhTerima",
+        field_id: "txtSmpTarikhTerima",
         type: "text",
         name: "Tarikh Terima",
         validator: {
@@ -235,13 +235,13 @@ function SectionMaklumatPgspp () {
       id = 123;
   
       formValidate.clearValidation();
-      $('.divSmSave').show();
+      $('.divSmpSave').show();
 
       ShowLoader();
       setTimeout(function () {
-        mzSetValue('txtSmPegawaiNama', 'SITI AISYAH BINTI ABDUL MALIK', 'text');
-        mzSetValue('txtSmPegawaiJawatan', 'PEGAWAI PSU - PENGAMBILAN', 'text');
-        mzSetValue('optSmPegawaiKementerian', '1215', 'text');
+        mzSetValue('txtSmpPegawaiNama', 'SITI AISYAH BINTI ABDUL MALIK', 'text');
+        mzSetValue('txtSmpPegawaiJawatan', 'PEGAWAI PSU - PENGAMBILAN', 'text');
+        mzSetValue('optSmpPegawaiKementerian', '1215', 'text');
 
         self.genTableKsl();
         self.genTableKpi();
@@ -250,7 +250,7 @@ function SectionMaklumatPgspp () {
         self.genTablePsl();
         self.genTablePkk();
 
-        $('#h4SmTitle').html('<i class="fa-duotone fa-lg fa-file-circle-plus mr-3"></i>Daftar Maklumat PGSPP');
+        $('#h4SmpTitle').html('<i class="fa-duotone fa-lg fa-file-circle-plus mr-3"></i>Daftar Maklumat PGSPP');
         $('.sectionMain').hide();
         $('.sectionMaklumatPgspp').show();
         maScrollTop();
@@ -267,7 +267,7 @@ function SectionMaklumatPgspp () {
       submitType = 'edit';
   
       formValidate.clearValidation();
-      $('.divSmSave').show();
+      $('.divSmpSave').show();
 
       ShowLoader();
       setTimeout(function () {
@@ -280,7 +280,7 @@ function SectionMaklumatPgspp () {
         self.genTablePsl();
         self.genTablePkk();
 
-        $('#h4SmTitle').html('<i class="fa-duotone fa-lg fa-file-pen mr-3"></i>Kemaskini Maklumat PGSPP');
+        $('#h4SmpTitle').html('<i class="fa-duotone fa-lg fa-file-pen mr-3"></i>Kemaskini Maklumat PGSPP');
         $('.sectionMain').hide();
         $('.sectionMaklumatPgspp').show();
         maScrollTop();
@@ -297,7 +297,7 @@ function SectionMaklumatPgspp () {
       submitType = 'view';
   
       formValidate.clearValidation();
-      $('.divSmSave').hide();
+      $('.divSmpSave').hide();
 
       ShowLoader();
       setTimeout(function () {
@@ -310,7 +310,7 @@ function SectionMaklumatPgspp () {
         self.genTablePsl();
         self.genTablePkk();
 
-        $('#h4SmTitle').html('<i class="fa-duotone fa-lg fa-file mr-3"></i>Paparan Maklumat PGSPP');
+        $('#h4SmpTitle').html('<i class="fa-duotone fa-lg fa-file mr-3"></i>Paparan Maklumat PGSPP');
         $('.sectionMain').hide();
         $('.sectionMaklumatPgspp').show();
         maScrollTop();
@@ -326,23 +326,23 @@ function SectionMaklumatPgspp () {
     formValidate = new MzValidate(false);
     formValidate.registerFields(self.getValidationData());
 
-    $('.btnSmBack').on('click', function () {
+    $('.btnSmpBack').on('click', function () {
       $('.sectionMain').show();
       $('.sectionMaklumatPgspp').hide();
       maScrollTop();
     });
 
-    $('.btnSmNext').click(function(e) {
+    $('.btnSmpNext').click(function(e) {
       e.preventDefault();
       $('.nav-pills-custom .active').parent().next('li').find('a').trigger('click');
     });
 
-    $('.btnSmPrevious').click(function(e) {
+    $('.btnSmpPrevious').click(function(e) {
       e.preventDefault();
       $('.nav-pills-custom .active').parent().prev('li').find('a').trigger('click');
     });
 
-    $('#btnSmSave').click(function(e) {
+    $('#btnSmpSave').click(function(e) {
       if (!formValidate.validateNow()) {
         toastr['error'](_ALERT_MSG_VALIDATION, _ALERT_TITLE_VALIDATION_ERROR);
       } else {
@@ -356,14 +356,14 @@ function SectionMaklumatPgspp () {
       }
     });
 
-    $('#btnSmReset').on('click', function () {
+    $('#btnSmpReset').on('click', function () {
       formValidate.clearValidation();
       if (submitType == 'edit' || submitType == 'view') {
         self.assignValue();
       } else {
-        mzSetValue('txtSmPegawaiNama', 'SITI AISYAH BINTI ABDUL MALIK', 'text');
-        mzSetValue('txtSmPegawaiJawatan', 'PEGAWAI PSU - PENGAMBILAN', 'text');
-        mzSetValue('optSmPegawaiKementerian', '1215', 'text');
+        mzSetValue('txtSmpPegawaiNama', 'SITI AISYAH BINTI ABDUL MALIK', 'text');
+        mzSetValue('txtSmpPegawaiJawatan', 'PEGAWAI PSU - PENGAMBILAN', 'text');
+        mzSetValue('optSmpPegawaiKementerian', '1215', 'text');
       }
     });
 
@@ -628,24 +628,24 @@ function SectionMaklumatPgspp () {
   };
 
   this.assignValue = function () {
-    mzSetValue('txtSmTahun', '2020', 'text');
-    mzSetValue('optSmKementerian', '1215', 'select');
-    mzSetValue('optSmSkimPerkhidmatan', '1042', 'select');
-    mzSetValue('optSmKlasifikasiPerkhidmatan', null, 'select');
-    mzSetValue('optSmKumpulanPerkhidmatan', 'A', 'select');
-    mzSetValue('optSmGredGaji', 'DG44', 'select');
-    mzSetValue('optSmGredGaji', 'DG44', 'select');
-    mzSetValue('txtSmJadualGajiP', '1', 'text');
-    mzSetValue('txtSmJadualGajiT', '2', 'text');
-    mzSetValue('txtSmJawatanTahun', '2020', 'text');
-    mzSetValue('txtSmTetap', '10', 'text');
-    mzSetValue('txtSmSementara', '0', 'text');
-    mzSetValue('txtSmKontrak', '30', 'text');
-    mzSetValue('txtSmPegawaiNama', 'SITI AISYAH BINTI ABDUL MALIK', 'text');
-    mzSetValue('txtSmPegawaiJawatan', 'PEGAWAI PSU - PENGAMBILAN', 'text');
-    mzSetValue('optSmPegawaiKementerian', '1215', 'select');
-    mzSetValue('txtSmTarikhPohon', '20/05/2024', 'text');
-    mzSetValue('txtSmTarikhTerima', '20/05/2024', 'text');
+    mzSetValue('txtSmpTahun', '2020', 'text');
+    mzSetValue('optSmpKementerian', '1215', 'select');
+    mzSetValue('optSmpSkimPerkhidmatan', '1042', 'select');
+    mzSetValue('optSmpKlasifikasiPerkhidmatan', null, 'select');
+    mzSetValue('optSmpKumpulanPerkhidmatan', 'A', 'select');
+    mzSetValue('optSmpGredGaji', 'DG44', 'select');
+    mzSetValue('optSmpGredGaji', 'DG44', 'select');
+    mzSetValue('txtSmpJadualGajiP', '1', 'text');
+    mzSetValue('txtSmpJadualGajiT', '2', 'text');
+    mzSetValue('txtSmpJawatanTahun', '2020', 'text');
+    mzSetValue('txtSmpTetap', '10', 'text');
+    mzSetValue('txtSmpSementara', '0', 'text');
+    mzSetValue('txtSmpKontrak', '30', 'text');
+    mzSetValue('txtSmpPegawaiNama', 'SITI AISYAH BINTI ABDUL MALIK', 'text');
+    mzSetValue('txtSmpPegawaiJawatan', 'PEGAWAI PSU - PENGAMBILAN', 'text');
+    mzSetValue('optSmpPegawaiKementerian', '1215', 'select');
+    mzSetValue('txtSmpTarikhPohon', '20/05/2024', 'text');
+    mzSetValue('txtSmpTarikhTerima', '20/05/2024', 'text');
   };
   
   this.genTableKsl = function () {
@@ -749,7 +749,7 @@ function SectionMaklumatPgspp () {
   
   this.setOptionNegeri = function (_refNegeri) {
     try {
-      mzOptionStop('optSmAlTkNegeri', _refNegeri, 'display');
+      mzOptionStop('optSmpAlTkNegeri', _refNegeri, 'display');
     } catch (e) { toastr['error'](_ALERT_MSG_ERROR_DEFAULT, _ALERT_TITLE_ERROR); }
   };
   

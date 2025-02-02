@@ -1,0 +1,143 @@
+<section class="sectionMaklumatEkeps" style="display: none;">
+  <div class="row mb-2">
+    <div class="col-12 p-1">
+      <nav class="navbar z-depth-1">
+        <h4 class="navbar-text white-text font-weight-500 ml-2 pb-0" id="h4SmeTitle">
+          <i class="fa-duotone fa-lg fa-file-pen mr-2"></i>Maklumat eKEPS
+        </h4>
+        <button class="btn-clear text-white float-right mr-2 btnSmeBack" title="Kembali">
+          <i class="fa-solid fa-xl fa-chevron-left"></i>
+        </button>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col p-1">
+      <div class="card rounded-0 mb-4">
+        <div class="card-header unique-color darken-3 rounded-0">
+          <div class="row">
+            <div class="col">
+              <div class="d-flex">
+                <div class="p-0 w-100">
+                  <p class="section-title">Maklumat eKEPS</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-12">
+              <p class="label-text font-weight-500 unique-text">Maklumat Minit</p>
+              <hr class="mt-2">
+            </div>
+            <div class="col-lg-6">
+              <p class="label-text">Kategori Mesyuarat<span class="ml-1 text-danger">*</span></p>
+              <div class="select-outline" id="optSmeKategoriMesyuarat_">
+                <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optSmeKategoriMesyuarat">
+                  <option value="" selected>Sila Pilih</option>
+                  <option value="MSJ">MSJ - MINIT MESYUARAT SURUHANJAYA PERKHIDMATAN PENDIDIKAN</option>
+                  <option value="MLRTT">MLRTT - MINIT MESYUARAT LEMBAGA RAYUAN TATATERTIB PERKHIDMATAN PENDIDIKAN</option>
+                  <option value="MLRKP">MLRKP - MINIT MESYUARAT LEMBAGA RAYUAN KENAIKAN PANGKAT PERKHIDMATAN PENDIDIKAN</option>
+                </select>
+                <p class="font-small text-danger" id="optSmeKategoriMesyuaratErr"></p>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <p class="label-text">Tarikh Mesyuarat<span class="ml-1 text-danger">*</span></p>
+              <div class="md-form md-outline md-outline-light md-custom my-1">
+                <input type="text" class="form-control datepicker2" id="txtSmeTarikhMesyuarat" placeholder="DD/MM/YYYY">
+                <p class="font-small text-danger" id="txtSmeTarikhMesyuaratErr"></p>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <p class="label-text">Tarikh Pengesahan Minit<span class="ml-1 text-danger">*</span></p>
+              <div class="md-form md-outline md-outline-light md-custom my-1">
+                <input type="text" class="form-control datepicker2" id="txtSmeTarikhPengesahanMinit" placeholder="DD/MM/YYYY">
+                <p class="font-small text-danger" id="txtSmeTarikhPengesahanMinitErr"></p>
+              </div>
+            </div>
+            <div class="col-lg-2">
+              <p class="label-text">Tahun<span class="ml-1 text-danger">*</span></p>
+              <div class="md-form md-outline md-outline-light md-custom my-1">
+                <input type="text" class="form-control numeric" readonly maxlength="4" id="txtSmeTahun" placeholder="YYYY">
+                <p class="font-small text-danger" id="txtSmeTahunErr"></p>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <p class="label-text">Bilangan Mesyuarat<span class="ml-1 text-danger">*</span></p>
+              <div class="md-form md-outline md-outline-light md-custom my-1">
+                <div class="input-group">
+                  <div class="input-group-append align-items-center">
+                    <span class="rounded-0 label-text pr-3">KALI KE-</span>
+                  </div>
+                  <input type="text" class="form-control numeric" id="txtSmeBilMesyuaratNo">
+                  <div class="input-group-append align-items-center">
+                    <span class="rounded-0 label-text px-3">BIL.</span>
+                  </div>
+                  <input type="text" class="form-control numeric" id="txtSmeBilMesyuaratBil">
+                  <div class="input-group-append align-items-center">
+                    <span class="rounded-0 label-text px-3">/</span>
+                  </div>
+                  <input type="text" class="form-control numeric" maxlength="4" id="txtSmeBilMesyuaratTahun">
+                </div>
+                <p class="font-small text-danger" id="txtSmeBilMesyuaratBilErr"></p>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <p class="label-text">No. Rujukan Fail<span class="ml-1 text-danger">*</span></p>
+              <div class="md-form md-outline md-outline-light md-custom my-1">
+                <input type="text" class="form-control" id="txtSmeNoRujukanFail">
+                <p class="font-small text-danger" id="txtSmeNoRujukanFailErr"></p>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <p class="label-text">Tajuk Minit<span class="ml-1 text-danger">*</span></p>
+              <div class="md-form md-outline md-outline-light md-custom my-1">
+                <input type="text" class="form-control uc-text" id="txtSmeTajukMinit">
+                <p class="font-small text-danger" id="txtSmeTajukMinitErr"></p>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-2 divTab">
+            <div class="col-md-12">
+              <p class="label-text font-weight-500 unique-text">Senarai Dokumen Berkaitan Minit</p>
+              <hr class="mt-2">
+            </div>
+            <div class="col-md-12 p-0">
+              <div class="table-responsive">
+                <table id="dtDbm" class="table table-custom display responsive mt-1">
+                  <thead>
+                    <tr>
+                      <th class="all" style="width: 50px; min-width: 50px;">#</th>
+                      <th class="all">Tajuk Dokumen</th>
+                      <th class="all" style="width: 190px;">Jenis Dokumen</th>
+                      <th class="all" style="width: 190px;">No. Rujukan Fail</th>
+                      <th class="all" style="width: 62px; min-width: 62px;">
+                        <span class="btn-clear divSmeSave btnDbmTambah" data-toggle="tooltip" data-placement="left" title="Tambah">
+                          <i class="fa-regular mx-0 fa-circle-plus fa-lg"></i>
+                        </span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer grey lighten-6 p-1">
+          <div class="d-flex align-items-center">
+            <div class="p-0 pl-2 mr-auto">
+              <button type="button" class="btn btn-sm btn-outline-default z-depth-0 btnSmeBack"><i class="fa-solid fa-chevron-left mr-2"></i>Kembali</button>
+            </div>
+            <div class="p-0 pr-2 ml-auto divSmeSave">
+              <button type="button" class="btn btn-sm btn-outline-default z-depth-0" id="btnSmeReset"><i class="fa-solid fa-rotate mr-2"></i>Set Semula</button>
+              <button type="button" class="btn btn-sm btn-default z-depth-1" id="btnSmeSave"><i class="fa-solid fa-floppy-disk mr-2"></i>Simpan</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
