@@ -7,30 +7,7 @@ function ModalPreviewPdf() {
   let submitType = '';
   
   this.init = function () {
-
-    $('#txtMdbeDokumen').on('change', function () {
-      const preview = document.querySelector('embed');
-      const file = document.querySelector('input[type=file]').files[0];
-      const reader = new FileReader();
-      // var filename = file.name;
-
-      if (typeof file == 'object') {
-        // console.log(file.type);
-        if (file.type == 'application/pdf') {
-          reader.addEventListener("load", function () {
-            preview.src = reader.result;
-          }, false);
-      
-          if (file) {
-            reader.readAsDataURL(file);
-          } 
-        } else {
-          preview.src = '';
-        }
-      } else {
-        preview.src = '';
-      }
-    });
+    
   };
   
   this.view = function (_id) {
