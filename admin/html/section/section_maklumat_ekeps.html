@@ -31,7 +31,7 @@
               <p class="label-text font-weight-500 unique-text">Maklumat Minit</p>
               <hr class="mt-2">
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-8">
               <p class="label-text">Kategori Mesyuarat<span class="ml-1 text-danger">*</span></p>
               <div class="select-outline" id="optSmeKategoriMesyuarat_">
                 <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optSmeKategoriMesyuarat">
@@ -41,6 +41,13 @@
                   <option value="MLRKP">MLRKP - MINIT MESYUARAT LEMBAGA RAYUAN KENAIKAN PANGKAT PERKHIDMATAN PENDIDIKAN</option>
                 </select>
                 <p class="font-small text-danger" id="optSmeKategoriMesyuaratErr"></p>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <p class="label-text">No. Rujukan Fail<span class="ml-1 text-danger">*</span></p>
+              <div class="md-form md-outline md-outline-light md-custom my-1">
+                <input type="text" class="form-control" id="txtSmeNoRujukanFail">
+                <p class="font-small text-danger" id="txtSmeNoRujukanFailErr"></p>
               </div>
             </div>
             <div class="col-lg-3">
@@ -57,14 +64,7 @@
                 <p class="font-small text-danger" id="txtSmeTarikhPengesahanMinitErr"></p>
               </div>
             </div>
-            <div class="col-lg-2">
-              <p class="label-text">Tahun<span class="ml-1 text-danger">*</span></p>
-              <div class="md-form md-outline md-outline-light md-custom my-1">
-                <input type="text" class="form-control numeric" readonly maxlength="4" id="txtSmeTahun" placeholder="YYYY">
-                <p class="font-small text-danger" id="txtSmeTahunErr"></p>
-              </div>
-            </div>
-            <div class="col-lg-5">
+            <div class="col-lg-6">
               <p class="label-text">Bilangan Mesyuarat<span class="ml-1 text-danger">*</span></p>
               <div class="md-form md-outline md-outline-light md-custom my-1">
                 <div class="input-group">
@@ -84,13 +84,6 @@
                 <p class="font-small text-danger" id="txtSmeBilMesyuaratBilErr"></p>
               </div>
             </div>
-            <div class="col-lg-5">
-              <p class="label-text">No. Rujukan Fail<span class="ml-1 text-danger">*</span></p>
-              <div class="md-form md-outline md-outline-light md-custom my-1">
-                <input type="text" class="form-control" id="txtSmeNoRujukanFail">
-                <p class="font-small text-danger" id="txtSmeNoRujukanFailErr"></p>
-              </div>
-            </div>
             <div class="col-lg-12">
               <p class="label-text">Tajuk Minit<span class="ml-1 text-danger">*</span></p>
               <div class="md-form md-outline md-outline-light md-custom my-1">
@@ -106,10 +99,10 @@
             </div>
             <div class="col-md-12 p-0">
               <div class="table-responsive">
-                <table id="dtDbm" class="table table-custom display responsive mt-1">
+                <table id="dtDbm" class="table table-custom display responsive mt-0">
                   <thead>
                     <tr>
-                      <th class="all" style="width: 50px; min-width: 50px;">#</th>
+                      <th class="all" style="min-width: 35px;">#</th>
                       <th class="all">Tajuk Dokumen</th>
                       <th class="all" style="width: 190px;">Jenis Dokumen</th>
                       <th class="all" style="width: 190px;">No. Rujukan Fail</th>
@@ -118,6 +111,7 @@
                           <i class="fa-regular mx-0 fa-circle-plus fa-lg"></i>
                         </span>
                       </th>
+                      <th class="never d-none">Isi Dokumen</th>
                     </tr>
                   </thead>
                   <tbody></tbody>

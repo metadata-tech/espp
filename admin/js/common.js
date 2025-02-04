@@ -34,7 +34,19 @@ const _DATATABLE_LANGUAGE =  {
     emptyTable: "Tiada data diperolehi",
     infoEmpty: "Tiada data diperolehi",
     zeroRecords: "Tiada data dijumpai - maaf",
-    lengthMenu: "Papar _MENU_ rekod per mukasurat",
+    // lengthMenu: "Papar _MENU_ rekod per mukasurat",
+    lengthMenu: 
+    '<div class="input-group">' +
+    '<div class="input-group-append align-items-center pr-2">Papar</div>' +
+    '<div class="select-outline" style="width: 90px !important;">' +
+    '<select class="browser-default custom-select custom-select-sm">'+
+    '<option value="10">10</option>'+
+    '<option value="25">25</option>'+
+    '<option value="50">50</option>'+
+    '<option value="100">100</option>'+
+    '<option value="-1">Semua</option>'+
+    '</select></div>' +
+    '<div class="input-group-append align-items-center pl-2">rekod per mukasurat</div>',
     infoFiltered: "(ditapis dari _MAX_ jumlah rekod)",
     paginate: {
         previous: "Sebelumnya",

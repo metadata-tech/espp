@@ -51,7 +51,7 @@
                         </div>
                       </div>
                       <div class="row">
-                        <div class="col-lg-6 mb-2">
+                        <div class="col-lg-8 mb-2">
                           <p class="label-text">Kategori Mesyuarat</p>
                           <div class="select-outline" id="optCtcrKategoriMesyuarat_">
                             <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optCtcrKategoriMesyuarat">
@@ -60,6 +60,12 @@
                               <option value="MLRTT">MLRTT - MINIT MESYUARAT LEMBAGA RAYUAN TATATERTIB PERKHIDMATAN PENDIDIKAN</option>
                               <option value="MLRKP">MLRKP - MINIT MESYUARAT LEMBAGA RAYUAN KENAIKAN PANGKAT PERKHIDMATAN PENDIDIKAN</option>
                             </select>
+                          </div>
+                        </div>
+                        <div class="col-lg-4 mb-2">
+                          <p class="label-text">No. Rujukan Fail</p>
+                          <div class="md-form md-outline md-outline-light md-custom my-1">
+                            <input type="text" class="form-control" id="txtCtcrNoRujukanFail">
                           </div>
                         </div>
                         <div class="col-lg-3 mb-2">
@@ -74,13 +80,7 @@
                             <input type="text" class="form-control datepicker2" id="txtCtcrTarikhPengesahanMinit" placeholder="DD/MM/YYYY">
                           </div>
                         </div>
-                        <div class="col-lg-2 mb-2">
-                          <p class="label-text">Tahun</p>
-                          <div class="md-form md-outline md-outline-light md-custom my-1">
-                            <input type="text" class="form-control numeric" maxlength="4" id="txtCtcrTahun" placeholder="YYYY">
-                          </div>
-                        </div>
-                        <div class="col-lg-5 mb-2">
+                        <div class="col-lg-6 mb-2">
                           <p class="label-text">Bilangan Mesyuarat</p>
                           <div class="md-form md-outline md-outline-light md-custom my-1">
                             <div class="input-group">
@@ -99,12 +99,6 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-lg-5 mb-2">
-                          <p class="label-text">No. Rujukan Fail</p>
-                          <div class="md-form md-outline md-outline-light md-custom my-1">
-                            <input type="text" class="form-control" id="txtCtcrNoRujukanFail">
-                          </div>
-                        </div>
                         <div class="col-lg-12 mb-2">
                           <p class="label-text">Tajuk Minit</p>
                           <div class="md-form md-outline md-outline-light md-custom my-1">
@@ -119,7 +113,7 @@
                         </div>
                       </div>
                       <div class="row">
-                        <div class="col-lg-4 mb-2">
+                        <div class="col-lg-3 mb-2">
                           <p class="label-text">Jenis Dokumen</p>
                           <div class="select-outline" id="optCtcrJenisDokumen_">
                             <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optCtcrJenisDokumen">
@@ -132,10 +126,16 @@
                             </select>
                           </div>
                         </div>
-                        <div class="col-lg-8 mb-2">
+                        <div class="col-lg-9 mb-2">
                           <p class="label-text">Tajuk Dokumen</p>
                           <div class="md-form md-outline md-outline-light md-custom my-1">
                             <input type="text" class="form-control uc-text" id="txtCtcrTajukDokumen">
+                          </div>
+                        </div>
+                        <div class="col-lg-12 mb-2">
+                          <p class="label-text">Isi Dokumen</p>
+                          <div class="md-form md-outline md-outline-light md-custom my-1">
+                            <input type="text" class="form-control" id="txtCtcrIsiDokumen">
                           </div>
                         </div>
                       </div>
@@ -170,20 +170,20 @@
                   <table id="dtSek" class="table table-hover table-custom display responsive mt-0">
                     <thead>
                       <tr>
-                        <th class="all align-bottom">#</th>
-                        <th class="all align-bottom">Kategori Mesyuarat</th>
-                        <th class="all align-bottom" style="width: 90px;">Tahun</th>
-                        <th class="all align-bottom">Tarikh Mesyuarat</th>
-                        <th class="all align-bottom">Tarikh Pengesahan Minit</th>
+                        <th class="all align-bottom" style="min-width: 35px;">#</th>
+                        <th class="all align-bottom">Tajuk Minit</th>
+                        <th class="all align-bottom" style="width: 120px;">Kategori Mesyuarat</th>
                         <th class="all align-bottom" style="width: 190px;">Bil. Mesyuarat</th>
                         <th class="all align-bottom" style="width: 190px;">No. Rujukan Fail</th>
-                        <th class="all align-bottom">Tajuk Minit</th>
+                        <th class="all align-bottom" style="width: 120px;">Tarikh Mesyuarat</th>
+                        <th class="all align-bottom" style="width: 130px;">Tarikh Pengesahan</th>
                         <th class="all align-bottom">Jenis Dokumen</th>
                         <th class="all align-bottom">Tajuk Dokumen</th>
                         <th class="all align-bottom"></th>
-                        <th class="never d-none"></th>
-                        <th class="never d-none"></th>
-                        <th class="never d-none"></th>
+                        <th class="never d-none">Bil. Mesyuarat No</th>
+                        <th class="never d-none">Bil. Mesyuarat Bil</th>
+                        <th class="never d-none">Bil. Mesyuarat Tahun</th>
+                        <th class="never d-none">Isi Dokumen</th>
                       </tr>
                     </thead>
                     <tbody></tbody>
@@ -227,6 +227,12 @@
   <script type="text/javascript" src="js/vendor/highcharts-11.3.0/modules/export-data.js"></script>
   <script type="text/javascript" src="js/vendor/highcharts-11.3.0/modules/accessibility.js"></script>
   <script type="text/javascript" src="js/addons/xlsx.min.js"></script>
+  <script type="text/javascript" src="js/addons/pdf.min.js"></script>
+  <script type="text/javascript" src="js/addons/tesseract.min.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.6.172/build/pdf.min.js "></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script> -->
+  <script type="module">
+  </script>
 
   <script type="text/javascript">
     document.write('<scr' + 'ipt src="js/common.js?5' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');

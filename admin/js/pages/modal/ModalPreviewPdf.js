@@ -18,6 +18,8 @@ function ModalPreviewPdf() {
       
       ShowLoader();
       setTimeout(function () {
+        document.getElementById('pdfMpdfPreview').src = 'document/3. MLRTT 672 (Image).pdf';
+
         $('#h5MpdfTitle').html('<i class="fa-duotone fa-file-pdf mr-2"></i>Paparan Dokumen');
         $('#modalPreviewPdf').modal({backdrop: 'static', keyboard: false}).scrollTop(0);
         HideLoader();

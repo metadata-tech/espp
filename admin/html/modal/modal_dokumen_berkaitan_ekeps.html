@@ -10,17 +10,10 @@
       <div class="modal-body pt-4 pb-4">
         <form id="formMdbe" autocomplete="off" spellcheck="false">
           <div class="row mb-2">
-            <div class="col-lg-12">
-              <p class="label-text">Tajuk Dokumen<span class="ml-1 text-danger">*</span></p>
-              <div class="md-form md-outline md-outline-light my-1">
-                <textarea class="md-textarea form-control" rows="2" id="txtMdbeTajukDokumen"></textarea>
-                <p class="font-small text-danger font-weight-400" id="txtMdbeTajukDokumenErr"></p>
-              </div>
-            </div>
-            <div class="col-lg-6">
+            <div class="col-lg-3">
               <p class="label-text">Jenis Dokumen<span class="ml-1 text-danger">*</span></p>
               <div class="select-outline my-1" id="optMdbeJenisDokumen_">
-                <select class="mdb-select md-form md-outline md-outline-light colorful-select white my-0 font-weight-500 z-depth-0" searchable="Carian" data-stop-refresh="true" id="optMdbeJenisDokumen">
+                <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Carian" data-stop-refresh="true" id="optMdbeJenisDokumen">
                   <option value="">Sila Pilih</option>
                   <option value="1">Senarai Kehadiran</option>
                   <option value="2">Agenda Mesyuarat</option>
@@ -31,7 +24,7 @@
                 <p class="font-small text-danger font-weight-400" id="optMdbeJenisDokumenErr"></p>
               </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-9">
               <p class="label-text">Kategori Mesyuarat<span class="ml-1 text-danger">*</span></p>
               <div class="select-outline" id="optMdbeKategoriMesyuarat_">
                 <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optMdbeKategoriMesyuarat">
@@ -50,14 +43,58 @@
                 <p class="font-small text-danger font-weight-400" id="txtMdbeTarikhMesyuaratErr"></p>
               </div>
             </div>
-            <div class="col-lg-3">
-              <p class="label-text">Tahun<span class="ml-1 text-danger">*</span></p>
+            <div class="col-lg-4">
+              <p class="label-text">Masa Mesyuarat<span class="ml-1 text-danger">*</span></p>
               <div class="md-form md-outline md-outline-light md-custom my-1">
-                <input type="text" class="form-control numeric" readonly maxlength="4" id="txtMdbeTahunMesyuarat" placeholder="YYYY">
-                <p class="font-small text-danger font-weight-400" id="txtMdbeTahunMesyuaratErr"></p>
+                <div class="input-group d-flex justify-content-between">
+                  <div class="select-outline" id="optMdbeMasaJam_" style="width: 100px !important;">
+                    <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-0" id="optMdbeMasaJam">
+                      <option value="" selected>Jam</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                    </select>
+                  </div>
+                  <div class="select-outline" id="optMdbeMasaMinit_" style="width: 100px !important;">
+                    <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-0" id="optMdbeMasaMinit">
+                      <option value="" selected>Minit</option>
+                      <option value="00">00</option>
+                      <option value="05">05</option>
+                      <option value="10">10</option>
+                      <option value="15">15</option>
+                      <option value="20">20</option>
+                      <option value="25">25</option>
+                      <option value="30">30</option>
+                      <option value="35">35</option>
+                      <option value="40">40</option>
+                      <option value="45">45</option>
+                      <option value="50">50</option>
+                      <option value="55">55</option>
+                    </select>
+                  </div>
+                  <div class="select-outline" id="optMdbeMasaMeridiem_" style="width: 140px !important;">
+                    <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-0" id="optMdbeMasaMeridiem">
+                      <option value="" selected>Meridiem</option>
+                      <option value="AM">PAGI</option>
+                      <option value="PM">PETANG</option>
+                    </select>
+                  </div>
+                </div>
+                <p class="font-small text-danger font-weight-400" id="optMdbeMasaJamErr"></p>
+                <!-- <p class="font-small text-danger font-weight-400" id="optMdbeMasaMinitErr"></p> -->
+                <!-- <p class="font-small text-danger font-weight-400" id="optMdbeMasaMeridiemErr"></p> -->
               </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-5">
               <p class="label-text">Bilangan Mesyuarat<span class="ml-1 text-danger">*</span></p>
               <div class="md-form md-outline md-outline-light md-custom my-1">
                 <div class="input-group">
@@ -78,66 +115,6 @@
               </div>
             </div>
             <div class="col-lg-6">
-              <p class="label-text">Masa<span class="ml-1 text-danger">*</span></p>
-              <div class="md-form md-outline md-outline-light md-custom my-1">
-                <div class="input-group">
-                  <div class="input-group-append align-items-center">
-                    <span class="rounded-0 label-text pr-2">JAM</span>
-                  </div>
-                  <div class="select-outline" id="optMdbeMasaJam_" style="width: 140px !important;">
-                    <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-0" searchable="Cari di sini.." id="optMdbeMasaJam">
-                      <option value="" selected>Sila Pilih</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                      <option value="7">7</option>
-                      <option value="8">8</option>
-                      <option value="9">9</option>
-                      <option value="10">10</option>
-                      <option value="11">11</option>
-                      <option value="12">12</option>
-                    </select>
-                  </div>
-                  <div class="input-group-append align-items-center">
-                    <span class="rounded-0 label-text px-2">MINIT</span>
-                  </div>
-                  <div class="select-outline" id="optMdbeMasaMinit_" style="width: 140px !important;">
-                    <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-0" searchable="Cari di sini.." id="optMdbeMasaMinit">
-                      <option value="" selected>Sila Pilih</option>
-                      <option value="00">00</option>
-                      <option value="05">05</option>
-                      <option value="10">10</option>
-                      <option value="15">15</option>
-                      <option value="20">20</option>
-                      <option value="25">25</option>
-                      <option value="30">30</option>
-                      <option value="35">35</option>
-                      <option value="40">40</option>
-                      <option value="45">45</option>
-                      <option value="50">50</option>
-                      <option value="55">55</option>
-                    </select>
-                  </div>
-                  <div class="input-group-append align-items-center">
-                    <span class="rounded-0 label-text px-2">MERIDIEM</span>
-                  </div>
-                  <div class="select-outline" id="optMdbeMasaMeridiem_" style="width: 140px !important;">
-                    <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-0" searchable="Cari di sini.." id="optMdbeMasaMeridiem">
-                      <option value="" selected>Sila Pilih</option>
-                      <option value="AM">PAGI</option>
-                      <option value="PM">PETANG</option>
-                    </select>
-                  </div>
-                </div>
-                <p class="font-small text-danger font-weight-400" id="optMdbeMasaJamErr"></p>
-                <p class="font-small text-danger font-weight-400" id="optMdbeMasaMinitErr"></p>
-                <p class="font-small text-danger font-weight-400" id="optMdbeMasaMeridiemErr"></p>
-              </div>
-            </div>
-            <div class="col-lg-6">
               <p class="label-text">Tempat<span class="ml-1 text-danger">*</span></p>
               <div class="md-form md-outline md-outline-light md-custom my-1">
                 <input type="text" class="form-control uc-text" id="txtMdbeTempat">
@@ -151,7 +128,7 @@
                 <p class="font-small text-danger font-weight-400" id="txtMdbeNoRujukanFailErr"></p>
               </div>
             </div>
-            <div class="col-lg-6 mb-4">
+            <div class="col-lg-12">
               <p class="label-text">Dokumen Berkaitan<span class="ml-1 text-danger">*</span></p>
               <div class="md-form md-outline md-outline-light my-1">
                 <div class="file-field" id="txtMdbeDokumen_">
@@ -164,25 +141,36 @@
                     <input class="file-path form-control white" type="text" id="txtMdbeFile" readonly>
                   </div>
                 </div>
-                <p class="font-small text-danger font-weight-400 my-0" id="txtMdbeDokumenErr"></p>
+                <p class="font-small text-danger font-weight-400" id="txtMdbeDokumenErr"></p>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <p class="label-text">Tajuk Dokumen<span class="ml-1 text-danger">*</span></p>
+              <div class="md-form md-outline md-outline-light my-1">
+                <textarea class="md-textarea form-control" rows="2" id="txtMdbeTajukDokumen"></textarea>
+                <p class="font-small text-danger font-weight-400" id="txtMdbeTajukDokumenErr"></p>
               </div>
             </div>
           </div>
           <div class="row">
             <div class="col-lg-6" style="height: 75vh">
-              <embed class="border border-1 border-light" src="" frameborder="1" width="100%" height="100%"></embed>
+              <p class="label-text">Paparan Dokumen</p>
+              <embed class="border border-1 border-light my-1" id="pdfMdbePreview" src="" frameborder="1" width="100%" height="100%"></embed>
             </div>
             <div class="col-lg-6">
+              <p class="label-text">Isi Dokumen<span class="ml-1 text-danger">*</span></p>
+              <!-- <p class="font-small text-danger font-weight-400 my-1" id="txtMdbeIsiDokumenErr"></p> -->
+              <p class="font-small text-danger font-weight-400 my-1" id="isiDokumenErr"></p>
               <div class="md-form md-outline md-outline-light my-0">
-                <textarea class="md-textarea form-control" readonly rows="29" id="txtMdbeIsiDokumen"></textarea>
-                <p class="font-small text-danger font-weight-400" id="txtMdbeIsiDokumenErr"></p>
+                <textarea class="md-textarea form-control" readonly id="txtMdbeIsiDokumen" style="overflow-y: scroll; height: 75vh;"></textarea>
+                <!-- <p class="font-small text-danger font-weight-400" id="txtMdbeIsiDokumenErr"></p> -->
               </div>
             </div>
           </div>
         </form>
       </div>
       <div class="modal-footer p-0">
-        <button type="button" class="btn btn-md btn-outline-default waves-effect z-depth-0" data-dismiss="modal"><i class="fa-solid fa-ban mr-2"></i>Batal</button>
+        <button type="button" class="btn btn-md btn-outline-default waves-effect z-depth-0" data-dismiss="modal" id="btnMdbeClose"><i class="fa-solid fa-ban mr-2"></i>Batal</button>
         <button type="button" class="btn btn-md btn-default waves-effect z-depth-0" id="btnMdbeSave"><i class="fa-regular fa-floppy-disk mr-2"></i>Simpan</button>
       </div>
     </div>
