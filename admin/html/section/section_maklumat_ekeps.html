@@ -28,7 +28,7 @@
         <div class="card-body">
           <div class="row">
             <div class="col-md-12">
-              <p class="label-text font-weight-500 unique-text">Maklumat Minit</p>
+              <p class="label-text font-weight-500 unique-text">Maklumat Mesyuarat</p>
               <hr class="mt-2">
             </div>
             <div class="col-lg-8">
@@ -36,35 +36,28 @@
               <div class="select-outline" id="optSmeKategoriMesyuarat_">
                 <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optSmeKategoriMesyuarat">
                   <option value="" selected>Sila Pilih</option>
-                  <option value="MSJ">MSJ - MINIT MESYUARAT SURUHANJAYA PERKHIDMATAN PENDIDIKAN</option>
-                  <option value="MLRTT">MLRTT - MINIT MESYUARAT LEMBAGA RAYUAN TATATERTIB PERKHIDMATAN PENDIDIKAN</option>
-                  <option value="MLRKP">MLRKP - MINIT MESYUARAT LEMBAGA RAYUAN KENAIKAN PANGKAT PERKHIDMATAN PENDIDIKAN</option>
+                  <option value="MSJ">MSJ - MESYUARAT SURUHANJAYA PERKHIDMATAN PENDIDIKAN</option>
+                  <option value="MLRTT">MLRTT - MESYUARAT LEMBAGA RAYUAN TATATERTIB PERKHIDMATAN PENDIDIKAN</option>
+                  <option value="MLRKP">MLRKP - MESYUARAT LEMBAGA RAYUAN KENAIKAN PANGKAT PERKHIDMATAN PENDIDIKAN</option>
                 </select>
                 <p class="font-small text-danger" id="optSmeKategoriMesyuaratErr"></p>
               </div>
             </div>
             <div class="col-lg-4">
-              <p class="label-text">No. Rujukan Fail<span class="ml-1 text-danger">*</span></p>
-              <div class="md-form md-outline md-outline-light md-custom my-1">
-                <input type="text" class="form-control" id="txtSmeNoRujukanFail">
-                <p class="font-small text-danger" id="txtSmeNoRujukanFailErr"></p>
-              </div>
-            </div>
-            <div class="col-lg-3">
               <p class="label-text">Tarikh Mesyuarat<span class="ml-1 text-danger">*</span></p>
               <div class="md-form md-outline md-outline-light md-custom my-1">
                 <input type="text" class="form-control datepicker2" id="txtSmeTarikhMesyuarat" placeholder="DD/MM/YYYY">
                 <p class="font-small text-danger" id="txtSmeTarikhMesyuaratErr"></p>
               </div>
             </div>
-            <div class="col-lg-3">
-              <p class="label-text">Tarikh Pengesahan Minit<span class="ml-1 text-danger">*</span></p>
+            <div class="col-lg-8">
+              <p class="label-text">Tajuk Mesyuarat<span class="ml-1 text-danger">*</span></p>
               <div class="md-form md-outline md-outline-light md-custom my-1">
-                <input type="text" class="form-control datepicker2" id="txtSmeTarikhPengesahanMinit" placeholder="DD/MM/YYYY">
-                <p class="font-small text-danger" id="txtSmeTarikhPengesahanMinitErr"></p>
+                <input type="text" class="form-control uc-text" id="txtSmeTajukMesyuarat">
+                <p class="font-small text-danger" id="txtSmeTajukMesyuaratErr"></p>
               </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-4">
               <p class="label-text">Bilangan Mesyuarat<span class="ml-1 text-danger">*</span></p>
               <div class="md-form md-outline md-outline-light md-custom my-1">
                 <div class="input-group">
@@ -82,13 +75,6 @@
                   <input type="text" class="form-control numeric" maxlength="4" id="txtSmeBilMesyuaratTahun">
                 </div>
                 <p class="font-small text-danger" id="txtSmeBilMesyuaratBilErr"></p>
-              </div>
-            </div>
-            <div class="col-lg-12">
-              <p class="label-text">Tajuk Minit<span class="ml-1 text-danger">*</span></p>
-              <div class="md-form md-outline md-outline-light md-custom my-1">
-                <input type="text" class="form-control uc-text" id="txtSmeTajukMinit">
-                <p class="font-small text-danger" id="txtSmeTajukMinitErr"></p>
               </div>
             </div>
           </div>

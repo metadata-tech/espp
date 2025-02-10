@@ -46,41 +46,35 @@
                     <div class="card-body">
                       <div class="row">
                         <div class="col-lg-12">
-                          <p class="label-text font-weight-500">Maklumat Minit</p>
+                          <p class="label-text font-weight-500">Maklumat Mesyuarat</p>
                           <hr class="mt-2">
                         </div>
                       </div>
                       <div class="row">
-                        <div class="col-lg-8 mb-2">
+                        <div class="col-lg-7 mb-2">
                           <p class="label-text">Kategori Mesyuarat</p>
                           <div class="select-outline" id="optCtcrKategoriMesyuarat_">
                             <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optCtcrKategoriMesyuarat">
                               <option value="" selected>Sila Pilih</option>
-                              <option value="MSJ">MSJ - MINIT MESYUARAT SURUHANJAYA PERKHIDMATAN PENDIDIKAN</option>
-                              <option value="MLRTT">MLRTT - MINIT MESYUARAT LEMBAGA RAYUAN TATATERTIB PERKHIDMATAN PENDIDIKAN</option>
-                              <option value="MLRKP">MLRKP - MINIT MESYUARAT LEMBAGA RAYUAN KENAIKAN PANGKAT PERKHIDMATAN PENDIDIKAN</option>
+                              <option value="MSJ">MSJ - MESYUARAT SURUHANJAYA PERKHIDMATAN PENDIDIKAN</option>
+                              <option value="MLRTT">MLRTT - MESYUARAT LEMBAGA RAYUAN TATATERTIB PERKHIDMATAN PENDIDIKAN</option>
+                              <option value="MLRKP">MLRKP - MESYUARAT LEMBAGA RAYUAN KENAIKAN PANGKAT PERKHIDMATAN PENDIDIKAN</option>
                             </select>
                           </div>
                         </div>
-                        <div class="col-lg-4 mb-2">
-                          <p class="label-text">No. Rujukan Fail</p>
-                          <div class="md-form md-outline md-outline-light md-custom my-1">
-                            <input type="text" class="form-control" id="txtCtcrNoRujukanFail">
-                          </div>
-                        </div>
-                        <div class="col-lg-3 mb-2">
+                        <div class="col-lg-5 mb-2">
                           <p class="label-text">Tarikh Mesyuarat</p>
                           <div class="md-form md-outline md-outline-light md-custom my-1">
                             <input type="text" class="form-control datepicker2" id="txtCtcrTarikhMesyuarat" placeholder="DD/MM/YYYY">
                           </div>
                         </div>
-                        <div class="col-lg-3 mb-2">
-                          <p class="label-text">Tarikh Pengesahan Minit</p>
+                        <div class="col-lg-7 mb-2">
+                          <p class="label-text">Tajuk Mesyuarat</p>
                           <div class="md-form md-outline md-outline-light md-custom my-1">
-                            <input type="text" class="form-control datepicker2" id="txtCtcrTarikhPengesahanMinit" placeholder="DD/MM/YYYY">
+                            <input type="text" class="form-control uc-text" id="txtCtcrTajukMesyuarat">
                           </div>
                         </div>
-                        <div class="col-lg-6 mb-2">
+                        <div class="col-lg-5 mb-2">
                           <p class="label-text">Bilangan Mesyuarat</p>
                           <div class="md-form md-outline md-outline-light md-custom my-1">
                             <div class="input-group">
@@ -99,14 +93,8 @@
                             </div>
                           </div>
                         </div>
-                        <div class="col-lg-12 mb-2">
-                          <p class="label-text">Tajuk Minit</p>
-                          <div class="md-form md-outline md-outline-light md-custom my-1">
-                            <input type="text" class="form-control uc-text" id="txtCtcrTajukMinit">
-                          </div>
-                        </div>
                       </div>
-                      <div class="row">
+                      <div class="row mt-2">
                         <div class="col-lg-12">
                           <p class="label-text font-weight-500">Dokumen Berkaitan</p>
                           <hr class="mt-2">
@@ -171,12 +159,10 @@
                     <thead>
                       <tr>
                         <th class="all align-bottom" style="min-width: 35px;">#</th>
-                        <th class="all align-bottom">Tajuk Minit</th>
-                        <th class="all align-bottom" style="width: 120px;">Kategori Mesyuarat</th>
-                        <th class="all align-bottom" style="width: 190px;">Bil. Mesyuarat</th>
-                        <th class="all align-bottom" style="width: 190px;">No. Rujukan Fail</th>
-                        <th class="all align-bottom" style="width: 120px;">Tarikh Mesyuarat</th>
-                        <th class="all align-bottom" style="width: 130px;">Tarikh Pengesahan</th>
+                        <th class="all align-bottom">Tajuk Mesyuarat</th>
+                        <th class="all align-bottom" style="width: 190px;">Kategori Mesyuarat</th>
+                        <th class="all align-bottom" style="width: 200px;">Bil. Mesyuarat</th>
+                        <th class="all align-bottom" style="width: 190px;">Tarikh Mesyuarat</th>
                         <th class="all align-bottom">Jenis Dokumen</th>
                         <th class="all align-bottom">Tajuk Dokumen</th>
                         <th class="all align-bottom"></th>

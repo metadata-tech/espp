@@ -22,9 +22,9 @@ function SectionMaklumatEkeps () {
         }
       },
       {
-        field_id: "txtSmeTajukMinit",
+        field_id: "txtSmeTajukMesyuarat",
         type: "text",
-        name: "Tajuk Minit",
+        name: "Tajuk Mesyuarat",
         validator: {
           notEmpty: true
         }
@@ -33,14 +33,6 @@ function SectionMaklumatEkeps () {
         field_id: "txtSmeTarikhMesyuarat",
         type: "text",
         name: "Tarikh Mesyuarat",
-        validator: {
-          notEmpty: true,
-        }
-      },
-      {
-        field_id: "txtSmeTarikhPengesahanMinit",
-        type: "text",
-        name: "Tarikh Pengesahan Minit",
         validator: {
           notEmpty: true,
         }
@@ -65,22 +57,6 @@ function SectionMaklumatEkeps () {
         field_id: "txtSmeBilMesyuaratTahun",
         type: "text",
         name: "Bilangan Mesyuarat",
-        validator: {
-          notEmpty: true,
-        }
-      },
-      {
-        field_id: "txtSmeNoRujukanFail",
-        type: "text",
-        name: "No. Rujukan Fail",
-        validator: {
-          notEmpty: true,
-        }
-      },
-      {
-        field_id: "txtSmeTajukMinit",
-        type: "text",
-        name: "Tajuk Minit",
         validator: {
           notEmpty: true,
         }
@@ -171,47 +147,47 @@ function SectionMaklumatEkeps () {
     formValidate.registerFields(self.getValidationData());
       
     /* $('input[type="radio"][name="radSmeKategoriMesyuarat"]').change(function() {
-      if ($('#txtSmeTajukMinit').val().length == 0 || ($('#txtSmeTajukMinit').val() == 'MINIT MESYUARAT SURUHANJAYA PERKHIDMATAN PENDIDIKAN' || $('#txtSmeTajukMinit').val() == 'MINIT MESYUARAT LEMBAGA RAYUAN TATATERTIB PERKHIDMATAN PENDIDIKAN' || $('#txtSmeTajukMinit').val() == 'MINIT MESYUARAT LEMBAGA RAYUAN KENAIKAN PANGKAT PERKHIDMATAN PENDIDIKAN')) {
+      if ($('#txtSmeTajukMesyuarat').val().length == 0 || ($('#txtSmeTajukMesyuarat').val() == 'MINIT MESYUARAT SURUHANJAYA PERKHIDMATAN PENDIDIKAN' || $('#txtSmeTajukMesyuarat').val() == 'MINIT MESYUARAT LEMBAGA RAYUAN TATATERTIB PERKHIDMATAN PENDIDIKAN' || $('#txtSmeTajukMesyuarat').val() == 'MINIT MESYUARAT LEMBAGA RAYUAN KENAIKAN PANGKAT PERKHIDMATAN PENDIDIKAN')) {
         if (this.value == 'MSJ') {
-          formValidate.clearValidation('txtSmeTajukMinit');
-          mzSetValue('txtSmeTajukMinit', 'MINIT MESYUARAT SURUHANJAYA PERKHIDMATAN PENDIDIKAN', 'text');
+          formValidate.clearValidation('txtSmeTajukMesyuarat');
+          mzSetValue('txtSmeTajukMesyuarat', 'MINIT MESYUARAT SURUHANJAYA PERKHIDMATAN PENDIDIKAN', 'text');
           maDisableClear('txtSmeBilMesyuaratNo', false);
         }
         else if (this.value == 'MLRTT') {
-          formValidate.clearValidation('txtSmeTajukMinit');
-          mzSetValue('txtSmeTajukMinit', 'MINIT MESYUARAT LEMBAGA RAYUAN TATATERTIB PERKHIDMATAN PENDIDIKAN', 'text');
+          formValidate.clearValidation('txtSmeTajukMesyuarat');
+          mzSetValue('txtSmeTajukMesyuarat', 'MINIT MESYUARAT LEMBAGA RAYUAN TATATERTIB PERKHIDMATAN PENDIDIKAN', 'text');
           maDisableClear('txtSmeBilMesyuaratNo', false);
         }
         else if (this.value == 'MLRKP') {
-          formValidate.clearValidation('txtSmeTajukMinit');
-          mzSetValue('txtSmeTajukMinit', 'MINIT MESYUARAT LEMBAGA RAYUAN KENAIKAN PANGKAT PERKHIDMATAN PENDIDIKAN', 'text');
+          formValidate.clearValidation('txtSmeTajukMesyuarat');
+          mzSetValue('txtSmeTajukMesyuarat', 'MINIT MESYUARAT LEMBAGA RAYUAN KENAIKAN PANGKAT PERKHIDMATAN PENDIDIKAN', 'text');
           maDisableClear('txtSmeBilMesyuaratNo', true);
         } else {
-          mzSetValue('txtSmeTajukMinit', '', 'text');
+          mzSetValue('txtSmeTajukMesyuarat', '', 'text');
         }
       }
     }); */
       
     $('#optSmeKategoriMesyuarat').on('change', function () {
       if (this.value == 'MSJ') {
-        formValidate.clearValidation('txtSmeTajukMinit');
-        mzSetValue('txtSmeTajukMinit', 'MINIT MESYUARAT SURUHANJAYA PERKHIDMATAN PENDIDIKAN', 'text');
+        formValidate.clearValidation('txtSmeTajukMesyuarat');
+        mzSetValue('txtSmeTajukMesyuarat', 'MESYUARAT SURUHANJAYA PERKHIDMATAN PENDIDIKAN', 'text');
         maDisableClear('txtSmeBilMesyuaratNo', false);
         formValidate.enableField('txtSmeBilMesyuaratNo');
       }
       else if (this.value == 'MLRTT') {
-        formValidate.clearValidation('txtSmeTajukMinit');
-        mzSetValue('txtSmeTajukMinit', 'MINIT MESYUARAT LEMBAGA RAYUAN TATATERTIB PERKHIDMATAN PENDIDIKAN', 'text');
+        formValidate.clearValidation('txtSmeTajukMesyuarat');
+        mzSetValue('txtSmeTajukMesyuarat', 'MESYUARAT LEMBAGA RAYUAN TATATERTIB PERKHIDMATAN PENDIDIKAN', 'text');
         maDisableClear('txtSmeBilMesyuaratNo', false);
         formValidate.enableField('txtSmeBilMesyuaratNo');
       }
       else if (this.value == 'MLRKP') {
-        formValidate.clearValidation('txtSmeTajukMinit');
-        mzSetValue('txtSmeTajukMinit', 'MINIT MESYUARAT LEMBAGA RAYUAN KENAIKAN PANGKAT PERKHIDMATAN PENDIDIKAN', 'text');
+        formValidate.clearValidation('txtSmeTajukMesyuarat');
+        mzSetValue('txtSmeTajukMesyuarat', 'MESYUARAT LEMBAGA RAYUAN KENAIKAN PANGKAT PERKHIDMATAN PENDIDIKAN', 'text');
         maDisableClear('txtSmeBilMesyuaratNo', true);
         formValidate.disableField('txtSmeBilMesyuaratNo');
       } else {
-        mzSetValue('txtSmeTajukMinit', '', 'text');
+        mzSetValue('txtSmeTajukMesyuarat', '', 'text');
       }
     });
       
@@ -344,7 +320,7 @@ function SectionMaklumatEkeps () {
     mzSetValue('txtSmeBilMesyuaratBil', '18', 'text');
     mzSetValue('txtSmeBilMesyuaratTahun', '2023', 'text');
     mzSetValue('txtSmeNoRujukanFail', 'SPP.600-3/1/1 Jld.21(4)(S)', 'text');
-    mzSetValue('txtSmeTajukMinit', 'MINIT MESYUARAT SURUHANJAYA PERKHIDMATAN PENDIDIKAN KALI KE-1209 (BIL. 18/2023)', 'text');
+    mzSetValue('txtSmeTajukMesyuarat', 'MESYUARAT SURUHANJAYA PERKHIDMATAN PENDIDIKAN KALI KE-1209 (BIL. 18/2023)', 'text');
   };
   
   this.genTableDbm = function () {
