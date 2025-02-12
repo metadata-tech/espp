@@ -20,3 +20,6 @@ RewriteRule ^admin/senarai_permohonan_pgspp?$ admin/html/senarai_permohonan_pgsp
 
 # Modul Kertas
 RewriteRule ^admin/senarai_ekeps?$ admin/html/senarai_ekeps.html
+
+# Modul eRuling
+RewriteRule ^admin/senarai_ruling?$ admin/html/senarai_ruling.html

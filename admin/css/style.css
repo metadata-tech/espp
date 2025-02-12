@@ -2435,9 +2435,13 @@ table.ngdbbptk.dataTable tr.dtrg-group th {
   padding: 0 !important;
   margin: 0 !important;  
 }
+.table-notification thead th {  
+  border-bottom: 0 !important;
+}
 .table-notification > thead > tr > th {  
 	text-align: center;
-	padding: 8px 4px 6px 4px !important;
+	padding: 0 !important;
+	/* padding: 8px 4px 6px 4px !important; */
   font-weight: 500;
   font-size: 14.4px !important;
 }

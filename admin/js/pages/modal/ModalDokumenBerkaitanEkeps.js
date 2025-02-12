@@ -18,14 +18,6 @@ function ModalDokumenBerkaitanEkeps() {
         }
       },
       {
-        field_id: "optMdbeKategoriMesyuarat",
-        type: "select",
-        name: "Kategori Mesyuarat",
-        validator: {
-          notEmpty: true
-        }
-      },
-      {
         field_id: "txtMdbeTajukDokumen",
         type: "text",
         name: "Tajuk Dokumen",
@@ -34,73 +26,9 @@ function ModalDokumenBerkaitanEkeps() {
         }
       },
       {
-        field_id: "txtMdbeBilMesyuaratNo",
-        type: "text",
-        name: "Bilangan Mesyuarat",
-        validator: {
-          notEmpty: true
-        }
-      },
-      {
-        field_id: "txtMdbeBilMesyuaratBil",
-        type: "text",
-        name: "Bilangan Mesyuarat",
-        validator: {
-          notEmpty: true
-        }
-      },
-      {
-        field_id: "txtMdbeBilMesyuaratTahun",
-        type: "text",
-        name: "Bilangan Mesyuarat",
-        validator: {
-          notEmpty: true
-        }
-      },
-      {
-        field_id: "optMdbeMasaJam",
-        type: "select",
-        name: "Masa",
-        validator: {
-          notEmpty: true
-        }
-      },
-      {
-        field_id: "optMdbeMasaMinit",
-        type: "select",
-        name: "Minit",
-        validator: {
-          notEmpty: true
-        }
-      },
-      {
-        field_id: "optMdbeMasaMeridiem",
-        type: "select",
-        name: "Meridiem",
-        validator: {
-          notEmpty: true
-        }
-      },
-      {
-        field_id: "txtMdbeTempat",
-        type: "text",
-        name: "Tempat",
-        validator: {
-          notEmpty: true
-        }
-      },
-      {
         field_id: "txtMdbeNoRujukanFail",
         type: "text",
         name: "No. Rujukan Fail",
-        validator: {
-          notEmpty: true
-        }
-      },
-      {
-        field_id: "txtMdbeTarikhMesyuarat",
-        type: "text",
-        name: "Tarikh Mesyuarat",
         validator: {
           notEmpty: true
         }
@@ -131,6 +59,30 @@ function ModalDokumenBerkaitanEkeps() {
           notEqual: 'Sila tunggu...'
         }
       },
+      {
+        field_id: "optMdbeCawangan",
+        type: "select",
+        name: "Cawangan",
+        validator: {
+          notEmpty: true
+        }
+      },
+      {
+        field_id: "optMdbeFungsi",
+        type: "select",
+        name: "Fungsi/ Bahagian",
+        validator: {
+          notEmpty: true
+        }
+      },
+      {
+        field_id: "optMdbeSubFungsi",
+        type: "select",
+        name: "Sub Fungsi/ Aktiviti",
+        validator: {
+          notEmpty: true
+        }
+      },
     ];
   };
   
@@ -142,6 +94,20 @@ function ModalDokumenBerkaitanEkeps() {
       console.log('close');
       // $('#modalDokumenBerkaitanEkeps').modal('hide');
       // worker.terminate();
+    });
+      
+    $('#optMdbeJenisDokumen').on('change', function () {
+      if (this.value == '6' || this.value == '7') {
+        $('.optionKertas').show();
+        formValidateMdbe.enableField('optMdbeCawangan');
+        formValidateMdbe.enableField('optMdbeFungsi');
+        formValidateMdbe.enableField('optMdbeSubFungsi');
+      } else {
+        $('.optionKertas').hide();
+        formValidateMdbe.disableField('optMdbeCawangan');
+        formValidateMdbe.disableField('optMdbeFungsi');
+        formValidateMdbe.disableField('optMdbeSubFungsi');
+      }
     });
 
     $('#txtMdbeDokumen').on('change', function () {
@@ -250,34 +216,6 @@ function ModalDokumenBerkaitanEkeps() {
         showError(error);
       }
     });
-      
-    $('#optMdbeKategoriMesyuarat').on('change', function () {
-      if (this.value == 'MSJ') {
-        formValidateMdbe.clearValidation('txtMdbeTajukMinit');
-        maDisableClear('txtMdbeBilMesyuaratNo', false);
-        formValidateMdbe.enableField('txtMdbeBilMesyuaratNo');
-      }
-      else if (this.value == 'MLRTT') {
-        formValidateMdbe.clearValidation('txtMdbeTajukMinit');
-        maDisableClear('txtMdbeBilMesyuaratNo', false);
-        formValidateMdbe.enableField('txtMdbeBilMesyuaratNo');
-      }
-      else if (this.value == 'MLRKP') {
-        formValidateMdbe.clearValidation('txtMdbeTajukMinit');
-        maDisableClear('txtMdbeBilMesyuaratNo', true);
-        formValidateMdbe.disableField('txtMdbeBilMesyuaratNo');
-      } else {
-        formValidateMdbe.enableField('txtMdbeBilMesyuaratNo');
-      }
-    });
-      
-    $('#txtMdbeTarikhMesyuarat').on('change', function () {
-      if (this.value.substring(6).length > 0) {
-        mzSetValue('txtMdbeBilMesyuaratTahun', this.value.substring(6), 'text');
-      } else {
-        mzSetValue('txtMdbeBilMesyuaratTahun', '', 'text');
-      }
-    });
 
     $('#btnMdbeSave').on('click', function () {
       if (!formValidateMdbe.validateNow()) {
@@ -306,6 +244,7 @@ function ModalDokumenBerkaitanEkeps() {
 
       formValidateMdbe.clearValidation();
       document.getElementById('pdfMdbePreview').src = '';
+      $('.optionKertas').hide();
 
       ShowLoader();
       setTimeout(function () {
@@ -375,31 +314,19 @@ function ModalDokumenBerkaitanEkeps() {
   };
 
   this.assignValue = function () {
-    mzSetValue('optMdbeJenisDokumen', 3, 'select');
-    const kategoriMesyuarat = 'MSJ';
-    mzSetValue('optMdbeKategoriMesyuarat', 'MSJ', 'select');
-    if (kategoriMesyuarat == 'MSJ') {
-      maDisableInput('txtMdbeBilMesyuaratNo', false);
-      formValidateMdbe.enableField('txtMdbeBilMesyuaratNo');
-    }
-    else if (kategoriMesyuarat == 'MLRTT') {
-      maDisableInput('txtMdbeBilMesyuaratNo', false);
-      formValidateMdbe.enableField('txtMdbeBilMesyuaratNo');
-    }
-    else if (kategoriMesyuarat == 'MLRKP') {
-      maDisableInput('txtMdbeBilMesyuaratNo', true);
-      formValidateMdbe.disableField('txtMdbeBilMesyuaratNo');
+    const jenisDokumen = '1';
+    if (jenisDokumen == '6' || jenisDokumen == '7') {
+      $('.optionKertas').show();
+      formValidateMdbe.enableField('optMdbeCawangan');
+      formValidateMdbe.enableField('optMdbeFungsi');
+      formValidateMdbe.enableField('optMdbeSubFungsi');
     } else {
-      formValidateMdbe.enableField('txtMdbeBilMesyuaratNo');
+      $('.optionKertas').hide();
+      formValidateMdbe.disableField('optMdbeCawangan');
+      formValidateMdbe.disableField('optMdbeFungsi');
+      formValidateMdbe.disableField('optMdbeSubFungsi');
     }
-    mzSetValue('txtMdbeTarikhMesyuarat', '20/12/2023', 'text');
-    mzSetValue('txtMdbeBilMesyuaratNo', '1209', 'text');
-    mzSetValue('txtMdbeBilMesyuaratBil', '18', 'text');
-    mzSetValue('txtMdbeBilMesyuaratTahun', '2023', 'text');
-    mzSetValue('optMdbeMasaJam', 10, 'select');
-    mzSetValue('optMdbeMasaMinit', 30, 'select');
-    mzSetValue('optMdbeMasaMeridiem', 'AM', 'select');
-    mzSetValue('txtMdbeTempat', 'SURUHANJAYA PERKHIDMATAN PENDIDIKAN', 'text');
+    mzSetValue('optMdbeJenisDokumen', jenisDokumen, 'select');
     mzSetValue('txtMdbeNoRujukanFail', 'SPP.600-3/1/1 Jld.21(4)(S)', 'text');
     mzSetValue('txtMdbeTajukDokumen', 'KERTAS BIL. KM13/2024: PEMAKLUMAN PERINTAH TAHAN KERJA YANG TERHENTI TERHADAP NAMA PEGAWAI, PEGAWAI PENDIDIKAN PENGAJIAN TINGGI (PPPT) GRED DH54, POLITEKNIK NILAI, NEGERI SEMBILAN [NOMBOR FAIL]', 'textarea');
     mzSetValue('txtMdbeFile', '3. MLRTT 672 (Image).pdf', 'text');
