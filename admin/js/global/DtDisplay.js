@@ -209,6 +209,23 @@ function DtDisplay () {
     }
 
 
+    this.getActionRuling = function (type, id, row, flag, flag2) {
+        const htmlEdit = '<button class="btn-clear" data-toggle="tooltip" data-placement="top" title="Kemaskini"><i class="fa-regular mx-0 fa-pen-to-square fa-lg '+id+'Edit" id="'+id+'Edit_'+row+'"></i></button>';
+        const htmlView = '<button class="btn-clear" data-toggle="tooltip" data-placement="top" title="Papar"><i class="fa-regular mx-0 fa-circle-info fa-lg '+id+'View" id="'+id+'View_'+row+'"></i></button>';
+        const htmlRemove = '<button class="btn-clear" data-toggle="tooltip" data-placement="top" title="Hapus"><i class="fa-regular mx-0 fa-trash-can fa-lg '+id+'Remove" id="'+id+'Remove_'+row+'"></i></button>';
+        const htmlActive = '<button class="btn-clear" data-toggle="tooltip" data-placement="top" title="Aktif"><i class="fa-regular mx-0 fa-circle fa-lg '+id+'Active" id="'+id+'Active_'+row+'"></i></button>';
+        const htmlDeactive = '<button class="btn-clear" data-toggle="tooltip" data-placement="top" title="Nyahaktif"><i class="fa-regular mx-0 fa-circle-check fa-lg '+id+'Deactive" id="'+id+'Deactive_'+row+'"></i></button>';
+
+        if (flag == 1) {
+          return '<div class="btn-group px-0">' + htmlView + htmlEdit + htmlRemove + htmlDeactive + '</div>';
+        } else if (flag == 2) {
+          return '<div class="btn-group px-0">' + htmlView + htmlEdit + htmlRemove + htmlActive + '</div>';
+        } else {
+          return '<div class="btn-group px-0">' + htmlView + '</div>';
+        }
+    }
+
+
     this.getActionEkeps = function (type, id, row, flag, flag2) {
         const htmlEdit = '<button class="btn-clear" data-toggle="tooltip" data-placement="top" title="Kemaskini"><i class="fa-regular mx-0 fa-pen-to-square fa-lg '+id+'Edit" id="'+id+'Edit_'+row+'"></i></button>';
         const htmlView = '<button class="btn-clear" data-toggle="tooltip" data-placement="top" title="Papar"><i class="fa-regular mx-0 fa-eye fa-lg '+id+'View" id="'+id+'View_'+row+'"></i></button>';

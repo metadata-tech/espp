@@ -44,7 +44,7 @@ const _DATATABLE_LANGUAGE =  {
     '<option value="25">25</option>'+
     '<option value="50">50</option>'+
     '<option value="100">100</option>'+
-    '<option value="-1">Semua</option>'+
+    // '<option value="-1">Semua</option>'+
     '</select></div>' +
     '<div class="input-group-append align-items-center pl-2">rekod per mukasurat</div>',
     infoFiltered: "(ditapis dari _MAX_ jumlah rekod)",

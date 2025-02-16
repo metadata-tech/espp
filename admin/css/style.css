@@ -2429,6 +2429,9 @@ table.ngdbbptk.dataTable tr.dtrg-group th {
 /* .table-custom > tbody > tr:last-child { 
   border-bottom: 1px solid #dee2e6 !important;
 } */
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #fafafa ;
+}
 .table-notification {
 	border-collapse: collapse;
 	border-spacing: 3px;

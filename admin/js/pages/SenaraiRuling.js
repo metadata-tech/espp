@@ -12,41 +12,65 @@ function SenaraiRuling () {
   let formValidate;
   let vData = [
     {
+      field_id: "txtCtcrTajukKertas",
+      type: "text",
+      name: "Tajuk Kertas",
+      validator: {}
+    },
+    {
+      field_id: "optCtcrCawangan",
+      type: "select",
+      name: "Cawangan",
+      validator: {}
+    },
+    {
+      field_id: "optCtcrFungsi",
+      type: "select",
+      name: "Fungsi/Bahagian",
+      validator: {}
+    },
+    {
+      field_id: "optCtcrSubfungsi",
+      type: "select",
+      name: "Subfungsi/Aktiviti",
+      validator: {}
+    },
+    {
+      field_id: "txtCtcrTarikhMesyuaratDari",
+      type: "text",
+      name: "Tarikh Mesyuarat (Dari)",
+      validator: {}
+    },
+    {
+      field_id: "txtCtcrTarikhMesyuaratHingga",
+      type: "text",
+      name: "Tarikh Mesyuarat (Hingga)",
+      validator: {}
+    },
+    {
+      field_id: "txtCtcrTahunMesyuarat",
+      type: "text",
+      name: "Tahun Mesyuarat",
+      validator: {}
+    },
+    {
       field_id: "optCtcrKategoriMesyuarat",
       type: "select",
       name: "Kategori Mesyuarat",
       validator: {}
     },
     {
-      field_id: "txtCtcrTarikhMesyuarat",
-      type: "text",
-      name: "Tarikh Mesyuarat",
+      field_id: "optCtcrKeputusan",
+      type: "select",
+      name: "Keputusan",
       validator: {}
     },
     {
-      field_id: "txtCtcrBilMesyuaratNo",
-      type: "text",
-      name: "Bilangan Mesyuarat",
+      field_id: "optCtcrStatus",
+      type: "select",
+      name: "Status",
       validator: {}
-    },
-    {
-      field_id: "txtCtcrBilMesyuaratBil",
-      type: "text",
-      name: "Bilangan Mesyuarat",
-      validator: {}
-    },
-    {
-      field_id: "txtCtcrBilMesyuaratTahun",
-      type: "text",
-      name: "Bilangan Mesyuarat",
-      validator: {}
-    },
-    {
-      field_id: "txtCtcrTajukMesyuarat",
-      type: "text",
-      name: "Tajuk Mesyuarat",
-      validator: {}
-    },
+    }
   ];
 
   this.init = function () {
@@ -66,34 +90,27 @@ function SenaraiRuling () {
           toastr['error'](_ALERT_MSG_VALIDATION, _ALERT_TITLE_ERROR);
         } else {
           dtSer.search('').columns().search('').draw();
-          if ($('#txtCtcrTajukMesyuarat').val().length > 0) {
-            dtSer.columns(1).search($('#txtCtcrTajukMesyuarat').val() ? $('#txtCtcrTajukMesyuarat').val() : '', false, true, false);
+          if ($('#txtCtcrTajukKertas').val().length > 0) {
+            dtSer.columns(1).search($('#txtCtcrTajukKertas').val() ? $('#txtCtcrTajukKertas').val() : '', false, true, false);
+          }
+          if ($('#optCtcrCawangan').val().length > 0) {
+            dtSer.columns(2).search($('#optCtcrCawangan').val() ? $('#optCtcrCawangan').val() : '', false, true, false);
+          }
+          if ($('#optCtcrFungsi').val().length > 0) {
+            dtSer.columns(3).search($('#optCtcrFungsi').val() ? $('#optCtcrFungsi').val() : '', false, true, false);
+          }
+          if ($('#optCtcrSubfungsi').val().length > 0) {
+            dtSer.columns(4).search($('#optCtcrSubfungsi').val() ? $('#optCtcrSubfungsi').val() : '', false, true, false);
           }
           if ($('#optCtcrKategoriMesyuarat').val().length > 0) {
-            dtSer.columns(2).search($('#optCtcrKategoriMesyuarat').val() ? $('#optCtcrKategoriMesyuarat').val() : '', false, true, false);
+            dtSer.columns(5).search($('#optCtcrKategoriMesyuarat').val() ? $('#optCtcrKategoriMesyuarat').val() : '', false, true, false);
           }
-          if ($('#txtCtcrTarikhMesyuarat').val().length > 0) {
+          if ($('#txtCtcrTarikhMesyuaratDari').val().length > 0) {
             moment.locale('ms');
-            const tarikh = moment($('#txtCtcrTarikhMesyuarat').val(), 'DD/MM/YYYY').format('YYYY-MM-DD');
-            dtSer.columns(5).search($('#txtCtcrTarikhMesyuarat').val() ? tarikh : '', false, true, false);
-          }
-          if ($('#optCtcrJenisDokumen').val().length > 0) {
-            dtSer.columns(7).search($('#optCtcrJenisDokumen').val() ? $('#optCtcrJenisDokumen').val() : '', false, true, false);
-          }
-          if ($('#txtCtcrTajukDokumen').val().length > 0) {
-            dtSer.columns(8).search($('#txtCtcrTajukDokumen').val() ? $('#txtCtcrTajukDokumen').val() : '', false, true, false);
-          }
-          if ($('#txtCtcrBilMesyuaratNo').val().length > 0) {
-            dtSer.columns(10).search($('#txtCtcrBilMesyuaratNo').val() ? $('#txtCtcrBilMesyuaratNo').val() : '', false, true, false);
-          }
-          if ($('#txtCtcrBilMesyuaratBil').val().length > 0) {
-            dtSer.columns(11).search($('#txtCtcrBilMesyuaratBil').val() ? $('#txtCtcrBilMesyuaratBil').val() : '', false, true, false);
-          }
-          if ($('#txtCtcrBilMesyuaratTahun').val().length > 0) {
-            dtSer.columns(12).search($('#txtCtcrBilMesyuaratTahun').val() ? $('#txtCtcrBilMesyuaratTahun').val() : '', false, true, false);
-          }
-          if ($('#txtCtcrIsiDokumen').val().length > 0) {
-            dtSer.columns(13).search($('#txtCtcrIsiDokumen').val() ? $('#txtCtcrIsiDokumen').val() : '', false, true, true);
+            const tarikhDari = moment($('#txtCtcrTarikhMesyuaratDari').val(), 'DD/MM/YYYY').format('YYYY-MM-DD');
+            // dtSer.columns(6).search($('#txtCtcrTarikhMesyuaratDari').val() ? tarikhDari : '', false, true, false);
+            console.log(tarikhDari);
+            dtSer.columns(6).search((d) => d >= tarikhDari);
           }
           dtSer.draw();
         }
@@ -113,18 +130,18 @@ function SenaraiRuling () {
         bPaginate: true,
         bInfo: true,
         autoWidth: false,
-        aaSorting: [[4, 'desc']],
+        aaSorting: [[6, 'desc']],
         language: _DATATABLE_LANGUAGE,
         // dom: "<'row'<'col-12 col-sm-6 align-bottom'l><'col-sm-6 d-none d-sm-block'f>>" +
         dom:  "<'d-flex align-items-center'<'p-0 align-items-center d-none d-sm-block'B><'p-0 px-2 mt-2 align-items-center d-none d-sm-block'l><'p-0 mr-auto flex-fill 'f>>" +
         "<'d-flex mt-2'<'p-0 flex-fill'tr>>" +
         "<'d-flex align-items-center'<'p-0 flex-fill d-none d-sm-block'i><'p-0 mt-3 mr-auto flex-fill'p>>",
         columnDefs: [
-          { className: 'text-center align-top', targets: [0,2,3,4,5,6,7] },
+          { className: 'text-center align-top', targets: [0,2,3,4,5,6,7,8,9,10,11,12] },
           { className: 'text-left align-top', targets: [1] },
-          { bSortable: false, targets: [0,7] },
-          { visible: false, targets: [5,6,8,9,10,11] },
-          { className: 'noVis', targets: [0,7,8,9,10,11] },
+          { bSortable: false, targets: [0,12] },
+          { visible: false, targets: [7,8,9,13,14,15] },
+          { className: 'noVis', targets: [0,12,13,14,15] },
         ],
         buttons: [
           { extend: 'colvis', columns: ':not(.noVis)', fade: 400, collectionLayout: 'three-column', text:'<i class="fa-solid fa-columns"></i>', className: 'btn btn-outline-default btn-sm btn-icon z-depth-0', titleAttr: 'Pilihan Kolum'},
@@ -159,9 +176,22 @@ function SenaraiRuling () {
         },
         aoColumns: [
           { mData: null},
-          { mData: 'tajukMesyuarat'},
+          { mData: 'tajukKertas'},
+          { mData: 'cawangan', mRender: function (data, type, row, meta) { 
+            return data;
+          }},
+          { mData: 'fungsiBahagian', mRender: function (data, type, row, meta) { 
+            return data;
+          }},
+          { mData: 'subfungsiAktiviti', mRender: function (data, type, row, meta) { 
+            return data;
+          }},
           { mData: 'kategoriMesyuarat', mRender: function (data, type, row, meta) { 
             return data;
+          }},
+          { mData: 'tarikhMesyuarat', mRender: function (data) { 
+            moment.locale('ms');
+            return moment(data, 'DD/MM/YYYY').format('YYYY-MM-DD');
           }},
           { mData: null, mRender: function (data, type, row, meta) { 
             if (row['kategoriMesyuarat'] == 'MLRKP')
@@ -169,33 +199,40 @@ function SenaraiRuling () {
             else
               return 'KALI KE-' + row['bilMesyuaratNo'] + ' (BIL. ' + row['bilMesyuaratBil'] + '/' + row['bilMesyuaratTahun'] + ')';
           }},
-          { mData: 'tarikhMesyuarat', mRender: function (data) { 
-            moment.locale('ms');
-            return moment(data, 'DD/MM/YYYY').format('YYYY-MM-DD');
+          { mData: 'kumpulanSasaran', mRender: function (data, type, row, meta) { 
+            return data;
           }},
-          { mData: 'jenisDokumen', mRender: function (data, type, row, meta) { 
-            var tajuk = "<ol>"
-            $.each(data, function(index, value) {
-              tajuk += '<li>' + value + '</li>';
-            });
-            tajuk += '</ol>';
-            return tajuk;
-          }},
-          { mData: 'tajukDokumen', mRender: function (data, type, row, meta) { 
-            var tajuk = "<ol>"
-            $.each(data, function(index, value) {
-              tajuk += '<li>' + value + '</li>';
-            });
-            tajuk += '</ol>';
-            return tajuk;
+          { mData: 'perenggan'},
+          { mData: 'keputusanId', mRender: function (data, type, row, meta) { 
+            if (data == 1) {
+              return "DILULUSKAN";
+            } else if (data == 2) {
+              return "DITANGGUHKAN";
+            } else if (data == 3) {
+              return "DIBATALKAN";
+            } else {
+              return "";
+            }
           }},
           { mData: 'statusId', mRender: function (data, type, row, meta) { 
-            return dtDisplay.getActionEkeps('edit', 'lnkSer', meta.row, data); 
+            if (data == 1) {
+              return "DERAF";
+            } else if (data == 2) {
+              return "BARU";
+            } else if (data == 3) {
+              return "AKTIF";
+            } else if (data == 4) {
+              return "NYAHAKTIF";
+            } else {
+              return "";
+            }
+          }},
+          { mData: 'statusId', mRender: function (data, type, row, meta) { 
+            return dtDisplay.getActionRuling('edit', 'lnkSer', meta.row, data, row['keputusanId']); 
           }},
           { mData: 'bilMesyuaratNo'},
           { mData: 'bilMesyuaratBil'},
           { mData: 'bilMesyuaratTahun'},
-          { mData: 'isiDokumen'},
         ]
       });
 
@@ -207,42 +244,51 @@ function SenaraiRuling () {
   this.genTable = function () {
     try {
       const dataDb = [{
-        kategoriMesyuarat: "MSJ", 
-        tarikhMesyuarat: "15/10/2023", 
-        bilMesyuarat: "KALI KE-1209 (BIL. 18/2023)",
-        bilMesyuaratNo: "1209",
-        bilMesyuaratBil: "18",
-        bilMesyuaratTahun: "2023",
-        tajukMesyuarat: "MESYUARAT SURUHANJAYA PERKHIDMATAN PENDIDIKAN KALI KE-1209 (BIL. 18/2023)",
-        jenisDokumen: ["MINIT MESYUARAT"],
-        tajukDokumen: ["MINT MESYUARAT SURUHANJAYA PERKHIDMATAN PENDIDIKAN KALI KE-2 BIL 1/2025"],
-        isiDokumen: ["p DISAHKAN PADA: 9 MAC 2015 |\nSm L DISAHKAN pAdA S MAc 2 | 672\n-\nSPP(S).220/485/1 Jilid 24 (49)\nMINIT MESYUARAT\nLEMBAGA RAYUAN TATATERTIB PERKHIDMATAN PENDIDIKAN\nKALI KE-672(BIL.4/2015)\nHARI DAN TARIKH : Isnin, 23 Februari 2015\n-\nMASA : 11.05 pagi\nTEMPAT : Bilik Mesyuarat Suruhanjaya\nAras3, Blok B3, Kompleks JPM\nPusat Pentadbiran Kerajaan Persekutuan\nPUTRAJAYA\nHADIR:\n1. YBhg. Datuk Dr. Haili bin Dolhan - Pengerusi\nPengerusi SPP\nx 2. Tuan Haji Abdul Adzis bin Abas\n3. Puan Rahimah binti Mohd Sura\n4. YBhg. Dato' Dr. Soh Chee Seng\n5. YBhg. Dato' Haji Azmi bin Che Mat\n6. YBhg. Dato' Haji Imran bin Idris\n7. YBhg. Dato' Abdul Halim bin Abdul Razak\n8. Encik Awangku Ali bin Pg. Jumaat\n9. Tuan Haji Morazuki bin Hashim\nN 10. YBhg. Dato' Abu Bakar bin Othman - Setiausaha\nTIDAK HADIR DENGAN MAAF\n1. YBhg. Dato' Seri Dr. Abdul Rahman bin Hashim\nTimbalan Pengerusi SPP\n2. Tuan Haji Jamaludin bin Yahaya\n( . , ,\nTuan Haji Osman bin Abd. Aziz\nK\n(\nN 1\nX SULIT\nN\nSULIT DISAHKAN PADA: 9 MAC 2015 MLRTI Kedr2 (BI A0\n| .\n| HADIR BERSAMA- SAMA (URUS SETIA):\n! 1. Encik Mohd Taupik bin Yusof TSU(P)\n2. Puan Maheran binti Abdul Rahman SUB(PM)\n3. Encik Mohd Safrie bin Zakaria SUB(K)\n| 4. Encik Mohd Farid bin Mohd Arif SUB(G)\n| 5, Encik Mohamad Fahmi bin Mohd Latib SUB(BG)\n| 6. Puan Zuliana binti Mohd Akob SUB (D) ,\n7. Puan Zaidayu binti Haron PSU(NT)\n| 8. Puan Nuuraulia binti Md. Isa PSU(U)\n| 9. Puan Maimunah binti Ismail PPT(U)\n| 1. PERUTUSAN PENGERUSI\n| Pengerusi mengalu-alukan semua yang hadir.\n2. PENGESAHAN MINIT MESYUARAT LEMBAGA  RAYUAN\n| TATATERTIB PERKHIDMATAN PENDIDIKAN KALI KE-671 PADA 9 .\n| FEBUARI 2015\n| Minit Mesyuarat Lembaga Rayuan Tatatertib Perkhidmatan Pendidikan\nkali ke-671 pada 9 Februari 2015 disahkan tanpa pindaan.\n3. PERKARA BERBANGKIT DARIPADA MINIT MESYUARAT\nLEMBAGA RAYUAN TATATERTIB PERKHIDMATAN PENDIDIKAN\nKALI KE-671 PADA 9 FEBRUARI 2015\n| Tiada.\n4. PERBINCANGAN KERTAS *\n41 KERTAS BIL. R17/2015: RAYUAN TATATERTIB DARIPADA\nNURASHIKIN BINTI ADNAN PEGAWAI PERKHIDMATAN\nPENDIDIKAN LEPASAN DIPLOMA GRED DGA32 KHAS UNTUK\n| PENYANDANG SEKOLAH KEBANGSAAN BANDAR BARU SENTUL,\n| KUALA LUMPUR\n! H  (SPP(S).60/1/0080676(5)1\n% ' Lembaga menimbangkan kertas dan:\n| , .\nSULIT\n"],
-        statusId: 1, 
-      },{
-        kategoriMesyuarat: "MLRTT", 
-        tarikhMesyuarat: "06/12/2024", 
-        bilMesyuarat: "KALI KE-888 (BIL. 17/2024)",
-        bilMesyuaratNo: "888",
-        bilMesyuaratBil: "17",
-        bilMesyuaratTahun: "2024",
-        tajukMesyuarat: "MESYUARAT LEMBAGA RAYUAN TATATERTIB PERKHIDMATAN PENDIDIKAN KALI KE-888 (BIL.17/2024) ",
-        jenisDokumen: ["MINIT MESYUARAT", "KERTAS SURUHANJAYA"],
-        tajukDokumen: ["MINT MESYUARAT SURUHANJAYA PERKHIDMATAN PENDIDIKAN KALI KE-2200 BIL 14/2024", "KERTAS SURUHANJAYA LLP"],
-        isiDokumen: [''],
-        statusId: 2, 
-      },{
-        kategoriMesyuarat: "MLRKP", 
-        tarikhMesyuarat: "20/12/2024", 
+        tajukKertas: "PELANTIKAN KE JAWATAN TETAP PEGAWAI PENDIDIKAN PENGAJIAN TINGGI GRED DH41 DAN DH29 BAGI CALON PASARAN TERBUKA DI BAWAH KEMENTERIAN PENGAJIAN TINGGI MALAYSIA TEMU DUGA MULAI 24 HINGGA 25 NOVEMBER 2009 DAN 15 DISEMBER 2009 [SPP.Z.20/19/7-2]",
+        cawangan: "HQ - PUTRAJAYA",
+        fungsiBahagian: "NT - NAIK PANGKAT DAN TATATERTIB",
+        subfungsiAktiviti: "TEMU DUGA",
+        kategoriMesyuarat: "MSJ",
+        tarikhMesyuarat: "10/02/2025",
         bilMesyuarat: "BIL. 2/2024",
-        bilMesyuaratNo: null,
-        bilMesyuaratBil: "2",
+        bilMesyuaratNo: '1209',
+        bilMesyuaratBil: "18",
         bilMesyuaratTahun: "2024",
-        tajukMesyuarat: "MESYUARAT LEMBAGA RAYUAN KENAIKAN PANGKAT PERKHIDMATAN PENDIDIKAN BIL.2/2024 ",
-        jenisDokumen: ["MINIT MESYUARAT", "KERTAS EDARAN"],
-        tajukDokumen: ["MINT MESYUARAT SURUHANJAYA PERKHIDMATAN PENDIDIKAN KALI KE-2 BIL 1/2025", "KERTAS EDARAN"],
-        isiDokumen: [''],
-        statusId: 1, 
-      },];
+        kumpulanSasaran: "GRED DH41",
+        perenggan: "3.1",
+        keputusanId: 3,
+        statusId: 4,
+      },{
+        tajukKertas: "PELANTIKAN KE JAWATAN TETAP PEGAWAI PENDIDIKAN PENGAJIAN TINGGI GRED DH41 DAN DH29 BAGI CALON PASARAN TERBUKA DI BAWAH KEMENTERIAN PENGAJIAN TINGGI MALAYSIA TEMU DUGA MULAI 24 HINGGA 25 NOVEMBER 2009 DAN 15 DISEMBER 2009 [SPP.Z.20/19/7-2]",
+        cawangan: "S - SABAH",
+        fungsiBahagian: "P - PENGAMBILAN",
+        subfungsiAktiviti: "TEMU DUGA",
+        kategoriMesyuarat: "MSJ",
+        tarikhMesyuarat: "11/02/2025",
+        bilMesyuarat: "BIL. 2/2024",
+        bilMesyuaratNo: '1209',
+        bilMesyuaratBil: "18",
+        bilMesyuaratTahun: "2024",
+        kumpulanSasaran: "GRED DH41",
+        perenggan: "3.1",
+        keputusanId: 2,
+        statusId: 3,
+      },{
+        tajukKertas: "PELANTIKAN KE JAWATAN TETAP PEGAWAI PENDIDIKAN PENGAJIAN TINGGI GRED DH41 DAN DH29 BAGI CALON PASARAN TERBUKA DI BAWAH KEMENTERIAN PENGAJIAN TINGGI MALAYSIA TEMU DUGA MULAI 24 HINGGA 25 NOVEMBER 2009 DAN 15 DISEMBER 2009 [SPP.Z.20/19/7-2]",
+        cawangan: "Q -SARAWAK",
+        fungsiBahagian: "K - PERKHIDMATAN",
+        subfungsiAktiviti: "TEMU DUGA",
+        kategoriMesyuarat: "MSJ",
+        tarikhMesyuarat: "12/02/2025",
+        bilMesyuarat: "BIL. 2/2024",
+        bilMesyuaratNo: '1209',
+        bilMesyuaratBil: "18",
+        bilMesyuaratTahun: "2024",
+        kumpulanSasaran: "GRED DH41",
+        perenggan: "3.1",
+        keputusanId: null,
+        statusId: 1,
+      }];
       dtSer.clear().rows.add(dataDb).draw();
     } catch (e) { toastr['error'](_ALERT_MSG_ERROR_DEFAULT, _ALERT_TITLE_ERROR); }
   };
