@@ -138,11 +138,11 @@ function SenaraiEkeps () {
         "<'d-flex mt-2'<'p-0 flex-fill'tr>>" +
         "<'d-flex align-items-center'<'p-0 flex-fill d-none d-sm-block'i><'p-0 mt-3 mr-auto flex-fill'p>>",
         columnDefs: [
-          { className: 'text-center align-top', targets: [0,2,3,4,5,6,7] },
+          { className: 'text-center align-top', targets: [0,2,3,4,5,6,7,8,9,10] },
           { className: 'text-left align-top', targets: [1] },
-          { bSortable: false, targets: [0,7] },
-          { visible: false, targets: [5,6,8,9,10,11] },
-          { className: 'noVis', targets: [0,7,8,9,10,11] },
+          { bSortable: false, targets: [0,10] },
+          { visible: false, targets: [3,5,6,11] },
+          { className: 'noVis', targets: [0,10,11] },
         ],
         buttons: [
           { extend: 'colvis', columns: ':not(.noVis)', fade: 400, collectionLayout: 'three-column', text:'<i class="fa-solid fa-columns"></i>', className: 'btn btn-outline-default btn-sm btn-icon z-depth-0', titleAttr: 'Pilihan Kolum'},
@@ -207,13 +207,13 @@ function SenaraiEkeps () {
             tajuk += '</ol>';
             return tajuk;
           }},
-          { mData: 'statusId', mRender: function (data, type, row, meta) { 
-            return dtDisplay.getActionEkeps('edit', 'lnkSek', meta.row, data); 
-          }},
           { mData: 'bilMesyuaratNo'},
           { mData: 'bilMesyuaratBil'},
           { mData: 'bilMesyuaratTahun'},
-          { mData: 'isiDokumen'},
+          { mData: 'statusId', mRender: function (data, type, row, meta) { 
+            return dtDisplay.getActionEkeps('edit', 'lnkSek', meta.row, data); 
+          }},
+          { mData: 'isiDokumen'}
         ]
       });
 
