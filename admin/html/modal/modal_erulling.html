@@ -1,0 +1,104 @@
+<div class="modal" id="modalErulling" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-notify modal-lg modal-dialog-scrollable" role="document">
+    <div class="modal-content rounded-0">
+      <div class="modal-header unique-color rounded-0">
+        <h5 class="modal-title w-100 white-text" id="h5MerlTitle"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="btnMerlClose">
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body pt-4 pb-4">
+        <form id="formMerl" autocomplete="off" spellcheck="false">
+          <div class="row mb-2">
+            <div class="col-lg-6">
+              <p class="label-text">Jenis Dokumen<span class="ml-1 text-danger">*</span></p>
+              <div class="select-outline my-1" id="optMerlJenisDokumen_">
+                <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Carian" data-stop-refresh="true" id="optMerlJenisDokumen">
+                  <option value="">Sila Pilih</option>
+                  <option value="1">MINIT MESYUARAT</option>
+                  <option value="2">MAKLUM BALAS</option>
+                  <option value="3">SURAT PANGGILAN</option>
+                  <option value="4">AGENDA MESYUARAT</option>
+                  <option value="5">SENARAI KEHADIRAN</option>
+                  <option value="6">KERTAS EDARAN</option>
+                  <option value="7">KERTAS PERTIMBANGAN</option>
+                </select>
+                <p class="font-small text-danger font-weight-400" id="optMerlJenisDokumenErr"></p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <p class="label-text">No. Rujukan Fail<span class="ml-1 text-danger">*</span></p>
+              <div class="md-form md-outline md-outline-light md-custom my-1">
+                <input type="text" class="form-control datepicker" id="txtMerlNoRujukanFail">
+                <p class="font-small text-danger font-weight-400" id="txtMerlNoRujukanFailErr"></p>
+              </div>
+            </div>
+            <div class="col-lg-4 optionKertas">
+              <p class="label-text">Cawangan<span class="ml-1 text-danger">*</span></p>
+              <div class="select-outline my-1" id="optMerlCawangan_">
+                <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Carian" data-stop-refresh="true" id="optMerlCawangan">
+                  <option value="">Sila Pilih</option>
+                  <option value="HQ">HQ - PUTRAJAYA</option>
+                  <option value="S">S - SABAH</option>
+                  <option value="Q">Q - SARAWAK</option>
+                </select>
+                <p class="font-small text-danger font-weight-400" id="optMerlCawanganErr"></p>
+              </div>
+            </div>
+            <div class="col-lg-4 optionKertas">
+              <p class="label-text">Fungsi/ Bahagian<span class="ml-1 text-danger">*</span></p>
+              <div class="select-outline my-1" id="optMerlFungsi_">
+                <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Carian" data-stop-refresh="true" id="optMerlFungsi">
+                  <option value="">Sila Pilih</option>
+                  <option value="P">P - PENGAMBILAN</option>
+                  <option value="K">K - PERKHIDMATAN</option>
+                  <option value="NT">NT - NAIK PANGKAT DAN TATATERTIB</option>
+                  <option value="D">D - DASAR</option>
+                </select>
+                <p class="font-small text-danger font-weight-400" id="optMerlFungsiErr"></p>
+              </div>
+            </div>
+            <div class="col-lg-4 optionKertas">
+              <p class="label-text">Sub Fungsi/ Aktiviti<span class="ml-1 text-danger">*</span></p>
+              <div class="select-outline my-1" id="optMerlSubFungsi_">
+                <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Carian" data-stop-refresh="true" id="optMerlSubFungsi">
+                  <option value="">Sila Pilih</option>
+                  <option value="TEMU DUGA">TEMU DUGA</option>
+                </select>
+                <p class="font-small text-danger font-weight-400" id="optMerlSubFungsiErr"></p>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <p class="label-text">Tajuk Dokumen<span class="ml-1 text-danger">*</span></p>
+              <div class="md-form md-outline md-outline-light my-1">
+                <textarea class="md-textarea form-control" rows="2" id="txtMerlTajukDokumen"></textarea>
+                <p class="font-small text-danger font-weight-400" id="txtMerlTajukDokumenErr"></p>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <p class="label-text">Dokumen Berkaitan<span class="ml-1 text-danger">*</span></p>
+              <div class="md-form md-outline md-outline-light my-1">
+                <div class="file-field" id="txtMerlDokumen_">
+                  <div class="btn btn-smx btn-outline-default waves-effect z-depth-0 float-right mr-0 mt-0">
+                    <span><i class="fa-regular fa-upload mr-2" aria-hidden="true"></i>Pilih Fail</span>
+                    <input type="file" id="txtMerlDokumen">
+                    <input type="hidden" id="txtMerlDokumenBlob">
+                  </div>
+                  <div class="file-path-wrapper pl-0 pr-2">
+                    <input class="file-path form-control white" type="text" id="txtMerlFile" readonly>
+                  </div>
+                </div>
+                <p class="font-small text-danger font-weight-400" id="txtMerlDokumenErr"></p>
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+      <div class="modal-footer p-0">
+        <button type="button" class="btn btn-md btn-outline-default waves-effect z-depth-0" data-dismiss="modal"><i class="fa-solid fa-ban mr-2"></i>Batal</button>
+        <button type="button" class="btn btn-md btn-default waves-effect z-depth-0" id="btnMerlSave"><i class="fa-regular fa-floppy-disk mr-2"></i>Simpan</button>
+      </div>
+    </div>
+  </div>
+</div>

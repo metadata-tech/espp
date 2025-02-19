@@ -211,7 +211,7 @@
     <div class="includeHtml" id="h-m-modal_confirm_delete"></div>
     <div class="includeHtml" id="h-m-modal_confirm_action"></div>
     <div class="includeHtml" id="h-m-modal_permohonan_pengisian"></div>
-    <div class="includeHtml" id="h-m-modal_dokumen_berkaitan_ekeps"></div>
+    <div class="includeHtml" id="h-m-modal_erulling"></div>
     <div class="includeHtml" id="h-m-modal_preview_pdf"></div>
   </main>
 
@@ -251,7 +251,7 @@
     let modalConfirmAction;
     let modalConfirmDelete;
     let modalPermohonanPengisian;
-    let modalDokumenBerkaitanEkeps;
+    let modalErulling;
     let modalPreviewPdf;
     let mainClass;
     let sectionMaklumatEkeps;
@@ -263,8 +263,8 @@
       modalConfirmAction = new ModalConfirmAction();
       modalPermohonanPengisian = new ModalPermohonanPengisian();
 
-      sectionMaklumatEkeps = new SectionMaklumatEkeps();
-      modalDokumenBerkaitanEkeps = new ModalDokumenBerkaitanEkeps();
+      //sectionMaklumatEkeps = new SectionMaklumatEkeps();
+      modalErulling = new ModalErulling();
       modalPreviewPdf = new ModalPreviewPdf();
 
       ShowLoader(); setTimeout(function () {
@@ -283,35 +283,36 @@
 
           mainClass.setModalConfirmAction(modalConfirmAction);
           modalConfirmAction.init();
+console.log(0);
+          mainClass.setModalErulling(modalErulling);
+          //modalPermohonanPengisian.init();
 
-          mainClass.setModalPermohonanPengisian(modalPermohonanPengisian);
-          modalPermohonanPengisian.init();
-
-          mainClass.setSectionMaklumatEkeps(sectionMaklumatEkeps);
+         /* mainClass.setSectionMaklumatEkeps(sectionMaklumatEkeps);
           sectionMaklumatEkeps.setDtDisplay(dtDisplay);
           sectionMaklumatEkeps.setClassFrom(mainClass);
           sectionMaklumatEkeps.init();
           
-          sectionMaklumatEkeps.setModalDokumenBerkaitanEkeps(modalDokumenBerkaitanEkeps);
-          sectionMaklumatEkeps.setModalPreviewPdf(modalPreviewPdf);
+          //sectionMaklumatEkeps.setModalDokumenBerkaitanEkeps(modalDokumenBerkaitanEkeps);
+          sectionMaklumatEkeps.setModalPreviewPdf(modalPreviewPdf);*/
 
-          modalDokumenBerkaitanEkeps.setClassFrom(sectionMaklumatEkeps);
-          modalDokumenBerkaitanEkeps.init();
+          console.log(1);
+          modalErulling.setClassFrom(mainClass);
+          modalErulling.init();
 
-          modalPreviewPdf.setClassFrom(sectionMaklumatEkeps);
-          modalPreviewPdf.init();
+          /*modalPreviewPdf.setClassFrom(sectionMaklumatEkeps);
+          modalPreviewPdf.init();*/
 
           mainClass.setDtDisplay(dtDisplay);
           mainClass.init();
 
           HideLoader();
-        } catch (e) { toastr['error'](_ALERT_MSG_ERROR_DEFAULT, _ALERT_TITLE_ERROR); }
+        } catch (e) { toastr['error'](e.message, _ALERT_TITLE_ERROR); }
       }, 400);
     });
 
     document.write('<scr' + 'ipt src="js/pages/modal/ModalPreviewPdf.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
-    document.write('<scr' + 'ipt src="js/pages/modal/ModalDokumenBerkaitanEkeps.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
-    document.write('<scr' + 'ipt src="js/pages/section/SectionMaklumatEkeps.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
+    document.write('<scr' + 'ipt src="js/pages/modal/ModalErulling.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
+    //document.write('<scr' + 'ipt src="js/pages/section/SectionMaklumatEkeps.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
     document.write('<scr' + 'ipt src="js/pages/modal/ModalPermohonanPengisian.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
     document.write('<scr' + 'ipt src="js/pages/modal/ModalChangePassword.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
     document.write('<scr' + 'ipt src="js/pages/modal/ModalChangeProfile.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
