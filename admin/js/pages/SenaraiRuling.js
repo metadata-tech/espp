@@ -5,7 +5,7 @@ function SenaraiRuling () {
   let dtDisplay;
   let modalConfirmDelete;
   let modalConfirmAction;
-  let modalPermohonanPengisian;
+  let modalErulling;
   let sectionMaklumatEkeps;
   let userId;
   let dtSer;
@@ -81,8 +81,7 @@ function SenaraiRuling () {
       formValidate.registerFields(vData);
       
       $('.btnAddSer').on('click', function () {
-        sectionMaklumatEkeps.add();
-        // modalPermohonanPengisian.add();
+        modalErulling.add();
       });
       
       $('#btnCtcrFilter').on('click', function () {
@@ -161,10 +160,10 @@ function SenaraiRuling () {
           });
           $('.lnkSerView').off('click').on('click', function () {
             // modalConfirmAction.action(123, self);
-            sectionMaklumatEkeps.view(123);
+            modalErulling.view(123);
           });
           $('.lnkSerEdit').off('click').on('click', function () {
-            sectionMaklumatEkeps.edit(123);
+            modalErulling.edit(123);
           });
           $('.lnkSerRemove').off('click').on('click', function () {
             // modalConfirmAction.action(123, self);
@@ -315,8 +314,8 @@ function SenaraiRuling () {
     modalConfirmDelete = _modalConfirmDelete;
   };
   
-  this.setModalPermohonanPengisian = function (_modalPermohonanPengisian) {
-    modalPermohonanPengisian = _modalPermohonanPengisian;
+  this.setModalErulling = function (_modalErulling) {
+    modalErulling = _modalErulling;
   };
   
   this.setSectionMaklumatEkeps = function (_sectionMaklumatEkeps) {
