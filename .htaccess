@@ -17,6 +17,7 @@ RewriteRule ^login/semakan/(.+)/?$ login/semakan.html
 # Modul Pengambilan
 RewriteRule ^admin/home?$ admin/html/home.html
 RewriteRule ^admin/senarai_permohonan_pgspp?$ admin/html/senarai_permohonan_pgspp.html
+RewriteRule ^admin/mpg_maklumat_calon?$ admin/html/mpg_maklumat_calon.html
 
 # Modul Kertas
 RewriteRule ^admin/senarai_ekeps?$ admin/html/senarai_ekeps.html

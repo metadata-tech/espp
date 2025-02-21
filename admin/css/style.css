@@ -891,7 +891,6 @@ a.text-default:hover, a.text-default:focus {
 .section-title {
 	font-size: 1.2rem;
 	/* margin-top: 0; */
-	margin-bottom: 0 !important;
 	font-weight: 400 !important;
 	color: #fff;
 }
@@ -1072,6 +1071,13 @@ a.text-default:hover, a.text-default:focus {
     max-width: 65px;
   }
 }
+@media (min-width: 1200px) {
+  .side-section {
+    -ms-flex: 0 0 200px;
+    flex: 0 0 200px;
+    max-width: 200px;
+  }
+}
 @media (min-width: 1550px) {
   .side-section {
     -ms-flex: 0 0 280px;
@@ -1187,8 +1193,7 @@ a.text-default:hover, a.text-default:focus {
 }
 .menu-title {
 	line-height: 1.2 !important;
-	font-size: 0.9rem;
-	font-weight: 500;
+	/* font-weight: 400; */
 	margin-bottom: 0 !important;
 }
 .menu-subtitle {
@@ -1350,7 +1355,6 @@ a.text-default:hover, a.text-default:focus {
 .nav-pills-custom .nav-link.active,
 .nav-pills-custom .show > .nav-link {
 	color: #3f5c80 !important;
-	font-size: 16px !important;
 	font-weight: 500 !important;
 	border-left: 3px solid #3f729b;
 }
@@ -1727,6 +1731,12 @@ a.text-default:hover, a.text-default:focus {
 		-ms-flex: 0 0 8.3333333%;
 		flex: 0 0 8.3333333%;
 		max-width: 8.3333333%;
+	}
+}
+@media (min-width: 1200px) {
+	.flex-xl-column {
+		-ms-flex-direction: column !important;
+		flex-direction: column !important;
 	}
 }
 @media (min-width: 1550px) {
