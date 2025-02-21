@@ -114,11 +114,13 @@ function ModalDokumenBerkaitanEkeps() {
       const preview = document.getElementById('pdfMdbePreview');
       const file = document.getElementById('txtMdbeDokumen').files[0];
       const reader = new FileReader();
+      // src= URL.createObjectURL(file);
 
       if (typeof file == 'object') {
         if (file.type == 'application/pdf') {
           reader.addEventListener("load", function () {
-            preview.src = reader.result;
+            // preview.src = reader.result;
+            preview.src = URL.createObjectURL(file);
           }, false);
       
           if (file) {
