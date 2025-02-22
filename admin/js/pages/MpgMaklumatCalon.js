@@ -56,13 +56,15 @@ function MpgMaklumatCalon () {
       $('#btnCmclFilter').on('click', function () {
         if (!formValidate.validateNow()) {
           toastr['error'](_ALERT_MSG_VALIDATION, _ALERT_TITLE_ERROR);
+          $('#sectionMaklumat').hide();
         } else {
-          
+          $('#sectionMaklumat').show();
         }
       });
       
       $('#btnCmclClearFilter').on('click', function () {
         formValidate.clearValidation();
+        $('#sectionMaklumat').hide();
       });
     
       dtJwt = $('#dtJwt').DataTable({

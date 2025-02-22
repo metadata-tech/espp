@@ -3030,3 +3030,8 @@ table.dataTable.table-condensed .sorting_desc:after {
   font-family: "Roboto", sans-serif !important;
   color: #000 !important;
 }
+/* .md-tabs .nav-link.active,
+.md-tabs .nav-item.open .nav-link {
+  background-color: white;
+  color: black;
+} */
