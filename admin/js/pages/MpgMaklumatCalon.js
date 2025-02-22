@@ -72,8 +72,6 @@ function MpgMaklumatCalon () {
           // { className: 'text-center', targets: [0,2,3,4,5,6,7,8] },
           // { className: 'text-left', targets: [1] },
           { bSortable: false, targets: [0,8] },
-          // { visible: false, targets: [5] },
-          // { className: 'noVis', targets: [4,5] },
         ],
         fnRowCallback : function(nRow, aData, iDisplayIndex){
           const info = $(this).DataTable().page.info();

@@ -59,64 +59,6 @@ function ModalMpgJawatanDipohon() {
   this.init = function () {
     formValidateMjph = new MzValidate(false);
     formValidateMjph.registerFields(self.getValidationDataMjph());
-    
-    $('#btnMjphClose').on('click', function () {
-      console.log('close');
-      // $('#modalMpgJawatanDipohon').modal('hide');
-      // worker.terminate();
-    });
-      
-    $('#optMjphJenisDokumen').on('change', function () {
-      if (this.value == '6' || this.value == '7') {
-        //$('.optionKertas').show();
-        formValidateMjph.enableField('optMjphCawangan');
-        formValidateMjph.enableField('optMjphFungsi');
-        formValidateMjph.enableField('optMjphSubFungsi');
-      } else {
-        //$('.optionKertas').hide();
-        formValidateMjph.disableField('optMjphCawangan');
-        formValidateMjph.disableField('optMjphFungsi');
-        formValidateMjph.disableField('optMjphSubFungsi');
-      }
-    });
-
-    $('#txtMjphDokumen').on('change', function () {
-      const preview = document.getElementById('pdfMjphPreview');
-      const file = document.getElementById('txtMjphDokumen').files[0];
-      const reader = new FileReader();
-
-      if (typeof file == 'object') {
-        if (file.type == 'application/pdf') {
-          reader.addEventListener("load", function () {
-            preview.src = reader.result;
-          }, false);
-      
-          if (file) {
-            reader.readAsDataURL(file);
-          } 
-        } else {
-          preview.src = '';
-        }
-      } else {
-        preview.src = '';
-      }
-    });
-
-    // pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdn.jsdelivr.net/npm/pdfjs-dist@3.6.172/build/pdf.worker.js";
-    pdfjsLib.GlobalWorkerOptions.workerSrc = 'js/addons/pdf.worker.js';
-
-    let language = "msa";
-
-    const showError = (error) => {
-      mzSetValue('txtMjphIsiDokumen', null, 'textarea');
-      $('#isiDokumenErr').html(document.createTextNode(`Error: ${error.message}`));
-      // document.getElementById("txtMjphIsiDokumenErr").appendChild(document.createTextNode(`Error: ${error.message}`));
-    };
-
-    const clearResults = () => {
-      mzSetValue('txtMjphIsiDokumen', null, 'textarea');
-      $('#isiDokumenErr').html('');
-    };
 
     $('#btnMjphSave').on('click', function () {
       if (!formValidateMjph.validateNow()) {
@@ -144,7 +86,6 @@ function ModalMpgJawatanDipohon() {
       submitType = 'add';
 
       formValidateMjph.clearValidation();
-      //$('.optionKertas').hide();
 
       ShowLoader();
       setTimeout(function () {
@@ -213,26 +154,10 @@ function ModalMpgJawatanDipohon() {
   };
 
   this.assignValue = function () {
-    const jenisDokumen = '1';
-    if (jenisDokumen == '6' || jenisDokumen == '7') {
-      $('.optionKertas').show();
-      formValidateMjph.enableField('optMjphCawangan');
-      formValidateMjph.enableField('optMjphFungsi');
-      formValidateMjph.enableField('optMjphSubFungsi');
-    } else {
-      $('.optionKertas').hide();
-      formValidateMjph.disableField('optMjphCawangan');
-      formValidateMjph.disableField('optMjphFungsi');
-      formValidateMjph.disableField('optMjphSubFungsi');
-    }
-    mzSetValue('optMjphJenisDokumen', jenisDokumen, 'select');
+    mzSetValue('optMjphJenisDokumen', '01', 'select');
     mzSetValue('txtMjphNoRujukanFail', 'SPP.600-3/1/1 Jld.21(4)(S)', 'text');
     mzSetValue('txtMjphTajukDokumen', 'KERTAS BIL. KM13/2024: PEMAKLUMAN PERINTAH TAHAN KERJA YANG TERHENTI TERHADAP NAMA PEGAWAI, PEGAWAI PENDIDIKAN PENGAJIAN TINGGI (PPPT) GRED DH54, POLITEKNIK NILAI, NEGERI SEMBILAN [NOMBOR FAIL]', 'textarea');
     mzSetValue('txtMjphFile', '3. MLRTT 672 (Image).pdf', 'text');
-    document.getElementById('pdfMjphPreview').src = 'document/3. MLRTT 672 (Image).pdf';
-
-    var isiDokumen = "p DISAHKAN PADA: 9 MAC 2015 |\nSm L DISAHKAN pAdA S MAc 2 | 672\n-\nSPP(S).220/485/1 Jilid 24 (49)\nMINIT MESYUARAT\nLEMBAGA RAYUAN TATATERTIB PERKHIDMATAN PENDIDIKAN\nKALI KE-672(BIL.4/2015)\nHARI DAN TARIKH : Isnin, 23 Februari 2015\n-\nMASA : 11.05 pagi\nTEMPAT : Bilik Mesyuarat Suruhanjaya\nAras3, Blok B3, Kompleks JPM\nPusat Pentadbiran Kerajaan Persekutuan\nPUTRAJAYA\nHADIR:\n1. YBhg. Datuk Dr. Haili bin Dolhan - Pengerusi\nPengerusi SPP\nx 2. Tuan Haji Abdul Adzis bin Abas\n3. Puan Rahimah binti Mohd Sura\n4. YBhg. Dato' Dr. Soh Chee Seng\n5. YBhg. Dato' Haji Azmi bin Che Mat\n6. YBhg. Dato' Haji Imran bin Idris\n7. YBhg. Dato' Abdul Halim bin Abdul Razak\n8. Encik Awangku Ali bin Pg. Jumaat\n9. Tuan Haji Morazuki bin Hashim\nN 10. YBhg. Dato' Abu Bakar bin Othman - Setiausaha\nTIDAK HADIR DENGAN MAAF\n1. YBhg. Dato' Seri Dr. Abdul Rahman bin Hashim\nTimbalan Pengerusi SPP\n2. Tuan Haji Jamaludin bin Yahaya\n( . , ,\nTuan Haji Osman bin Abd. Aziz\nK\n(\nN 1\nX SULIT\nN\nSULIT DISAHKAN PADA: 9 MAC 2015 MLRTI Kedr2 (BI A0\n| .\n| HADIR BERSAMA- SAMA (URUS SETIA):\n! 1. Encik Mohd Taupik bin Yusof TSU(P)\n2. Puan Maheran binti Abdul Rahman SUB(PM)\n3. Encik Mohd Safrie bin Zakaria SUB(K)\n| 4. Encik Mohd Farid bin Mohd Arif SUB(G)\n| 5, Encik Mohamad Fahmi bin Mohd Latib SUB(BG)\n| 6. Puan Zuliana binti Mohd Akob SUB (D) ,\n7. Puan Zaidayu binti Haron PSU(NT)\n| 8. Puan Nuuraulia binti Md. Isa PSU(U)\n| 9. Puan Maimunah binti Ismail PPT(U)\n| 1. PERUTUSAN PENGERUSI\n| Pengerusi mengalu-alukan semua yang hadir.\n2. PENGESAHAN MINIT MESYUARAT LEMBAGA  RAYUAN\n| TATATERTIB PERKHIDMATAN PENDIDIKAN KALI KE-671 PADA 9 .\n| FEBUARI 2015\n| Minit Mesyuarat Lembaga Rayuan Tatatertib Perkhidmatan Pendidikan\nkali ke-671 pada 9 Februari 2015 disahkan tanpa pindaan.\n3. PERKARA BERBANGKIT DARIPADA MINIT MESYUARAT\nLEMBAGA RAYUAN TATATERTIB PERKHIDMATAN PENDIDIKAN\nKALI KE-671 PADA 9 FEBRUARI 2015\n| Tiada.\n4. PERBINCANGAN KERTAS *\n41 KERTAS BIL. R17/2015: RAYUAN TATATERTIB DARIPADA\nNURASHIKIN BINTI ADNAN PEGAWAI PERKHIDMATAN\nPENDIDIKAN LEPASAN DIPLOMA GRED DGA32 KHAS UNTUK\n| PENYANDANG SEKOLAH KEBANGSAAN BANDAR BARU SENTUL,\n| KUALA LUMPUR\n! H  (SPP(S).60/1/0080676(5)1\n% ' Lembaga menimbangkan kertas dan:\n| , .\nSULIT\n";
-    mzSetValue('txtMjphIsiDokumen', isiDokumen, 'textarea');
   };
   
   this.getClassName = function () {
