@@ -109,9 +109,9 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-12 p-1">
+          <!-- <div class="col-lg-12 p-1">
             <p class="label-text float-right">Kemaskini Terakhir: <span class="kemaskiniTerakhir">04/01/2024 (09:00:08)</span></p>
-          </div>
+          </div> -->
           <!-- Menu -->
           <div class="col p-1 pr-3 side-section">
             <div class="card rounded-0" style="position: sticky; top: 62px;">
@@ -364,9 +364,9 @@
                           <div class="col-lg-6">
                             <p class="label-text">Tarikh Lahir<span class="ml-1 text-danger">*</span></p>
                             <div class="md-form md-outline md-outline-light md-custom my-1">
-                              <input type="text" class="form-control datepicker2" id="txtSmeTarikhLahir" placeholder="DD/MM/YYYY">
+                              <input type="text" class="form-control datepicker2" placeholder="DD/MM/YYYY" id="txtSmclTarikhLahir">
                             </div>
-                            <p class="font-small text-danger" id="txtSmeTarikhLahirErr"></p>
+                            <p class="font-small text-danger" id="txtSmclTarikhLahirErr"></p>
                           </div>
                           <div class="col-lg-6">
                             <p class="label-text">Alamat E-mel</p>
@@ -667,16 +667,16 @@
                       </div>
                       <div class="card-body">
                         <div class="row mb-4">
-                          <div class="col-md-12">
+                          <div class="col-lg-12">
                             <p class="label-text font-weight-500 unique-text">Jawatan-Jawatan Yang Dipohon</p>
                             <hr class="mt-2">
                           </div>
-                          <div class="col-md-12 p-0">
+                          <div class="col-lg-12 p-0">
                             <div class="table-responsive">
                               <table id="dtJwt" class="table table-custom table-bordered-custom table-hover table-striped display responsive mt-0">
                                 <thead>
                                   <tr>
-                                    <th class="all" style="min-width: 35px;">#</th>
+                                    <th class="all" style="width: 35px; min-width: 35px;">#</th>
                                     <th class="all" style="width: 200px;">Jawatan (Skim Dipohon)</th>
                                     <th class="all">No. Kelompok</th>
                                     <th class="all">No. Siri</th>
@@ -685,7 +685,7 @@
                                     <th class="all">Tarikh Surat <br>Perakuan</th>
                                     <th class="all">Tarikh Daftar</th>
                                     <th class="all" style="width: 62px; min-width: 62px;">
-                                      <span class="btn-clear divSmeSave btnJwtTambah" data-toggle="tooltip" data-placement="left" title="Tambah">
+                                      <span class="btn-clear divSmclSave btnJwtTambah" data-toggle="tooltip" data-placement="left" title="Tambah">
                                         <i class="fa-regular mx-0 fa-circle-plus fa-lg"></i>
                                       </span>
                                     </th>
@@ -698,7 +698,7 @@
                         </div>
                         <hr class="mt-2 mb-4">
                         <div class="row">
-                          <div class="col-md-12">
+                          <div class="col-lg-12">
                             <p class="label-text font-weight-500 unique-text">Pusat Temu Duga / Ujian Khas Yang Dipilih<span class="ml-1 text-danger">*</span></p>
                             <p class="label-text">Pilih satu tempat Pusat Temuduga</p>
                             <hr class="mt-2">
@@ -739,6 +739,7 @@
                             <button type="button" class="btn btn-sm btn-outline-default z-depth-0 btnSmclNext"><i class="fa-solid fa-arrow-right mr-2"></i>Seterusnya</button>
                           </div>
                           <div class="p-0 pr-2 ml-auto">
+                            <button type="button" class="btn btn-sm btn-outline-default z-depth-0" id="btnSmclBReset"><i class="fa-solid fa-rotate mr-2"></i>Set Semula</button>
                             <button type="button" class="btn btn-sm btn-default z-depth-0" id="btnSmclBSave"><i class="fa-solid fa-floppy-disk mr-2"></i>Simpan</button>
                           </div>
                         </div>
@@ -751,7 +752,63 @@
                         <p class="section-title"><i class="fa-solid fa-c mr-3 mb-0"></i>Keputusan Persekolahan</p>
                       </div>
                       <div class="card-body">
-                        
+                        <div class="row mb-4">
+                          <div class="col-lg-12">
+                            <p class="label-text font-weight-500 unique-text">Keputusan Persekolahan</p>
+                            <hr class="mt-2">
+                          </div>
+                          <div class="col-lg-12 p-0">
+                            <div class="table-responsive">
+                              <table id="dtKpk" class="table table-custom table-bordered-custom table-hover table-striped display responsive mt-0">
+                                <thead>
+                                  <tr>
+                                    <th class="all" style="width: 35px; min-width: 35px;">#</th>
+                                    <th class="all">Taraf Pendidikan</th>
+                                    <th class="all">Keputusan</th>
+                                    <th class="all">Tahun</th>
+                                    <th class="all" style="width: 62px; min-width: 62px;">
+                                      <span class="btn-clear divSmclSave btnKpkTambah" data-toggle="tooltip" data-placement="left" title="Tambah">
+                                        <i class="fa-regular mx-0 fa-circle-plus fa-lg"></i>
+                                      </span>
+                                    </th>
+                                  </tr>
+                                </thead>
+                                <tbody></tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                        <hr class="mt-2 mb-4">
+                        <div class="row">
+                          <div class="col-lg-6">
+                            <p class="label-text">Tamat Darjah 6 Sekolah Rendah Kerajaan</p>
+                            <div class="md-form md-outline mb-4 mt-1">
+                              <div class="form-check form-check-inline mb-2">
+                                <input type="radio" class="form-check-input" name="radSmclTamatDarjahEnam" id="radSmclTamatDarjahEnam1" value="1">
+                                <label class="form-check-label text-black" for="radSmclTamatDarjahEnam1">Ya</label>
+                              </div>
+                              <div class="form-check form-check-inline mb-2">
+                                <input type="radio" class="form-check-input" name="radSmclTamatDarjahEnam" id="radSmclTamatDarjahEnam2" value="2">
+                                <label class="form-check-label text-black" for="radSmclTamatDarjahEnam2">Tidak</label>
+                              </div>
+                            </div>
+                            <p class="font-small text-danger" id="radSmclTamatDarjahEnamErr"></p>
+                          </div> 
+                          <div class="col-lg-6">
+                            <p class="label-text">Tamat Tingkatan 3 Sekolah Menengah Kerajaan</p>
+                            <div class="md-form md-outline mb-4 mt-1">
+                              <div class="form-check form-check-inline mb-2">
+                                <input type="radio" class="form-check-input" name="radSmclTamatTingkatanTiga" id="radSmclTamatTingkatanTiga1" value="1">
+                                <label class="form-check-label text-black" for="radSmclTamatTingkatanTiga1">Ya</label>
+                              </div>
+                              <div class="form-check form-check-inline mb-2">
+                                <input type="radio" class="form-check-input" name="radSmclTamatTingkatanTiga" id="radSmclTamatTingkatanTiga2" value="2">
+                                <label class="form-check-label text-black" for="radSmclTamatTingkatanTiga2">Tidak</label>
+                              </div>
+                            </div>
+                            <p class="font-small text-danger" id="radSmclTamatTingkatanTigaErr"></p>
+                          </div>                  
+                        </div>                   
                       </div>
                       <div class="card-footer grey lighten-6 p-1 divSmclSave">
                         <div class="d-flex">
@@ -760,6 +817,7 @@
                             <button type="button" class="btn btn-sm btn-outline-default z-depth-0 btnSmclNext"><i class="fa-solid fa-arrow-right mr-2"></i>Seterusnya</button>
                           </div>
                           <div class="p-0 pr-2 ml-auto">
+                            <button type="button" class="btn btn-sm btn-outline-default z-depth-0" id="btnSmclCReset"><i class="fa-solid fa-rotate mr-2"></i>Set Semula</button>
                             <button type="button" class="btn btn-sm btn-default z-depth-0" id="btnSmclCSave"><i class="fa-solid fa-floppy-disk mr-2"></i>Simpan</button>
                           </div>
                         </div>
@@ -772,7 +830,76 @@
                         <p class="section-title"><i class="fa-solid fa-d mr-3 mb-0"></i>Tambahan Keputusan Persekolahan</p>
                       </div>
                       <div class="card-body">
-                        
+                        <div class="row">
+                          <div class="col-lg-12">
+                            <p class="label-text font-weight-500 unique-text">Peperiksaan Bahasa Melayu Kertas Julai/ SAP/ SPM/ STPM/ STAM/ Universiti atau Setaraf</p>
+                            <p class="label-text">(Isi bahagian ini jika berkaitan)</p>
+                            <hr class="mt-2">
+                          </div>
+                          <div class="col-lg-6">
+                            <p class="label-text">Tahun</p>
+                            <div class="md-form md-outline md-outline-light md-custom my-1">
+                              <input type="text" class="form-control numeric" maxlength="4" placeholder="YYYY" id="txtSmclTahunPeperiksaanBmJulai">
+                            </div>
+                            <p class="font-small text-danger font-weight-400" id="txtSmclTahunPeperiksaanBmJulaiErr"></p>
+                          </div>
+                          <div class="col-lg-6">
+                            <p class="label-text">Jenis</p>
+                            <div class="select-outline" id="optSmclJenisPeperiksaanBmJulai_">
+                              <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optSmclJenisPeperiksaanBmJulai">
+                                <option value="" selected>Sila Pilih</option>
+                              </select>
+                            </div>
+                            <p class="font-small text-danger" id="optSmclJenisPeperiksaanBmJulaiErr"></p>
+                          </div>
+                          <div class="col-lg-6">
+                            <p class="label-text">Gred</p>
+                            <div class="select-outline" id="optSmclGredPeperiksaanBmJulai_">
+                              <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optSmclGredPeperiksaanBmJulai">
+                                <option value="" selected>Sila Pilih</option>
+                              </select>
+                            </div>
+                            <p class="font-small text-danger" id="optSmclGredPeperiksaanBmJulaiErr"></p>
+                          </div>
+                          <div class="col-lg-6">
+                            <p class="label-text">Ujian Lisan</p>
+                            <div class="md-form md-outline mb-4 mt-1">
+                              <div class="form-check form-check-inline mb-2">
+                                <input type="radio" class="form-check-input" name="radSmclUjianLisanBmJulai" id="radSmclUjianLisanBmJulai1" value="1">
+                                <label class="form-check-label text-black" for="radSmclUjianLisanBmJulai1">Ya</label>
+                              </div>
+                              <div class="form-check form-check-inline mb-2">
+                                <input type="radio" class="form-check-input" name="radSmclUjianLisanBmJulai" id="radSmclUjianLisanBmJulai2" value="2">
+                                <label class="form-check-label text-black" for="radSmclUjianLisanBmJulai2">Tidak</label>
+                              </div>
+                            </div>
+                            <p class="font-small text-danger" id="radSmclUjianLisanBmJulaiErr"></p>
+                          </div> 
+                        </div>
+                        <hr class="mt-2 mb-4">
+                        <div class="row">
+                          <div class="col-lg-12">
+                            <p class="label-text font-weight-500 unique-text">Peperiksaan Matematik Kertas Julai</p>
+                            <p class="label-text">(Isi bahagian ini jika berkaitan)</p>
+                            <hr class="mt-2">
+                          </div>
+                          <div class="col-lg-6">
+                            <p class="label-text">Tahun</p>
+                            <div class="md-form md-outline md-outline-light md-custom my-1">
+                              <input type="text" class="form-control numeric" maxlength="4" placeholder="YYYY" id="txtSmclTahunPeperiksaanMathJulai">
+                            </div>
+                            <p class="font-small text-danger font-weight-400" id="txtSmclTahunPeperiksaanMathJulaiErr"></p>
+                          </div>
+                          <div class="col-lg-6">
+                            <p class="label-text">Gred</p>
+                            <div class="select-outline" id="optSmclGredPeperiksaanMathJulai_">
+                              <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optSmclGredPeperiksaanMathJulai">
+                                <option value="" selected>Sila Pilih</option>
+                              </select>
+                            </div>
+                            <p class="font-small text-danger" id="optSmclGredPeperiksaanMathJulaiErr"></p>
+                          </div>
+                        </div>
                       </div>
                       <div class="card-footer grey lighten-6 p-1 divSmclSave">
                         <div class="d-flex">
@@ -781,6 +908,7 @@
                             <button type="button" class="btn btn-sm btn-outline-default z-depth-0 btnSmclNext"><i class="fa-solid fa-arrow-right mr-2"></i>Seterusnya</button>
                           </div>
                           <div class="p-0 pr-2 ml-auto">
+                            <button type="button" class="btn btn-sm btn-outline-default z-depth-0" id="btnSmclDReset"><i class="fa-solid fa-rotate mr-2"></i>Set Semula</button>
                             <button type="button" class="btn btn-sm btn-default z-depth-0" id="btnSmclDSave"><i class="fa-solid fa-floppy-disk mr-2"></i>Simpan</button>
                           </div>
                         </div>
@@ -793,7 +921,33 @@
                         <p class="section-title"><i class="fa-solid fa-e mr-3 mb-0"></i>Keputusan Pengajian Tinggi</p>
                       </div>
                       <div class="card-body">
-                        
+                        <div class="row mb-4">
+                          <div class="col-lg-12">
+                            <p class="label-text font-weight-500 unique-text">Keputusan Pengajian Tinggi</p>
+                            <hr class="mt-2">
+                          </div>
+                          <div class="col-lg-12 p-0">
+                            <div class="table-responsive">
+                              <table id="dtKpt" class="table table-custom table-bordered-custom table-hover table-striped display responsive mt-0">
+                                <thead>
+                                  <tr>
+                                    <th class="all" style="width: 35px; min-width: 35px;">#</th>
+                                    <th class="all">Pusat Pengajian / Pengkhususan / Kelulusan</th>
+                                    <th class="all" style="width: 90px;">Tahun</th>
+                                    <th class="all">Tarikh Senat</th>
+                                    <th class="all">Keputusan Bahasa Inggeris</th>
+                                    <th class="all" style="width: 62px; min-width: 62px;">
+                                      <span class="btn-clear divSmclSave btnKptTambah" data-toggle="tooltip" data-placement="left" title="Tambah">
+                                        <i class="fa-regular mx-0 fa-circle-plus fa-lg"></i>
+                                      </span>
+                                    </th>
+                                  </tr>
+                                </thead>
+                                <tbody></tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                       <div class="card-footer grey lighten-6 p-1 divSmclSave">
                         <div class="d-flex">
@@ -802,7 +956,8 @@
                             <button type="button" class="btn btn-sm btn-outline-default z-depth-0 btnSmclNext"><i class="fa-solid fa-arrow-right mr-2"></i>Seterusnya</button>
                           </div>
                           <div class="p-0 pr-2 ml-auto">
-                            <button type="button" class="btn btn-sm btn-default z-depth-0" id="btnSmclESave"><i class="fa-solid fa-floppy-disk mr-2"></i>Simpan</button>
+                            <!-- <button type="button" class="btn btn-sm btn-outline-default z-depth-0" id="btnSmclEReset"><i class="fa-solid fa-rotate mr-2"></i>Set Semula</button> -->
+                            <!-- <button type="button" class="btn btn-sm btn-default z-depth-0" id="btnSmclESave"><i class="fa-solid fa-floppy-disk mr-2"></i>Simpan</button> -->
                           </div>
                         </div>
                       </div>
@@ -814,7 +969,74 @@
                         <p class="section-title"><i class="fa-solid fa-f mr-3 mb-0"></i>Maklumat Tambahan</p>
                       </div>
                       <div class="card-body">
-                        
+                        <div class="row">
+                          <div class="col-lg-12">
+                            <p class="label-text font-weight-500 unique-text">Bekas Tentera/ Bekas Polis</p>
+                            <p class="label-text">(Bekas tentera/polis perlu mengemukakan Buku Tamat Perkhidmatan semasa menghadiri temuduga)</p>
+                            <hr class="mt-2">
+                          </div>
+                          <div class="col-lg-6">
+                            <p class="label-text">Kategori</p>
+                            <div class="select-outline" id="optSmclTambahanKategori_">
+                              <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optSmclTambahanKategori">
+                                <option value="" selected>Sila Pilih</option>
+                              </select>
+                            </div>
+                            <p class="font-small text-danger" id="optSmclTambahanKategoriErr"></p>
+                          </div>
+                          <div class="col-lg-6">
+                            <p class="label-text">Pangkat Dalam Tentera Laut</p>
+                            <div class="select-outline" id="optSmclTambahanPangkatLaut_">
+                              <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optSmclTambahanPangkatLaut">
+                                <option value="" selected>Sila Pilih</option>
+                              </select>
+                            </div>
+                            <p class="font-small text-danger" id="optSmclTambahanPangkatLautErr"></p>
+                          </div>
+                          <div class="col-lg-6">
+                            <p class="label-text">Menerima Pencen</p>
+                            <div class="md-form md-outline mb-4 mt-1">
+                              <div class="form-check form-check-inline mb-2">
+                                <input type="radio" class="form-check-input" name="radSmclTambahanPencen" id="radSmclTambahanPencen1" value="1">
+                                <label class="form-check-label text-black" for="radSmclTambahanPencen1">Ya</label>
+                              </div>
+                              <div class="form-check form-check-inline mb-2">
+                                <input type="radio" class="form-check-input" name="radSmclTambahanPencen" id="radSmclTambahanPencen2" value="2">
+                                <label class="form-check-label text-black" for="radSmclTambahanPencen2">Tidak</label>
+                              </div>
+                            </div>
+                            <p class="font-small text-danger" id="radSmclTambahanPencenErr"></p>
+                          </div>                          
+                          <div class="col-lg-6">
+                            <p class="label-text">Menerima Ganjaran</p>
+                            <div class="md-form md-outline mb-4 mt-1">
+                              <div class="form-check form-check-inline mb-2">
+                                <input type="radio" class="form-check-input" name="radSmclTambahanGanjaran" id="radSmclTambahanGanjaran1" value="1">
+                                <label class="form-check-label text-black" for="radSmclTambahanGanjaran1">Ya</label>
+                              </div>
+                              <div class="form-check form-check-inline mb-2">
+                                <input type="radio" class="form-check-input" name="radSmclTambahanGanjaran" id="radSmclTambahanGanjaran2" value="2">
+                                <label class="form-check-label text-black" for="radSmclTambahanGanjaran2">Tidak</label>
+                              </div>
+                            </div>
+                            <p class="font-small text-danger" id="radSmclTambahanGanjaranErr"></p>
+                          </div>
+                        </div>
+                        <hr class="mt-2 mb-4">
+                        <div class="row">
+                          <div class="col-lg-6">
+                            <p class="label-text">Ukuran Tinggi</p>
+                            <div class="md-form md-outline md-outline-light md-custom my-1">
+                              <div class="input-group">
+                                <input type="text" class="form-control currency2" id="txtSmclTambahanTinggi">
+                                <div class="input-group-append align-items-center">
+                                  <span class="rounded-0 label-text px-3">meter</span>
+                                </div>
+                              </div>
+                            </div>
+                            <p class="font-small text-danger font-weight-400" id="txtSmclTambahanTinggi"></p>
+                          </div>
+                        </div>
                       </div>
                       <div class="card-footer grey lighten-6 p-1 divSmclSave">
                         <div class="d-flex">
@@ -823,6 +1045,7 @@
                             <button type="button" class="btn btn-sm btn-outline-default z-depth-0 btnSmclNext"><i class="fa-solid fa-arrow-right mr-2"></i>Seterusnya</button>
                           </div>
                           <div class="p-0 pr-2 ml-auto">
+                            <button type="button" class="btn btn-sm btn-outline-default z-depth-0" id="btnSmclFReset"><i class="fa-solid fa-rotate mr-2"></i>Set Semula</button>
                             <button type="button" class="btn btn-sm btn-default z-depth-0" id="btnSmclFSave"><i class="fa-solid fa-floppy-disk mr-2"></i>Simpan</button>
                           </div>
                         </div>
@@ -835,7 +1058,31 @@
                         <p class="section-title"><i class="fa-solid fa-g mr-3 mb-0"></i>Penguasaan Bahasa</p>
                       </div>
                       <div class="card-body">
-                        
+                        <div class="row mb-4">
+                          <div class="col-lg-12">
+                            <p class="label-text font-weight-500 unique-text">Maklumat Penguasaan Bahasa</p>
+                            <hr class="mt-2">
+                          </div>
+                          <div class="col-lg-12 p-0">
+                            <div class="table-responsive">
+                              <table id="dtPbh" class="table table-custom table-bordered-custom table-hover table-striped display responsive mt-0">
+                                <thead>
+                                  <tr>
+                                    <th class="all" style="width: 35px; min-width: 35px;">#</th>
+                                    <th class="all">Jenis Bahasa</th>
+                                    <th class="all">Penguasaan Bahasa</th>
+                                    <th class="all" style="width: 62px; min-width: 62px;">
+                                      <span class="btn-clear divSmclSave btnPbhTambah" data-toggle="tooltip" data-placement="left" title="Tambah">
+                                        <i class="fa-regular mx-0 fa-circle-plus fa-lg"></i>
+                                      </span>
+                                    </th>
+                                  </tr>
+                                </thead>
+                                <tbody></tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                       <div class="card-footer grey lighten-6 p-1 divSmclSave">
                         <div class="d-flex">
@@ -844,7 +1091,8 @@
                             <button type="button" class="btn btn-sm btn-outline-default z-depth-0 btnSmclNext"><i class="fa-solid fa-arrow-right mr-2"></i>Seterusnya</button>
                           </div>
                           <div class="p-0 pr-2 ml-auto">
-                            <button type="button" class="btn btn-sm btn-default z-depth-0" id="btnSmclGSave"><i class="fa-solid fa-floppy-disk mr-2"></i>Simpan</button>
+                            <!-- <button type="button" class="btn btn-sm btn-outline-default z-depth-0" id="btnSmclGReset"><i class="fa-solid fa-rotate mr-2"></i>Set Semula</button> -->
+                            <!-- <button type="button" class="btn btn-sm btn-default z-depth-0" id="btnSmclGSave"><i class="fa-solid fa-floppy-disk mr-2"></i>Simpan</button> -->
                           </div>
                         </div>
                       </div>
@@ -856,7 +1104,30 @@
                         <p class="section-title"><i class="fa-solid fa-h mr-3 mb-0"></i>Bakat/ Kebolehan</p>
                       </div>
                       <div class="card-body">
-                        
+                        <div class="row mb-4">
+                          <div class="col-lg-12">
+                            <p class="label-text font-weight-500 unique-text">Maklumat Bakat</p>
+                            <hr class="mt-2">
+                          </div>
+                          <div class="col-lg-12 p-0">
+                            <div class="table-responsive">
+                              <table id="dtBkt" class="table table-custom table-bordered-custom table-hover table-striped display responsive mt-0">
+                                <thead>
+                                  <tr>
+                                    <th class="all" style="width: 35px; min-width: 35px;">#</th>
+                                    <th class="all">Bakat</th>
+                                    <th class="all" style="width: 62px; min-width: 62px;">
+                                      <span class="btn-clear divSmclSave btnBktTambah" data-toggle="tooltip" data-placement="left" title="Tambah">
+                                        <i class="fa-regular mx-0 fa-circle-plus fa-lg"></i>
+                                      </span>
+                                    </th>
+                                  </tr>
+                                </thead>
+                                <tbody></tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                       <div class="card-footer grey lighten-6 p-1 divSmclSave">
                         <div class="d-flex">
@@ -865,7 +1136,8 @@
                             <button type="button" class="btn btn-sm btn-outline-default z-depth-0 btnSmclNext"><i class="fa-solid fa-arrow-right mr-2"></i>Seterusnya</button>
                           </div>
                           <div class="p-0 pr-2 ml-auto">
-                            <button type="button" class="btn btn-sm btn-default z-depth-0" id="btnSmclHSave"><i class="fa-solid fa-floppy-disk mr-2"></i>Simpan</button>
+                            <!-- <button type="button" class="btn btn-sm btn-outline-default z-depth-0" id="btnSmclHReset"><i class="fa-solid fa-rotate mr-2"></i>Set Semula</button> -->
+                            <!-- <button type="button" class="btn btn-sm btn-default z-depth-0" id="btnSmclHSave"><i class="fa-solid fa-floppy-disk mr-2"></i>Simpan</button> -->
                           </div>
                         </div>
                       </div>
@@ -877,7 +1149,135 @@
                         <p class="section-title"><i class="fa-solid fa-i mr-3 mb-0"></i>Pegawai Sedang Berkhidmat/ KPSL</p>
                       </div>
                       <div class="card-body">
-                        
+                        <div class="row">
+                          <div class="col-lg-12">
+                            <div class="row">
+                              <div class="col-lg-7">
+                                <p class="label-text font-weight-500 unique-text">Maklumat Pegawai Sedang Berkhidmat/KPSL</p>
+                                <p class="label-text">Pengesahan Ketua Jabatan hendaklah dibawa semasa temuduga</p>
+                              </div>
+                              <div class="col-lg-5">
+                                <button type="button" class="btn btn-smx btn-outline-default z-depth-0 btnSmclHapusPegawaiKpsl m-0 float-right"><i class="fa-solid fa-ban mr-2"></i>Hapus Pegawai Sedang Berkhidmat/KPSL</button>
+                              </div>
+                            </div>
+                            <hr class="mt-2">
+                          </div>
+                          <div class="col-lg-6">
+                            <p class="label-text">Jenis Perkhidmatan<span class="ml-1 text-danger">*</span></p>
+                            <div class="select-outline" id="optSmclJenisPerkhidmatan_">
+                              <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optSmclJenisPerkhidmatan">
+                                <option value="" selected>Sila Pilih</option>
+                              </select>
+                            </div>
+                            <p class="font-small text-danger" id="optSmclJenisPerkhidmatanErr"></p>
+                          </div>
+                          <div class="col-lg-6">
+                            <p class="label-text">Taraf Jawatan<span class="ml-1 text-danger">*</span></p>
+                            <div class="select-outline" id="optSmclTarafJawatan_">
+                              <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optSmclTarafJawatan">
+                                <option value="" selected>Sila Pilih</option>
+                              </select>
+                            </div>
+                            <p class="font-small text-danger" id="optSmclTarafJawatanErr"></p>
+                          </div>
+                          <div class="col-lg-6">
+                            <p class="label-text">Tarikh Lantikan Pertama Ke Perkhidmatan Awam<span class="ml-1 text-danger">*</span></p>
+                            <div class="md-form md-outline md-outline-light md-custom my-1">
+                              <input type="text" class="form-control datepicker2" placeholder="DD/MM/YYYY" id="txtSmclTarikhLantikan">
+                            </div>
+                            <p class="font-small text-danger font-weight-400" id="txtSmclTarikhLantikanErr"></p>
+                          </div>
+                          <div class="col-lg-6">
+                            <p class="label-text">Skim Perkhidmatan Sekarang (Hakiki)<span class="ml-1 text-danger">*</span></p>
+                            <div class="select-outline" id="optSmclSkimPerkhidmatanSekarang_">
+                              <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optSmclSkimPerkhidmatanSekarang">
+                                <option value="" selected>Sila Pilih</option>
+                              </select>
+                            </div>
+                            <p class="font-small text-danger" id="optSmclSkimPerkhidmatanSekarangErr"></p>
+                          </div>
+                          <div class="col-lg-6">
+                            <p class="label-text">Gred Perkhidmatan Sekarang (Hakiki)<span class="ml-1 text-danger">*</span></p>
+                            <div class="select-outline" id="optSmclGredPerkhidmatanSekarang_">
+                              <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optSmclGredPerkhidmatanSekarang">
+                                <option value="" selected>Sila Pilih</option>
+                              </select>
+                            </div>
+                            <p class="font-small text-danger" id="optSmclGredPerkhidmatanSekarangErr"></p>
+                          </div>
+                          <div class="col-lg-6">
+                            <p class="label-text">Kumpulan Perkhidmatan<span class="ml-1 text-danger">*</span></p>
+                            <div class="select-outline" id="optSmclKumpulanPerkhidmatan_">
+                              <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optSmclKumpulanPerkhidmatan">
+                                <option value="" selected>Sila Pilih</option>
+                              </select>
+                            </div>
+                            <p class="font-small text-danger" id="optSmclKumpulanPerkhidmatanErr"></p>
+                          </div>
+                          <div class="col-lg-6">
+                            <p class="label-text">Tarikh Lantikan Ke Skim Perkhidmatan Sekarang (Hakiki)<span class="ml-1 text-danger">*</span></p>
+                            <div class="md-form md-outline md-outline-light md-custom my-1">
+                              <input type="text" class="form-control datepicker2" placeholder="DD/MM/YYYY" id="txtSmclTarikhLantikanSkim">
+                            </div>
+                            <p class="font-small text-danger font-weight-400" id="txtSmclTarikhLantikanSkimErr"></p>
+                          </div>
+                          <div class="col-lg-6">
+                            <p class="label-text">Tarikh Pengesahan Skim Perkhidmatan Sekarang (Hakiki)<span class="ml-1 text-danger">*</span></p>
+                            <div class="md-form md-outline md-outline-light md-custom my-1">
+                              <input type="text" class="form-control datepicker2" placeholder="DD/MM/YYYY" id="txtSmclTarikhPengesahanSkim">
+                            </div>
+                            <p class="font-small text-danger font-weight-400" id="txtSmclTarikhPengesahanSkimErr"></p>
+                          </div>
+                          <div class="col-lg-6">
+                            <p class="label-text">Kementerian/Jabatan Tempat Bertugas<span class="ml-1 text-danger">*</span></p>
+                            <div class="select-outline" id="optSmclKementerianBertugas_">
+                              <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optSmclKementerianBertugas">
+                                <option value="" selected>Sila Pilih</option>
+                              </select>
+                            </div>
+                            <p class="font-small text-danger" id="optSmclKementerianBertugasErr"></p>
+                          </div>
+                          <div class="col-lg-6">
+                            <p class="label-text">Negeri Tempat Bertugas<span class="ml-1 text-danger">*</span></p>
+                            <div class="select-outline" id="optSmclNegeriBertugas_">
+                              <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optSmclNegeriBertugas">
+                                <option value="" selected>Sila Pilih</option>
+                              </select>
+                            </div>
+                            <p class="font-small text-danger" id="optSmclNegeriBertugasErr"></p>
+                          </div>
+                        </div>
+                        <hr class="mt-2 mb-4">
+                        <div class="row">
+                          <div class="col-lg-12">
+                            <div class="row">
+                              <div class="col-lg-6">
+                                <p class="label-text font-weight-500 unique-text">Peperiksaan Khas Yang Melakyakkan KPSL (Bagi Pemohon KPSL)</p>
+                                <p class="label-text">(Ruangan ini perlu diisi oleh pemohon yang telah lulus semua peperiksaan yang disyarat untuk KPSL sahaja)</p>
+                              </div>
+                              <div class="col-lg-6">
+                                <button type="button" class="btn btn-smx btn-outline-default z-depth-0 btnSmclHapusPeperiksaanKpsl m-0 float-right"><i class="fa-solid fa-ban mr-2"></i>Hapus Peperiksaan Khas Yang Melakyakkan KPSL</button>
+                              </div>
+                            </div>
+                            <hr class="mt-2">
+                          </div>
+                          <div class="col-lg-6">
+                            <p class="label-text">Tarikh Lulus Semua Peperiksaan</p>
+                            <div class="md-form md-outline md-outline-light md-custom my-1">
+                              <input type="text" class="form-control datepicker2" placeholder="DD/MM/YYYY" id="txtSmclTarikhLulusPeperiksaan">
+                            </div>
+                            <p class="font-small text-danger font-weight-400" id="txtSmclTarikhLulusPeperiksaanErr"></p>
+                          </div>
+                          <div class="col-lg-6">
+                            <p class="label-text">Jenis Peperiksaan<span class="ml-1 text-danger">*</span></p>
+                            <div class="select-outline" id="optSmclJenisPeperiksaan_">
+                              <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optSmclJenisPeperiksaan">
+                                <option value="" selected>Sila Pilih</option>
+                              </select>
+                            </div>
+                            <p class="font-small text-danger" id="optSmclJenisPeperiksaanErr"></p>
+                          </div>
+                        </div>
                       </div>
                       <div class="card-footer grey lighten-6 p-1 divSmclSave">
                         <div class="d-flex">
@@ -886,6 +1286,7 @@
                             <button type="button" class="btn btn-sm btn-outline-default z-depth-0 btnSmclNext"><i class="fa-solid fa-arrow-right mr-2"></i>Seterusnya</button>
                           </div>
                           <div class="p-0 pr-2 ml-auto">
+                            <button type="button" class="btn btn-sm btn-outline-default z-depth-0" id="btnSmclIReset"><i class="fa-solid fa-rotate mr-2"></i>Set Semula</button>
                             <button type="button" class="btn btn-sm btn-default z-depth-0" id="btnSmclISave"><i class="fa-solid fa-floppy-disk mr-2"></i>Simpan</button>
                           </div>
                         </div>
@@ -898,7 +1299,116 @@
                         <p class="section-title"><i class="fa-solid fa-j mr-3 mb-0"></i>Maklumat Ko-Kurikulum</p>
                       </div>
                       <div class="card-body">
-                        
+                        <div class="row mb-4">
+                          <div class="col-lg-12">
+                            <p class="label-text font-weight-500 unique-text">Sukan</p>
+                            <hr class="mt-2">
+                          </div>
+                          <div class="col-lg-12 p-0">
+                            <div class="table-responsive">
+                              <table id="dtSkn" class="table table-custom table-bordered-custom table-hover table-striped display responsive mt-0">
+                                <thead>
+                                  <tr>
+                                    <th class="all" style="width: 35px; min-width: 35px;">#</th>
+                                    <th class="all">Sukan</th>
+                                    <th class="all">Peringkat</th>
+                                    <th class="all" style="width: 62px; min-width: 62px;">
+                                      <span class="btn-clear divSmclSave btnSknTambah" data-toggle="tooltip" data-placement="left" title="Tambah">
+                                        <i class="fa-regular mx-0 fa-circle-plus fa-lg"></i>
+                                      </span>
+                                    </th>
+                                  </tr>
+                                </thead>
+                                <tbody></tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row mb-4">
+                          <div class="col-lg-12">
+                            <p class="label-text font-weight-500 unique-text">Persatuan (Jawatan yang disandang)</p>
+                            <hr class="mt-2">
+                          </div>
+                          <div class="col-lg-12 p-0">
+                            <div class="table-responsive">
+                              <table id="dtPsn" class="table table-custom table-bordered-custom table-hover table-striped display responsive mt-0">
+                                <thead>
+                                  <tr>
+                                    <th class="all" style="width: 35px; min-width: 35px;">#</th>
+                                    <th class="all">Nama Persatuan</th>
+                                    <th class="all">Jawatan</th>
+                                    <th class="all">Peringkat</th>
+                                    <th class="all" style="width: 62px; min-width: 62px;">
+                                      <span class="btn-clear divSmclSave btnPsnTambah" data-toggle="tooltip" data-placement="left" title="Tambah">
+                                        <i class="fa-regular mx-0 fa-circle-plus fa-lg"></i>
+                                      </span>
+                                    </th>
+                                  </tr>
+                                </thead>
+                                <tbody></tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row mb-4">
+                          <div class="col-lg-12">
+                            <p class="label-text font-weight-500 unique-text">Rekacipta dan Inovasi</p>
+                            <hr class="mt-2">
+                          </div>
+                          <div class="col-lg-12 p-0">
+                            <div class="table-responsive">
+                              <table id="dtRni" class="table table-custom table-bordered-custom table-hover table-striped display responsive mt-0">
+                                <thead>
+                                  <tr>
+                                    <th class="all" style="width: 35px; min-width: 35px;">#</th>
+                                    <th class="all">Jenis</th>
+                                    <th class="all">Sumbangan</th>
+                                    <th class="all">Peringkat</th>
+                                    <th class="all" style="width: 62px; min-width: 62px;">
+                                      <span class="btn-clear divSmclSave btnRniTambah" data-toggle="tooltip" data-placement="left" title="Tambah">
+                                        <i class="fa-regular mx-0 fa-circle-plus fa-lg"></i>
+                                      </span>
+                                    </th>
+                                  </tr>
+                                </thead>
+                                <tbody></tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                        <hr class="mt-2 mb-4">
+                        <div class="row">
+                          <div class="col-lg-12">
+                            <p class="label-text">Pencapaian Khas/Istimewa (sekiranya ada)</p>
+                            <div class="md-form md-outline md-outline-light md-custom my-1">
+                              <input type="text" class="form-control uc-text" id="txtSmclPencapaian Khas">
+                            </div>
+                            <p class="font-small text-danger font-weight-400" id="txtSmclPencapaian KhasErr"></p>
+                          </div>
+                          <div class="col-lg-6">
+                            <p class="label-text">Program Latihan Khidmat Negara (PLKN)</p>
+                            <div class="md-form md-outline mb-4 mt-1">
+                              <div class="form-check form-check-inline mb-2">
+                                <input type="radio" class="form-check-input" name="radSmclPlkn" id="radSmclPlkn1" value="1">
+                                <label class="form-check-label text-black" for="radSmclPlkn1">Ya</label>
+                              </div>
+                              <div class="form-check form-check-inline mb-2">
+                                <input type="radio" class="form-check-input" name="radSmclPlkn" id="radSmclPlkn2" value="2">
+                                <label class="form-check-label text-black" for="radSmclPlkn2">Tidak</label>
+                              </div>
+                            </div>
+                            <p class="font-small text-danger" id="radSmclPlknErr"></p>
+                          </div>
+                          <div class="col-lg-6">
+                            <p class="label-text">Status Pekerjaan Sekarang</p>
+                            <div class="select-outline" id="optSmclStatusPekerjaan_">
+                              <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optSmclStatusPekerjaan">
+                                <option value="" selected>Sila Pilih</option>
+                              </select>
+                            </div>
+                            <p class="font-small text-danger" id="optSmclStatusPekerjaanErr"></p>
+                          </div>
+                        </div>
                       </div>
                       <div class="card-footer grey lighten-6 p-1 divSmclSave">
                         <div class="d-flex">
@@ -907,6 +1417,7 @@
                             <button type="button" class="btn btn-sm btn-outline-default z-depth-0 btnSmclNext"><i class="fa-solid fa-arrow-right mr-2"></i>Seterusnya</button>
                           </div>
                           <div class="p-0 pr-2 ml-auto">
+                            <button type="button" class="btn btn-sm btn-outline-default z-depth-0" id="btnSmclJReset"><i class="fa-solid fa-rotate mr-2"></i>Set Semula</button>
                             <button type="button" class="btn btn-sm btn-default z-depth-0" id="btnSmclJSave"><i class="fa-solid fa-floppy-disk mr-2"></i>Simpan</button>
                           </div>
                         </div>
@@ -919,7 +1430,32 @@
                         <p class="section-title"><i class="fa-solid fa-k mr-3 mb-0"></i>Sijil/ Profesional</p>
                       </div>
                       <div class="card-body">
-                        
+                        <div class="row mb-4">
+                          <div class="col-lg-12">
+                            <p class="label-text font-weight-500 unique-text">Maklumat Keputusan Profesional</p>
+                            <hr class="mt-2">
+                          </div>
+                          <div class="col-lg-12 p-0">
+                            <div class="table-responsive">
+                              <table id="dtPro" class="table table-custom table-bordered-custom table-hover table-striped display responsive mt-0">
+                                <thead>
+                                  <tr>
+                                    <th class="all" style="width: 35px; min-width: 35px;">#</th>
+                                    <th class="all">Nama Sijil</th>
+                                    <th class="all">Tarikh Keahlian</th>
+                                    <th class="all">No. Keahlian</th>
+                                    <th class="all" style="width: 90px; min-width: 90px;">
+                                      <span class="btn-clear divSmclSave btnProTambah" data-toggle="tooltip" data-placement="left" title="Tambah">
+                                        <i class="fa-regular mx-0 fa-circle-plus fa-lg"></i>
+                                      </span>
+                                    </th>
+                                  </tr>
+                                </thead>
+                                <tbody></tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                       <div class="card-footer grey lighten-6 p-1 divSmclSave">
                         <div class="d-flex">
@@ -928,7 +1464,8 @@
                             <button type="button" class="btn btn-sm btn-outline-default z-depth-0 btnSmclNext"><i class="fa-solid fa-arrow-right mr-2"></i>Seterusnya</button>
                           </div>
                           <div class="p-0 pr-2 ml-auto">
-                            <button type="button" class="btn btn-sm btn-default z-depth-0" id="btnSmclKSave"><i class="fa-solid fa-floppy-disk mr-2"></i>Simpan</button>
+                            <!-- <button type="button" class="btn btn-sm btn-outline-default z-depth-0" id="btnSmclKReset"><i class="fa-solid fa-rotate mr-2"></i>Set Semula</button> -->
+                            <!-- <button type="button" class="btn btn-sm btn-default z-depth-0" id="btnSmclKSave"><i class="fa-solid fa-floppy-disk mr-2"></i>Simpan</button> -->
                           </div>
                         </div>
                       </div>
@@ -940,7 +1477,45 @@
                         <p class="section-title"><i class="fa-solid fa-l mr-3 mb-0"></i>Pengesahan Ketua Jabatan</p>
                       </div>
                       <div class="card-body">
-                        
+                        <div class="row mb-4">
+                          <div class="col-lg-12 mb-3">
+                            <p class="label-text font-weight-500 unique-text">(a) Tindakan Tatatertib Atas Pegawai</p>
+                          </div>
+                          <div class="col-lg-12 p-0">
+                            <div class="table-responsive">
+                              <table id="dtTtt" class="table table-custom table-bordered-custom table-hover table-striped display responsive mt-0">
+                                <thead>
+                                  <tr>
+                                    <th class="all" style="width: 35px; min-width: 35px;">#</th>
+                                    <th class="all">Tindakan Tatatertib</th>
+                                    <th class="all">Tarikh Hukuman</th>
+                                    <th class="all">Catatan</th>
+                                    <th class="all" style="width: 62px; min-width: 62px;">
+                                      <span class="btn-clear divSmclSave btnTttTambah" data-toggle="tooltip" data-placement="left" title="Tambah">
+                                        <i class="fa-regular mx-0 fa-circle-plus fa-lg"></i>
+                                      </span>
+                                    </th>
+                                  </tr>
+                                </thead>
+                                <tbody></tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-12 mb-3">
+                            <p class="label-text font-weight-500 unique-text">(b) Pengisytiharan Harta Oleh Pegawai</p>
+                          </div>
+                          <div class="col-lg-12">
+                            <p class="label-text">Kod Status Pengisytiharan Harta</p>
+                            <div class="select-outline" id="optSmclKodIsytiharHarta_">
+                              <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optSmclKodIsytiharHarta">
+                                <option value="" selected>Sila Pilih</option>
+                              </select>
+                            </div>
+                            <p class="font-small text-danger" id="optSmclKodIsytiharHartaErr"></p>
+                          </div>
+                        </div>
                       </div>
                       <div class="card-footer grey lighten-6 p-1 divSmclSave">
                         <div class="d-flex">
@@ -949,6 +1524,7 @@
                             <button type="button" class="btn btn-sm btn-outline-default z-depth-0 btnSmclNext"><i class="fa-solid fa-arrow-right mr-2"></i>Seterusnya</button>
                           </div>
                           <div class="p-0 pr-2 ml-auto">
+                            <button type="button" class="btn btn-sm btn-outline-default z-depth-0" id="btnSmclLReset"><i class="fa-solid fa-rotate mr-2"></i>Set Semula</button>
                             <button type="button" class="btn btn-sm btn-default z-depth-0" id="btnSmclLSave"><i class="fa-solid fa-floppy-disk mr-2"></i>Simpan</button>
                           </div>
                         </div>
@@ -961,16 +1537,86 @@
                         <p class="section-title"><i class="fa-solid fa-m mr-3 mb-0"></i>Senarai Semak</p>
                       </div>
                       <div class="card-body">
-                        
+                        <div class="row">
+                          <div class="col-lg-12">
+                            <p class="label-text font-weight-500 unique-text mb-2">Arahan :</p>
+                            <ol class="">
+                              <li class="label-text mb-2">Sila pastikan semua bahagian yang bertanda <span class="text-danger">*</span> diisi terlebih dahulu.</li>
+                              <li class="label-text mb-2">Butang 'Hantar Borang SPP' hanya akan di aktifkan setelah semua maklumat penting diisi.</li>
+                            </ol>
+                          </div>
+                        </div>
+                        <div class="row mt-4">
+                          <div class="col-lg-12 mb-3">
+                            <p class="label-text font-weight-500 unique-text">Senarai Semak</p>
+                            <p class="label-text">(Sila tandakan bahagian borang yang telah diisi)</p>
+                          </div>
+                          <div class="col-lg-12">
+                            <table class="table table-custom table-bordered-custom mt-0">
+                              <thead>
+                                <tr>
+                                  <th class="all" style="width: 55px; min-width: 55px;">Bil.</th>
+                                  <th class="all" style="width: 80%;">Bahagian</th>
+                                  <th class="all">Semak</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td class="text-center align-middle">1</td>
+                                  <td class="align-middle">&nbsp;Maklumat Calon<span class="ml-1 text-danger">*</span></td>
+                                  <td class="text-center">
+                                    <div class="form-check p-0 m-0 ml-2 mt-1">
+                                      <input type="checkbox" class="form-check-input" name="chkSmclSemak" id="chkSmclSemakA" value="A">
+                                      <label class="form-check-label" for="chkSmclSemakA"></label>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="text-center align-middle">2</td>
+                                  <td class="align-middle">&nbsp;Maklumat Skim Dipohon<span class="ml-1 text-danger">*</span></td>
+                                  <td class="text-center">
+                                    <div class="form-check p-0 m-0 ml-2 mt-1">
+                                      <input type="checkbox" class="form-check-input" name="chkSmclSemak" id="chkSmclSemakB" value="B">
+                                      <label class="form-check-label" for="chkSmclSemakB"></label>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="text-center align-middle">3</td>
+                                  <td class="align-middle">&nbsp;Keputusan Persekolahan<span class="ml-1 text-danger">*</span></td>
+                                  <td class="text-center">
+                                    <div class="form-check p-0 m-0 ml-2 mt-1">
+                                      <input type="checkbox" class="form-check-input" name="chkSmclSemak" id="chkSmclSemakC" value="C">
+                                      <label class="form-check-label" for="chkSmclSemakC"></label>
+                                    </div>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td class="text-center align-middle">4</td>
+                                  <td class="align-middle">&nbsp;Tambahan Keputusan Persekolahan (Jika Berkaitan)</td>
+                                  <td class="text-center">
+                                    <div class="form-check p-0 m-0 ml-2 mt-1">
+                                      <input type="checkbox" class="form-check-input" name="chkSmclSemak" id="chkSmclSemakD" value="D">
+                                      <label class="form-check-label" for="chkSmclSemakD"></label>
+                                    </div>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <p class="font-small text-danger" id="chkSmclSemakErr"></p>
+                          </div>
+                        </div>
                       </div>
                       <div class="card-footer grey lighten-6 p-1 divSmclSave">
                         <div class="d-flex">
                           <div class="p-0 pl-2">
                             <button type="button" class="btn btn-sm btn-outline-default z-depth-0 btnSmclPrevious"><i class="fa-solid fa-arrow-left mr-2"></i>Sebelumnya</button>
-                            <button type="button" class="btn btn-sm btn-outline-default z-depth-0 btnSmclNext"><i class="fa-solid fa-arrow-right mr-2"></i>Seterusnya</button>
+                            <!-- <button type="button" class="btn btn-sm btn-outline-default z-depth-0 btnSmclNext"><i class="fa-solid fa-arrow-right mr-2"></i>Seterusnya</button> -->
                           </div>
                           <div class="p-0 pr-2 ml-auto">
+                            <button type="button" class="btn btn-sm btn-outline-default z-depth-0" id="btnSmclMReset"><i class="fa-solid fa-rotate mr-2"></i>Set Semula</button>
                             <button type="button" class="btn btn-sm btn-default z-depth-0" id="btnSmclMSave"><i class="fa-solid fa-floppy-disk mr-2"></i>Simpan</button>
+                            <button type="button" class="btn btn-sm btn-outline-default z-depth-0 disabled" id="btnSmclHantar"><i class="fa-solid fa-paper-plane mr-2"></i>Hantar</button>
                           </div>
                         </div>
                       </div>

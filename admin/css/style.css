@@ -170,7 +170,7 @@ html *:not('i') {
 }
 .btn.btn-smx {
 	padding: 0.42rem 1.5rem;
-	font-size: 0.75rem; 
+	font-size: 0.7rem; 
 }
 .btn.btn-smx .fas, .btn.btn-smx .fab, .btn.btn-smx .far {
 	font-size: 0.7rem; 
@@ -1035,9 +1035,9 @@ a.text-default:hover, a.text-default:focus {
   }
 }
 .side-section {
-  -ms-flex: 0 0 65px;
-  flex: 0 0 65px;
-  max-width: 65px;
+  -ms-flex: 0 0 75px;
+  flex: 0 0 75px;
+  max-width: 75px;
 }
 .side-section-2 {
   -ms-flex: 0 0 65px;
@@ -1056,9 +1056,9 @@ a.text-default:hover, a.text-default:focus {
 }
 @media (min-width: 576px) {
   .side-section {
-    -ms-flex: 0 0 65px;
-    flex: 0 0 65px;
-    max-width: 65px;
+    -ms-flex: 0 0 75px;
+    flex: 0 0 75px;
+    max-width: 75px;
   }
   .side-section-2 {
     -ms-flex: 0 0 65px;
@@ -1073,9 +1073,9 @@ a.text-default:hover, a.text-default:focus {
 }
 @media (min-width: 1200px) {
   .side-section {
-    -ms-flex: 0 0 200px;
-    flex: 0 0 200px;
-    max-width: 200px;
+    -ms-flex: 0 0 215px;
+    flex: 0 0 215px;
+    max-width: 215px;
   }
 }
 @media (min-width: 1550px) {
@@ -1112,10 +1112,10 @@ a.text-default:hover, a.text-default:focus {
   }
 } */
 .div-menu-icon {
-	min-width: 25px;
+	min-width: 20px;
 	padding: 0 !important;
 	font-weight: 500 !important;
-	font-size: 1.25rem;
+	font-size: 1.2rem;
 }
 .h7 {
   margin-top: 0;
@@ -1126,7 +1126,7 @@ a.text-default:hover, a.text-default:focus {
 }
 @media (max-width: 1080px) {
   .div-menu-icon .fa-regular {
-    font-size: 1.20rem;
+    font-size: 1.2rem;
   }
 	h1, .h1 {
 		font-size:2rem !important;
