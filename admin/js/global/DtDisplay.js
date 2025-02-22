@@ -186,25 +186,23 @@ function DtDisplay () {
 
 
     this.getActionA = function (type, id, row, flag, flag2) {
-        // const htmlEdit = '<button class="btn-clear" data-toggle="tooltip" data-placement="top" title="Kemaskini"><i class="fa-regular mx-0 fa-pen-to-square fa-lg '+id+'Edit" id="'+id+'Edit_'+row+'"></i></button>';
-        // const htmlView = '<button class="btn-clear" data-toggle="tooltip" data-placement="top" title="Papar"><i class="fa-regular mx-0 fa-eye fa-lg '+id+'View" id="'+id+'View_'+row+'"></i></button>';
-        // const htmlRemove = '<button class="btn-clear" data-toggle="tooltip" data-placement="top" title="Hapus"><i class="fa-regular mx-0 fa-trash-can fa-lg '+id+'Remove" id="'+id+'Remove_'+row+'"></i></button>';
-      
         const htmlEdit = '<a data-toggle="tooltip" data-placement="left" title="Kemaskini"><i class="fa-regular fa-pen-to-square fa-lg '+id+'Edit" id="'+id+'Edit_'+row+'"></i></a>';
         const htmlRemove = '<a data-toggle="tooltip" data-placement="left" title="Hapus"><i class="fa-regular fa-trash-can fa-lg ml-1 '+id+'Remove" id="'+id+'Remove_'+row+'"></i></a>';
         const htmlView = '<a data-toggle="tooltip" data-placement="left" title="Papar"><i class="fa-regular fa-eye fa-lg ml-1 '+id+'View" id="'+id+'View_'+row+'"></i></a>';
 
         if (type === 'edit' || type === 'add') {
           if (flag == 1) {
-            return '<div class="btn-group px-1">' + htmlEdit + htmlRemove + '</div>';
+            return htmlEdit + htmlRemove;
           } else if (flag == 2) {
-            return '<div class="btn-group px-1">' + htmlEdit + '</div>';
+            return htmlEdit;
+          } else if (flag == 3) {
+            return htmlRemove;
           } else {
-            return '<div class="btn-group px-1">' + htmlView + '</div>';
+            return htmlView;
           }
         }
         else {
-          return '<div class="btn-group px-1">' + htmlView + '</div>';
+          return htmlView;
         }
     }
 

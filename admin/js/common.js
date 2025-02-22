@@ -2968,7 +2968,7 @@ $('.currency2').on('change click keyup input paste',(function (event) {
     $(this).val(function (index, value) {
         return value.replace(/(?!\.)\D/g, "")
         .replace(/(?<=\..*)\./g, "")
-        .replace(/(?<=\.\d\d\d).*/g, "")
+        .replace(/(?<=\.\d\d).*/g, "")
         .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     });
 }));
@@ -3001,3 +3001,7 @@ const dropdown = [...dropdowns].map((dropdownToggleEl) => new bootstrap.Dropdown
         return { ...defaultBsPopperConfig, strategy: 'fixed' };
     }
 }));*/
+
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}

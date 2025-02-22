@@ -1094,6 +1094,9 @@ a.text-default:hover, a.text-default:focus {
     flex: 0 0 300px;
     max-width: 300px;
   }
+  .d-side-section-block {
+    display: block !important;
+  }
   .d-side-section-3-block {
     display: block !important;
   }
@@ -2439,6 +2442,13 @@ table.ngdbbptk.dataTable tr.dtrg-group th {
 /* .table-custom > tbody > tr:last-child { 
   border-bottom: 1px solid #dee2e6 !important;
 } */
+.table-bordered-custom {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.table-bordered-custom th,
+.table-bordered-custom td {
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
 .table-striped tbody tr:nth-of-type(odd) {
   background-color: #fafafa ;
 }
