@@ -251,6 +251,18 @@ function DtDisplay () {
         }
     }
 
+    this.getActionPengisian = function (type, id, row, flag, flag2) {
+        const htmlEdit = '<button class="btn-clear" data-toggle="tooltip" data-placement="top" title="Kemaskini"><i class="fa-regular mx-0 fa-pen-to-square fa-lg '+id+'Edit" id="'+id+'Edit_'+row+'"></i></button>';
+        const htmlView = '<button class="btn-clear" data-toggle="tooltip" data-placement="top" title="Papar"><i class="fa-regular mx-0 fa-circle-info fa-lg '+id+'View" id="'+id+'View_'+row+'"></i></button>';
+        const htmlRemove = '<button class="btn-clear" data-toggle="tooltip" data-placement="top" title="Hapus"><i class="fa-regular mx-0 fa-trash-can fa-lg '+id+'Remove" id="'+id+'Remove_'+row+'"></i></button>';
+      
+        if (flag == 1) {
+          return '<div class="btn-group px-0">'+ htmlEdit + htmlRemove + '</div>';
+        } else {
+          return '<div class="btn-group px-0">' + htmlView + '</div>';
+        }
+    }
+
 
     this.getActionDokumenEkeps = function (type, id, row, flag, flag2) {
         const htmlEdit = '<button class="btn-clear" data-toggle="tooltip" data-placement="top" title="Kemaskini"><i class="fa-regular mx-0 fa-pen-to-square fa-lg '+id+'Edit" id="'+id+'Edit_'+row+'"></i></button>';
