@@ -22,6 +22,11 @@ function DtDisplay () {
         const htmlEdit = '<button class="btn-clear" data-toggle="tooltip" data-placement="top" title="Kemaskini"><i class="fa-regular mx-0 fa-pen-to-square fa-lg '+id+'Edit" id="'+id+'Edit_'+row+'"></i></button>';
     return htmlEdit;
     }
+    
+    this.getActionMpgAnalisiPemerolehan = function (type, id, row, flag, flag2) {
+        const htmlView = '<button class="btn-clear" data-toggle="tooltip" data-placement="top" title="Papar"><i class="fa-regular mx-0 fa-circle-info fa-lg '+id+'View" id="'+id+'View_'+row+'"></i></button>';
+    return htmlView;
+    }
 
     this.getStatus = function (statusName, statusColor) {
         if (statusName === '' || statusColor === '' || statusName === null || statusColor === null) {

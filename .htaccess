@@ -28,7 +28,8 @@ RewriteRule ^admin/mpg_kemaskini_calon_pemerolehan?$ admin/html/mpg_kemaskini_ca
 RewriteRule ^admin/mpg_pengesahan_pintas_aliran?$ admin/html/mpg_pengesahan_pintas_aliran.html
 RewriteRule ^admin/mpg_proses_pemerolehan?$ admin/html/mpg_proses_pemerolehan.html
 RewriteRule ^admin/mpg_laporan_pemerolehan?$ admin/html/mpg_laporan_pemerolehan.html
-
+RewriteRule ^admin/mpg_analisis_pemerolehan?$ admin/html/mpg_analisis_pemerolehan.html
+RewriteRule ^admin/mpg_statistik_asas?$ admin/html/mpg_statistik_asas.html
 
 
 # Modul Kertas
