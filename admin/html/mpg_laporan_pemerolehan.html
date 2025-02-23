@@ -31,7 +31,7 @@
         <p id="pBasePageTitle">
           <i class="fas fa-angle-double-right mx-2 white-text" aria-hidden="true"></i>
           <span class="font-weight-bold">Modul Pengambilan</span>
-          <span class="font-small"> / Maklumat Pemerolehan</span>
+          <span class="font-small"> / Laporan</span>
         </p>
       </div>
       <ul class="nav navbar-nav nav-flex-icons ml-auto">
@@ -73,7 +73,7 @@
           <div class="col-12 p-1">
             <nav class="navbar z-depth-1">
               <h4 class="navbar-text white-text font-weight-500 ml-2 pb-0">
-                <i class="fa-duotone fa-lg fa-briefcase mr-3"></i>Maklumat Pemerolehan
+                <i class="fa-duotone fa-lg fa-file-chart-column mr-3"></i>Laporan
               </h4>
             </nav>
           </div>
@@ -81,69 +81,14 @@
         <div class="row">
           <div class="col-lg-12 p-1">
             <div class="card mb-3 rounded-0">
-              <div class="accordion">
-                <div class="card-header white h6 rounded-0 p-0" style="cursor: pointer;" data-toggle="collapse" data-target="#accSasp">
-                  <div class="d-flex">
-                    <div class="p-2-3 flex-shrink-1 unique-color"><i class="fa-solid fa-magnifying-glass text-white"></i></div>
-                    <div class="p-2-3 flex-fill">Carian</div>
-                    <div class="p-2-3"><i class="fa fa-chevron-down accordion-chevron text-light"></i></div>
-                  </div>
-                </div>
-                <div id="accSasp" class="collapse">
-                  <form id="formSasp" autocomplete="off" spellcheck="false">
-                    <div class="card-body">
-                      <div class="row">
-                        <div class="col-md-4 mb-2">
-                          <p class="label-text">No. Pemerolehan</p>
-                          <div class="md-form md-outline md-outline-light md-custom my-1">
-                            <input type="text" class="form-control numeric" maxlength="4" id="txtSaspNoPemerolehan">
-                          </div>
-                        </div>
-                        <div class="col-md-4 mb-2">
-                          <p class="label-text">Skim Perkhidmatan</p>
-                          <div class="select-outline" id="optSaspSkimPerkhidmatan_">
-                            <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optSaspSkimPerkhidmatan">
-                              <option value="" selected>Sila Pilih</option>
-                              <option value="1184 - PEGAWAI PERKHIDMATAN PENDIDIKAN GRED DG41">1184 - PEGAWAI PERKHIDMATAN PENDIDIKAN GRED DG41</option>
-                              <option value="1188 - PEGAWAI PERKHIDMATAN PENDIDIKAN SISWAZAH GRED DG41">1188 - PEGAWAI PERKHIDMATAN PENDIDIKAN SISWAZAH GRED DG41</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="col-md-4 mb-2">
-                          <p class="label-text">Status</p>
-                          <div class="select-outline" id="optSaspStatus_">
-                            <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optSaspStatus">
-                              <option value="" selected>Sila Pilih</option>
-                              <option value="1 - TAMAT">TAMAT</option>
-                              <option value="2 - SEDANG PROSES">SEDANG PROSES</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="card-footer white p-1">
-                      <div class="d-flex">
-                        <div class="mr-auto px-2">
-                          <button type="button" class="btn btn-sm btn-default waves-effect z-depth-0" id="btnSaspFilter"><i class="fa-solid fa-magnifying-glass mr-2"></i>Carian</button>
-                          <button type="button" class="btn btn-sm btn-outline-default waves-effect z-depth-0" id="btnSaspClearFilter"><i class="fa-solid fa-magnifying-glass-arrows-rotate mr-2"></i>Kosongkan</button>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-12 p-1">
-            <div class="card mb-3 rounded-0">
               <div class="card-header unique-color rounded-0 p-1">
                 <div class="d-flex flex-row">
                   <div class="p-0 flex-fill">
-                    <h5 class="navbar-text white-text font-weight-500 ml-3 mb-0"><i class="fa-duotone fa-pen-to-square mr-2"></i>   Pengesahan Selesai</h5>
+                    <h5 class="navbar-text white-text font-weight-500 ml-3 mb-0"><i class="fa-duotone fa-list mr-2"></i>   Senarai Laporan</h5>
                   </div>
-                  <div class="p-0">
+                  <!-- <div class="p-0">
                     <button class="btn btn-sm btn-outline-white text-capitalize z-depth-0 py-1 px-2 ml-1 btnAddPpj"><i class="fa-solid fa-circle-check mr-2"></i>Semakan Pukal</button>
-                  </div>
+                  </div> -->
                 </div>
               </div>
               <div class="card-body p-0">
@@ -152,10 +97,7 @@
                     <thead>
                       <tr>
                         <th class="all align-bottom">#</th>
-                        <th class="all align-bottom" style="width: 40px; min-width: 80px;">Pilih</th>
-                        <th class="all align-bottom" style=" min-width: 80px;">No. Pemerolehan</th>
-                        <th class="all align-bottom">Skim Perkhidmatan</th>
-                        <th class="all align-bottom">Status</th>
+                        <th class="all align-bottom" style=" min-width: 80px;">Laporan</th>
                         <th class="all align-bottom"></th>
                       </tr>
                     </thead>
@@ -225,7 +167,7 @@
 
   document.addEventListener('DOMContentLoaded', function () {
     dtDisplay = new DtDisplay();
-    mainClass = new MpgSahSelesaiPemerolehan();
+    mainClass = new MpgLaporanPemerolehan();
     modalConfirmDelete = new ModalConfirmDelete();
     modalConfirmAction = new ModalConfirmAction();
     modalMpgSelesaiPemerolehan = new ModalMpgSelesaiPemerolehan();
@@ -284,7 +226,7 @@
   document.write('<scr' + 'ipt src="js/pages/modal/ModalConfirmAction.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
   document.write('<scr' + 'ipt src="js/pages/modal/ModalConfirmDelete.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
   document.write('<scr' + 'ipt src="js/global/DtDisplay.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
-  document.write('<scr' + 'ipt src="js/pages/MpgSahSelesaiPemerolehan.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
+  document.write('<scr' + 'ipt src="js/pages/MpgLaporanPemerolehan.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
   // document.write('<scr' + 'ipt src="js/pages/section/SectionMpgProsesPemerolehan.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
 
 

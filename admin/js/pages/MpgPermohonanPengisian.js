@@ -121,7 +121,7 @@ function MpgPermohonanPengisian () {
         columnDefs: [
           { className: 'text-center align-top', targets: [0,1,2,3,4,5,6,7,8] },
           { bSortable: false, targets: [0, 8] },
-          // { visible: false, targets: [3] },
+          { visible: false, targets: [1, 5,] },
           { className: 'noVis', targets: [0, 8] },
         ],
         buttons: [

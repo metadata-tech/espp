@@ -1,6 +1,6 @@
-function MpgSahSelesaiPemerolehan () {
+function MpgLaporanPemerolehan () {
   
-  const className = 'MpgSahSelesaiPemerolehan';
+  const className = 'MpgLaporanPemerolehan';
   let self = this;
   let dtDisplay;
   let modalConfirmDelete;
@@ -83,10 +83,10 @@ function MpgSahSelesaiPemerolehan () {
         "<'d-flex mt-2'<'p-0 flex-fill'tr>>" +
         "<'d-flex align-items-center'<'p-0 flex-fill d-none d-sm-block'i><'p-0 mt-3 mr-auto flex-fill'p>>",
         columnDefs: [
-          { className: 'text-center align-top', targets: [0,1,4] },
-          { bSortable: false, targets: [0, 1, 2, 5] },
+          { className: 'text-center align-top', targets: [0,1,2] },
+          { bSortable: false, targets: [0, 1, 2] },
           // // { visible: false, targets: [3] },
-          { className: 'noVis', targets: [0, 1, 5] },
+          { className: 'noVis', targets: [0,2] },
         ],
         buttons: [
           { extend: 'colvis', columns: ':not(.noVis)', fade: 400, collectionLayout: 'three-column', text:'<i class="fa-solid fa-columns"></i>', className: 'btn btn-outline-default btn-sm btn-icon z-depth-0', titleAttr: 'Pilihan Kolum'},
@@ -108,9 +108,9 @@ function MpgSahSelesaiPemerolehan () {
             // modalConfirmAction.action(123, self);
             modalMpgSelesaiPemerolehan.view(123);
           });
-          $('.lnkPpjEdit').off('click').on('click', function () {
-            modalMpgSelesaiPemerolehan.edit(123);
-          });
+          // $('.lnkPpjEdit').off('click').on('click', function () {
+          //   modalMpgSelesaiPemerolehan.edit(123);
+          // });
           $('.lnkPpjRemove').off('click').on('click', function () {
             modalConfirmDelete.delete(123, self);
           });
@@ -120,24 +120,8 @@ function MpgSahSelesaiPemerolehan () {
         },
         aoColumns: [
           { mData: null},
-          { mData: null, mRender: function (data, type, row, meta) {
-            return '<div class="form-check p-0 m-0" style="margin-top: -6px !important; margin-bottom: -6px !important;">' +
-                '<input type="checkbox" class="form-check-input check chkKotak" name="chkKotak[]" id="chkKotak' + meta.row + '" value="' + meta.row + '">' +
-                '<label class="form-check-label" for="chkKotak' + meta.row + '"></label>' +
-                '</div>';
-              }},
-          { mData: 'noPemerolehan'},
           { mData: 'skimPerkhidmatan', mRender: function (data, type, row, meta) { 
             return data;
-          }},
-          { mData: 'statusId', mRender: function (data, type, row, meta) { 
-            if (data == 1) {
-              return "Draf";
-            } else if (data == 2) {
-              return "Dalam Proses";
-            } else {
-              return "";
-            }
           }},
           { mData: 'statusId', mRender: function (data, type, row, meta) { 
             return dtDisplay.getActionMpgPengesahanPintasAliran('edit', 'lnkPpj', meta.row, data); 
@@ -155,39 +139,31 @@ function MpgSahSelesaiPemerolehan () {
     try {
       const dataDb = [{
         noPemerolehan: "SM20210002", 
-        kementerian: "1215 - KEMENTERIAN PENGAJIAN TINGGI", 
-        skimPerkhidmatan: '1184 - PEGAWAI PERKHIDMATAN PENDIDIKAN GRED DG41', 
+        kementerian: "DOKUMEN PEMEROLEHAN", 
+        skimPerkhidmatan: 'DOKUMEN PEMEROLEHAN', 
         tarikhPermohonan: "20/12/2020", 
         bilKekosongan: 789, 
         statusId: 1,
       },{
         noPemerolehan: "SM20200002", 
-        kementerian: "1216 - KEMENTERIAN PENDIDIKAN MALAYSIA", 
-        skimPerkhidmatan: '1188 - PEGAWAI PERKHIDMATAN PENDIDIKAN SISWAZAH GRED DG41', 
+        kementerian: "SENARAI RULING", 
+        skimPerkhidmatan: 'SENARAI RULING', 
         tarikhPermohonan: "20/12/2020", 
         bilKekosongan: 550, 
         statusId: 2,
       },{
         noPemerolehan: "SM20210001", 
-        kementerian: "1215 - KEMENTERIAN PENGAJIAN TINGGI", 
-        skimPerkhidmatan: '1184 - PEGAWAI PERKHIDMATAN PENDIDIKAN GRED DG41', 
+        kementerian: "SENARAI CALON MENGIKUT STATUS PEMEROLEHAN", 
+        skimPerkhidmatan: 'SENARAI CALON MENGIKUT STATUS PEMEROLEHAN', 
         tarikhPermohonan: "20/12/2021", 
         bilKekosongan: 789, 
         statusId: 2,
       },{
         noPemerolehan: "SM20210002", 
-        kementerian: "1216 - KEMENTERIAN PENDIDIKAN MALAYSIA", 
-        skimPerkhidmatan: '1188 - PEGAWAI PERKHIDMATAN PENDIDIKAN SISWAZAH GRED DG41', 
+        kementerian: "STATISTIK SELEPAS PEMEROLEHAN", 
+        skimPerkhidmatan: 'STATISTIK SELEPAS PEMEROLEHAN', 
         tarikhPermohonan: "20/12/2021", 
         bilKekosongan: 550, 
-        statusId: 2,
-      },{
-        tahun: '2022', 
-        noPemerolehan: "SM20210002",  
-        kementerian: "1215 - KEMENTERIAN PENGAJIAN TINGGI", 
-        skimPerkhidmatan: '1184 - PEGAWAI PERKHIDMATAN PENDIDIKAN GRED DG41', 
-        tarikhPermohonan: "20/12/2022", 
-        bilKekosongan: 789, 
         statusId: 2,
       },];
       dtPsl.clear().rows.add(dataDb).draw();

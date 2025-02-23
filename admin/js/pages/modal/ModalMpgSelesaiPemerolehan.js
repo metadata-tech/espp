@@ -59,30 +59,6 @@ function ModalMpgSelesaiPemerolehan() {
           notEqual: 'Sila tunggu...'
         }
       },
-      {
-        field_id: "optMspeCawangan",
-        type: "select",
-        name: "Cawangan",
-        validator: {
-          notEmpty: true
-        }
-      },
-      {
-        field_id: "optMspeFungsi",
-        type: "select",
-        name: "Fungsi/ Bahagian",
-        validator: {
-          notEmpty: true
-        }
-      },
-      {
-        field_id: "optMspeSubFungsi",
-        type: "select",
-        name: "Sub Fungsi/ Aktiviti",
-        validator: {
-          notEmpty: true
-        }
-      },
     ];
   };
   
@@ -123,7 +99,7 @@ function ModalMpgSelesaiPemerolehan() {
 
       formValidateMspe.clearValidation();
 
-      dtJwt = $('#dtJwt').DataTable({
+      dtSep = $('#dtSep').DataTable({
         bLengthChange: false,
         bFilter: true,
         bPaginate: false,
@@ -147,16 +123,16 @@ function ModalMpgSelesaiPemerolehan() {
         },
         drawCallback: function () {
           $('[data-toggle="tooltip"]').tooltip();
-          $('.btnJwtTambah').on('click', function () {
+          $('.btnSepTambah').on('click', function () {
             modalMpgJawatanDipohon.add();
           });
-          $('.lnkJwtView').off('click').on('click', function () {
+          $('.lnkSepView').off('click').on('click', function () {
             modalMpgJawatanDipohon.view(123);
           });
-          $('.lnkJwtEdit').off('click').on('click', function () {
+          $('.lnkSepEdit').off('click').on('click', function () {
             modalMpgJawatanDipohon.edit(123);
           });
-          $('.lnkJwtRemove').off('click').on('click', function () {
+          $('.lnkSepRemove').off('click').on('click', function () {
             modalConfirmDelete.delete(123, modalMpgJawatanDipohon);
           });
         },
@@ -166,8 +142,6 @@ function ModalMpgSelesaiPemerolehan() {
           { mData: 'noKelompok'},
         ]
       });
-
-      //$('.optionKertas').hide();
 
       ShowLoader();
       setTimeout(function () {
@@ -196,6 +170,10 @@ function ModalMpgSelesaiPemerolehan() {
         $('#modalMpgSelesaiPemerolehan').modal({backdrop: 'static', keyboard: false}).scrollTop(0);
         HideLoader();
       }, 200);
+
+      
+      self.genTableSep();
+
     } catch (e) {
       toastr['error'](e.message !== '' ? e.message : _ALERT_MSG_ERROR_DEFAULT, _ALERT_TITLE_ERROR);
     }
@@ -223,30 +201,20 @@ function ModalMpgSelesaiPemerolehan() {
   };
   
 
-  this.genTableJwt = function () {
+  this.genTableSep = function () {
     try {
       if (submitType == 'add') {
-        const dataJwt = [];
-        dtJwt.clear().rows.add(dataJwt).draw();
+        const dataSep = [];
+        dtSep.clear().rows.add(dataSep).draw();
       } else {
-        const dataJwt = [{
+        const dataSep = [{
           skimPermohonan: '3235 - PEGAWAI KHIDMAT PELANGGANGRED N19', 
-          noKelompok: '2491A039', 
-          noSiri: '040', 
-          jDaftar: '03', 
-          keutamaan: 1, 
-          tarikhSuratPerakuan: '14/10/2023', 
-          tarikhDaftar: '14/10/2023', 
+          noKelompok: '2491A039',
         },{
           skimPermohonan: '3235 - PEGAWAI KHIDMAT PELANGGANGRED N19', 
-          noKelompok: '2491A039', 
-          noSiri: '040', 
-          jDaftar: '03', 
-          keutamaan: 2, 
-          tarikhSuratPerakuan: '14/10/2023', 
-          tarikhDaftar: '14/10/2023', 
+          noKelompok: '2491A039',
         }];
-        dtJwt.clear().rows.add(dataJwt).draw();
+        dtSep.clear().rows.add(dataSep).draw();
       }
     } catch (e) { toastr['error'](_ALERT_MSG_ERROR_DEFAULT, _ALERT_TITLE_ERROR); }
   };
