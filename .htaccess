@@ -21,6 +21,15 @@ RewriteRule ^admin/mpg_maklumat_calon?$ admin/html/mpg_maklumat_calon.html
 RewriteRule ^admin/mpg_permohonan_pengisian?$ admin/html/mpg_permohonan_pengisian.html
 RewriteRule ^admin/mpg_sah_selesai_pemerolehan?$ admin/html/mpg_sah_selesai_pemerolehan.html
 RewriteRule ^admin/mpg_pindah_calon?$ admin/html/mpg_pindah_calon.html
+RewriteRule ^admin/mpg_catatan_pemerolehan?$ admin/html/mpg_catatan_pemerolehan.html
+RewriteRule ^admin/mpg_gabungan_skim?$ admin/html/mpg_gabungan_skim.html
+RewriteRule ^admin/mpg_salin_calon?$ admin/html/mpg_salin_calon.html
+RewriteRule ^admin/mpg_kemaskini_calon_pemerolehan?$ admin/html/mpg_kemaskini_calon_pemerolehan.html
+RewriteRule ^admin/mpg_pengesahan_pintas_aliran?$ admin/html/mpg_pengesahan_pintas_aliran.html
+RewriteRule ^admin/mpg_proses_pemerolehan?$ admin/html/mpg_proses_pemerolehan.html
+RewriteRule ^admin/mpg_maklumat_pemerolehan?$ admin/html/mpg_maklumat_pemerolehan.html
+
+
 
 # Modul Kertas
 RewriteRule ^admin/senarai_ekeps?$ admin/html/senarai_ekeps.html

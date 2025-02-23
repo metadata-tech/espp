@@ -1,0 +1,135 @@
+<section class="sectionMpgKemaskiniCalonPemerolehan" style="display: none;">
+  <div class="row mb-2">
+    <div class="col-12 p-1">
+      <nav class="navbar z-depth-1">
+        <h4 class="navbar-text white-text font-weight-500 ml-2 pb-0">
+          <i class="fa-duotone fa-lg fa-book-copy mr-3"></i>Senarai Maklumat Pemerolehan
+        </h4>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col p-1">
+      <div class="card rounded-0 mb-4">
+        <div class="card-header unique-color darken-3 rounded-0">
+          <div class="row">
+            <div class="col">
+              <div class="d-flex">
+                <div class="p-0 w-100">
+                  <p class="section-title">Tambahan Calon</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-12">
+              <p class="label-text font-weight-500 unique-text">Maklumat Calon</p>
+              <hr class="mt-2">
+            </div>
+            <div class="col-lg-4">
+              <p class="label-text">No. Pemerolehan<span class="ml-1 text-danger">*</span></p>
+              <div class="md-form md-outline md-outline-light md-custom my-1">
+                <input type="text" class="form-control numeric" id="txtLtPnnoPemerolehan2">
+              </div>
+            </div>
+            <div class="col-lg-8">
+              <p class="label-text">Suruhanjaya<span class="ml-1 text-danger">*</span></p>
+              <div class="select-outline" id="optSmeKategoriMesyuarat_">
+                <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optSmeKategoriMesyuarat2">
+                  <option value="" selected>Sila Pilih</option>
+                  <option value="MSJ">MSJ - Suruhanjaya</option>
+                  <option value="MLRTT">MLRTT - Suruhanjaya</option>
+                  <option value="MLRKP">MLRKP - Suruhanjaya</option>
+                </select>
+                <p class="font-small text-danger" id="optSmeKategoriMesyuaratErr"></p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <p class="label-text">Skim/Gabungan<span class="ml-1 text-danger">*</span></p>
+              <div class="select-outline" id="optSmeKategoriMesyuarat_">
+                <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optSmeKategoriMesyuarat1">
+                  <option value="" selected>Sila Pilih</option>
+                  <option value="MSJ">MSJ - Skim</option>
+                  <option value="MLRTT">MLRTT - Skim</option>
+                  <option value="MLRKP">MLRKP - Skim</option>
+                </select>
+                <p class="font-small text-danger" id="optSmeKategoriMesyuaratErr"></p>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <p class="label-text">Tarikh Mesyuarat<span class="ml-1 text-danger">*</span></p>
+              <div class="md-form md-outline md-outline-light md-custom my-1">
+                <input type="text" class="form-control datepicker2" id="txtSmeTarikhDari" placeholder="DD/MM/YYYY">
+                <p class="font-small text-danger" id="txtSmeTarikhMesyuaratErr"></p>
+              </div>
+            </div>
+            <div class="col-lg-3">
+              <p class="label-text">Tarikh Mesyuarat<span class="ml-1 text-danger">*</span></p>
+              <div class="md-form md-outline md-outline-light md-custom my-1">
+                <input type="text" class="form-control datepicker2" id="txtSmeTarikhTutup" placeholder="DD/MM/YYYY">
+                <p class="font-small text-danger" id="txtSmeTarikhMesyuaratErr"></p>
+              </div>
+            </div>
+          </div><br>
+
+          <div class="row mt-2 divTab">
+            <div class="col-md-12">
+              <hr class="mt-2">
+            </div>
+
+            <div class="col-md-12 p-0">
+              <div class="col-lg-6">
+                <p class="label-text">No. Kad Pengenalan</p>
+                <div class="md-form md-outline md-outline-light md-custom my-1">
+                  <input type="text" class="form-control numeric" id="txtKcpmSkim" placeholder="Isi No. Kad Pengenalan">
+                </div>
+                <p class="font-small text-danger font-weight-400" id="txtKcpmTajukKertasErr"></p>
+                </div>
+                <div class="col-lg-6">
+                  <p class="label-text">Nama</p>
+                  <div class="md-form md-outline md-outline-light md-custom my-1">
+                    <input type="text" class="form-control uc-text" id="txtKcpmSuruhanjaya" disabled>
+                  </div>
+                  </div>
+
+
+              <div class="table-responsive">
+                <table id="dtDbm3" class="table table-custom table-hover table-striped display responsive mt-0">
+                  <thead>
+                    <tr>
+                      <th class="all" style="width: 90px;">#</th>
+                      <th class="all"  style="width: 190px;">NO. KAD PENGENALAN</th>
+                      <th class="all" style="width: 590px;">NAMA</th>
+                      <th class="all" style="width: 62px; min-width: 62px;">
+                        <span class="btn-clear divSmeSave btnDbmTambah" data-toggle="tooltip" data-placement="left" title="Tambah">
+                          <i class="fa-regular mx-0 fa-circle-plus fa-lg"></i>
+                        </span>
+                      </th>
+                  </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div><br>
+ 
+     
+
+        </div>
+        <div class="card-footer grey lighten-6 p-1">
+          <div class="d-flex align-items-center">
+            <div class="p-0 pl-2 mr-auto">
+              <button type="button" class="btn btn-sm btn-outline-default z-depth-0 btnSmeBack"><i class="fa-solid fa-chevron-left mr-2"></i>Kembali</button>
+            </div>
+            <div class="p-0 pr-2 ml-auto divSmeSave">
+              <button type="button" class="btn btn-sm btn-outline-default z-depth-0" id="btnSmeReset"><i class="fa-solid fa-rotate mr-2"></i>Set Semula</button>
+              <button type="button" class="btn btn-sm btn-default z-depth-1" id="btnSmeSave"><i class="fa-solid fa-floppy-disk mr-2"></i>Simpan</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

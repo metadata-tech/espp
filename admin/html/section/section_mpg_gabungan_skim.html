@@ -1,0 +1,104 @@
+<section class="sectionMpgGabunganSkim" style="display: none;">
+  <div class="row mb-2">
+    <div class="col-12 p-1">
+      <nav class="navbar z-depth-1">
+        <h4 class="navbar-text white-text font-weight-500 ml-2 pb-0">
+          <i class="fa-duotone fa-lg fa-book-copy mr-3"></i>Tambah Gabungan Skim
+        </h4>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col p-1">
+      <div class="card rounded-0 mb-4">
+        <div class="card-header unique-color darken-3 rounded-0">
+          <div class="row">
+            <div class="col">
+              <div class="d-flex">
+                <div class="p-0 w-100">
+                  <p class="section-title">Tambah Gabungan Skim</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-12">
+              <p class="label-text font-weight-500 unique-text">Maklumat Skim</p>
+              <hr class="mt-2">
+            </div>
+            <div class="col-lg-6">
+              <p class="label-text">Kod<span class="ml-1 text-danger">*</span></p>
+              <div class="md-form md-outline md-outline-light md-custom my-1">
+                <input type="text" class="form-control numeric" id="txtLtPnnoPemerolehan" placeholder="Kod">
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <p class="label-text">Diskripsi<span class="ml-1 text-danger">*</span></p>
+              <div class="md-form md-outline md-outline-light md-custom my-1">
+                <input type="text" class="form-control uc-text" id="txtLtPnnoPemerolehan2" placeholder="Diskripsi">
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <p class="label-text">Disyarat Ujian</p>
+              <div class="select-outline" id="optSmeKategoriMesyuarat_">
+                <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optSmeKategoriMesyuarat5">
+                  <option value="" selected>Sila Pilih</option>
+                  <option value="YA">YA</option>
+                  <option value="TIDAK">TIDAK</option>
+                </select>
+              </div>
+            </div>
+
+          <div class="col-md-12 mt-4 divTab">
+            <div class="col-md-12">
+              <p class="label-text font-weight-500 unique-text">Senarai Gabungan Skim</p>
+              <hr class="mt-2">
+            </div>
+
+            <div class="col-md-12">
+              <div class="col-lg-6">
+                <p class="label-text">Senarai Skim</p>
+                <div class="select-outline" id="optSmeKategoriMesyuarat_">
+                  <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optSmeKategoriMesyuarat4">
+                    <option value="" selected>Sila Pilih</option>
+                    <option value="001">001</option>
+                    <option value="002">002</option>
+                    <option value="003">003</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="table-responsive">
+                <table id="dtDbm3" class="table table-custom table-hover table-striped display responsive mt-0">
+                  <thead>
+                    <tr>
+                      <th class="all" style="width: 90px;">#</th>
+                      <th class="all"  style="width: 290px;">SENARAI GABUNGAN SKIM</th>
+                      <th class="all" style="width: 62px; min-width: 62px;">
+                        <span class="btn-clear divSmeSave btnDbmTambah" data-toggle="tooltip" data-placement="left" title="Tambah">
+                          <i class="fa-regular mx-0 fa-circle-plus fa-lg"></i>
+                        </span>
+                      </th>                  </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div><br>
+        </div><br>
+        <div class="card-footer grey lighten-6 p-1">
+          <div class="d-flex align-items-center">
+            <div class="p-0 pl-2 mr-auto">
+              <button type="button" class="btn btn-sm btn-outline-default z-depth-0 btnSmeBack"><i class="fa-solid fa-chevron-left mr-2"></i>Kembali</button>
+            </div>
+            <div class="p-0 pr-2 ml-auto divSmeSave">
+              <button type="button" class="btn btn-sm btn-default z-depth-1" id="btnSmeSave"><i class="fa-solid fa-floppy-disk mr-2"></i>SIMPAN</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
