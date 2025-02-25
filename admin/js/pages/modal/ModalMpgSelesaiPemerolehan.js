@@ -5,6 +5,7 @@ function ModalMpgSelesaiPemerolehan() {
   let classFrom;
   let id;
   let submitType = '';
+  let dtSep;
 
   let formValidateMspe;
   this.getValidationDataMspe = function () {
@@ -91,13 +92,6 @@ function ModalMpgSelesaiPemerolehan() {
         }
       }
     });
-  };
-  
-  this.add = function () {
-    try {
-      submitType = 'add';
-
-      formValidateMspe.clearValidation();
 
       dtSep = $('#dtSep').DataTable({
         bLengthChange: false,
@@ -106,7 +100,7 @@ function ModalMpgSelesaiPemerolehan() {
         bInfo: true,
         autoWidth: false,
         ordering: false,
-        aaSorting: [[5, 'asc']],
+        // aaSorting: [[5, 'asc']],
         language: _DATATABLE_LANGUAGE,
         dom: "<'d-flex'<'p-0'><'p-0 d-none d-sm-block ml-auto'>>" +
         "<'d-flex'<'p-0 flex-fill'tr>>",
@@ -114,7 +108,7 @@ function ModalMpgSelesaiPemerolehan() {
           { className: 'text-center', targets: "_all" },
           // { className: 'text-center', targets: [0,2,3,4,5,6,7,8] },
           // { className: 'text-left', targets: [1] },
-          { bSortable: false, targets: [0,8] },
+          { bSortable: false, targets: [0] },
         ],
         fnRowCallback : function(nRow, aData, iDisplayIndex){
           const info = $(this).DataTable().page.info();
@@ -124,13 +118,13 @@ function ModalMpgSelesaiPemerolehan() {
         drawCallback: function () {
           $('[data-toggle="tooltip"]').tooltip();
           $('.btnSepTambah').on('click', function () {
-            modalMpgJawatanDipohon.add();
+            // modalMpgJawatanDipohon.add();
           });
           $('.lnkSepView').off('click').on('click', function () {
-            modalMpgJawatanDipohon.view(123);
+            // modalMpgJawatanDipohon.view(123);
           });
           $('.lnkSepEdit').off('click').on('click', function () {
-            modalMpgJawatanDipohon.edit(123);
+            // modalMpgJawatanDipohon.edit(123);
           });
           $('.lnkSepRemove').off('click').on('click', function () {
             modalConfirmDelete.delete(123, modalMpgJawatanDipohon);
@@ -141,19 +135,32 @@ function ModalMpgSelesaiPemerolehan() {
           { mData: 'skimPermohonan'},
           { mData: 'noKelompok'},
         ]
+        
       });
 
-      ShowLoader();
-      setTimeout(function () {
-        $('#h5MspeTitle').html('<i class="fa-duotone fa-regular fa-cloud-check fa-lg mr-2"></i>Pengesahan Selesai');
-        $('#modalMpgSelesaiPemerolehan').modal({backdrop: 'static', keyboard: false}).scrollTop(0);
-        HideLoader();
-      }, 200);
-    } catch (e) {
-      toastr['error'](e.message !== '' ? e.message : _ALERT_MSG_ERROR_DEFAULT, _ALERT_TITLE_ERROR);
-    }
-  };
-  
+      self.genTableSep();
+};
+
+
+this.add = function () {
+  try {
+    submitType = 'add';
+
+    formValidateMspe.clearValidation();
+    //$('.optionKertas').hide();
+
+    ShowLoader();
+    setTimeout(function () {
+      $('#h5MspeTitle').html('<i class="fa-duotone fa-regular fa-cloud-check fa-lg mr-2"></i>Pengesahan Selesai');
+      $('#modalMpgSelesaiPemerolehan').modal({backdrop: 'static', keyboard: false}).scrollTop(0);
+      HideLoader();
+    }, 200);
+  } catch (e) {
+    toastr['error'](e.message !== '' ? e.message : _ALERT_MSG_ERROR_DEFAULT, _ALERT_TITLE_ERROR);
+  }
+};
+
+
   this.edit = function (_id) {
     try {
       mzEmptyParams([_id]);

@@ -30,6 +30,8 @@ RewriteRule ^admin/mpg_proses_pemerolehan?$ admin/html/mpg_proses_pemerolehan.ht
 RewriteRule ^admin/mpg_laporan_pemerolehan?$ admin/html/mpg_laporan_pemerolehan.html
 RewriteRule ^admin/mpg_analisis_pemerolehan?$ admin/html/mpg_analisis_pemerolehan.html
 RewriteRule ^admin/mpg_statistik_asas?$ admin/html/mpg_statistik_asas.html
+RewriteRule ^admin/mpg_maklumat_pemerolehan?$ admin/html/mpg_maklumat_pemerolehan.html
+
 
 
 # Modul Kertas

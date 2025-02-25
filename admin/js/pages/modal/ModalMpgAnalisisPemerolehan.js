@@ -168,27 +168,27 @@ function ModalMpgAnalisisPemerolehan () {
       bLengthChange: true,
       bFilter: true,
       pageLength: 10,
-      bPaginate: true,
+      bPaginate: false,
       bInfo: true,
       autoWidth: false,
       // aaSorting: [[6, 'desc']],
       language: _DATATABLE_LANGUAGE,
-      // dom: "<'row'<'col-12 col-sm-6 align-bottom'l><'col-sm-6 d-none d-sm-block'f>>" +
-      dom:  "<'d-flex align-items-center'<'p-0 align-items-center d-none d-sm-block'B><'p-0 px-2 mt-2 align-items-center d-none d-sm-block'l><'p-0 mr-auto flex-fill 'f>>" +
-      "<'d-flex mt-2'<'p-0 flex-fill'tr>>" +
-      "<'d-flex align-items-center'<'p-0 flex-fill d-none d-sm-block'i><'p-0 mt-3 mr-auto flex-fill'p>>",
+      dom: "<'row'<'col-12 col-sm-6 align-bottom'l><'col-sm-6 d-none d-sm-block'f>>" ,
+      // dom:  "<'d-flex align-items-center'<'p-0 align-items-center d-none d-sm-block'B><'p-0 px-2 mt-2 align-items-center d-none d-sm-block'l><'p-0 mr-auto flex-fill 'f>>" +
+      // "<'d-flex mt-2'<'p-0 flex-fill'tr>>" +
+      // "<'d-flex align-items-center'<'p-0 flex-fill d-none d-sm-block'i><'p-0 mt-3 mr-auto flex-fill'p>>",
       columnDefs: [
-        { className: 'text-center align-top', targets: [0,1,2,3] },
+        { className: 'text-center', targets: "_all" },
         { className: 'text-left align-top', targets: [1] },
-        { bSortable: false, targets: [0] },
+        { bSortable: false, targets: "_all" },
         { visible: false, targets: [] },
         { className: 'noVis', targets: [0] },
       ],
-      buttons: [
-        { extend: 'colvis', columns: ':not(.noVis)', fade: 400, collectionLayout: 'three-column', text:'<i class="fa-solid fa-columns"></i>', className: 'btn btn-outline-default btn-sm btn-icon z-depth-0', titleAttr: 'Pilihan Kolum'},
-        { extend: 'excelHtml5', className: 'btn btn-outline-default btn-sm btn-icon ml-0 z-depth-0', text:'<i class="fa-solid fa-file-excel"></i>', title:'Senarai', titleAttr: 'Excel', exportOptions: mzExportOpt},
-        { text: '<i class="fa-solid fa-arrows-rotate"></i>', className: 'btn btn-outline-default btn-sm btn-icon ml-0 z-depth-0', attr: { id: 'btnMplRefresh' }, titleAttr: 'Muat Semula Senarai'}
-      ],
+      // buttons: [
+      //   { extend: 'colvis', columns: ':not(.noVis)', fade: 400, collectionLayout: 'three-column', text:'<i class="fa-solid fa-columns"></i>', className: 'btn btn-outline-default btn-sm btn-icon z-depth-0', titleAttr: 'Pilihan Kolum'},
+      //   { extend: 'excelHtml5', className: 'btn btn-outline-default btn-sm btn-icon ml-0 z-depth-0', text:'<i class="fa-solid fa-file-excel"></i>', title:'Senarai', titleAttr: 'Excel', exportOptions: mzExportOpt},
+      //   { text: '<i class="fa-solid fa-arrows-rotate"></i>', className: 'btn btn-outline-default btn-sm btn-icon ml-0 z-depth-0', attr: { id: 'btnMplRefresh' }, titleAttr: 'Muat Semula Senarai'}
+      // ],
       fnRowCallback : function(nRow, aData, iDisplayIndex){
         const info = $(this).DataTable().page.info();
         $('td', nRow).eq(0).html(info.start + (iDisplayIndex + 1));
