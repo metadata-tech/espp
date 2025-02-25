@@ -14,15 +14,15 @@ function MpgPindahCalon () {
   let submitType;
   let formValidate;
   let vData = [
-    {
-      field_id: "txtCmclNoKp",
-      type: "text",
-      name: "No. Kad Pengenalan",
-      validator: {
-        notEmpty: true,
-        maxLengthDigit: 12,
-      }
-    }
+    // {
+    //   field_id: "txtCmclNoKp",
+    //   type: "text",
+    //   name: "No. Kad Pengenalan",
+    //   validator: {
+    //     notEmpty: true,
+    //     maxLengthDigit: 12,
+    //   }
+    // }
   ];
 
   this.init = function () {

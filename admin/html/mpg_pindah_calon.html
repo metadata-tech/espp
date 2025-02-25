@@ -108,38 +108,8 @@
             </div>
           </div>
         </div>
-        <div class="row"  id="sectionMaklumat">
-          <!-- <div class="col-lg-12 p-1">
-            <p class="label-text float-right">Kemaskini Terakhir: <span class="kemaskiniTerakhir">04/01/2024 (09:00:08)</span></p>
-          </div> -->
-          <!-- Menu -->
-          <div class="col p-1 pr-3 side-section">
-            <div class="card rounded-0" style="position: sticky; top: 62px;">
-              <div class="card-body white p-2">
-                <ul class="nav nav-pills-custom flex-xl-column" id="pills-tab" role="tablist">
-                  <li class="nav-item" role="presentation">
-                    <a class="nav-link mt-2 active" id="secMaklumatCalon-tab" data-toggle="pill" href="#secMaklumatCalon" role="tab">
-                      <div class="d-flex flex-row align-items-center">
-                        <div class="p-0 ml-2 d-none d-xl-block">
-                          <p class="menu-title">Maklumat Pindah Calon</p>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <a class="nav-link mt-2" id="secMaklumatPindahCalon-tab" data-toggle="pill" href="#secMaklumatPindahCalon" role="tab">
-                      <div class="d-flex flex-row align-items-center">
-                        <div class="p-0 ml-2 d-none d-xl-block">
-                          <p class="menu-title">Senarai Calon Dipindahkan</p>
-                        </div>
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!-- <div class="col p-1">
+        <div class="row" style="display: none;" id="sectionMaklumat">
+          <div class="col-lg-12 p-1">
             <div class="card rounded-0 mb-4">
               <div class="card-body p-0 rounded-0">
                 <div class="tab-content p-0">
@@ -149,11 +119,15 @@
                         <div class="d-flex align-items-center">
                           <div class="p-0 flex-fill">
                             <ul class="nav nav-fill md-tabs unique-color mx-0 mb-2 mt-0 z-depth-0 rounded-0 p-0">
-                              <li class="nav-item">
-                                <a class="nav-link label-text active" id="secMaklumatCalon-tab" href="#secMaklumatCalon" role="tab">Maklumat Pindah Calon</a>
+                              <li class="nav-item" role="presentation">
+                                <a class="nav-link label-text active" id="secMaklumatCalon-tab" data-toggle="pill" href="#secMaklumatPindahCalon1" role="tab">
+                                  <p class="menu-title">Maklumat Pindah Calon</p>
+                                </a>
                               </li>
-                              <li class="nav-item">
-                                <a class="nav-link label-text" id="secMaklumatPindahCalon-tab" href="#secMaklumatPindahCalon" role="tab">Senarai Calon Dipindahkan</a>
+                              <li class="nav-item" role="presentation">
+                                <a class="nav-link label-text" id="secMaklumatPindahCalon-tab" data-toggle="pill" href="#secMaklumatPindahCalon2" role="tab">
+                                  <p class="menu-title">Senarai Calon Dipindahkan</p>
+                                </a>
                               </li>
                             </ul>
                           </div>
@@ -164,13 +138,10 @@
                 </div>
               </div>
             </div>
-          </div> -->
-          <!-- Content -->
-          <div class="col p-1">
             <div class="card rounded-0 mb-4">
               <div class="card-body p-0 rounded-0">
                 <div class="tab-content p-0">
-                  <div class="tab-pane fade accordion show active" id="secMaklumatCalon" role="tabpanel">
+                  <div class="tab-pane fade accordion show active" id="secMaklumatPindahCalon1" role="tabpanel">
                     <div class="card shadow-none">
                       <div class="card-body">
                         <div class="row">
@@ -299,7 +270,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="tab-pane fade accordion" id="secMaklumatPindahCalon" role="tabpanel">
+                  <div class="tab-pane fade accordion" id="secMaklumatPindahCalon2" role="tabpanel">
                     <div class="card shadow-none">
                       <div class="card-body">
                         <div class="row">
@@ -324,66 +295,6 @@
                           <div class="col-lg-12 ">
                             <hr class="border-dark border-2">
                           </div>
-                          <!-- <div class="col-lg-12 p-3">
-                            <div class="card mb-3 rounded-0">
-                              <div class="card-header white h6 rounded-0 p-0">
-                                <div class="d-flex">
-                                  <div class="p-2-3 flex-shrink-1 unique-color"><i class="fa-solid fa-magnifying-glass text-white"></i></div>
-                                  <div class="p-2-3 flex-fill"><span class="">Carian</span></div>
-                                </div>
-                              </div>
-                              <form id="formCmcl" autocomplete="off" spellcheck="false">
-                                <div class="card-body">
-                                  <div class="row">
-                                    <div class="col-lg-12 mb-2 mt-2 ml-3 align-content-center">
-                                      <p class="label-text font-weight-500 unique-text">Maklumat Pemerolehan Asal</p>
-                                    </div>
-                                    <div class="col-lg-12 ">
-                                      <hr class="mt-2">
-                                    </div>
-                                    <div class="col-lg-4">
-                                      <p class="label-text">No. Pemerolehan<span class="ml-1 text-danger">*</span></p>
-                                      <div class="md-form md-outline md-outline-light md-custom my-1">
-                                        <input type="text" class="form-control numeric" disabled id="txtSmclNoKp">
-                                      </div>
-                                      <p class="font-small text-danger font-weight-400" id="txtSmclNoKpErr"></p>
-                                    </div>
-                                    <div class="col-lg-8">
-                                      <p class="label-text">Suruhanjaya<span class="ml-1 text-danger">*</span></p>
-                                      <div class="select-outline" id="optSmclSuruhanjaya_">
-                                        <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optSmclSuruhanjaya">
-                                          <option value="" selected>Sila Pilih</option>
-                                          <option value="01">JOHOR</option>
-                                          <option value="02">KEDAH</option>
-                                          <option value="03">KELANTAN</option>
-                                          <option value="06">PAHANG</option>
-                                        </select>
-                                      </div>
-                                      <p class="font-small text-danger" id="optSmclSuruhanjayaErr"></p>
-                                    </div>
-                                    <div class="col-lg-12">
-                                      <p class="label-text">Skim<span class="ml-1 text-danger">*</span></p>
-                                      <div class="select-outline" id="optSmclSkim_">
-                                        <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optSmclSkim">
-                                          <option value="" selected>Sila Pilih</option>
-                                          <option value="01">JOHOR</option>
-                                          <option value="02">KEDAH</option>
-                                          <option value="03">KELANTAN</option>
-                                          <option value="06">PAHANG</option>
-                                        </select>
-                                      </div>
-                                      <p class="font-small text-danger" id="optSmclSkimErr"></p>
-                                    </div>
-                                    <div class="col-lg-8">
-                                      <p class="label-text">&nbsp;</p>
-                                      <button type="button" class="btn btn-sm btn-default waves-effect z-depth-0" id="btnCmclFilter"><i class="fa-solid fa-magnifying-glass mr-2"></i>Carian</button>
-                                      <button type="button" class="btn btn-sm btn-outline-default waves-effect z-depth-0" id="btnCmclClearFilter"><i class="fa-solid fa-magnifying-glass-arrows-rotate mr-2"></i>Set Semula</button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </form>
-                            </div>
-                          </div> -->
                           <div class="col-lg-12 p-3">
                             <div class="card mb-3 rounded-0">
                               <form id="formCmcl" autocomplete="off" spellcheck="false">

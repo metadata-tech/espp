@@ -167,8 +167,6 @@
           </div>
         </div>
       </section>
-      <!-- <div class="includeHtml" id="h-s-section_mpg_maklumat_pengisian"></div>
-    </div> -->
   </div>
   <div class="includeHtml" id="h-m-modal_change_password"></div>
   <div class="includeHtml" id="h-m-modal_change_profile"></div>
@@ -176,8 +174,6 @@
   <div class="includeHtml" id="h-m-modal_confirm_delete"></div>
   <div class="includeHtml" id="h-m-modal_confirm_action"></div>
   <div class="includeHtml" id="h-m-modal_mpg_selesai_pemerolehan"></div>
-  <!-- <div class="includeHtml" id="h-m-modal_mpg_proses_pemerolehan"></div>
-  <div class="includeHtml" id="h-m-modal_mpg_proses_pemerolehan_2"></div> -->
   <div class="includeHtml" id="h-m-modal_preview_pdf"></div>
 </main>
 
@@ -204,8 +200,6 @@
 <script type="text/javascript" src="js/addons/xlsx.min.js"></script>
 <script type="text/javascript" src="js/addons/pdf.min.js"></script>
 <script type="text/javascript" src="js/addons/tesseract.min.js"></script>
-<!-- <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.6.172/build/pdf.min.js "></script> -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script> -->
 <script type="module">
 </script>
 
@@ -229,9 +223,6 @@
     modalConfirmDelete = new ModalConfirmDelete();
     modalConfirmAction = new ModalConfirmAction();
     modalMpgSelesaiPemerolehan = new ModalMpgSelesaiPemerolehan();
-    // modalMpgProsesPemerolehan = new ModalMpgProsesPemerolehan();
-    // modalMpgProsesPemerolehan2 = new ModalMpgProsesPemerolehan2();
-    // modalPreviewPdf = new ModalPreviewPdf();
 
     ShowLoader(); setTimeout(function () {
       try {
@@ -251,20 +242,10 @@
         modalConfirmAction.init();
         
         mainClass.setModalMpgSelesaiPemerolehan(modalMpgSelesaiPemerolehan);
-        // mainClass.setModalMpgProsesPemerolehan(modalMpgProsesPemerolehan);
-        // mainClass.setModalMpgProsesPemerolehan2(modalMpgProsesPemerolehan2);
 
         modalMpgSelesaiPemerolehan.setClassFrom(mainClass);
         modalMpgSelesaiPemerolehan.init();
-
-
-        // modalMpgProsesPemerolehan.setClassFrom(mainClass);
-        // modalMpgProsesPemerolehan.init();
-
         
-        // modalMpgProsesPemerolehan2.setClassFrom(mainClass);
-        // modalMpgProsesPemerolehan2.init();
-
         mainClass.setDtDisplay(dtDisplay);
         mainClass.init();
 
@@ -274,10 +255,6 @@
   });
 
   document.write('<scr' + 'ipt src="js/pages/modal/ModalPreviewPdf.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
-  //document.write('<scr' + 'ipt src="js/pages/modal/ModalMpgProsesPemerolehan.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
-  //document.write('<scr' + 'ipt src="js/pages/modal/ModalMpgProsesPemerolehan2.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
-  //document.write('<scr' + 'ipt src="js/pages/section/SectionMaklumatEkeps.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
-  document.write('<scr' + 'ipt src="js/pages/modal/ModalMpgSelesaiPemerolehan.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
   document.write('<scr' + 'ipt src="js/pages/modal/ModalChangePassword.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
   document.write('<scr' + 'ipt src="js/pages/modal/ModalChangeProfile.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
   document.write('<scr' + 'ipt src="js/pages/modal/ModalNotification.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
@@ -285,7 +262,7 @@
   document.write('<scr' + 'ipt src="js/pages/modal/ModalConfirmDelete.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
   document.write('<scr' + 'ipt src="js/global/DtDisplay.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
   document.write('<scr' + 'ipt src="js/pages/MpgSahSelesaiPemerolehan.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
-  // document.write('<scr' + 'ipt src="js/pages/section/SectionMpgProsesPemerolehan.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
+  document.write('<scr' + 'ipt src="js/pages/modal/ModalMpgSelesaiPemerolehan.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
 
 
 </script>
