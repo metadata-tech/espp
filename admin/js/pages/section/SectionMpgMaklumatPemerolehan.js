@@ -288,8 +288,8 @@ function SectionMpgMaklumatPemerolehan () {
       dom: "<'d-flex'<'p-0'f><'p-0 d-none d-sm-block ml-auto'>>" +
       "<'d-flex'<'p-0 flex-fill'tr>>",
       columnDefs: [
-        { className: 'text-center', targets: [0,1,2,3] },
-        { className: 'text-left', targets: [1] },
+        { className: 'text-center', targets: [0,1,3] },
+        { className: 'text-left', targets: [2] },
         { bSortable: false, targets: [0,1,2,3] },
         { visible: false, targets: [] },
         { className: 'noVis', targets: [0,1] },
@@ -319,10 +319,13 @@ function SectionMpgMaklumatPemerolehan () {
         { mData: 'tajukDokumen'},
         { mData: 'jenisDokumen'},
         { mData: null, mRender: function (data, type, row, meta) {
-            return '<div class="form-check p-0 m-0" style="margin-top: -6px !important; margin-bottom: -6px !important;">' +
-                '<input type="checkbox" class="form-check-input check chkKotak" name="chkKotak[]" id="chkKotak' + meta.row + '" value="' + meta.row + '">' +
-                '<label class="form-check-label" for="chkKotak' + meta.row + '"></label>' +
-                '</div>';
+          let tableId = meta.settings.sTableId;
+            return  '<div class="form-check p-0 m-0" style="margin-top: -6px !important; margin-bottom: -6px !important;">' +
+            '<input type="checkbox" class="form-check-input check chkKotak" ' +
+            'name="chkKotak_' + tableId + '[]" id="chkKotak_' + tableId + '_' + meta.row + '" ' +
+            'value="' + meta.row + '">' +
+            '<label class="form-check-label" for="chkKotak_' + tableId + '_' + meta.row + '"></label>' +
+            '</div>';
               }},
       ]
     });
@@ -339,8 +342,8 @@ function SectionMpgMaklumatPemerolehan () {
       dom: "<'d-flex'<'p-0'f><'p-0 d-none d-sm-block ml-auto'>>" +
       "<'d-flex'<'p-0 flex-fill'tr>>",
       columnDefs: [
-        { className: 'text-center', targets: [0,1,2,3] },
-        { className: 'text-left', targets: [1] },
+        { className: 'text-center', targets: [0,1,3] },
+        { className: 'text-left', targets: [2] },
         { bSortable: false, targets: [0,1,2,3] },
         { visible: false, targets: [] },
         { className: 'noVis', targets: [0,1] },
@@ -370,10 +373,13 @@ function SectionMpgMaklumatPemerolehan () {
         { mData: 'tajukDokumen'},
         { mData: 'jenisDokumen'},
         { mData: null, mRender: function (data, type, row, meta) {
-            return '<div class="form-check p-0 m-0" style="margin-top: -6px !important; margin-bottom: -6px !important;">' +
-                '<input type="checkbox" class="form-check-input check chkKotak" name="chkKotak[]" id="chkKotak' + meta.row + '" value="' + meta.row + '">' +
-                '<label class="form-check-label" for="chkKotak' + meta.row + '"></label>' +
-                '</div>';
+          let tableId = meta.settings.sTableId;
+            return  '<div class="form-check p-0 m-0" style="margin-top: -6px !important; margin-bottom: -6px !important;">' +
+            '<input type="checkbox" class="form-check-input check chkKotak" ' +
+            'name="chkKotak_' + tableId + '[]" id="chkKotak_' + tableId + '_' + meta.row + '" ' +
+            'value="' + meta.row + '">' +
+            '<label class="form-check-label" for="chkKotak_' + tableId + '_' + meta.row + '"></label>' +
+            '</div>';
               }},
       ]
     });
@@ -390,8 +396,8 @@ function SectionMpgMaklumatPemerolehan () {
       dom: "<'d-flex'<'p-0'f><'p-0 d-none d-sm-block ml-auto'>>" +
       "<'d-flex'<'p-0 flex-fill'tr>>",
       columnDefs: [
-        { className: 'text-center', targets: [0,1,2,3] },
-        { className: 'text-left', targets: [1] },
+        { className: 'text-center', targets: [0,1,3] },
+        { className: 'text-left', targets: [2] },
         { bSortable: false, targets: [0,1,2,3] },
         { visible: false, targets: [] },
         { className: 'noVis', targets: [0,1] },
@@ -430,8 +436,8 @@ function SectionMpgMaklumatPemerolehan () {
     dom: "<'d-flex'<'p-0'f><'p-0 d-none d-sm-block ml-auto'>>" +
     "<'d-flex'<'p-0 flex-fill'tr>>",
     columnDefs: [
-      { className: 'text-center', targets: [0,1,2,3,4,5,6] },
-      { className: 'text-left', targets: [1] },
+      { className: 'text-center', targets: [0,1,4,5,6] },
+      { className: 'text-left', targets: [2,3] },
       { bSortable: false, targets: [0,1,2,6] },
       { visible: false, targets: [] },
       { className: 'noVis', targets: [0,1] },
@@ -455,11 +461,14 @@ function SectionMpgMaklumatPemerolehan () {
       { mData: 'bilKekosonganDipohon'},
       { mData: 'tarikhPohon'},
       { mData: null, mRender: function (data, type, row, meta) {
-        return '<div class="form-check p-0 m-0" style="margin-top: -6px !important; margin-bottom: -6px !important;">' +
-            '<input type="checkbox" class="form-check-input check chkKotak" name="chkKotak[]" id="chkKotak' + meta.row + '" value="' + meta.row + '">' +
-            '<label class="form-check-label" for="chkKotak' + meta.row + '"></label>' +
-            '</div>';
-          }},
+        let tableId = meta.settings.sTableId;
+          return  '<div class="form-check p-0 m-0" style="margin-top: -6px !important; margin-bottom: -6px !important;">' +
+          '<input type="checkbox" class="form-check-input check chkKotak" ' +
+          'name="chkKotak_' + tableId + '[]" id="chkKotak_' + tableId + '_' + meta.row + '" ' +
+          'value="' + meta.row + '">' +
+          '<label class="form-check-label" for="chkKotak_' + tableId + '_' + meta.row + '"></label>' +
+          '</div>';
+            }},
     ]
   });
 };
@@ -495,12 +504,37 @@ function SectionMpgMaklumatPemerolehan () {
     try {
         const dataDbm = [{
           tajukDokumen: '001', 
-          jenisDokumen: 'MINIT MESYUARAT', 
+          jenisDokumen: 'Calon yang Tidak Sesuai (status 57) tidak akan dipertimbangkan dalam pemerolehan untuk selamanya untuk skim yang sama', 
           noRujukanFail: 'SPP.600-3/1/1 Jld.18(4)(S)', 
           isiDokumen: []
         },{
           tajukDokumen: '002', 
-          jenisDokumen: 'KERTAS SURUHANJAYA', 
+          jenisDokumen: 'Calon yang Terma Tawaran (status 50,63,51,64,80) tidak akan dipertimbangkan dalam pemerolehan untuk selamanya untuk skim yang sama', 
+          noRujukanFail: 'SPP.600-3/1/1 Jld.18(4)(S)', 
+          isiDokumen: []
+        },{
+          tajukDokumen: '003', 
+          jenisDokumen: 'Calon yang Terma Tawaran (status 50,63,51,64,80) tidak akan dipertimbangkan dalam pemerolehan selama setahun untuk skim berlainan bagi gred yang sama', 
+          noRujukanFail: 'SPP.600-3/1/1 Jld.18(4)(S)', 
+          isiDokumen: []
+        },{
+          tajukDokumen: '004', 
+          jenisDokumen: 'Calon yang Tolak Tawaran (status 58,59) tidak akan dipertimbangkan dalam pemerolehan dalam masa 2 tahun dari tarikh surat tawaran untuk skim sama', 
+          noRujukanFail: 'SPP.600-3/1/1 Jld.18(4)(S)', 
+          isiDokumen: []
+        },{
+          tajukDokumen: '005', 
+          jenisDokumen: 'Calon yang Tolak Tawaran (status 58,59) tidak akan dipertimbangkan dalam pemerolehan selama setahun dari tarikh surat tawaran untuk skim berlainan bagi gred sama', 
+          noRujukanFail: 'SPP.600-3/1/1 Jld.18(4)(S)', 
+          isiDokumen: []
+        },{
+          tajukDokumen: '006', 
+          jenisDokumen: 'Calon yang mempunyai rekod kesalahan Tatatertib (Buang Kerja)', 
+          noRujukanFail: 'SPP.600-3/1/1 Jld.18(4)(S)', 
+          isiDokumen: []
+        },{
+          tajukDokumen: '007', 
+          jenisDokumen: 'Calon yang telah menamatkan Perkhidmatan', 
           noRujukanFail: 'SPP.600-3/1/1 Jld.11(4)(S)', 
           isiDokumen: []
         }];
@@ -512,12 +546,52 @@ function SectionMpgMaklumatPemerolehan () {
     try {
         const dataDbm = [{
           tajukDokumen: '101', 
-          jenisDokumen: 'MINIT MESYUARAT', 
+          jenisDokumen: 'Calon yang Tidak Hadir 2 kali temu duga tidak akan dipertimbangkan dalam pemerolehan bagi tempoh 1 tahun', 
           noRujukanFail: 'SPP.600-3/1/1 Jld.18(4)(S)', 
           isiDokumen: []
         },{
           tajukDokumen: '102', 
-          jenisDokumen: 'KERTAS SURUHANJAYA', 
+          jenisDokumen: 'Calon yang Tidak Hadir 3 kali temu duga bagi skim yang sama tidak akan dipertimbangkan dalam pemerolehan', 
+          noRujukanFail: 'SPP.600-3/1/1 Jld.18(4)(S)', 
+          isiDokumen: []
+        },{
+          tajukDokumen: '103', 
+          jenisDokumen: 'Calon yang Tidak Berjaya temu duga 2 kali tidak akan dipertimbangkan dalam pemerolehan', 
+          noRujukanFail: 'SPP.600-3/1/1 Jld.18(4)(S)', 
+          isiDokumen: []
+        },{
+          tajukDokumen: '104', 
+          jenisDokumen: 'Masukkan calon yang lulus peperiksaan sahaja (di dalam tempoh sah laku)', 
+          noRujukanFail: 'SPP.600-3/1/1 Jld.18(4)(S)', 
+          isiDokumen: []
+        },{
+          tajukDokumen: '105', 
+          jenisDokumen: 'Aktifkan calon KPSL dan Sedang Berkhidmat (masukkan dalam pemerolehan tidak mengira tarikh daftar)', 
+          noRujukanFail: 'SPP.600-3/1/1 Jld.18(4)(S)', 
+          isiDokumen: []
+        },{
+          tajukDokumen: '106', 
+          jenisDokumen: 'Kecualikan calon gagal ujian fizikal (skim 1307,2303,4536,1108,1024,3369,1987,2238,3365,1873,2854,3940,1174,2037,45522,1102,2885,3528,1198,3340,3198', 
+          noRujukanFail: 'SPP.600-3/1/1 Jld.18(4)(S)', 
+          isiDokumen: []
+        },{
+          tajukDokumen: '107', 
+          jenisDokumen: 'Semakan Calon SPM Terbuka (yang tidak memenuhi 2 kredit dan 4 lulus', 
+          noRujukanFail: 'SPP.600-3/1/1 Jld.18(4)(S)', 
+          isiDokumen: []
+        },{
+          tajukDokumen: '108', 
+          jenisDokumen: 'Kecualikan calon yang memiliki ijazah kurang dari 3 tahun', 
+          noRujukanFail: 'SPP.600-3/1/1 Jld.18(4)(S)', 
+          isiDokumen: []
+        },{
+          tajukDokumen: '109', 
+          jenisDokumen: 'Keccualikan calon gagal temu duga kurang 6 bulan dari tarikh temu duga bagi skim yang sama', 
+          noRujukanFail: 'SPP.600-3/1/1 Jld.18(4)(S)', 
+          isiDokumen: []
+        },{
+          tajukDokumen: '110', 
+          jenisDokumen: 'Kecualikan calon yang mempunyai ijazah sarjana muda', 
           noRujukanFail: 'SPP.600-3/1/1 Jld.11(4)(S)', 
           isiDokumen: []
         }];
@@ -529,13 +603,9 @@ function SectionMpgMaklumatPemerolehan () {
   this.genTableDbm3 = function () {
     try {
         const dataDbm = [{
-          tajukDokumen: '101', 
-          jenisDokumen: 'MINIT MESYUARAT', 
+          tajukDokumen: '203', 
+          jenisDokumen: 'Kecualikan calon pusat temuduga pilihan WP Labuan, Sabah dan Sarawak', 
           noRujukanFail: 'SPP.600-3/1/1 Jld.18(4)(S)', 
-        },{
-          tajukDokumen: '102', 
-          jenisDokumen: 'KERTAS SURUHANJAYA', 
-          noRujukanFail: 'SPP.600-3/1/1 Jld.11(4)(S)', 
         }];
         dtDbm3.clear().rows.add(dataDbm).draw();
     } catch (e) { toastr['error'](_ALERT_MSG_ERROR_DEFAULT, _ALERT_TITLE_ERROR); }
