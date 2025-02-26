@@ -923,7 +923,7 @@
                       <div class="card-body">
                         <div class="row mb-4">
                           <div class="col-lg-12">
-                            <p class="label-text font-weight-500 unique-text">Keputusan Pengajian Tinggi</p>
+                           <p class="label-text font-weight-500 unique-text">Keputusan Pengajian Tinggi</p>
                             <hr class="mt-2">
                           </div>
                           <div class="col-lg-12 p-0">
@@ -1716,6 +1716,14 @@
     <div class="includeHtml" id="h-m-modal_confirm_delete"></div>
     <div class="includeHtml" id="h-m-modal_confirm_action"></div>
     <div class="includeHtml" id="h-m-modal_mpg_jawatan_dipohon"></div>
+    <div class="includeHtml" id="h-m-modal_mpg_sejarah_transaksi"></div>
+    <div class="includeHtml" id="h-m-modal_mpg_tambah_maklumat_kelulusan"></div>
+    <div class="includeHtml" id="h-m-modal_mpg_tambah_penguasaan_bahasa"></div>
+    <div class="includeHtml" id="h-m-modal_mpg_tambah_bakat"></div>
+    <div class="includeHtml" id="h-m-modal_mpg_tambah_sukan"></div>
+    <div class="includeHtml" id="h-m-modal_mpg_tambah_persatuan"></div>
+    <div class="includeHtml" id="h-m-modal_mpg_tambah_rekacipta"></div>
+
   </main>
 
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
@@ -1751,6 +1759,14 @@
     let modalConfirmAction;
     let modalConfirmDelete;
     let modalMpgJawatanDipohon;
+    let modalMpgTambahMaklumatKelulusan;
+    let modalMpgTambahPenguasaanBahasa;
+    let modalMpgSejarahTransaksi;
+    let modalMpgTambahBakat;
+    let modalMpgTambahSukan;
+    let modalMpgTambahPersatuan;
+    let modalMpgTambahRekacipta;
+
     let mainClass;
     let sectionMaklumatEkeps;
 
@@ -1762,6 +1778,13 @@
 
       //sectionMaklumatEkeps = new SectionMaklumatEkeps();
       modalMpgJawatanDipohon = new ModalMpgJawatanDipohon();
+      modalMpgTambahMaklumatKelulusan = new ModalMpgTambahMaklumatKelulusan();
+      modalMpgTambahPenguasaanBahasa = new ModalMpgTambahPenguasaanBahasa();
+      modalMpgSejarahTransaksi = new ModalMpgSejarahTransaksi();
+      modalMpgTambahBakat = new ModalMpgTambahBakat();
+      modalMpgTambahSukan = new ModalMpgTambahSukan();
+      modalMpgTambahPersatuan = new ModalMpgTambahPersatuan();
+      modalMpgTambahRekacipta = new ModalMpgTambahRekacipta();
 
       ShowLoader(); setTimeout(function () {
         try {
@@ -1779,7 +1802,15 @@
 
           mainClass.setModalConfirmAction(modalConfirmAction);
           modalConfirmAction.init();
+
           mainClass.setModalMpgJawatanDipohon(modalMpgJawatanDipohon);
+          mainClass.setModalMpgTambahMaklumatKelulusan(modalMpgTambahMaklumatKelulusan);
+          mainClass.setModalMpgTambahPenguasaanBahasa(modalMpgTambahPenguasaanBahasa);
+          mainClass.setModalMpgSejarahTransaksi(modalMpgSejarahTransaksi);
+          mainClass.setModalMpgTambahBakat(modalMpgTambahBakat);
+          mainClass.setModalMpgTambahSukan(modalMpgTambahSukan);
+          mainClass.setModalMpgTambahPersatuan(modalMpgTambahPersatuan);
+          mainClass.setModalMpgTambahRekacipta(modalMpgTambahRekacipta);
 
           // mainClass.setSectionMaklumatEkeps(sectionMaklumatEkeps);
           // sectionMaklumatEkeps.setDtDisplay(dtDisplay);
@@ -1792,6 +1823,27 @@
           modalMpgJawatanDipohon.setClassFrom(mainClass);
           modalMpgJawatanDipohon.init();
 
+          modalMpgTambahMaklumatKelulusan.setClassFrom(mainClass);
+          modalMpgTambahMaklumatKelulusan.init();
+
+          modalMpgTambahPenguasaanBahasa.setClassFrom(mainClass);
+          modalMpgTambahPenguasaanBahasa.init();
+
+          modalMpgSejarahTransaksi.setClassFrom(mainClass);
+          modalMpgSejarahTransaksi.init();
+
+          modalMpgTambahBakat.setClassFrom(mainClass);
+          modalMpgTambahBakat.init();
+
+          modalMpgTambahSukan.setClassFrom(mainClass);
+          modalMpgTambahSukan.init();
+
+          modalMpgTambahPersatuan.setClassFrom(mainClass);
+          modalMpgTambahPersatuan.init();
+
+          modalMpgTambahRekacipta.setClassFrom(mainClass);
+          modalMpgTambahRekacipta.init();
+
           mainClass.setDtDisplay(dtDisplay);
           mainClass.init();
 
@@ -1800,6 +1852,13 @@
       }, 400);
     });
 
+    document.write('<scr' + 'ipt src="js/pages/modal/ModalMpgTambahRekacipta.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
+    document.write('<scr' + 'ipt src="js/pages/modal/ModalMpgTambahPersatuan.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
+    document.write('<scr' + 'ipt src="js/pages/modal/ModalMpgTambahSukan.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
+    document.write('<scr' + 'ipt src="js/pages/modal/ModalMpgTambahBakat.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
+    document.write('<scr' + 'ipt src="js/pages/modal/ModalMpgTambahPenguasaanBahasa.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
+    document.write('<scr' + 'ipt src="js/pages/modal/ModalMpgTambahMaklumatKelulusan.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
+    document.write('<scr' + 'ipt src="js/pages/modal/ModalMpgSejarahTransaksi.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
     document.write('<scr' + 'ipt src="js/pages/modal/ModalMpgJawatanDipohon.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
     //document.write('<scr' + 'ipt src="js/pages/section/SectionMaklumatEkeps.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');
     document.write('<scr' + 'ipt src="js/pages/modal/ModalChangePassword.js?' + new Date().valueOf() + '" type="text/javascript"></scr' + 'ipt>');

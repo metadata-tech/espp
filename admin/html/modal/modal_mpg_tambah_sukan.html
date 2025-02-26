@@ -1,0 +1,52 @@
+<div class="modal" id="modalMpgTambahSukan" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-notify modal-lg" role="document">
+    <div class="modal-content rounded-0">
+      <div class="modal-header unique-color rounded-0">
+        <h5 class="modal-title w-100 white-text"><i class="fa-duotone fa-circle-plus mr-3"></i>Tambah Sukan</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="btnMmskClose">
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body pt-4 pb-4">
+        <form id="formMmsk" autocomplete="off" spellcheck="false">
+          <div class="row mb-2">
+            <div class="col-md-12">
+              <p class="label-text font-weight-500 unique-text">Sila penuhkan bahagian yang bertanda<span class="ml-1 text-danger">*</span></p>
+              <hr class="mt-2">
+            </div>
+            <div class="col-lg-6">
+              <p class="label-text">Sukan<span class="ml-1 text-danger">*</span></p>
+              <div class="select-outline" id="optSmeKategoriMesyuarat_">
+                <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optSmeKategoriMesyuarat125">
+                  <option value="" selected>Sila Pilih</option>
+                  <option value="1">Badminton</option>
+                  <option value="2">Berbasikal</option>
+                  <option value="3">Bola Sepak</option>
+                  <option value="3">Bola Jaring</option>
+                  <option value="3">Bola Keranjang</option>
+                </select>
+                <p class="font-small text-danger" id="optSmeKategoriMesyuaratErr"></p>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <p class="label-text">Peringkat<span class="ml-1 text-danger">*</span></p>
+              <div class="select-outline" id="optSmeKategoriMesyuarat_">
+                <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optSmeKategoriMesyuarat126">
+                  <option value="" selected>Sila Pilih</option>
+                  <option value="1">Antarabangsa</option>
+                  <option value="2">Daerah</option>
+                  <option value="3">IPTS / IPTA</option>
+                </select>
+                <p class="font-small text-danger" id="optSmeKategoriMesyuaratErr"></p>
+              </div>
+            </div>
+        </div> 
+        </form>
+      </div>
+      <div class="modal-footer p-0">
+        <button type="button" class="btn btn-md btn-outline-default waves-effect z-depth-0" data-dismiss="modal"><i class="fa-regular fa-arrow-left mr-2"></i>Kembali</button>
+        <button type="button" class="btn btn-md btn-default waves-effect z-depth-0" id="btnMmtsSave"><i class="fa-duotone fa-solid fa-square-plus mr-2"></i>Tambah</button>
+      </div>
+    </div>
+  </div>
+</div>

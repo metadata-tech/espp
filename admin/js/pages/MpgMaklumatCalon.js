@@ -6,6 +6,13 @@ function MpgMaklumatCalon () {
   let modalConfirmDelete;
   let modalConfirmAction;
   let modalMpgJawatanDipohon;
+  let modalMpgSejarahTransaksi;
+  let modalMpgTambahMaklumatKelulusan;
+  let modalMpgTambahPenguasaanBahasa;
+  let modalMpgTambahBakat;
+  let modalMpgTambahSukan;
+  let modalMpgTambahPersatuan;
+  let modalMpgTambahRekacipta;
   let sectionMaklumatEkeps;
   let userId;
   let dtJwt;
@@ -188,16 +195,16 @@ function MpgMaklumatCalon () {
         drawCallback: function () {
           $('[data-toggle="tooltip"]').tooltip();
           $('.btnKptTambah').on('click', function () {
-            // modalMpgJawatanDipohon.add();
+            modalMpgTambahMaklumatKelulusan.add();
           });
           $('.lnkKptView').off('click').on('click', function () {
-            // modalMpgJawatanDipohon.view(123);
+            modalMpgSejarahTransaksi.view(123);
           });
           $('.lnkKptEdit').off('click').on('click', function () {
-            // modalMpgJawatanDipohon.edit(123);
+            // modalMpgSejarahTransaksi.edit(123);
           });
           $('.lnkKptRemove').off('click').on('click', function () {
-            modalConfirmDelete.delete(123, modalMpgJawatanDipohon);
+            modalConfirmDelete.delete(123, modalMpgSejarahTransaksi);
           });
         },
         aoColumns: [
@@ -211,7 +218,7 @@ function MpgMaklumatCalon () {
             return data + '<br>Tahun : ' + row['tahunPeperiksaanBi'] + '<br>Band : ' + row['tahapPeperiksaanBi'];
           }},
           { mData: null, mRender: function (data, type, row, meta) { 
-            return dtDisplay.getActionA(submitType, 'lnkKpt', meta.row, 1); 
+            return dtDisplay.getActionKpt(submitType, 'lnkKpt', meta.row, 1); 
           }},
         ]
       });
@@ -239,7 +246,7 @@ function MpgMaklumatCalon () {
         drawCallback: function () {
           $('[data-toggle="tooltip"]').tooltip();
           $('.btnPbhTambah').on('click', function () {
-            // modalMpgJawatanDipohon.add();
+            modalMpgTambahPenguasaanBahasa.add();
           });
           $('.lnkPbhView').off('click').on('click', function () {
             // modalMpgJawatanDipohon.view(123);
@@ -284,7 +291,7 @@ function MpgMaklumatCalon () {
         drawCallback: function () {
           $('[data-toggle="tooltip"]').tooltip();
           $('.btnBktTambah').on('click', function () {
-            // modalMpgJawatanDipohon.add();
+            modalMpgTambahBakat.add();
           });
           $('.lnkBktView').off('click').on('click', function () {
             // modalMpgJawatanDipohon.view(123);
@@ -328,7 +335,7 @@ function MpgMaklumatCalon () {
         drawCallback: function () {
           $('[data-toggle="tooltip"]').tooltip();
           $('.btnSknTambah').on('click', function () {
-            // modalMpgJawatanDipohon.add();
+            modalMpgTambahSukan.add();
           });
           $('.lnkSknView').off('click').on('click', function () {
             // modalMpgJawatanDipohon.view(123);
@@ -337,7 +344,7 @@ function MpgMaklumatCalon () {
             // modalMpgJawatanDipohon.edit(123);
           });
           $('.lnkSknRemove').off('click').on('click', function () {
-            modalConfirmDelete.delete(123, modalMpgJawatanDipohon);
+            modalConfirmDelete.delete(123, modalMpgTambahSukan);
           });
         },
         aoColumns: [
@@ -373,7 +380,7 @@ function MpgMaklumatCalon () {
         drawCallback: function () {
           $('[data-toggle="tooltip"]').tooltip();
           $('.btnPsnTambah').on('click', function () {
-            // modalMpgJawatanDipohon.add();
+            modalMpgTambahPersatuan.add();
           });
           $('.lnkPsnView').off('click').on('click', function () {
             // modalMpgJawatanDipohon.view(123);
@@ -382,7 +389,7 @@ function MpgMaklumatCalon () {
             // modalMpgJawatanDipohon.edit(123);
           });
           $('.lnkPsnRemove').off('click').on('click', function () {
-            modalConfirmDelete.delete(123, modalMpgJawatanDipohon);
+            modalConfirmDelete.delete(123, modalMpgTambahPersatuan);
           });
         },
         aoColumns: [
@@ -419,7 +426,7 @@ function MpgMaklumatCalon () {
         drawCallback: function () {
           $('[data-toggle="tooltip"]').tooltip();
           $('.btnRniTambah').on('click', function () {
-            // modalMpgJawatanDipohon.add();
+            modalMpgTambahRekacipta.add();
           });
           $('.lnkRniView').off('click').on('click', function () {
             // modalMpgJawatanDipohon.view(123);
@@ -428,7 +435,7 @@ function MpgMaklumatCalon () {
             // modalMpgJawatanDipohon.edit(123);
           });
           $('.lnkRniRemove').off('click').on('click', function () {
-            modalConfirmDelete.delete(123, modalMpgJawatanDipohon);
+            modalConfirmDelete.delete(123, modalMpgTambahRekacipta);
           });
         },
         aoColumns: [
@@ -746,7 +753,35 @@ function MpgMaklumatCalon () {
   this.setModalMpgJawatanDipohon = function (_modalMpgJawatanDipohon) {
     modalMpgJawatanDipohon = _modalMpgJawatanDipohon;
   };
+
+  this.setModalMpgSejarahTransaksi = function (_modalMpgSejarahTransaksi) {
+    modalMpgSejarahTransaksi = _modalMpgSejarahTransaksi;
+  };
+
+  this.setModalMpgTambahMaklumatKelulusan = function (_modalMpgTambahMaklumatKelulusan) {
+    modalMpgTambahMaklumatKelulusan = _modalMpgTambahMaklumatKelulusan;
+  };
+
+  this.setModalMpgTambahPenguasaanBahasa = function (_modalMpgTambahPenguasaanBahasa) {
+    modalMpgTambahPenguasaanBahasa = _modalMpgTambahPenguasaanBahasa;
+  };
   
+  this.setModalMpgTambahBakat = function (_modalMpgTambahBakat) {
+    modalMpgTambahBakat = _modalMpgTambahBakat;
+  };
+
+  this.setModalMpgTambahSukan = function (_modalMpgTambahSukan) {
+    modalMpgTambahSukan = _modalMpgTambahSukan;
+  };
+
+  this.setModalMpgTambahPersatuan = function (_modalMpgTambahPersatuan) {
+    modalMpgTambahPersatuan = _modalMpgTambahPersatuan;
+  };
+
+  this.setModalMpgTambahRekacipta = function (_modalMpgTambahRekacipta) {
+    modalMpgTambahRekacipta = _modalMpgTambahRekacipta;
+  };
+
   this.setSectionMaklumatEkeps = function (_sectionMaklumatEkeps) {
     sectionMaklumatEkeps = _sectionMaklumatEkeps;
   };

@@ -221,7 +221,7 @@ function DtDisplay () {
 
         if (type === 'edit' || type === 'add') {
           if (flag == 1) {
-            return htmlEdit + htmlRemove;
+            return htmlEdit + htmlRemove ;
           } else if (flag == 2) {
             return htmlEdit;
           } else if (flag == 3) {
@@ -238,6 +238,16 @@ function DtDisplay () {
             return htmlView;
           }
         }
+    }
+
+    this.getActionKpt = function (type, id, row, flag, flag2) {
+        const htmlEdit = '<a data-toggle="tooltip" data-placement="left" title="Kemaskini"><i class="fa-regular fa-pen-to-square fa-lg '+id+'Edit" id="'+id+'Edit_'+row+'"></i></a>';
+        const htmlRemove = '<a data-toggle="tooltip" data-placement="left" title="Hapus"><i class="fa-regular fa-trash-can fa-lg ml-1 '+id+'Remove" id="'+id+'Remove_'+row+'"></i></a>';
+        const htmlView = '<a data-toggle="tooltip" data-placement="left" title="Papar"><i class="fa-duotone fa-solid fa-clock-rotate-left fa-lg ml-1 '+id+'View" id="'+id+'View_'+row+'"></i></a>';
+        const htmlPdf = '<a data-toggle="tooltip" data-placement="left" title="PDF"><i class="fa-regular fa-file-pdf fa-lg ml-1 '+id+'Pdf" id="'+id+'Pdf_'+row+'"></i></a>';
+
+            return htmlEdit + htmlRemove + htmlView;
+  
     }
 
 
