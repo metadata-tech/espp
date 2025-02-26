@@ -1,0 +1,67 @@
+<div class="modal" id="modalMpgSijilProfesional" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-notify modal-lg modal-dialog-scrollable" role="document">
+    <div class="modal-content rounded-0">
+      <div class="modal-header unique-color rounded-0">
+        <h5 class="modal-title w-100 white-text" id="h5MsjpTitle"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="btnMsjpClose">
+          <span aria-hidden="true" class="white-text">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body pt-4 pb-4">
+        <form id="formMsjp" autocomplete="off" spellcheck="false">
+          <div class="row mb-2">
+            <div class="col-lg-6">
+              <p class="label-text">Tindakan Tatatertib<span class="ml-1 text-danger">*</span></p>
+              <div class="select-outline" id="optMsjpAlamatNegeri_">
+                <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optMsjpAlamatNegeri">
+                  <option value="" selected>Sila Pilih</option>
+                  <option value="01">Telah Kena Tindakan Tatatertib</option>
+                  <option value="02">Denda</option>
+                </select>
+              </div>
+              <p class="font-small text-danger" id="optMsjpAlamatNegeriErr"></p>
+            </div>
+            <div class="col-lg-6">
+              <p class="label-text">Tarikh Hukuman<span class="ml-1 text-danger">*</span></p>
+              <div class="md-form md-outline md-outline-light md-custom my-1">
+                <input type="text" class="form-control datepicker2" placeholder="DD/MM/YYYY" id="txtMsjpTarikhLahir">
+              </div>
+              <p class="font-small text-danger" id="txtMsjpTarikhLahirErr"></p>
+            </div>
+            <div class="col-lg-12">
+              <p class="label-text">No.Keahlian<span class="ml-1 text-danger">*</span></p>
+              <div class="select-outline" id="optMsjpNoKeahlian_">
+                <select class="mdb-select md-form md-outline md-outline-light colorful-select font-weight-400 my-1" searchable="Cari di sini.." id="optMsjpNoKeahlian">
+                  <option value="" selected>Sila Pilih</option>
+                  <option value="01">Telah Kena Tindakan Tatatertib</option>
+                  <option value="02">Denda</option>
+                </select>
+              </div>
+              <p class="font-small text-danger" id="optMsjpNoKeahlianrr"></p>
+            </div>
+            <div class="col-lg-12">
+              <p class="label-text">Dokumen Berkaitan<span class="ml-1 text-danger">*</span></p>
+              <div class="md-form md-outline md-outline-light my-1">
+                <div class="file-field" id="txtMerlDokumen_">
+                  <div class="btn btn-smx btn-outline-default waves-effect z-depth-0 float-right mr-0 mt-0">
+                    <span><i class="fa-regular fa-upload mr-2" aria-hidden="true"></i>Pilih Fail</span>
+                    <input type="file" id="txtMerlDokumen">
+                    <input type="hidden" id="txtMerlDokumenBlob">
+                  </div>
+                  <div class="file-path-wrapper pl-0 pr-2">
+                    <input class="file-path form-control white" type="text" id="txtMerlFile" readonly>
+                  </div>
+                </div>
+                <p class="font-small text-danger font-weight-400" id="txtMerlDokumenErr"></p>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer p-0">
+        <button type="button" class="btn btn-md btn-outline-default waves-effect z-depth-0" data-dismiss="modal"><i class="fa-solid fa-ban mr-2"></i>Batal</button>
+        <button type="button" class="btn btn-md btn-default waves-effect z-depth-0" id="btnMsjpSave"><i class="fa-regular fa-floppy-disk mr-2"></i>Simpan</button>
+      </div>
+    </div>
+  </div>
+</div>

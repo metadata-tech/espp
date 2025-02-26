@@ -6,6 +6,8 @@ function MpgMaklumatCalon () {
   let modalConfirmDelete;
   let modalConfirmAction;
   let modalMpgJawatanDipohon;
+  let modalMpgTindakanTatatertib;
+  let ModalMpgSijilProfesional;
   let modalMpgSejarahTransaksi;
   let modalMpgTambahMaklumatKelulusan;
   let modalMpgTambahPenguasaanBahasa;
@@ -472,16 +474,16 @@ function MpgMaklumatCalon () {
         drawCallback: function () {
           $('[data-toggle="tooltip"]').tooltip();
           $('.btnProTambah').on('click', function () {
-            // modalMpgJawatanDipohon.add();
+            modalMpgSijilProfesional.add();
           });
           $('.lnkProView').off('click').on('click', function () {
-            // modalMpgJawatanDipohon.view(123);
+            modalMpgSijilProfesional.view(123);
           });
           $('.lnkProEdit').off('click').on('click', function () {
-            // modalMpgJawatanDipohon.edit(123);
+            modalMpgSijilProfesional.edit(123);
           });
           $('.lnkProRemove').off('click').on('click', function () {
-            modalConfirmDelete.delete(123, modalMpgJawatanDipohon);
+            modalConfirmDelete.delete(123, modalMpgSijilProfesional);
           });
           $('.lnkProPdf').off('click').on('click', function () {
             // modalPreviewPdf.edit(123);
@@ -521,16 +523,16 @@ function MpgMaklumatCalon () {
         drawCallback: function () {
           $('[data-toggle="tooltip"]').tooltip();
           $('.btnTttTambah').on('click', function () {
-            // modalMpgJawatanDipohon.add();
+            modalMpgTindakanTatatertib.add();
           });
           $('.lnkTttView').off('click').on('click', function () {
-            // modalMpgJawatanDipohon.view(123);
+            modalMpgTindakanTatatertib.view(123);
           });
           $('.lnkTttEdit').off('click').on('click', function () {
-            // modalMpgJawatanDipohon.edit(123);
+            modalMpgTindakanTatatertib.edit(123);
           });
           $('.lnkTttRemove').off('click').on('click', function () {
-            modalConfirmDelete.delete(123, modalMpgJawatanDipohon);
+            modalConfirmDelete.delete(123, modalMpgJTindakanTatatertib);
           });
         },
         aoColumns: [
@@ -752,6 +754,14 @@ function MpgMaklumatCalon () {
   
   this.setModalMpgJawatanDipohon = function (_modalMpgJawatanDipohon) {
     modalMpgJawatanDipohon = _modalMpgJawatanDipohon;
+  };
+  
+  this.setModalMpgTindakanTatatertib = function (_modalMpgTindakanTatatertib) {
+    modalMpgTindakanTatatertib = _modalMpgTindakanTatatertib;
+  };
+  
+  this.setModalMpgSijilProfesional = function (_modalMpgSijilProfesional) {
+    modalMpgSijilProfesional = _modalMpgSijilProfesional;
   };
 
   this.setModalMpgSejarahTransaksi = function (_modalMpgSejarahTransaksi) {
