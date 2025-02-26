@@ -67,6 +67,13 @@ function MpgMaklumatCalon () {
           toastr['error'](_ALERT_MSG_VALIDATION, _ALERT_TITLE_ERROR);
           $('#sectionMaklumat').hide();
         } else {
+          // $('.divSmclSave').hide();
+          $('.nav-link').removeClass('active');
+          $('.tab-pane').removeClass('show');
+          $('.tab-pane').removeClass('active');
+          $('#secMaklumatCalon-tab').addClass('active');
+          $('#secMaklumatCalon').addClass('show');
+          $('#secMaklumatCalon').addClass('active');
           $('#sectionMaklumat').show();
         }
       });
