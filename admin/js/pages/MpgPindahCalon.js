@@ -69,8 +69,7 @@ function MpgPindahCalon () {
         // ordering: false,
         order: [[3, 'desc']],
         language: _DATATABLE_LANGUAGE,
-        dom: "<'d-flex'<'p-0'><'p-0 d-none d-sm-block ml-auto'>>" +
-        "<'d-flex'<'p-0 flex-fill'tr>>",
+        dom:  "<'d-flex '<'p-0 mr-auto flex-fill 'f>>",
         columnDefs: [
           { className: 'text-center', targets: "_all" },
           { bSortable: false, targets: "_all" },
