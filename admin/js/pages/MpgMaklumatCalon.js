@@ -62,6 +62,14 @@ function MpgMaklumatCalon () {
         $(window).scrollTop(0);
       });
       
+      // $('#txtCmclNoKp').on('change', function () {
+      //   $('#sectionMaklumat').hide();
+      // });
+
+      $('#txtCmclNoKp').keyup(function() {
+        $('#sectionMaklumat').hide();
+      });
+      
       $('#btnCmclFilter').on('click', function () {
         if (!formValidate.validateNow()) {
           toastr['error'](_ALERT_MSG_VALIDATION, _ALERT_TITLE_ERROR);
@@ -89,16 +97,16 @@ function MpgMaklumatCalon () {
         bPaginate: false,
         bInfo: true,
         autoWidth: false,
-        // ordering: false,
         order: [[5, 'asc']],
         language: _DATATABLE_LANGUAGE,
         dom: "<'d-flex'<'p-0'><'p-0 d-none d-sm-block ml-auto'>>" +
         "<'d-flex'<'p-0 flex-fill'tr>>",
         columnDefs: [
           { className: 'text-center', targets: "_all" },
-          // { className: 'text-center', targets: [0,2,3,4,5,6,7,8] },
-          // { className: 'text-left', targets: [1] },
           { bSortable: false, targets: "_all" },
+        ],
+        buttons: [
+          { text: '<i class="fa-regular fa-circle-plus mr-1"></i>Tambah', className: 'btn btn-sm btn-outline-default z-depth-0 m-0 py-1 px-3 divSmclSave btnJwtTambah', attr: { id: 'btnSekRefresh' }, titleAttr: 'Tambah'}
         ],
         fnRowCallback : function(nRow, aData, iDisplayIndex){
           const info = $(this).DataTable().page.info();
