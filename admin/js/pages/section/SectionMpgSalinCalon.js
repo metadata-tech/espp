@@ -15,7 +15,7 @@ function SectionMpgSalinCalon () {
   this.getValidationData = function () {
     return [
       {
-        field_id: "optSmeKategoriMesyuarat",
+        field_id: "optSmscKategoriMesyuarat",
         type: "select",
         name: "Kategori Mesyuarat",
         validator: {
@@ -23,7 +23,7 @@ function SectionMpgSalinCalon () {
         }
       },
       {
-        field_id: "txtSmeTajukMesyuarat",
+        field_id: "txtSmscTajukMesyuarat",
         type: "text",
         name: "Tajuk Mesyuarat",
         validator: {
@@ -31,7 +31,7 @@ function SectionMpgSalinCalon () {
         }
       },
       {
-        field_id: "txtSmeTarikhDari",
+        field_id: "txtSmscTarikhDari",
         type: "text",
         name: "Tarikh Mesyuarat",
         validator: {
@@ -39,7 +39,7 @@ function SectionMpgSalinCalon () {
         }
       },
       {
-        field_id: "txtSmeTarikhTutup",
+        field_id: "txtSmscTarikhTutup",
         type: "text",
         name: "Tarikh Mesyuarat",
         validator: {
@@ -47,7 +47,7 @@ function SectionMpgSalinCalon () {
         }
       },
       {
-        field_id: "txtSmeBilMesyuaratNo",
+        field_id: "txtSmscBilMesyuaratNo",
         type: "text",
         name: "Bilangan Mesyuarat",
         validator: {
@@ -55,7 +55,7 @@ function SectionMpgSalinCalon () {
         }
       },
       {
-        field_id: "txtSmeBilMesyuaratBil",
+        field_id: "txtSmscBilMesyuaratBil",
         type: "text",
         name: "Bilangan Mesyuarat",
         validator: {
@@ -63,7 +63,7 @@ function SectionMpgSalinCalon () {
         }
       },
       {
-        field_id: "txtSmeBilMesyuaratTahun",
+        field_id: "txtSmscBilMesyuaratTahun",
         type: "text",
         name: "Bilangan Mesyuarat",
         validator: {
@@ -79,7 +79,7 @@ function SectionMpgSalinCalon () {
       id = 123;
   
       formValidate.clearValidation();
-      $('.divSmeSave').show();
+      $('.divSmscSave').show();
       $('.divTab').show();
 
       ShowLoader();
@@ -104,7 +104,7 @@ function SectionMpgSalinCalon () {
       submitType = 'edit';
   
       formValidate.clearValidation();
-      $('.divSmeSave').show();
+      $('.divSmscSave').show();
       $('.divTab').show();
 
       ShowLoader();
@@ -114,7 +114,7 @@ function SectionMpgSalinCalon () {
         // self.genTableDbm();
         self.genTableDbm3();
 
-        $('#h4SmeTitle').html('<i class="fa-duotone fa-lg fa-file-pen mr-3"></i>Kemaskini Maklumat eKEPS');
+        $('#h4SmscTitle').html('<i class="fa-duotone fa-lg fa-file-pen mr-3"></i>Kemaskini Maklumat eKEPS');
         $('.sectionMain').hide();
         $('.sectionMpgSalinCalon').show();
         maScrollTop();
@@ -131,7 +131,7 @@ function SectionMpgSalinCalon () {
       submitType = 'view';
   
       formValidate.clearValidation();
-      $('.divSmeSave').show();
+      $('.divSmscSave').show();
       $('.divTab').show();
 
       ShowLoader();
@@ -141,7 +141,7 @@ function SectionMpgSalinCalon () {
         self.genTableDbm3();
 
 
-        // $('#h4SmeTitle').html('<i class="fa-duotone fa-lg fa-file mr-3"></i>Paparan Maklumat eKEPS');
+        // $('#h4SmscTitle').html('<i class="fa-duotone fa-lg fa-file mr-3"></i>Paparan Maklumat eKEPS');
         $('.sectionMain').hide();
         $('.sectionMpgSalinCalon').show();
         maScrollTop();
@@ -158,50 +158,50 @@ function SectionMpgSalinCalon () {
     formValidate.registerFields(self.getValidationData());
 
 
-    $('.btnSmeBack').on('click', function () {
+    $('.btnSmscBack').on('click', function () {
       $('.sectionMain').show();
       $('.sectionMpgSalinCalon').hide();
       maScrollTop();
     });
 
-    $('.btnSmeNext').click(function(e) {
+    $('.btnSmscNext').click(function(e) {
       e.preventDefault();
       $('.nav-pills-custom .active').parent().next('li').find('a').trigger('click');
     });
 
-    $('.btnSmePrevious').click(function(e) {
+    $('.btnSmscPrevious').click(function(e) {
       e.preventDefault();
       $('.nav-pills-custom .active').parent().prev('li').find('a').trigger('click');
     });
 
-    $('#btnSmeSave').click(function(e) {
+    $('#btnSmscSave').click(function(e) {
       if (!formValidate.validateNow()) {
         toastr['error'](_ALERT_MSG_VALIDATION, _ALERT_TITLE_VALIDATION_ERROR);
       } else {
         ShowLoader(); setTimeout(function () {
           toastr['success']('Maklumat Pemerolehan berjaya disimpan!');
           classFrom.genTable();
-          ('.sectionMpgSalinCalon').hide();
-          ('.sectionMain').show();
+          $('.sectionMain').show();
+          $('.sectionMpgSalinCalon').hide();
           HideLoader();
-        }, 200);
+        }, 500);
       }
     });
 
-    $('#btnSmeReset').on('click', function () {
+    $('#btnSmscReset').on('click', function () {
       formValidate.clearValidation();
       if (submitType == 'edit' || submitType == 'view') {
         self.assignValue();
       } else {
-        mzSetValue('txtSmePegawaiNama', 'SITI AISYAH BINTI ABDUL MALIK', 'text');
-        mzSetValue('txtSmePegawaiJawatan', 'PEGAWAI PSU - PENGAMBILAN', 'text');
-        mzSetValue('optSmePegawaiKementerian', '1215', 'text');
+        mzSetValue('txtSmscPegawaiNama', 'SITI AISYAH BINTI ABDUL MALIK', 'text');
+        mzSetValue('txtSmscPegawaiJawatan', 'PEGAWAI PSU - PENGAMBILAN', 'text');
+        mzSetValue('optSmscPegawaiKementerian', '1215', 'text');
       }
     });
 
-    $('.btnDbmTambah').on('click', function () {
-      modalDokumenBerkaitanEkeps.add();
-    });
+    // $('.btnDbmTambah').on('click', function () {
+    //   modalDokumenBerkaitanEkeps.add();
+    // });
     
     // dtDbm = $('#dtDbm').DataTable({
     //   bLengthChange: false,
@@ -296,29 +296,29 @@ function SectionMpgSalinCalon () {
 
   this.assignValue = function () {
     const kategoriMesyuarat = 'MSJ';
-    mzSetValue('optSmeKategoriMesyuarat', 'MSJ', 'select');
+    mzSetValue('optSmscKategoriMesyuarat', 'MSJ', 'select');
     if (kategoriMesyuarat == 'MSJ') {
-      maDisableInput('txtSmeBilMesyuaratNo', false);
-      formValidate.enableField('txtSmeBilMesyuaratNo');
+      maDisableInput('txtSmscBilMesyuaratNo', false);
+      formValidate.enableField('txtSmscBilMesyuaratNo');
     }
     else if (kategoriMesyuarat == 'MLRTT') {
-      maDisableInput('txtSmeBilMesyuaratNo', false);
-      formValidate.enableField('txtSmeBilMesyuaratNo');
+      maDisableInput('txtSmscBilMesyuaratNo', false);
+      formValidate.enableField('txtSmscBilMesyuaratNo');
     }
     else if (kategoriMesyuarat == 'MLRKP') {
-      maDisableInput('txtSmeBilMesyuaratNo', true);
-      formValidate.disableField('txtSmeBilMesyuaratNo');
+      maDisableInput('txtSmscBilMesyuaratNo', true);
+      formValidate.disableField('txtSmscBilMesyuaratNo');
     } else {
-      maDisableInput('txtSmeBilMesyuaratNo', false);
-      formValidate.enableField('txtSmeBilMesyuaratNo');
+      maDisableInput('txtSmscBilMesyuaratNo', false);
+      formValidate.enableField('txtSmscBilMesyuaratNo');
     }
-    mzSetValue('txtSmeTarikhMesyuarat', '20/12/2023', 'text');
-    mzSetValue('txtSmeTarikhPengesahanMinit', '20/12/2023', 'text');
-    mzSetValue('txtSmeBilMesyuaratNo', '1209', 'text');
-    mzSetValue('txtSmeBilMesyuaratBil', '18', 'text');
-    mzSetValue('txtSmeBilMesyuaratTahun', '2023', 'text');
-    mzSetValue('txtSmeNoRujukanFail', 'SPP.600-3/1/1 Jld.21(4)(S)', 'text');
-    mzSetValue('txtSmeTajukMesyuarat', 'MESYUARAT SURUHANJAYA PERKHIDMATAN PENDIDIKAN KALI KE-1209 (BIL. 18/2023)', 'text');
+    mzSetValue('txtSmscTarikhMesyuarat', '20/12/2023', 'text');
+    mzSetValue('txtSmscTarikhPengesahanMinit', '20/12/2023', 'text');
+    mzSetValue('txtSmscBilMesyuaratNo', '1209', 'text');
+    mzSetValue('txtSmscBilMesyuaratBil', '18', 'text');
+    mzSetValue('txtSmscBilMesyuaratTahun', '2023', 'text');
+    mzSetValue('txtSmscNoRujukanFail', 'SPP.600-3/1/1 Jld.21(4)(S)', 'text');
+    mzSetValue('txtSmscTajukMesyuarat', 'MESYUARAT SURUHANJAYA PERKHIDMATAN PENDIDIKAN KALI KE-1209 (BIL. 18/2023)', 'text');
   };
   
   // this.genTableDbm = function () {
@@ -354,7 +354,7 @@ function SectionMpgSalinCalon () {
 
   this.setOptionNegeri = function (_refNegeri) {
     try {
-      mzOptionStop('optSmeAlTkNegeri', _refNegeri, 'display');
+      mzOptionStop('optSmscAlTkNegeri', _refNegeri, 'display');
     } catch (e) { toastr['error'](_ALERT_MSG_ERROR_DEFAULT, _ALERT_TITLE_ERROR); }
   };
   
